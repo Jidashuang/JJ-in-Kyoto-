@@ -1,116 +1,153 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Container } from "@/components/layout/Container";
 import { Heading } from "@/components/ui/Heading";
+import { Section } from "@/components/ui/Section";
+import { TagList } from "@/components/ui/Tag";
+import { features } from "@/data/features";
+import { neighborhoods } from "@/data/neighborhoods";
+import { places } from "@/data/places";
 
 export const metadata: Metadata = {
   title: "Map",
   description:
-    "A light map of curated places across Kyoto — browse by neighborhood or category.",
+    "Browse Kyoto by neighborhood, feature, or place index — a lightweight way to move through the guide.",
 };
+
+function IndexCard({
+  href,
+  label,
+  title,
+  intro,
+  tags,
+  meta,
+}: {
+  href: string;
+  label: string;
+  title: string;
+  intro: string;
+  tags: string[];
+  meta: string;
+}) {
+  return (
+    <Link
+      href={href}
+      className="group flex flex-col gap-4 border border-border p-6 md:p-8 hover:border-foreground/20 transition-colors"
+    >
+      <div className="flex items-start justify-between gap-4">
+        <div>
+          <p className="label-xs text-muted-foreground/60 mb-2">{label}</p>
+          <Heading
+            as="h3"
+            size="sm"
+            font="serif"
+            className="group-hover:opacity-70 transition-opacity"
+          >
+            {title}
+          </Heading>
+        </div>
+        <span className="font-sans text-xs text-muted-foreground/40 mt-1 shrink-0 group-hover:text-foreground transition-colors">
+          →
+        </span>
+      </div>
+
+      <p className="font-sans text-sm leading-relaxed text-muted-foreground line-clamp-3">
+        {intro}
+      </p>
+
+      <div className="mt-auto pt-4 border-t border-border/60 flex items-center justify-between gap-4">
+        <TagList tags={tags.slice(0, 3)} variant="default" size="sm" />
+        <span className="font-sans text-xs text-muted-foreground/40 shrink-0">
+          {meta}
+        </span>
+      </div>
+    </Link>
+  );
+}
 
 export default function MapPage() {
   return (
-    <div className="flex flex-col">
-      {/* ── Page header ─────────────────────────────────────────────── */}
-      <section className="border-b border-border py-16 md:py-24">
-        <Container>
-          <div className="max-w-xl">
+    <div className="py-16 md:py-24">
+      <Container>
+        <section className="mb-14 md:mb-20">
+          <div className="max-w-2xl">
             <p className="label-xs mb-5 text-muted-foreground/60">
-              Explore by location
+              Browse by structure
             </p>
             <Heading as="h1" size="xl" font="serif" className="mb-5">
               Map
             </Heading>
-            <p className="font-sans text-base text-muted-foreground leading-relaxed">
-              Browse all listed places on a light map of Kyoto. Filter by
-              category, click a marker to preview, and jump to the full detail
-              page from there.
+            <p className="font-sans text-base leading-relaxed text-muted-foreground max-w-xl">
+              Use this page as a lightweight index of the guide. Move by area,
+              by editorial theme, or by the full place list depending on how
+              you want to explore Kyoto.
             </p>
           </div>
-        </Container>
-      </section>
+        </section>
 
-      {/* ── Coming soon ─────────────────────────────────────────────── */}
-      <section className="flex-1 flex items-center py-24 md:py-36">
-        <Container size="narrow">
-          <div className="flex flex-col items-center text-center gap-8">
-            {/* Decorative map glyph */}
-            <div
-              className="w-20 h-20 rounded-full border border-border flex items-center justify-center text-muted-foreground/30"
-              aria-hidden="true"
-            >
-              <svg
-                width="36"
-                height="36"
-                viewBox="0 0 36 36"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                {/* Simplified map pin + grid */}
-                <circle cx="18" cy="15" r="5" />
-                <path d="M18 20 C18 20 10 27 10 32 L26 32 C26 27 18 20 18 20Z" />
-                <line x1="4" y1="8" x2="4" y2="28" strokeOpacity="0.4" />
-                <line x1="32" y1="8" x2="32" y2="28" strokeOpacity="0.4" />
-                <line x1="4" y1="8" x2="10" y2="6" strokeOpacity="0.4" />
-                <line x1="32" y1="8" x2="26" y2="6" strokeOpacity="0.4" />
-                <line x1="4" y1="28" x2="10" y2="30" strokeOpacity="0.4" />
-                <line x1="32" y1="28" x2="26" y2="30" strokeOpacity="0.4" />
-              </svg>
-            </div>
-
-            <div className="flex flex-col gap-3">
-              <Heading as="h2" size="md" font="serif">
-                The map is on its way.
-              </Heading>
-              <p className="font-sans text-sm text-muted-foreground leading-relaxed max-w-sm">
-                We&apos;re building a lightweight, distraction-free map that
-                plots every listed place across the city. Filter by category,
-                pan by neighborhood, and keep the itinerary planning
-                lightweight.
-              </p>
-            </div>
-
-            {/* What to expect */}
-            <div className="w-full max-w-sm border border-border divide-y divide-border mt-4 text-left">
-              {[
-                {
-                  label: "All place markers",
-                  note: "Every listing plotted at its exact address.",
-                },
-                {
-                  label: "Category filter",
-                  note: "Show only cafes, bookstores, walks, and so on.",
-                },
-                {
-                  label: "Marker previews",
-                  note: "Tap a pin to see the name, excerpt, and a link.",
-                },
-                {
-                  label: "Neighborhood overlay",
-                  note:
-                    "Loose district outlines to orient yourself at a glance.",
-                },
-              ].map(({ label, note }) => (
-                <div key={label} className="flex flex-col gap-1 px-5 py-4">
-                  <p className="font-sans text-xs font-medium text-foreground tracking-wide">
-                    {label}
-                  </p>
-                  <p className="font-sans text-xs text-muted-foreground leading-relaxed">
-                    {note}
-                  </p>
-                </div>
-              ))}
-            </div>
-
-            <p className="font-sans text-xs text-muted-foreground/50 mt-2">
-              In the meantime, each place detail page links out to Google Maps.
-            </p>
+        <Section
+          spacing="sm"
+          label="Neighborhoods"
+          heading={<Heading as="h2" size="lg" font="serif">Browse by area</Heading>}
+          action={<Link href="/neighborhoods">All neighborhoods →</Link>}
+        >
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
+            {neighborhoods.slice(0, 6).map((neighborhood) => (
+              <IndexCard
+                key={neighborhood.slug}
+                href={`/neighborhoods/${neighborhood.slug}`}
+                label="Area"
+                title={neighborhood.name}
+                intro={neighborhood.intro}
+                tags={neighborhood.ambiance ?? []}
+                meta={`${neighborhood.placeSlugs.length} places`}
+              />
+            ))}
           </div>
-        </Container>
-      </section>
+        </Section>
+
+        <Section
+          spacing="sm"
+          label="Features"
+          heading={<Heading as="h2" size="lg" font="serif">Browse by theme</Heading>}
+          action={<Link href="/features">All features →</Link>}
+        >
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
+            {features.slice(0, 5).map((feature) => (
+              <IndexCard
+                key={feature.slug}
+                href={`/features/${feature.slug}`}
+                label="Theme"
+                title={feature.title}
+                intro={feature.intro}
+                tags={feature.placeSlugs.slice(0, 3)}
+                meta={`${feature.placeSlugs.length} places`}
+              />
+            ))}
+          </div>
+        </Section>
+
+        <Section
+          spacing="sm"
+          label="Places"
+          heading={<Heading as="h2" size="lg" font="serif">Browse the full index</Heading>}
+          action={<Link href="/places">All places →</Link>}
+        >
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
+            {places.slice(0, 9).map((place) => (
+              <IndexCard
+                key={place.slug}
+                href={`/places/${place.slug}`}
+                label={place.neighborhood}
+                title={place.title}
+                intro={place.excerpt}
+                tags={place.tags}
+                meta={place.category[0]}
+              />
+            ))}
+          </div>
+        </Section>
+      </Container>
     </div>
   );
 }
