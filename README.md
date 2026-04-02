@@ -5,25 +5,6 @@ Built with an editorial, magazine-inspired aesthetic using Next.js App Router an
 
 ---
 
-## Deployment Readiness (Verified)
-
-This project has been checked for staging deployment on Vercel with the following verified outcomes:
-
-- ✅ `npm run build` passes successfully
-- ✅ `npm run lint` runs cleanly
-- ✅ Static generation completes for all current routes
-- ✅ No required environment variables are currently used by app code
-- ✅ Sitemap and robots routes are present (`/sitemap.xml`, `/robots.txt`)
-
-### Notes from verification
-
-- The production build previously failed due to broken type imports in:
-  - `src/data/real-features.ts`
-  - `src/data/real-neighborhoods.ts`
-- These import paths were corrected to use the existing typed modules under `src/types`, and the build now passes.
-
----
-
 ## Overview
 
 This project is a content-first Kyoto travel guide with:
@@ -32,19 +13,6 @@ This project is a content-first Kyoto travel guide with:
 - typed local data for places, features, and neighborhoods
 - SEO basics (metadata, Open Graph, sitemap, robots)
 - Vercel-ready deployment defaults
-
-## Local Image Assets
-
-Image content is wired to the numbered files in `public/images/` and falls back
-to the editorial placeholder panels when a file is missing.
-
-- `public/images/1.jpg` to `public/images/10.jpg` map to feature covers
-- `public/images/11.jpg` to `public/images/16.jpg` map to neighborhood covers
-- `public/images/17.jpg` to `public/images/119.jpg` map to place hero images
-- `public/images/120.jpg` onward is used for place gallery images
-
-The data layer assigns these images automatically, so you only need to replace
-the numbered files if you want to swap in different photos later.
 
 ---
 
@@ -61,7 +29,7 @@ the numbered files if you want to swap in different photos later.
 
 ## Project Architecture
 
-```kyoto-guide/README.md#L1-40
+```Kyoto annai/kyoto-guide/README.md#L1-200
 kyoto-guide/
 ├── src/
 │   ├── app/
@@ -79,21 +47,61 @@ kyoto-guide/
 │   │   ├── robots.ts                  # dynamic robots.txt
 │   │   └── favicon.ico
 │   ├── components/
-│   │   ├── layout/
-│   │   └── ui/
+│   │   ├── layout/                    # Header/Footer/Container
+│   │   └── ui/                        # reusable typography + cards + tags
 │   ├── data/
 │   │   ├── places.ts
 │   │   ├── features.ts
-│   │   ├── real-features.ts
-│   │   ├── neighborhoods.ts
-│   │   └── real-neighborhoods.ts
+│   │   └── neighborhoods.ts
 │   ├── lib/
-│   └── types/
+│   │   ├── content.ts                 # typed content selectors/helpers
+│   │   └── utils.ts
+│   └── types/                         # shared TS interfaces
 ├── public/
+│   ├── favicon.ico
+│   ├── icon.png
+│   ├── apple-icon.png
+│   └── og-image.png
 ├── next.config.ts
 ├── tsconfig.json
 └── package.json
 ```
+
+### Rendering Strategy
+
+- Dynamic route segments (`[slug]`) use `generateStaticParams`.
+- Content comes from local typed data (`src/data/*`).
+- Pages are pre-rendered at build time where possible.
+
+---
+
+## SEO and Metadata
+
+The app includes baseline technical SEO:
+
+- global `metadata` in `src/app/layout.tsx`
+- canonical base URL via `metadataBase`
+- Open Graph + Twitter card metadata
+- robots directives
+- `sitemap.xml` from `src/app/sitemap.ts`
+- `robots.txt` from `src/app/robots.ts`
+- favicon + icon declarations
+
+### Important: Set your production domain
+
+Replace this constant in:
+
+- `src/app/layout.tsx`
+- `src/app/sitemap.ts`
+- `src/app/robots.ts`
+
+with your real domain:
+
+```Kyoto annai/kyoto-guide/README.md#L1-20
+const siteUrl = "https://kyoto-guide.vercel.app";
+```
+
+If your actual Vercel domain differs, update it before release.
 
 ---
 
@@ -101,126 +109,116 @@ kyoto-guide/
 
 ### Prerequisites
 
-- Node.js 20+ recommended
+- Node.js 18.17+ (Node 20+ recommended)
 - npm
 
 ### Install
 
-```kyoto-guide/README.md#L1-2
+```Kyoto annai/kyoto-guide/README.md#L1-10
 npm install
 ```
 
 ### Run dev server
 
-```kyoto-guide/README.md#L1-2
+```Kyoto annai/kyoto-guide/README.md#L1-10
 npm run dev
 ```
 
 Open `http://localhost:3000`.
 
-### Validate before deploy
+### Production build (must pass before deploy)
 
-```kyoto-guide/README.md#L1-3
-npm run lint
+```Kyoto annai/kyoto-guide/README.md#L1-10
 npm run build
 npm run start
 ```
 
----
+### Lint
 
-## Environment Variables
-
-## Current status
-
-No required environment variables are used by current application code for build/runtime.
-
-- No active `process.env.*` usage was found in app source
-- The project is currently local-data/static-first
-
-## If you add env vars later
-
-- Put public values in `NEXT_PUBLIC_*`
-- Keep secrets server-side only (do not expose in client bundles)
-- Add all new keys in Vercel project settings per environment (Preview/Production)
-
----
-
-## SEO / Metadata Production Checklist
-
-The app includes metadata and crawler files, but verify production consistency:
-
-- `src/app/layout.tsx` defines `metadataBase`, Open Graph, Twitter metadata
-- `src/app/sitemap.ts` defines sitemap URLs
-- `src/app/robots.ts` defines robots host/sitemap
-
-### Important before staging/prod cutover
-
-Update the canonical site URL constant if your final domain is different from current value:
-
-```kyoto-guide/src/app/layout.tsx#L1-8
-const siteUrl = "https://kyoto-guide.vercel.app";
+```Kyoto annai/kyoto-guide/README.md#L1-10
+npm run lint
 ```
 
-Also keep this URL aligned in:
+---
 
-- `src/app/sitemap.ts`
-- `src/app/robots.ts`
+## Content Management
+
+Main content files:
+
+- `src/data/places.ts`
+- `src/data/features.ts`
+- `src/data/neighborhoods.ts`
+
+When adding entries:
+
+1. Use unique slugs.
+2. Keep cross-references valid (`placeSlugs`, `sourceFeature`, etc.).
+3. Add corresponding imagery in `public/` when available.
+4. Keep copy concise and editorial.
 
 ---
 
-## Vercel Staging Deployment Steps (Verified-Friendly)
+## Route and Type Safety Checklist
 
-1. Push the repository to GitHub/GitLab/Bitbucket.
-2. In Vercel, create a new project and import the repo.
-3. Framework should auto-detect as **Next.js**.
-4. Keep default build settings:
-   - Install: `npm install`
-   - Build: `npm run build`
-   - Output: Next.js managed
-5. Configure environment variables (none required currently).
-6. Deploy to Preview (staging).
-7. Run post-deploy smoke checks:
-   - `/`
-   - `/places`
-   - `/features`
-   - `/neighborhoods`
-   - `/sitemap.xml`
-   - `/robots.txt`
-8. Verify metadata in page source and social preview behavior.
+Before deployment, verify:
+
+- every slug referenced in one dataset exists in its target dataset
+- `generateStaticParams` returns all route params for dynamic pages
+- `generateMetadata` handles missing content safely
+- no broken links between `/places`, `/features`, `/neighborhoods`
 
 ---
 
-## Remaining Blockers Before Staging Deployment
+## Vercel Deployment Guide
 
-### Must-fix blockers
+### 1) Push repository
 
-None currently identified for staging deployment.
+Push the project to GitHub/GitLab/Bitbucket.
 
-### Warnings / quality risks (non-blocking but recommended)
+### 2) Import to Vercel
 
-1. **Workspace root warning during build**  
-   Next.js warns about multiple lockfiles and inferred root outside this app directory.  
-   Recommended cleanup:
-   - remove unrelated lockfiles above project root if not needed, or
-   - explicitly set Turbopack root in Next config for consistency in CI.
+- Create a new project in Vercel
+- Import repository
+- Framework preset should auto-detect as **Next.js**
 
-2. **Canonical URL consistency**  
-   Ensure `siteUrl` values match your staging/prod domain strategy to avoid mixed canonical/sitemap host values.
+### 3) Build settings
 
-3. **Asset completeness**  
-   Confirm `public/og-image.png` and icons are final assets for staging review.
+Defaults are usually correct:
+
+- **Build Command**: `next build` (or `npm run build`)
+- **Output**: managed by Next.js
+- **Install Command**: `npm install`
+
+### 4) Environment variables
+
+No required secrets for current static/local-data architecture.  
+If you add external APIs later, define vars in Vercel Project Settings and avoid hardcoding credentials.
+
+### 5) Domain + SEO consistency
+
+- Attach your production domain in Vercel.
+- Update `siteUrl` references in metadata/sitemap/robots to match final domain.
+- Redeploy.
+
+### 6) Post-deploy checks
+
+After deployment, validate:
+
+- `/sitemap.xml` resolves
+- `/robots.txt` resolves
+- social preview appears for homepage share
+- favicon appears in browser tabs
+- all primary routes render without runtime errors
 
 ---
 
-## Post-Deploy Staging QA Checklist
+## Recommended Next Improvements
 
-- [ ] All primary routes load without runtime errors
-- [ ] Dynamic detail pages render (`places/[slug]`, `features/[slug]`, `neighborhoods/[slug]`)
-- [ ] `sitemap.xml` returns expected URLs
-- [ ] `robots.txt` returns expected host/sitemap directives
-- [ ] Metadata title/description/Open Graph are present
-- [ ] Mobile and desktop layouts look correct
-- [ ] No console errors on key pages
+- Replace placeholder OG image with branded 1200×630 graphic
+- Add per-page Open Graph images for dynamic detail pages
+- Add JSON-LD structured data (`WebSite`, `TravelGuide`, `BreadcrumbList`)
+- Add analytics + search console verification metadata
+- Add content pipeline (MDX/CMS) if editorial volume grows
 
 ---
 

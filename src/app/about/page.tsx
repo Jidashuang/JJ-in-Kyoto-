@@ -107,12 +107,12 @@ export default function AboutPage() {
 
         <section>
           <Heading as="h2" size="sm" font="serif" className="mb-5">
-            Corrections
+            Contact
           </Heading>
           <Prose>
             <p>
-              This section is reserved for corrections, updates, and
-              thoughtful suggestions.
+              Contact details will be added soon. In the meantime, this section
+              is reserved for corrections, updates, and thoughtful suggestions.
             </p>
           </Prose>
         </section>

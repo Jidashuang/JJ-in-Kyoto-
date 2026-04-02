@@ -3,21 +3,55 @@
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import { Container } from "@/components/layout/Container";
-import { SmartImage } from "@/components/media/SmartImage";
 import { Heading } from "@/components/ui/Heading";
 import { Tag, TagList } from "@/components/ui/Tag";
-import { PLACE_CATEGORIES } from "@/data/place-taxonomy";
 import { places } from "@/data/places";
+import { cn } from "@/lib/utils";
 
 const ALL_OPTION = "All";
 
-const CATEGORY_OPTIONS = [ALL_OPTION, ...PLACE_CATEGORIES] as const;
+const CATEGORY_OPTIONS = [
+  ALL_OPTION,
+  "Cafe",
+  "Sweets",
+  "Bakery",
+  "Bookstore",
+  "Antique",
+  "Lifestyle",
+  "Restaurant",
+  "Japanese",
+  "Chinese",
+  "Western",
+  "Walk",
+  "Scenic Spot",
+] as const;
 
 function titleCaseNeighborhood(value: string) {
   return value
     .split("-")
     .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
     .join(" ");
+}
+
+function ImgPlaceholder({
+  label = "",
+  className = "",
+}: {
+  label?: string;
+  className?: string;
+}) {
+  return (
+    <div
+      className={cn("img-placeholder bg-stone-100", className)}
+      aria-hidden="true"
+    >
+      {label && (
+        <span className="label-xs text-stone-400 text-center px-4">
+          {label}
+        </span>
+      )}
+    </div>
+  );
 }
 
 type PlaceCardProps = {
@@ -29,7 +63,6 @@ type PlaceCardProps = {
   tags: string[];
   excerpt: string;
   topPick: boolean;
-  heroImage: string;
 };
 
 function PlaceCard({
@@ -41,7 +74,6 @@ function PlaceCard({
   tags,
   excerpt,
   topPick,
-  heroImage,
 }: PlaceCardProps) {
   return (
     <Link
@@ -49,12 +81,9 @@ function PlaceCard({
       className="group flex flex-col gap-0 border border-border hover:border-foreground/20 transition-colors overflow-hidden bg-background"
     >
       <div className="relative overflow-hidden">
-        <SmartImage
-          src={heroImage}
-          alt={title}
-          fallbackLabel={category[0]}
-          className="aspect-[3/2] w-full"
-          imgClassName="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+        <ImgPlaceholder
+          className="aspect-[3/2] w-full transition-transform duration-500 group-hover:scale-[1.02]"
+          label={category[0]}
         />
         {topPick && (
           <span className="absolute top-3 left-3 label-xs bg-foreground text-primary-foreground px-2 py-1 rounded-sm">

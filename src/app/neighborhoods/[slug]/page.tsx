@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Container } from "@/components/layout/Container";
-import { SmartImage } from "@/components/media/SmartImage";
 import { Heading } from "@/components/ui/Heading";
 import { TagList } from "@/components/ui/Tag";
 import { neighborhoods } from "@/data/neighborhoods";
@@ -28,6 +27,28 @@ export async function generateMetadata({
   };
 }
 
+/* ─── Placeholder image ─────────────────────────────────────────────────────── */
+function ImgPlaceholder({
+  className = "",
+  label = "",
+}: {
+  className?: string;
+  label?: string;
+}) {
+  return (
+    <div
+      className={`img-placeholder bg-stone-100 ${className}`}
+      aria-hidden="true"
+    >
+      {label && (
+        <span className="label-xs text-stone-400 text-center px-4">
+          {label}
+        </span>
+      )}
+    </div>
+  );
+}
+
 /* ─── Place card (compact) ───────────────────────────────────────────────────── */
 function PlaceCard({
   slug,
@@ -36,7 +57,6 @@ function PlaceCard({
   category,
   excerpt,
   topPick,
-  heroImage,
 }: {
   slug: string;
   title: string;
@@ -44,7 +64,6 @@ function PlaceCard({
   category: string[];
   excerpt: string;
   topPick: boolean;
-  heroImage: string;
 }) {
   return (
     <Link
@@ -52,14 +71,8 @@ function PlaceCard({
       className="group flex gap-5 border border-border p-5 hover:border-foreground/20 transition-colors overflow-hidden"
     >
       {/* Thumbnail */}
-      <div className="relative shrink-0 overflow-hidden h-20 w-20">
-        <SmartImage
-          src={heroImage}
-          alt={title}
-          fallbackLabel={category[0]}
-          className="h-20 w-20"
-          imgClassName="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
-        />
+      <div className="relative shrink-0 overflow-hidden">
+        <ImgPlaceholder className="h-20 w-20" />
         {topPick && (
           <span className="absolute top-1.5 left-1.5 label-xs bg-foreground text-primary-foreground px-1.5 py-0.5">
             ★
@@ -179,13 +192,9 @@ export default async function NeighborhoodPage({
 
       {/* ── Hero image placeholder ──────────────────────────────────────── */}
       <Container className="mt-1 mb-0">
-        <SmartImage
-          src={neighborhood.heroImage ?? "/images/neighborhoods/placeholder.jpg"}
-          alt={neighborhood.name}
-          fallbackLabel={`${neighborhood.name} — overview`}
+        <ImgPlaceholder
           className="w-full aspect-[21/9]"
-          imgClassName="object-cover"
-          priority
+          label={`${neighborhood.name} — hero image`}
         />
       </Container>
 
@@ -218,10 +227,11 @@ export default async function NeighborhoodPage({
             ) : (
               <div className="flex flex-col gap-3 border border-dashed border-border p-10 text-center">
                 <p className="font-serif text-lg text-muted-foreground">
-                  No places are linked to this neighborhood yet.
+                  Places coming soon.
                 </p>
                 <p className="font-sans text-sm text-muted-foreground/60">
-                  Check the full place index for nearby entries.
+                  This district is part of the guide but specific listings are
+                  still being added.
                 </p>
                 <Link
                   href="/places"
@@ -261,14 +271,13 @@ export default async function NeighborhoodPage({
             <div className="border border-border p-7 flex flex-col gap-4">
               <p className="label-xs text-muted-foreground/60">On the map</p>
               <p className="font-sans text-sm text-muted-foreground leading-relaxed">
-                Browse the place index for everything linked to{" "}
-                {neighborhood.name}.
+                See all places in {neighborhood.name} plotted on the Kyoto map.
               </p>
               <Link
                 href="/map"
                 className="inline-flex h-9 items-center border border-border px-5 font-sans text-[0.68rem] tracking-[0.12em] uppercase text-muted-foreground hover:border-foreground/30 hover:text-foreground transition-colors"
               >
-                Open location guide →
+                Open map →
               </Link>
             </div>
 

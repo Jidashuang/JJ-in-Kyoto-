@@ -1,53 +1,54 @@
 import type { Feature } from "@/types/feature";
-import { realFeatures } from "@/data/real-features";
-import { places } from "@/data/places";
 
-const DEFAULT_INTRO =
-  "An editorial Kyoto feature drawn from the current guide.";
-const DEFAULT_BODY =
-  "This page gathers the linked places and notes for the feature.";
-const DEFAULT_COVER_IMAGE = "/images/features/placeholder.jpg";
-
-function normalizeSlug(input: string): string {
-  return input
-    .trim()
-    .toLowerCase()
-    .replace(/['’]/g, "")
-    .replace(/&/g, " and ")
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "");
-}
-
-function unique<T>(values: T[]): T[] {
-  return Array.from(new Set(values));
-}
-
-const placeSlugSet = new Set(places.map((p) => p.slug));
-
-function resolveFeaturePlaceSlugs(inputSlugs: string[]): string[] {
-  const resolved = inputSlugs
-    .map((slug) => normalizeSlug(slug))
-    .filter((slug) => placeSlugSet.has(slug));
-
-  return unique(resolved);
-}
-
-export const features: Feature[] = realFeatures.map((item) => {
-  const slug = normalizeSlug(item.slug || item.title || "");
-  const resolvedSlug = slug.length > 0 ? slug : "feature";
-  const title = item.title?.trim() || "Untitled Feature";
-  const intro = item.intro?.trim() || DEFAULT_INTRO;
-  const body = item.body?.trim() || DEFAULT_BODY;
-  const coverImage = item.coverImage || DEFAULT_COVER_IMAGE;
-  const placeSlugs = resolveFeaturePlaceSlugs(item.placeSlugs ?? []);
-
-  return {
-    slug: resolvedSlug,
-    title,
-    subtitle: item.subtitle,
-    intro,
-    coverImage,
-    body,
-    placeSlugs,
-  };
-});
+export const features: Feature[] = [
+  {
+    slug: "kyoto-coffee-doughnuts",
+    title: "Kyoto Coffee & Doughnuts",
+    subtitle: "The slow morning circuit",
+    intro:
+      "Kyoto's coffee culture runs on restraint. The best places keep the menus short, the light good, and the pacing entirely their own. These are the spots worth building a morning around.",
+    coverImage: "/images/features/kyoto-coffee-doughnuts.jpg",
+    placeSlugs: ["weekenders-coffee", "inoda-coffee", "le-petit-mec"],
+  },
+  {
+    slug: "bookstores-old-shops",
+    title: "Bookstores & Old Shops",
+    subtitle: "Shelves worth getting lost in",
+    intro:
+      "Between Ichijoji and Demachiyanagi, a loose cluster of independent bookshops, craft stores, and old-goods dealers that resist easy categorisation. Bring a tote bag and no fixed schedule.",
+    coverImage: "/images/features/bookstores-old-shops.jpg",
+    placeSlugs: ["keibunsha", "coto-books", "ichijoji-used-books"],
+  },
+  {
+    slug: "quiet-corners",
+    title: "Quiet Corners of Kyoto",
+    subtitle: "Away from the circuit",
+    intro:
+      "Not hidden — just unhurried. These are the places where the city slows down and remembers its own rhythm. A temple side street, a canal-facing café, a garden with nobody else in it.",
+    coverImage: "/images/features/quiet-corners.jpg",
+    placeSlugs: [
+      "wife-and-husband",
+      "sayama-cafe",
+      "sarasa-nishijin",
+      "hiiragi-ya",
+    ],
+  },
+  {
+    slug: "kyoto-chinese-western",
+    title: "Chinese & Western Comfort Food",
+    subtitle: "The other side of the table",
+    intro:
+      "Kyoto's reputation rests on kaiseki and tofu, but the city has always had a parallel appetite — for ramen that leans Chinese, for yoshoku that dates back to Meiji, for the kind of meal that asks nothing of you.",
+    coverImage: "/images/features/kyoto-chinese-western.jpg",
+    placeSlugs: ["chan-mishima", "kichi-kichi"],
+  },
+  {
+    slug: "day-by-kamo-river",
+    title: "A Day by the Kamo River",
+    subtitle: "A loose itinerary for the riverside",
+    intro:
+      "The Kamogawa is not a destination. It is the thing you keep returning to between other things — a morning coffee on the bank, a long afternoon walk from Demachiyanagi south, a place to sit when nowhere else feels right.",
+    coverImage: "/images/features/day-by-kamo-river.jpg",
+    placeSlugs: ["kamo-river-walk", "weekenders-coffee", "wife-and-husband"],
+  },
+];
