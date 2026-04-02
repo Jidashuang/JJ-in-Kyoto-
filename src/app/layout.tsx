@@ -7,7 +7,7 @@ import { siteUrl } from "@/lib/site";
 
 const siteName = "Kyoto by JJ";
 const siteDescription =
-  "A curated guide to Kyoto's quieter pleasures — coffee, books, old shops, and somewhere to sit.";
+  "An edited guide to Kyoto's quieter places — coffee, books, old shops, and rooms worth lingering in.";
 
 /* ─── Fonts ──────────────────────────────────────────────────────────────── */
 

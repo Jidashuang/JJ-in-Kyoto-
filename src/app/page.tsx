@@ -241,8 +241,8 @@ export default function HomePage() {
 
             {/* Tagline */}
             <p className="font-sans text-lg leading-relaxed text-muted-foreground max-w-lg mb-12">
-              A calm Kyoto guide built from repeated visits, careful curation,
-              and the kind of places worth returning to.
+              An edited Kyoto guide built from repeated visits, a narrow
+              selection, and places worth returning to.
             </p>
 
             {/* CTAs */}
@@ -251,13 +251,13 @@ export default function HomePage() {
                 href="/places"
                 className="inline-flex h-11 items-center border border-foreground bg-foreground px-8 font-sans text-[0.7rem] tracking-[0.15em] uppercase text-primary-foreground transition-opacity hover:opacity-75"
               >
-                Explore Places
+                Browse Places
               </Link>
               <Link
                 href="/features"
                 className="inline-flex h-11 items-center border border-border px-8 font-sans text-[0.7rem] tracking-[0.15em] uppercase text-muted-foreground transition-colors hover:border-foreground/30 hover:text-foreground"
               >
-                Read Features
+                Open Features
               </Link>
             </div>
           </div>
@@ -279,7 +279,7 @@ export default function HomePage() {
                 href="/features"
                 className="font-sans text-xs tracking-[0.1em] uppercase text-muted-foreground hover:text-foreground transition-colors"
               >
-                See all →
+                All features →
               </Link>
             </div>
             <div className="h-px bg-border" />
@@ -324,10 +324,10 @@ export default function HomePage() {
           </div>
 
           {/* Teaser count */}
-          <p className="mt-10 font-sans text-sm text-muted-foreground text-center">
-            {places.length} places listed from repeated visits and editorial
-            curation.
-          </p>
+            <p className="mt-10 font-sans text-sm text-muted-foreground text-center">
+              {places.length} places selected from repeat visits and close
+              reading.
+            </p>
         </Container>
       </Section>
 
@@ -341,7 +341,7 @@ export default function HomePage() {
                 href="/neighborhoods"
                 className="font-sans text-xs tracking-[0.1em] uppercase text-muted-foreground hover:text-foreground transition-colors"
               >
-                Explore →
+                All neighborhoods →
               </Link>
             </div>
             <div className="h-px bg-border" />
@@ -367,18 +367,18 @@ export default function HomePage() {
               About this guide
             </p>
             <Heading as="h2" size="md" font="serif" className="max-w-sm">
-              A personal record of the city, built from repeated visits and
-              careful curation.
+              A selective record of the city, built from repeated visits and
+              careful editing.
             </Heading>
             <p className="font-sans text-sm text-muted-foreground leading-relaxed max-w-xs">
-              Places are chosen for atmosphere over fame. Content comes from
-              repeated visits and personal curation — not aggregated reviews.
+              Places are chosen for atmosphere, consistency, and repeat value.
+              Content comes from direct visits and source notes, not volume.
             </p>
             <Link
               href="/about"
               className="mt-2 font-sans text-xs tracking-[0.15em] uppercase text-muted-foreground underline underline-offset-4 hover:text-foreground transition-colors"
             >
-              Read more about this project
+              Read the about page
             </Link>
           </div>
         </Container>

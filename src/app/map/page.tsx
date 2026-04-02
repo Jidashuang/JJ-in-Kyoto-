@@ -9,9 +9,9 @@ import { neighborhoods } from "@/data/neighborhoods";
 import { places } from "@/data/places";
 
 export const metadata: Metadata = {
-  title: "Map",
+  title: "Index",
   description:
-    "Browse Kyoto by neighborhood, feature, or place index — a lightweight way to move through the guide.",
+    "Browse Kyoto by neighborhood, feature, or place index — the guide's lightweight table of contents.",
 };
 
 function IndexCard({
@@ -72,15 +72,15 @@ export default function MapPage() {
         <section className="mb-14 md:mb-20">
           <div className="max-w-2xl">
             <p className="label-xs mb-5 text-muted-foreground/60">
-              Browse by structure
+              Guide index
             </p>
             <Heading as="h1" size="xl" font="serif" className="mb-5">
-              Map
+              Index
             </Heading>
             <p className="font-sans text-base leading-relaxed text-muted-foreground max-w-xl">
-              Use this page as a lightweight index of the guide. Move by area,
-              by editorial theme, or by the full place list depending on how
-              you want to explore Kyoto.
+              Use this page as the guide&apos;s table of contents. Start with an
+              area, follow a theme, or move straight through the full place
+              list.
             </p>
           </div>
         </section>
@@ -88,7 +88,7 @@ export default function MapPage() {
         <Section
           spacing="sm"
           label="Neighborhoods"
-          heading={<Heading as="h2" size="lg" font="serif">Browse by area</Heading>}
+          heading={<Heading as="h2" size="lg" font="serif">By area</Heading>}
           action={<Link href="/neighborhoods">All neighborhoods →</Link>}
         >
           <div className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
@@ -109,7 +109,7 @@ export default function MapPage() {
         <Section
           spacing="sm"
           label="Features"
-          heading={<Heading as="h2" size="lg" font="serif">Browse by theme</Heading>}
+          heading={<Heading as="h2" size="lg" font="serif">By theme</Heading>}
           action={<Link href="/features">All features →</Link>}
         >
           <div className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
@@ -130,7 +130,7 @@ export default function MapPage() {
         <Section
           spacing="sm"
           label="Places"
-          heading={<Heading as="h2" size="lg" font="serif">Browse the full index</Heading>}
+          heading={<Heading as="h2" size="lg" font="serif">Full place index</Heading>}
           action={<Link href="/places">All places →</Link>}
         >
           <div className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">

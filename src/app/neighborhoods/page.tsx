@@ -7,7 +7,7 @@ import { neighborhoods } from "@/data/neighborhoods";
 export const metadata: Metadata = {
   title: "Neighborhoods",
   description:
-    "Kyoto by district — explore the character of each area before you arrive.",
+    "Kyoto by district — each area with its own pace, character, and places worth knowing.",
 };
 
 export default function NeighborhoodsPage() {
@@ -22,9 +22,8 @@ export default function NeighborhoodsPage() {
               Neighborhoods
             </Heading>
             <p className="font-sans text-base leading-relaxed text-muted-foreground max-w-lg">
-              Kyoto rewards a slower approach. Each district has its own
-              character — understanding where you are changes what you find
-              there.
+              Kyoto rewards slower attention. Each district has its own pace,
+              and the area often explains the places inside it.
             </p>
           </div>
         </Container>
@@ -99,24 +98,26 @@ export default function NeighborhoodsPage() {
       <section className="border-t border-border py-14">
         <Container size="narrow">
           <div className="flex flex-col gap-4 text-center">
-            <p className="label-xs text-muted-foreground/50">How to use this</p>
+            <p className="label-xs text-muted-foreground/50">
+              Reading this guide
+            </p>
             <p className="font-sans text-sm leading-relaxed text-muted-foreground">
-              Each neighborhood page includes an introduction to the area&apos;s
-              character, a curated list of places, and a suggested half-day
-              route. Use it as orientation — not instruction.
+              Each neighborhood page pairs a short introduction with a curated
+              list of places and a suggested half-day route. Start there for
+              context, not instruction.
             </p>
             <div className="flex justify-center gap-6 mt-2">
               <Link
                 href="/places"
                 className="font-sans text-xs tracking-[0.12em] uppercase text-muted-foreground underline underline-offset-4 hover:text-foreground transition-colors"
               >
-                Browse all places
+                Browse the place index
               </Link>
               <Link
                 href="/map"
                 className="font-sans text-xs tracking-[0.12em] uppercase text-muted-foreground underline underline-offset-4 hover:text-foreground transition-colors"
               >
-                View on map
+                Open the index
               </Link>
             </div>
           </div>

@@ -7,7 +7,7 @@ import { features } from "@/data/features";
 export const metadata: Metadata = {
   title: "Features",
   description:
-    "Editorial themes and curated collections from across Kyoto — coffee mornings, bookstore afternoons, and the city's quieter corners.",
+    "Editorial themes and curated collections from across Kyoto — coffee, books, walks, and the city's quieter corners.",
 };
 
 /* ─── Placeholder image ────────────────────────────────────────────────────── */
@@ -76,7 +76,7 @@ function FeatureCardLarge({
 
         <div className="flex items-center gap-3 mt-2">
           <span className="font-sans text-xs tracking-[0.12em] uppercase text-foreground/50 group-hover:text-foreground transition-colors">
-            Read feature
+            Open feature
           </span>
           <span className="text-foreground/30 group-hover:text-foreground/60 transition-colors">
             →
@@ -169,8 +169,8 @@ export default function FeaturesPage() {
               Features
             </Heading>
             <p className="font-sans text-sm text-muted-foreground max-w-sm leading-relaxed">
-              Themed collections and editorial notes — the city read by subject
-              rather than by map.
+              Themes and editorial notes, arranged by emphasis rather than by
+              map.
             </p>
           </div>
         </div>

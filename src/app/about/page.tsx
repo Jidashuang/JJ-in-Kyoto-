@@ -5,7 +5,7 @@ import { Heading } from "@/components/ui/Heading";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "About Kyoto by JJ — a concise editorial guide built from repeated visits, careful curation, and quiet places worth returning to.",
+    "About Kyoto by JJ — a selective guide built from repeated visits, careful editing, and quiet places worth returning to.",
 };
 
 function Divider() {
@@ -27,22 +27,22 @@ export default function AboutPage() {
         <header className="mb-14 md:mb-16">
           <p className="label-xs mb-5 text-muted-foreground/65">About</p>
           <Heading as="h1" size="xl" font="serif" className="max-w-lg">
-            A calm, personal guide to Kyoto.
+            A selective guide to Kyoto.
           </Heading>
         </header>
 
         <section>
           <Heading as="h2" size="sm" font="serif" className="mb-5">
-            Project story
+            How it came together
           </Heading>
           <Prose>
             <p>
-              This began as private notes: places I kept returning to, routes
-              that made sense, details worth remembering.
+              This began as private notes: places worth returning to, routes
+              that held together, details worth keeping.
             </p>
             <p>
-              Over time, the notes became a small editorial index. The aim is
-              not to be complete, but to be useful and clear.
+              Over time, those notes became a small editorial index. The aim is
+              not completeness, but clarity.
             </p>
           </Prose>
         </section>
@@ -51,17 +51,16 @@ export default function AboutPage() {
 
         <section>
           <Heading as="h2" size="sm" font="serif" className="mb-5">
-            Curation philosophy
+            Selection standard
           </Heading>
           <Prose>
             <p>
               Listings are chosen by experience, not volume. A place is included
-              when it feels distinct, consistent, and worth recommending more
-              than once.
+              when it feels distinct, consistent, and worth recommending again.
             </p>
             <p>
-              Preference is given to atmosphere, craft, and repeat value. This
-              is selective by design.
+              Preference goes to atmosphere, craft, and repeat value. The guide
+              stays selective by design.
             </p>
           </Prose>
         </section>
@@ -70,17 +69,17 @@ export default function AboutPage() {
 
         <section>
           <Heading as="h2" size="sm" font="serif" className="mb-5">
-            Content source note
+            Sources and checks
           </Heading>
           <Prose>
             <p>
               Sources include firsthand visits, direct checks, and selected
-              editorial references (including print guides). External sources
-              are used as leads, then filtered through personal judgment.
+              editorial references. External notes are treated as leads and
+              then filtered through personal judgment.
             </p>
             <p>
               Practical details can change quickly. Please verify hours,
-              addresses, and availability before visiting.
+              addresses, and availability before you go.
             </p>
           </Prose>
         </section>
@@ -89,7 +88,7 @@ export default function AboutPage() {
 
         <section>
           <Heading as="h2" size="sm" font="serif" className="mb-5">
-            Image / copyright note
+            Images and rights
           </Heading>
           <Prose>
             <p>
@@ -111,8 +110,8 @@ export default function AboutPage() {
           </Heading>
           <Prose>
             <p>
-              Contact details are not published on the site yet. This section
-              is reserved for corrections, updates, and thoughtful suggestions.
+              Contact details are not published yet. This section is reserved
+              for corrections, updates, and thoughtful suggestions.
             </p>
           </Prose>
         </section>

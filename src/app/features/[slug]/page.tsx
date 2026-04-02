@@ -241,7 +241,7 @@ export default async function FeatureDetailPage({
                 href="/places"
                 className="font-sans text-xs tracking-[0.14em] uppercase text-muted-foreground underline underline-offset-4 hover:text-foreground transition-colors"
               >
-                Browse all places →
+                Browse the place index →
               </Link>
             </div>
           </Container>
@@ -254,17 +254,17 @@ export default async function FeatureDetailPage({
           <Container size="narrow">
             <div className="border border-border p-8 flex flex-col gap-3">
               <p className="label-xs text-muted-foreground/50">
-                No places matched this feature
+                No places are linked to this feature yet
               </p>
               <p className="font-sans text-sm text-muted-foreground leading-relaxed">
-                Browse{" "}
+                Browse the{" "}
                 <Link
                   href="/places"
                   className="underline underline-offset-4 hover:text-foreground transition-colors"
                 >
-                  all places
+                  place index
                 </Link>{" "}
-                to continue exploring Kyoto.
+                to keep exploring Kyoto.
               </p>
             </div>
           </Container>
@@ -276,12 +276,10 @@ export default async function FeatureDetailPage({
         <section className="border-t border-border bg-muted/20 py-16 md:py-20">
           <Container>
             <div className="mb-10">
-              <p className="label-xs text-muted-foreground/60 mb-3">
-                Continue reading
-              </p>
+              <p className="label-xs text-muted-foreground/60 mb-3">Related</p>
               <div className="divider mb-6" />
               <Heading as="h2" size="md" font="serif">
-                More Features
+                Related features
               </Heading>
             </div>
 

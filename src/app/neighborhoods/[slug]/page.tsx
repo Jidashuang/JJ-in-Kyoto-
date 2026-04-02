@@ -227,16 +227,16 @@ export default async function NeighborhoodPage({
             ) : (
               <div className="flex flex-col gap-3 border border-dashed border-border p-10 text-center">
                 <p className="font-serif text-lg text-muted-foreground">
-                  No places are listed for this area yet.
+                  No places are linked to this area yet.
                 </p>
                 <p className="font-sans text-sm text-muted-foreground/60">
-                  Browse the full place index if you want to keep exploring.
+                  Browse the place index if you want to keep exploring.
                 </p>
                 <Link
                   href="/places"
                   className="mt-2 font-sans text-xs tracking-[0.12em] uppercase text-muted-foreground underline underline-offset-4 hover:text-foreground transition-colors"
                 >
-                  Browse all places
+                  Browse the place index
                 </Link>
               </div>
             )}
@@ -254,35 +254,35 @@ export default async function NeighborhoodPage({
                   <div className="h-px w-8 bg-accent" />
                 </div>
                 <Heading as="h3" size="xs" font="serif">
-                  A suggested morning or afternoon
+                  A suggested route
                 </Heading>
                 <p className="font-sans text-sm leading-[1.85] text-muted-foreground">
                   {neighborhood.halfDayRoute}
                 </p>
                 <p className="font-sans text-[0.65rem] text-muted-foreground/40 tracking-wide">
-                  This is a suggestion, not an itinerary. Adjust for weather,
-                  mood, and what&apos;s open.
+                  Use it as a starting point, not a schedule. Adjust for
+                  weather, pace, and opening hours.
                 </p>
               </div>
             )}
 
             {/* Map CTA */}
             <div className="border border-border p-7 flex flex-col gap-4">
-              <p className="label-xs text-muted-foreground/60">On the map</p>
+              <p className="label-xs text-muted-foreground/60">Guide index</p>
               <p className="font-sans text-sm text-muted-foreground leading-relaxed">
-                See all places in {neighborhood.name} plotted on the Kyoto map.
+                See all places in {neighborhood.name} gathered in one place.
               </p>
               <Link
                 href="/map"
                 className="inline-flex h-9 items-center border border-border px-5 font-sans text-[0.68rem] tracking-[0.12em] uppercase text-muted-foreground hover:border-foreground/30 hover:text-foreground transition-colors"
               >
-                Open map →
+                Open index →
               </Link>
             </div>
 
             {/* Explore other neighborhoods */}
             <div className="border border-border p-7 flex flex-col gap-4">
-              <p className="label-xs text-muted-foreground/60">Other areas</p>
+              <p className="label-xs text-muted-foreground/60">Elsewhere</p>
               <div className="flex flex-col gap-2">
                 {neighborhoods
                   .filter((n) => n.slug !== slug)
@@ -313,7 +313,7 @@ export default async function NeighborhoodPage({
                 href="/neighborhoods"
                 className="font-sans text-xs tracking-[0.1em] uppercase text-muted-foreground hover:text-foreground transition-colors mt-1"
               >
-                All neighborhoods →
+                More neighborhoods →
               </Link>
             </div>
           </aside>

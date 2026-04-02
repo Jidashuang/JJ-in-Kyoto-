@@ -267,9 +267,9 @@ export default function PlacesClientPage() {
               Places
             </Heading>
             <p className="font-sans text-base text-muted-foreground leading-relaxed">
-              {places.length} places across Kyoto&apos;s neighbourhoods — cafes,
-              bookstores, sweets, walks, and more. Chosen for atmosphere over
-              fame.
+              {places.length} places across Kyoto&apos;s neighbourhoods —
+              cafes, bookstores, sweets, walks, and more. Chosen for
+              atmosphere, consistency, and repeat value.
             </p>
           </div>
         </Container>
@@ -310,7 +310,7 @@ export default function PlacesClientPage() {
                 type="search"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                placeholder="Search by name, category, mood, or excerpt…"
+                placeholder="Search by name, category, or detail…"
                 className="h-9 rounded-sm border border-border bg-background px-3 text-sm font-sans text-foreground outline-none transition-colors focus:border-foreground/40"
               />
             </label>
@@ -350,7 +350,7 @@ export default function PlacesClientPage() {
               places
             </p>
             <p className="hidden sm:block font-sans text-xs text-muted-foreground/50 italic">
-              Refined for quiet browsing
+              Kept deliberately selective
             </p>
           </div>
         </div>
@@ -368,8 +368,8 @@ export default function PlacesClientPage() {
         )}
 
         <p className="mt-14 text-center font-sans text-xs text-muted-foreground/40">
-          More places are added as the guide grows. Last reviewed from source
-          material.
+          More places are added as the guide grows. Checked against current
+          source notes.
         </p>
       </Container>
     </>
