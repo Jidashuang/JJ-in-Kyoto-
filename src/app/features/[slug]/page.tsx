@@ -34,6 +34,7 @@ function InlinePlaceCard({
   slug,
   title,
   titleJa,
+  heroImage,
   category,
   neighborhood,
   excerpt,
@@ -42,6 +43,7 @@ function InlinePlaceCard({
   slug: string;
   title: string;
   titleJa?: string;
+  heroImage: string;
   category: string[];
   neighborhood: string;
   excerpt: string;
@@ -54,7 +56,7 @@ function InlinePlaceCard({
     >
       {/* Thumbnail */}
       <SmartImage
-        src={`/images/places/${slug}/hero.jpg`}
+        src={heroImage}
         alt={title}
         fallbackLabel={category[0]}
         className="aspect-[3/2] sm:aspect-auto sm:w-40 sm:shrink-0"
@@ -220,6 +222,7 @@ export default async function FeatureDetailPage({
                       slug={place.slug}
                       title={place.title}
                       titleJa={place.titleJa}
+                      heroImage={place.heroImage}
                       category={place.category}
                       neighborhood={place.neighborhood}
                       excerpt={place.excerpt}
