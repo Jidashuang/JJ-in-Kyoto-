@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Container } from "@/components/layout/Container";
@@ -63,35 +62,49 @@ function InfoRow({
   );
 }
 
+function ImgPlaceholder({
+  className = "",
+  label = "",
+}: {
+  className?: string;
+  label?: string;
+}) {
+  return (
+    <div
+      className={`img-placeholder bg-stone-100 ${className}`}
+      aria-hidden="true"
+    >
+      {label && (
+        <span className="label-xs text-stone-400 text-center px-4">
+          {label}
+        </span>
+      )}
+    </div>
+  );
+}
+
 function RelatedCard({
   slug,
   title,
   titleJa,
   category,
   excerpt,
-  heroImage,
 }: {
   slug: string;
   title: string;
   titleJa?: string;
   category: string[];
   excerpt: string;
-  heroImage: string;
 }) {
   return (
     <Link
       href={`/places/${slug}`}
       className="group flex flex-col overflow-hidden border border-border bg-background hover:border-foreground/20 transition-colors"
     >
-      <div className="relative aspect-[3/2] w-full overflow-hidden">
-        <Image
-          src={heroImage}
-          alt={title}
-          fill
-          sizes="(max-width: 640px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-        />
-      </div>
+      <ImgPlaceholder
+        className="aspect-[3/2] w-full transition-transform duration-500 group-hover:scale-[1.03]"
+        label={category[0]}
+      />
       <div className="p-4 pb-5 flex flex-col gap-2">
         <TagList tags={category} variant="category" size="sm" />
         <div>
@@ -136,11 +149,6 @@ export default async function PlaceDetailPage({
     place.website ||
     place.mapsUrl;
 
-  const galleryImages =
-    place.gallery && place.gallery.length > 0
-      ? place.gallery
-      : [place.heroImage, place.heroImage, place.heroImage];
-
   const related = places
     .filter(
       (p) =>
@@ -152,18 +160,12 @@ export default async function PlaceDetailPage({
 
   return (
     <>
-      {/* ── Hero image ──────────────────────────────────────────────── */}
+      {/* ── Hero placeholder ────────────────────────────────────────── */}
       <section className="w-full">
-        <div className="relative aspect-[16/9] md:aspect-[21/9] w-full max-h-[620px] overflow-hidden bg-stone-100">
-          <Image
-            src={place.heroImage}
-            alt={place.title}
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover"
-          />
-        </div>
+        <ImgPlaceholder
+          className="aspect-[16/9] md:aspect-[21/9] w-full max-h-[620px]"
+          label={place.category[0]}
+        />
       </section>
 
       <Container className="py-10 md:py-14 lg:py-16">
@@ -299,19 +301,12 @@ export default async function PlaceDetailPage({
             <section className="mb-12 md:mb-14">
               <SectionHeading eyebrow="Visuals" title="Gallery" />
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {galleryImages.map((imageSrc, index) => (
-                  <figure
-                    key={`${imageSrc}-${index}`}
-                    className="relative aspect-[4/3] overflow-hidden border border-border bg-stone-100"
-                  >
-                    <Image
-                      src={imageSrc}
-                      alt={`${place.title} gallery image ${index + 1}`}
-                      fill
-                      sizes="(max-width: 640px) 100vw, 50vw"
-                      className="object-cover"
-                    />
-                  </figure>
+                {["View 1", "View 2", "View 3"].map((label) => (
+                  <ImgPlaceholder
+                    key={label}
+                    className="aspect-[4/3] border border-border"
+                    label={label}
+                  />
                 ))}
               </div>
             </section>
@@ -385,7 +380,6 @@ export default async function PlaceDetailPage({
                   titleJa={item.titleJa}
                   category={item.category}
                   excerpt={item.excerpt}
-                  heroImage={item.heroImage}
                 />
               ))}
             </div>
