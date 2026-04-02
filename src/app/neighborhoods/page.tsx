@@ -91,15 +91,6 @@ export default function NeighborhoodsPage() {
               </Link>
             ))}
 
-            {/* Placeholder card — "More coming" */}
-            <div className="flex flex-col items-center justify-center gap-3 bg-muted/20 p-8 md:p-10 min-h-[220px]">
-              <p className="label-xs text-muted-foreground/40 text-center">
-                More districts being added
-              </p>
-              <p className="font-sans text-xs text-muted-foreground/30 text-center max-w-[160px] leading-relaxed">
-                Higashiyama, Kitayama, and Kamogawa next
-              </p>
-            </div>
           </div>
         </Container>
       </section>

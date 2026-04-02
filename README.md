@@ -214,7 +214,6 @@ After deployment, validate:
 
 ## Recommended Next Improvements
 
-- Replace placeholder OG image with branded 1200×630 graphic
 - Add per-page Open Graph images for dynamic detail pages
 - Add JSON-LD structured data (`WebSite`, `TravelGuide`, `BreadcrumbList`)
 - Add analytics + search console verification metadata

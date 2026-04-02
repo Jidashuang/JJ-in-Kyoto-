@@ -190,7 +190,7 @@ export default async function FeatureDetailPage({
       </div>
 
       {/* ── Feature body copy ─────────────────────────────────────── */}
-      {feature.body ? (
+      {feature.body && (
         <div className="border-b border-border py-12 md:py-16">
           <Container size="narrow">
             <div className="prose-kyoto space-y-5 text-muted-foreground max-w-xl">
@@ -198,16 +198,6 @@ export default async function FeatureDetailPage({
                 <p key={i}>{para}</p>
               ))}
             </div>
-          </Container>
-        </div>
-      ) : (
-        /* If no long-form body yet, show a placeholder note */
-        <div className="border-b border-border py-10">
-          <Container size="narrow">
-            <p className="font-sans text-sm text-muted-foreground/40 italic">
-              Extended editorial copy for this feature is being written. The
-              places below represent the full selection.
-            </p>
           </Container>
         </div>
       )}
@@ -264,18 +254,17 @@ export default async function FeatureDetailPage({
           <Container size="narrow">
             <div className="border border-border p-8 flex flex-col gap-3">
               <p className="label-xs text-muted-foreground/50">
-                Places coming soon
+                No places matched this feature
               </p>
               <p className="font-sans text-sm text-muted-foreground leading-relaxed">
-                The places for this feature are being finalised. Check back
-                shortly or{" "}
+                Browse{" "}
                 <Link
                   href="/places"
                   className="underline underline-offset-4 hover:text-foreground transition-colors"
                 >
-                  browse all places
+                  all places
                 </Link>{" "}
-                in the meantime.
+                to continue exploring Kyoto.
               </p>
             </div>
           </Container>

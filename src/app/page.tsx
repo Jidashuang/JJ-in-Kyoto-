@@ -241,8 +241,8 @@ export default function HomePage() {
 
             {/* Tagline */}
             <p className="font-sans text-lg leading-relaxed text-muted-foreground max-w-lg mb-12">
-              A curated guide to the city&apos;s quieter pleasures — coffee,
-              books, old shops, and somewhere to sit.
+              A calm Kyoto guide built from repeated visits, careful curation,
+              and the kind of places worth returning to.
             </p>
 
             {/* CTAs */}
@@ -325,7 +325,8 @@ export default function HomePage() {
 
           {/* Teaser count */}
           <p className="mt-10 font-sans text-sm text-muted-foreground text-center">
-            {places.length} places listed &mdash; more being added.
+            {places.length} places listed from repeated visits and editorial
+            curation.
           </p>
         </Container>
       </Section>
@@ -366,7 +367,8 @@ export default function HomePage() {
               About this guide
             </p>
             <Heading as="h2" size="md" font="serif" className="max-w-sm">
-              A personal record of the city, still being written.
+              A personal record of the city, built from repeated visits and
+              careful curation.
             </Heading>
             <p className="font-sans text-sm text-muted-foreground leading-relaxed max-w-xs">
               Places are chosen for atmosphere over fame. Content comes from

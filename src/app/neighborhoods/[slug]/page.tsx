@@ -227,11 +227,10 @@ export default async function NeighborhoodPage({
             ) : (
               <div className="flex flex-col gap-3 border border-dashed border-border p-10 text-center">
                 <p className="font-serif text-lg text-muted-foreground">
-                  Places coming soon.
+                  No places are listed for this area yet.
                 </p>
                 <p className="font-sans text-sm text-muted-foreground/60">
-                  This district is part of the guide but specific listings are
-                  still being added.
+                  Browse the full place index if you want to keep exploring.
                 </p>
                 <Link
                   href="/places"

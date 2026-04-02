@@ -111,7 +111,7 @@ export default function AboutPage() {
           </Heading>
           <Prose>
             <p>
-              Contact details will be added soon. In the meantime, this section
+              Contact details are not published on the site yet. This section
               is reserved for corrections, updates, and thoughtful suggestions.
             </p>
           </Prose>

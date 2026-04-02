@@ -191,14 +191,6 @@ export default function FeaturesPage() {
           </div>
         )}
 
-        {/* ── Coming soon note ───────────────────────────────────────── */}
-        <div className="mt-20 border-t border-border pt-12 flex flex-col items-center gap-3 text-center">
-          <p className="label-xs text-muted-foreground/40">More to come</p>
-          <p className="font-sans text-sm text-muted-foreground max-w-xs leading-relaxed">
-            New features are added as places accumulate. Content is drawn from
-            personal visits and editorial curation.
-          </p>
-        </div>
       </Container>
     </div>
   );
