@@ -3,8 +3,8 @@ import { Cormorant_Garamond, Inter } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { siteUrl } from "@/lib/site";
 
-const siteUrl = "https://kyoto-guide.vercel.app";
 const siteName = "Kyoto by JJ";
 const siteDescription =
   "A curated guide to Kyoto's quieter pleasures — coffee, books, old shops, and somewhere to sit.";

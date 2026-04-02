@@ -2,8 +2,7 @@ import type { MetadataRoute } from "next";
 import { places } from "@/data/places";
 import { features } from "@/data/features";
 import { neighborhoods } from "@/data/neighborhoods";
-
-const siteUrl = "https://kyoto-guide.vercel.app";
+import { siteUrl } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();

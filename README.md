@@ -89,19 +89,13 @@ The app includes baseline technical SEO:
 
 ### Important: Set your production domain
 
-Replace this constant in:
+Set `NEXT_PUBLIC_SITE_URL` in Vercel before release, for example:
 
-- `src/app/layout.tsx`
-- `src/app/sitemap.ts`
-- `src/app/robots.ts`
-
-with your real domain:
-
-```Kyoto annai/kyoto-guide/README.md#L1-20
-const siteUrl = "https://kyoto-guide.vercel.app";
+```bash
+NEXT_PUBLIC_SITE_URL=https://jjinkyoto.com
 ```
 
-If your actual Vercel domain differs, update it before release.
+The app falls back to `https://kyoto-guide.vercel.app` until the custom domain is ready.
 
 ---
 
