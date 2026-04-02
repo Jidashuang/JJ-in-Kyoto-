@@ -155,7 +155,7 @@ export default async function PlaceDetailPage({
       {/* ── Hero image ──────────────────────────────────────────────── */}
       <section className="w-full">
         <SmartImage
-          src={place.heroImage}
+          src={place.heroImage || "/images/places/placeholder.jpg"}
           alt={place.title}
           fallbackLabel={place.category[0]}
           className="aspect-[16/9] md:aspect-[21/9] w-full max-h-[620px]"
