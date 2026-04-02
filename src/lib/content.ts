@@ -149,7 +149,9 @@ export function getUsedTags(): PlaceTag[] {
   const seen = new Set<PlaceTag>()
   for (const p of places) {
     for (const t of p.tags) {
-      seen.add(t)
+      if (t !== "Top Pick") {
+        seen.add(t)
+      }
     }
   }
   return Array.from(seen).sort()

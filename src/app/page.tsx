@@ -3,31 +3,10 @@ import { Container } from "@/components/layout/Container";
 import { Section } from "@/components/ui/Section";
 import { Heading } from "@/components/ui/Heading";
 import { TagList } from "@/components/ui/Tag";
+import { SmartImage } from "@/components/media/SmartImage";
 import { places } from "@/data/places";
 import { features } from "@/data/features";
 import { neighborhoods } from "@/data/neighborhoods";
-
-/* ─── Placeholder image ────────────────────────────────────────────────────── */
-function ImgPlaceholder({
-  className = "",
-  label = "",
-}: {
-  className?: string;
-  label?: string;
-}) {
-  return (
-    <div
-      className={`img-placeholder bg-stone-100 ${className}`}
-      aria-hidden="true"
-    >
-      {label && (
-        <span className="label-xs text-stone-400 text-center px-4">
-          {label}
-        </span>
-      )}
-    </div>
-  );
-}
 
 /* ─── Feature card ─────────────────────────────────────────────────────────── */
 function FeatureCard({
@@ -35,11 +14,13 @@ function FeatureCard({
   title,
   subtitle,
   intro,
+  coverImage,
 }: {
   slug: string;
   title: string;
   subtitle?: string;
   intro: string;
+  coverImage: string;
 }) {
   return (
     <Link
@@ -47,9 +28,12 @@ function FeatureCard({
       className="group flex flex-col gap-0 border border-border hover:border-foreground/20 transition-colors overflow-hidden"
     >
       {/* Cover image */}
-      <ImgPlaceholder
-        className="aspect-[4/3] w-full transition-transform duration-500 group-hover:scale-[1.02]"
-        label="Feature cover"
+      <SmartImage
+        src={coverImage}
+        alt={title}
+        fallbackLabel="Selected feature"
+        className="aspect-[4/3] w-full"
+        imgClassName="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
       />
 
       {/* Text */}
@@ -82,6 +66,7 @@ function PlaceCard({
   neighborhood,
   tags,
   excerpt,
+  heroImage,
 }: {
   slug: string;
   title: string;
@@ -90,6 +75,7 @@ function PlaceCard({
   neighborhood: string;
   tags: string[];
   excerpt: string;
+  heroImage: string;
 }) {
   return (
     <Link
@@ -97,9 +83,12 @@ function PlaceCard({
       className="group flex flex-col gap-0 border border-border hover:border-foreground/20 transition-colors overflow-hidden"
     >
       {/* Image */}
-      <ImgPlaceholder
-        className="aspect-[3/2] w-full transition-transform duration-500 group-hover:scale-[1.02]"
-        label={category[0]}
+      <SmartImage
+        src={heroImage}
+        alt={title}
+        fallbackLabel={category[0]}
+        className="aspect-[3/2] w-full"
+        imgClassName="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
       />
 
       {/* Content */}
@@ -154,12 +143,14 @@ function NeighborhoodCard({
   nameJa,
   intro,
   ambiance = [],
+  heroImage,
 }: {
   slug: string;
   name: string;
   nameJa?: string;
   intro: string;
   ambiance?: string[];
+  heroImage?: string;
 }) {
   return (
     <Link
@@ -185,6 +176,16 @@ function NeighborhoodCard({
         <span className="font-sans text-xs text-muted-foreground/40 mt-1 shrink-0 group-hover:text-foreground transition-colors">
           →
         </span>
+      </div>
+
+      <div className="relative overflow-hidden border border-border">
+        <SmartImage
+          src={heroImage ?? "/images/neighborhoods/placeholder.jpg"}
+          alt={name}
+          fallbackLabel="Neighborhood"
+          className="aspect-[16/9] w-full"
+          imgClassName="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+        />
       </div>
 
       <p className="font-sans text-sm text-muted-foreground leading-relaxed line-clamp-3">

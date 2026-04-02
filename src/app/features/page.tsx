@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { Container } from "@/components/layout/Container";
 import { Heading } from "@/components/ui/Heading";
+import { SmartImage } from "@/components/media/SmartImage";
 import { features } from "@/data/features";
 
 export const metadata: Metadata = {
@@ -10,38 +11,20 @@ export const metadata: Metadata = {
     "Editorial themes and curated collections from across Kyoto — coffee mornings, bookstore afternoons, and the city's quieter corners.",
 };
 
-/* ─── Placeholder image ────────────────────────────────────────────────────── */
-function ImgPlaceholder({
-  className = "",
-  label = "",
-}: {
-  className?: string;
-  label?: string;
-}) {
-  return (
-    <div
-      className={`img-placeholder bg-stone-100 ${className}`}
-      aria-hidden="true"
-    >
-      {label && (
-        <span className="label-xs text-stone-400 text-center px-4">{label}</span>
-      )}
-    </div>
-  );
-}
-
 /* ─── Feature card — large format ─────────────────────────────────────────── */
 function FeatureCardLarge({
   slug,
   title,
   subtitle,
   intro,
+  coverImage,
   placeSlugs,
 }: {
   slug: string;
   title: string;
   subtitle?: string;
   intro: string;
+  coverImage: string;
   placeSlugs: string[];
 }) {
   return (
@@ -50,9 +33,12 @@ function FeatureCardLarge({
       className="group grid grid-cols-1 md:grid-cols-2 border border-border hover:border-foreground/20 transition-colors overflow-hidden"
     >
       {/* Cover */}
-      <ImgPlaceholder
-        className="aspect-[4/3] md:aspect-auto md:min-h-[360px] w-full transition-transform duration-500 group-hover:scale-[1.015]"
-        label="Feature cover"
+      <SmartImage
+        src={coverImage}
+        alt={title}
+        fallbackLabel="Selected feature"
+        className="aspect-[4/3] md:aspect-auto md:min-h-[360px] w-full"
+        imgClassName="object-cover transition-transform duration-500 group-hover:scale-[1.015]"
       />
 
       {/* Text */}
@@ -100,12 +86,14 @@ function FeatureCardCompact({
   title,
   subtitle,
   intro,
+  coverImage,
   placeSlugs,
 }: {
   slug: string;
   title: string;
   subtitle?: string;
   intro: string;
+  coverImage: string;
   placeSlugs: string[];
 }) {
   return (
@@ -114,9 +102,12 @@ function FeatureCardCompact({
       className="group flex flex-col border border-border hover:border-foreground/20 transition-colors overflow-hidden"
     >
       {/* Cover */}
-      <ImgPlaceholder
-        className="aspect-[16/9] w-full transition-transform duration-500 group-hover:scale-[1.015]"
-        label="Feature cover"
+      <SmartImage
+        src={coverImage}
+        alt={title}
+        fallbackLabel="Selected feature"
+        className="aspect-[16/9] w-full"
+        imgClassName="object-cover transition-transform duration-500 group-hover:scale-[1.015]"
       />
 
       {/* Text */}
@@ -191,12 +182,12 @@ export default function FeaturesPage() {
           </div>
         )}
 
-        {/* ── Coming soon note ───────────────────────────────────────── */}
+        {/* ── Coverage note ─────────────────────────────────────────── */}
         <div className="mt-20 border-t border-border pt-12 flex flex-col items-center gap-3 text-center">
-          <p className="label-xs text-muted-foreground/40">More to come</p>
+          <p className="label-xs text-muted-foreground/40">Current set</p>
           <p className="font-sans text-sm text-muted-foreground max-w-xs leading-relaxed">
-            New features are added as places accumulate. Content is drawn from
-            personal visits and editorial curation.
+            The guide currently includes {features.length} feature collections,
+            each built from the same local dataset.
           </p>
         </div>
       </Container>

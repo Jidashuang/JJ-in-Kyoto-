@@ -198,9 +198,20 @@
         margin-top: 1.25em;
     }
 
-    /* Image placeholder — warm tonal background */
+    /* Editorial fallback panel — used when a real image is unavailable */
     .img-placeholder {
-        @apply bg-muted flex items-center justify-center overflow-hidden;
+        @apply bg-muted flex items-center justify-center overflow-hidden relative;
+        background-image:
+            radial-gradient(
+                circle at top left,
+                color-mix(in oklab, var(--accent) 12%, transparent),
+                transparent 45%
+            ),
+            linear-gradient(
+                135deg,
+                color-mix(in oklab, var(--muted) 72%, var(--background)),
+                color-mix(in oklab, var(--background) 88%, var(--muted))
+            );
     }
 
     /* Thin uppercase label — reusable eyebrow text */

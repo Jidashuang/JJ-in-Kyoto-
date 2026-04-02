@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Container } from "@/components/layout/Container";
+import { SmartImage } from "@/components/media/SmartImage";
 import { Heading } from "@/components/ui/Heading";
 import { TagList } from "@/components/ui/Tag";
 import { features } from "@/data/features";
@@ -28,26 +29,6 @@ export async function generateMetadata({
   };
 }
 
-/* ─── Placeholder image ──────────────────────────────────────────────────── */
-function ImgPlaceholder({
-  className = "",
-  label = "",
-}: {
-  className?: string;
-  label?: string;
-}) {
-  return (
-    <div
-      className={`img-placeholder bg-stone-100 ${className}`}
-      aria-hidden="true"
-    >
-      {label && (
-        <span className="label-xs text-stone-400 text-center px-4">{label}</span>
-      )}
-    </div>
-  );
-}
-
 /* ─── Inline place card ──────────────────────────────────────────────────── */
 function InlinePlaceCard({
   slug,
@@ -72,9 +53,12 @@ function InlinePlaceCard({
       className="group flex flex-col sm:flex-row gap-0 border border-border hover:border-foreground/20 transition-colors overflow-hidden"
     >
       {/* Thumbnail */}
-      <ImgPlaceholder
-        className="aspect-[3/2] sm:aspect-auto sm:w-40 sm:shrink-0 transition-transform duration-500 group-hover:scale-[1.02]"
-        label={category[0]}
+      <SmartImage
+        src={`/images/places/${slug}/hero.jpg`}
+        alt={title}
+        fallbackLabel={category[0]}
+        className="aspect-[3/2] sm:aspect-auto sm:w-40 sm:shrink-0"
+        imgClassName="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
       />
 
       {/* Text */}
@@ -128,7 +112,7 @@ export default async function FeatureDetailPage({
   if (!feature) notFound();
 
   const featurePlaces = places.filter((p) =>
-    feature.placeSlugs.includes(p.slug)
+    feature.placeSlugs.includes(p.slug),
   );
 
   // Other features for "related" strip
@@ -137,12 +121,14 @@ export default async function FeatureDetailPage({
   return (
     <article>
       {/* ── Hero / cover image ─────────────────────────────────────── */}
-      <div className="w-full">
-        <ImgPlaceholder
-          className="aspect-[21/9] w-full max-h-[60svh]"
-          label="Feature cover"
-        />
-      </div>
+      <SmartImage
+        src={feature.coverImage}
+        alt={feature.title}
+        fallbackLabel="Selected feature"
+        className="aspect-[21/9] w-full max-h-[60svh]"
+        imgClassName="object-cover"
+        priority
+      />
 
       {/* ── Feature header ────────────────────────────────────────── */}
       <div className="border-b border-border py-12 md:py-16">
@@ -200,26 +186,16 @@ export default async function FeatureDetailPage({
             </div>
           </Container>
         </div>
-      ) : (
-        /* If no long-form body yet, show a placeholder note */
-        <div className="border-b border-border py-10">
-          <Container size="narrow">
-            <p className="font-sans text-sm text-muted-foreground/40 italic">
-              Extended editorial copy for this feature is being written. The
-              places below represent the full selection.
-            </p>
-          </Container>
-        </div>
-      )}
+      ) : null}
 
       {/* ── Places in this feature ────────────────────────────────── */}
-      {featurePlaces.length > 0 && (
+      {featurePlaces.length > 0 ? (
         <section className="py-16 md:py-20">
           <Container>
             {/* Section header */}
             <div className="mb-10">
               <p className="label-xs text-muted-foreground/60 mb-3">
-                In this feature
+                Places in this feature
               </p>
               <div className="divider mb-6" />
               <Heading as="h2" size="md" font="serif">
@@ -238,74 +214,79 @@ export default async function FeatureDetailPage({
                   >
                     {String(i + 1).padStart(2, "0")}
                   </span>
+
                   <div className="flex-1">
-                    <InlinePlaceCard {...place} />
+                    <InlinePlaceCard
+                      slug={place.slug}
+                      title={place.title}
+                      titleJa={place.titleJa}
+                      category={place.category}
+                      neighborhood={place.neighborhood}
+                      excerpt={place.excerpt}
+                      tags={place.tags}
+                    />
                   </div>
                 </div>
               ))}
             </div>
 
-            {/* Link to all places */}
-            <div className="mt-12 pt-10 border-t border-border">
-              <Link
-                href="/places"
-                className="font-sans text-xs tracking-[0.14em] uppercase text-muted-foreground underline underline-offset-4 hover:text-foreground transition-colors"
-              >
-                Browse all places →
-              </Link>
-            </div>
-          </Container>
-        </section>
-      )}
-
-      {/* Empty state — no places matched */}
-      {featurePlaces.length === 0 && (
-        <section className="py-16">
-          <Container size="narrow">
-            <div className="border border-border p-8 flex flex-col gap-3">
-              <p className="label-xs text-muted-foreground/50">
-                Places coming soon
-              </p>
-              <p className="font-sans text-sm text-muted-foreground leading-relaxed">
-                The places for this feature are being finalised. Check back
-                shortly or{" "}
+            <div className="mt-10 border-t border-border pt-6">
+              <p className="font-sans text-xs text-muted-foreground/50">
+                Browse{" "}
                 <Link
                   href="/places"
                   className="underline underline-offset-4 hover:text-foreground transition-colors"
                 >
-                  browse all places
+                  all places
                 </Link>{" "}
-                in the meantime.
+                for the full list.
+              </p>
+            </div>
+          </Container>
+        </section>
+      ) : (
+        <section className="py-16 md:py-20">
+          <Container size="narrow">
+            <div className="border border-border p-8 flex flex-col gap-3">
+              <p className="label-xs text-muted-foreground/50">
+                No places are linked to this feature yet.
+              </p>
+              <p className="font-sans text-sm text-muted-foreground leading-relaxed">
+                Check the place index for nearby entries and continue browsing
+                by category.
               </p>
             </div>
           </Container>
         </section>
       )}
 
-      {/* ── More features ─────────────────────────────────────────── */}
+      {/* ── Related features ──────────────────────────────────────── */}
       {otherFeatures.length > 0 && (
         <section className="border-t border-border bg-muted/20 py-16 md:py-20">
           <Container>
             <div className="mb-10">
               <p className="label-xs text-muted-foreground/60 mb-3">
-                Continue reading
+                More features
               </p>
               <div className="divider mb-6" />
               <Heading as="h2" size="md" font="serif">
-                More Features
+                Continue exploring
               </Heading>
             </div>
 
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
+            <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {otherFeatures.map((f) => (
                 <Link
                   key={f.slug}
                   href={`/features/${f.slug}`}
                   className="group flex flex-col gap-0 border border-border hover:border-foreground/20 transition-colors overflow-hidden bg-background"
                 >
-                  <ImgPlaceholder
-                    className="aspect-[16/9] w-full transition-transform duration-500 group-hover:scale-[1.015]"
-                    label="Feature cover"
+                  <SmartImage
+                    src={f.coverImage}
+                    alt={f.title}
+                    fallbackLabel="Selected feature"
+                    className="aspect-[16/9] w-full"
+                    imgClassName="object-cover transition-transform duration-500 group-hover:scale-[1.015]"
                   />
                   <div className="flex flex-col gap-2 p-5">
                     {f.subtitle && (
@@ -313,10 +294,15 @@ export default async function FeatureDetailPage({
                         {f.subtitle}
                       </p>
                     )}
-                    <h3 className="font-serif text-lg leading-snug text-foreground group-hover:opacity-70 transition-opacity">
+                    <Heading
+                      as="h3"
+                      size="sm"
+                      font="serif"
+                      className="group-hover:opacity-70 transition-opacity"
+                    >
                       {f.title}
-                    </h3>
-                    <p className="font-sans text-sm text-muted-foreground line-clamp-2 leading-relaxed">
+                    </Heading>
+                    <p className="font-sans text-sm text-muted-foreground line-clamp-3">
                       {f.intro}
                     </p>
                   </div>

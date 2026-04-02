@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Container } from "@/components/layout/Container";
+import { SmartImage } from "@/components/media/SmartImage";
 import { Heading } from "@/components/ui/Heading";
 import { Tag, TagList } from "@/components/ui/Tag";
 import { places } from "@/data/places";
@@ -83,15 +83,13 @@ function RelatedCard({
       href={`/places/${slug}`}
       className="group flex flex-col overflow-hidden border border-border bg-background hover:border-foreground/20 transition-colors"
     >
-      <div className="relative aspect-[3/2] w-full overflow-hidden">
-        <Image
-          src={heroImage}
-          alt={title}
-          fill
-          sizes="(max-width: 640px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-        />
-      </div>
+      <SmartImage
+        src={heroImage}
+        alt={title}
+        fallbackLabel={category[0]}
+        className="aspect-[3/2] w-full"
+        imgClassName="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+      />
       <div className="p-4 pb-5 flex flex-col gap-2">
         <TagList tags={category} variant="category" size="sm" />
         <div>
@@ -130,16 +128,18 @@ export default async function PlaceDetailPage({
   if (!place) notFound();
 
   const hasInfo =
-    place.address ||
-    place.hours ||
-    place.price ||
-    place.website ||
-    place.mapsUrl;
+    !!place.address ||
+    !!place.hours ||
+    !!place.price ||
+    !!place.website ||
+    !!place.mapsUrl;
 
   const galleryImages =
-    place.gallery && place.gallery.length > 0
-      ? place.gallery
-      : [place.heroImage, place.heroImage, place.heroImage];
+    place.gallery && place.gallery.length > 0 ? place.gallery : [];
+
+  const displayBody = place.body?.trim();
+  const displayExcerpt =
+    place.excerpt?.trim() || "Details for this place will be added soon.";
 
   const related = places
     .filter(
@@ -154,16 +154,14 @@ export default async function PlaceDetailPage({
     <>
       {/* ── Hero image ──────────────────────────────────────────────── */}
       <section className="w-full">
-        <div className="relative aspect-[16/9] md:aspect-[21/9] w-full max-h-[620px] overflow-hidden bg-stone-100">
-          <Image
-            src={place.heroImage}
-            alt={place.title}
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover"
-          />
-        </div>
+        <SmartImage
+          src={place.heroImage || "/images/places/placeholder.jpg"}
+          alt={place.title}
+          fallbackLabel={place.category[0]}
+          className="aspect-[16/9] md:aspect-[21/9] w-full max-h-[620px]"
+          imgClassName="object-cover"
+          priority
+        />
       </section>
 
       <Container className="py-10 md:py-14 lg:py-16">
@@ -226,7 +224,7 @@ export default async function PlaceDetailPage({
               )}
 
               <p className="font-serif text-lg md:text-xl italic leading-[1.7] text-muted-foreground max-w-3xl">
-                {place.excerpt}
+                {displayExcerpt}
               </p>
             </header>
 
@@ -276,16 +274,18 @@ export default async function PlaceDetailPage({
             )}
 
             {/* Long-form body section */}
-            <section className="mb-12 md:mb-14">
-              <SectionHeading eyebrow="Editorial" title="Why go" />
-              <div className="prose-kyoto max-w-none md:max-w-3xl">
-                {place.body.split("\n\n").map((paragraph, index) => (
-                  <p key={index} className="mb-5 last:mb-0">
-                    {paragraph}
-                  </p>
-                ))}
-              </div>
-            </section>
+            {displayBody && (
+              <section className="mb-12 md:mb-14">
+                <SectionHeading eyebrow="Editorial" title="Why go" />
+                <div className="prose-kyoto max-w-none md:max-w-3xl">
+                  {displayBody.split("\n\n").map((paragraph, index) => (
+                    <p key={index} className="mb-5 last:mb-0">
+                      {paragraph}
+                    </p>
+                  ))}
+                </div>
+              </section>
+            )}
 
             {/* Tags */}
             {place.tags.length > 0 && (
@@ -296,25 +296,27 @@ export default async function PlaceDetailPage({
             )}
 
             {/* Gallery section */}
-            <section className="mb-12 md:mb-14">
-              <SectionHeading eyebrow="Visuals" title="Gallery" />
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {galleryImages.map((imageSrc, index) => (
-                  <figure
-                    key={`${imageSrc}-${index}`}
-                    className="relative aspect-[4/3] overflow-hidden border border-border bg-stone-100"
-                  >
-                    <Image
-                      src={imageSrc}
-                      alt={`${place.title} gallery image ${index + 1}`}
-                      fill
-                      sizes="(max-width: 640px) 100vw, 50vw"
-                      className="object-cover"
-                    />
-                  </figure>
-                ))}
-              </div>
-            </section>
+            {galleryImages.length > 0 && (
+              <section className="mb-12 md:mb-14">
+                <SectionHeading eyebrow="Visuals" title="Gallery" />
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {galleryImages.map((imageSrc, index) => (
+                    <figure
+                      key={`${imageSrc}-${index}`}
+                      className="relative aspect-[4/3] overflow-hidden border border-border bg-stone-100"
+                    >
+                      <SmartImage
+                        src={imageSrc}
+                        alt={`${place.title} gallery image ${index + 1}`}
+                        fallbackLabel={place.title}
+                        className="aspect-[4/3] w-full"
+                        imgClassName="object-cover"
+                      />
+                    </figure>
+                  ))}
+                </div>
+              </section>
+            )}
 
             {/* Source/verification from mock data model */}
             {(place.sourceFeature ||
@@ -327,15 +329,12 @@ export default async function PlaceDetailPage({
                 <div className="flex flex-col gap-2 font-sans text-xs text-muted-foreground/70">
                   {place.sourceFeature && (
                     <p>
-                      Source feature:{" "}
-                      <Link
-                        href={`/features/${place.sourceFeature}`}
-                        className="underline underline-offset-4 hover:text-foreground transition-colors"
-                      >
-                        {place.sourceFeature}
-                      </Link>
+                      Source feature: {place.sourceFeature}
                       {place.sourcePages ? ` (${place.sourcePages})` : ""}
                     </p>
+                  )}
+                  {!place.sourceFeature && place.sourcePages && (
+                    <p>Source pages: {place.sourcePages}</p>
                   )}
                   {place.verification && (
                     <p>

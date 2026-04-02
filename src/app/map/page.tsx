@@ -1,113 +1,182 @@
+import Link from "next/link";
 import type { Metadata } from "next";
 import { Container } from "@/components/layout/Container";
 import { Heading } from "@/components/ui/Heading";
+import { TagList } from "@/components/ui/Tag";
+import { neighborhoods } from "@/data/neighborhoods";
+import { places } from "@/data/places";
 
 export const metadata: Metadata = {
   title: "Map",
   description:
-    "A light map of curated places across Kyoto — browse by neighborhood or category.",
+    "Browse Kyoto by neighborhood and featured places from the current guide.",
 };
 
-export default function MapPage() {
+function titleCaseNeighborhood(value: string) {
+  return value
+    .split("-")
+    .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+    .join(" ");
+}
+
+function CountCard({
+  label,
+  value,
+}: {
+  label: string;
+  value: string | number;
+}) {
   return (
-    <div className="flex flex-col">
-      {/* ── Page header ─────────────────────────────────────────────── */}
-      <section className="border-b border-border py-16 md:py-24">
-        <Container>
-          <div className="max-w-xl">
-            <p className="label-xs mb-5 text-muted-foreground/60">
-              Explore by location
-            </p>
-            <Heading as="h1" size="xl" font="serif" className="mb-5">
+    <div className="border border-border bg-background px-5 py-4">
+      <p className="label-xs text-muted-foreground/50 mb-2">{label}</p>
+      <p className="font-serif text-2xl text-foreground">{value}</p>
+    </div>
+  );
+}
+
+export default function MapPage() {
+  const featuredPlaces = places.filter((place) => place.topPick).slice(0, 8);
+  const neighborhoodCounts = neighborhoods
+    .map((neighborhood) => ({
+      ...neighborhood,
+      count: places.filter((place) =>
+        neighborhood.placeSlugs.includes(place.slug),
+      ).length,
+    }))
+    .sort((a, b) => b.count - a.count || a.name.localeCompare(b.name));
+
+  return (
+    <div className="py-16 md:py-24">
+      <Container>
+        <div className="mb-14 md:mb-20">
+          <p className="label-xs text-muted-foreground/60 mb-4">
+            Browse by location
+          </p>
+          <div className="divider mb-6" />
+          <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+            <Heading as="h1" size="xl" font="serif">
               Map
             </Heading>
-            <p className="font-sans text-base text-muted-foreground leading-relaxed">
-              Browse all listed places on a light map of Kyoto. Filter by
-              category, click a marker to preview, and jump to the full detail
-              page from there.
+            <p className="font-sans text-sm text-muted-foreground max-w-md leading-relaxed">
+              Use this page to move between Kyoto&apos;s districts and the
+              places linked to them.
             </p>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+          <CountCard label="Neighborhoods" value={neighborhoods.length} />
+          <CountCard label="Places" value={places.length} />
+          <CountCard label="Top picks" value={featuredPlaces.length} />
+        </div>
+      </Container>
+
+      <section className="mt-16 border-y border-border bg-muted/20 py-16">
+        <Container>
+          <div className="mb-10">
+            <p className="label-xs text-muted-foreground/60 mb-3">
+              By neighborhood
+            </p>
+            <div className="divider mb-6" />
+            <Heading as="h2" size="md" font="serif">
+              Districts
+            </Heading>
+          </div>
+
+          <div className="grid grid-cols-1 gap-px bg-border sm:grid-cols-2 xl:grid-cols-3 border border-border">
+            {neighborhoodCounts.map((neighborhood) => (
+              <Link
+                key={neighborhood.slug}
+                href={`/neighborhoods/${neighborhood.slug}`}
+                className="group flex min-h-[220px] flex-col gap-5 bg-background p-7 transition-colors hover:bg-muted/40"
+              >
+                <div className="flex items-start justify-between gap-4">
+                  <div>
+                    <Heading
+                      as="h3"
+                      size="md"
+                      font="serif"
+                      className="group-hover:opacity-60 transition-opacity"
+                    >
+                      {neighborhood.name}
+                    </Heading>
+                    <p className="font-sans text-xs text-muted-foreground/50 mt-1 tracking-wider">
+                      {titleCaseNeighborhood(neighborhood.slug)}
+                    </p>
+                  </div>
+                  <span className="font-sans text-sm text-muted-foreground/30 mt-1 shrink-0 group-hover:text-foreground group-hover:translate-x-0.5 transition-all">
+                    →
+                  </span>
+                </div>
+
+                <p className="font-sans text-sm leading-relaxed text-muted-foreground line-clamp-4">
+                  {neighborhood.intro}
+                </p>
+
+                <div className="mt-auto flex items-center justify-between gap-4 border-t border-border/60 pt-3">
+                  <p className="font-sans text-xs text-muted-foreground/50">
+                    {neighborhood.count} place
+                    {neighborhood.count !== 1 ? "s" : ""} listed
+                  </p>
+                  {neighborhood.ambiance && neighborhood.ambiance.length > 0 && (
+                    <TagList
+                      tags={neighborhood.ambiance.slice(0, 2)}
+                      variant="outline"
+                      size="sm"
+                    />
+                  )}
+                </div>
+              </Link>
+            ))}
           </div>
         </Container>
       </section>
 
-      {/* ── Coming soon ─────────────────────────────────────────────── */}
-      <section className="flex-1 flex items-center py-24 md:py-36">
-        <Container size="narrow">
-          <div className="flex flex-col items-center text-center gap-8">
-            {/* Decorative map glyph */}
-            <div
-              className="w-20 h-20 rounded-full border border-border flex items-center justify-center text-muted-foreground/30"
-              aria-hidden="true"
-            >
-              <svg
-                width="36"
-                height="36"
-                viewBox="0 0 36 36"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1"
-                strokeLinecap="round"
-                strokeLinejoin="round"
+      <section className="py-16 md:py-20">
+        <Container>
+          <div className="mb-10">
+            <p className="label-xs text-muted-foreground/60 mb-3">
+              Featured places
+            </p>
+            <div className="divider mb-6" />
+            <Heading as="h2" size="md" font="serif">
+              Top picks across the guide
+            </Heading>
+          </div>
+
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {featuredPlaces.map((place) => (
+              <Link
+                key={place.slug}
+                href={`/places/${place.slug}`}
+                className="group flex flex-col gap-4 border border-border bg-background p-5 transition-colors hover:border-foreground/20"
               >
-                {/* Simplified map pin + grid */}
-                <circle cx="18" cy="15" r="5" />
-                <path d="M18 20 C18 20 10 27 10 32 L26 32 C26 27 18 20 18 20Z" />
-                <line x1="4" y1="8" x2="4" y2="28" strokeOpacity="0.4" />
-                <line x1="32" y1="8" x2="32" y2="28" strokeOpacity="0.4" />
-                <line x1="4" y1="8" x2="10" y2="6" strokeOpacity="0.4" />
-                <line x1="32" y1="8" x2="26" y2="6" strokeOpacity="0.4" />
-                <line x1="4" y1="28" x2="10" y2="30" strokeOpacity="0.4" />
-                <line x1="32" y1="28" x2="26" y2="30" strokeOpacity="0.4" />
-              </svg>
-            </div>
+                <div className="flex items-start justify-between gap-3">
+                  <TagList tags={place.category} variant="category" size="sm" />
+                  <span className="font-sans text-xs text-muted-foreground/30 group-hover:text-foreground transition-colors">
+                    →
+                  </span>
+                </div>
 
-            <div className="flex flex-col gap-3">
-              <Heading as="h2" size="md" font="serif">
-                The map is on its way.
-              </Heading>
-              <p className="font-sans text-sm text-muted-foreground leading-relaxed max-w-sm">
-                We&apos;re building a lightweight, distraction-free map that
-                plots every listed place across the city. Filter by category,
-                pan by neighborhood, and keep the itinerary planning
-                lightweight.
-              </p>
-            </div>
-
-            {/* What to expect */}
-            <div className="w-full max-w-sm border border-border divide-y divide-border mt-4 text-left">
-              {[
-                {
-                  label: "All place markers",
-                  note: "Every listing plotted at its exact address.",
-                },
-                {
-                  label: "Category filter",
-                  note: "Show only cafes, bookstores, walks, and so on.",
-                },
-                {
-                  label: "Marker previews",
-                  note: "Tap a pin to see the name, excerpt, and a link.",
-                },
-                {
-                  label: "Neighborhood overlay",
-                  note:
-                    "Loose district outlines to orient yourself at a glance.",
-                },
-              ].map(({ label, note }) => (
-                <div key={label} className="flex flex-col gap-1 px-5 py-4">
-                  <p className="font-sans text-xs font-medium text-foreground tracking-wide">
-                    {label}
-                  </p>
-                  <p className="font-sans text-xs text-muted-foreground leading-relaxed">
-                    {note}
+                <div>
+                  <Heading
+                    as="h3"
+                    size="sm"
+                    font="serif"
+                    className="group-hover:opacity-70 transition-opacity"
+                  >
+                    {place.title}
+                  </Heading>
+                  <p className="font-sans text-xs text-muted-foreground/50 mt-1">
+                    {titleCaseNeighborhood(place.neighborhood)}
                   </p>
                 </div>
-              ))}
-            </div>
 
-            <p className="font-sans text-xs text-muted-foreground/50 mt-2">
-              In the meantime, each place detail page links out to Google Maps.
-            </p>
+                <p className="font-sans text-sm text-muted-foreground leading-relaxed line-clamp-3">
+                  {place.excerpt}
+                </p>
+              </Link>
+            ))}
           </div>
         </Container>
       </section>

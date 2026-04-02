@@ -1,26 +1,8 @@
-export type PlaceCategory =
-  | 'Cafe'
-  | 'Sweets'
-  | 'Bakery'
-  | 'Bookstore'
-  | 'Antique'
-  | 'Lifestyle'
-  | 'Restaurant'
-  | 'Japanese'
-  | 'Chinese'
-  | 'Western'
-  | 'Walk'
-  | 'Scenic Spot'
+import type { PlaceCategory, PlaceTag } from "@/data/place-taxonomy";
 
-export type PlaceTag =
-  | 'Top Pick'
-  | 'Morning'
-  | 'Quiet'
-  | 'Classic'
-  | 'Casual'
-  | 'Local Favorite'
-  | 'Design Lover'
-  | 'Solo Friendly'
+export type { PlaceCategory, PlaceTag };
+
+export type PlaceTagWithTopPick = PlaceTag | "Top Pick";
 
 export type VerificationSource = 'pdf' | 'manual' | 'official'
 export type VerificationStatus = 'unverified' | 'verified' | 'possibly_outdated'
@@ -43,7 +25,7 @@ export interface Place {
   price?: string
   website?: string
   mapsUrl?: string
-  tags: PlaceTag[]
+  tags: PlaceTagWithTopPick[]
   excerpt: string
   body: string
   heroImage: string
