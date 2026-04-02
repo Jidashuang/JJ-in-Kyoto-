@@ -352,7 +352,7 @@ export default async function PlaceDetailPage({
                   href="/places"
                   className="font-sans text-sm underline underline-offset-4 hover:opacity-60 transition-opacity"
                 >
-                  ← Back to all places
+                  ← Back to the place index
                 </Link>
                 <Link
                   href={`/neighborhoods/${place.neighborhood}`}

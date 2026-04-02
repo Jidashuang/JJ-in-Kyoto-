@@ -175,6 +175,20 @@ function EmptyState({ onReset }: EmptyStateProps) {
       >
         Reset filters
       </button>
+      <div className="mt-2 flex flex-wrap justify-center gap-4">
+        <Link
+          href="/map"
+          className="font-sans text-xs tracking-[0.12em] uppercase text-muted-foreground underline underline-offset-4 hover:text-foreground transition-colors"
+        >
+          Open guide index
+        </Link>
+        <Link
+          href="/"
+          className="font-sans text-xs tracking-[0.12em] uppercase text-muted-foreground underline underline-offset-4 hover:text-foreground transition-colors"
+        >
+          Back home
+        </Link>
+      </div>
     </div>
   );
 }
