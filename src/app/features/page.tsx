@@ -2,196 +2,276 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { Container } from "@/components/layout/Container";
 import { Heading } from "@/components/ui/Heading";
+import {
+  CompactEditorialCard,
+  LeadEditorialCard,
+  StandardEditorialCard,
+  TextNoteCard,
+} from "@/components/ui/EditorialCards";
 import { features } from "@/data/features";
+import { neighborhoods } from "@/data/neighborhoods";
+import { places } from "@/data/places";
+import { countPlacesByDisplayTier } from "@/lib/place-display-selectors";
+import type { Feature } from "@/types/feature";
+import type { Place } from "@/types/place";
 
 export const metadata: Metadata = {
   title: "Features",
-  description:
-    "Editorial themes and curated collections from across Kyoto — coffee, books, walks, and the city's quieter corners.",
+  description: "Kyoto routes, collections, and essays with a point of view.",
 };
 
-/* ─── Placeholder image ────────────────────────────────────────────────────── */
-function ImgPlaceholder({
-  className = "",
-  label = "",
-}: {
-  className?: string;
-  label?: string;
-}) {
-  return (
-    <div
-      className={`img-placeholder bg-stone-100 ${className}`}
-      aria-hidden="true"
-    >
-      {label && (
-        <span className="label-xs text-stone-400 text-center px-4">{label}</span>
-      )}
-    </div>
-  );
+type RankedFeature = {
+  feature: Feature;
+  heroCount: number;
+  standardCount: number;
+  minimalCount: number;
+  strongCount: number;
+  visibleCount: number;
+  score: number;
+};
+
+function kindLabel(kind?: Feature["kind"]): string {
+  if (kind === "route") return "Route";
+  if (kind === "essay") return "Essay";
+  return "Collection";
 }
 
-/* ─── Feature card — large format ─────────────────────────────────────────── */
-function FeatureCardLarge({
-  slug,
-  title,
-  subtitle,
-  intro,
-  placeSlugs,
-}: {
-  slug: string;
-  title: string;
-  subtitle?: string;
-  intro: string;
-  placeSlugs: string[];
-}) {
-  return (
-    <Link
-      href={`/features/${slug}`}
-      className="group grid grid-cols-1 md:grid-cols-2 border border-border hover:border-foreground/20 transition-colors overflow-hidden"
-    >
-      {/* Cover */}
-      <ImgPlaceholder
-        className="aspect-[4/3] md:aspect-auto md:min-h-[360px] w-full transition-transform duration-500 group-hover:scale-[1.015]"
-        label="Feature cover"
-      />
-
-      {/* Text */}
-      <div className="flex flex-col justify-center gap-5 p-8 md:p-12">
-        {subtitle && (
-          <p className="label-xs text-muted-foreground">{subtitle}</p>
-        )}
-
-        <Heading
-          as="h2"
-          size="lg"
-          font="serif"
-          className="group-hover:opacity-70 transition-opacity"
-        >
-          {title}
-        </Heading>
-
-        <p className="font-sans text-sm leading-relaxed text-muted-foreground">
-          {intro}
-        </p>
-
-        <div className="flex items-center gap-3 mt-2">
-          <span className="font-sans text-xs tracking-[0.12em] uppercase text-foreground/50 group-hover:text-foreground transition-colors">
-            Open feature
-          </span>
-          <span className="text-foreground/30 group-hover:text-foreground/60 transition-colors">
-            →
-          </span>
-        </div>
-
-        {placeSlugs.length > 0 && (
-          <p className="font-sans text-xs text-muted-foreground/50 mt-auto pt-4 border-t border-border">
-            {placeSlugs.length} place{placeSlugs.length !== 1 ? "s" : ""} in
-            this feature
-          </p>
-        )}
-      </div>
-    </Link>
+function featureNeighborhoodNames(placeSlugs: string[]) {
+  const placeMap = new Map(places.map((place) => [place.slug, place]));
+  const neighborhoodMap = new Map(
+    neighborhoods.map((neighborhood) => [neighborhood.slug, neighborhood.name]),
   );
+
+  const names: string[] = [];
+  for (const placeSlug of placeSlugs) {
+    const place = placeMap.get(placeSlug);
+    const neighborhoodSlug = place?.canonicalNeighborhoodSlug;
+    if (!place || !neighborhoodSlug) continue;
+    const name = neighborhoodMap.get(neighborhoodSlug);
+    if (!name) continue;
+    if (!names.includes(name)) names.push(name);
+  }
+
+  return names;
 }
 
-/* ─── Feature card — compact ───────────────────────────────────────────────── */
-function FeatureCardCompact({
-  slug,
-  title,
-  subtitle,
-  intro,
-  placeSlugs,
-}: {
-  slug: string;
-  title: string;
-  subtitle?: string;
-  intro: string;
-  placeSlugs: string[];
-}) {
-  return (
-    <Link
-      href={`/features/${slug}`}
-      className="group flex flex-col border border-border hover:border-foreground/20 transition-colors overflow-hidden"
-    >
-      {/* Cover */}
-      <ImgPlaceholder
-        className="aspect-[16/9] w-full transition-transform duration-500 group-hover:scale-[1.015]"
-        label="Feature cover"
-      />
+function rankFeatureByStrength(
+  feature: Feature,
+  placeBySlug: Map<string, Place>,
+): RankedFeature {
+  const resolvedPlaces = feature.placeSlugs
+    .map((placeSlug) => placeBySlug.get(placeSlug))
+    .filter((place): place is Place => Boolean(place));
 
-      {/* Text */}
-      <div className="flex flex-col gap-3 p-6 pb-7 flex-1">
-        {subtitle && (
-          <p className="label-xs text-muted-foreground">{subtitle}</p>
-        )}
+  const counts = countPlacesByDisplayTier(resolvedPlaces);
+  const strongCount = counts.hero + counts.standard;
+  const visibleCount = strongCount + counts.minimal;
 
-        <Heading
-          as="h3"
-          size="sm"
-          font="serif"
-          className="group-hover:opacity-70 transition-opacity"
-        >
-          {title}
-        </Heading>
-
-        <p className="font-sans text-sm leading-relaxed text-muted-foreground line-clamp-3 flex-1">
-          {intro}
-        </p>
-
-        <div className="flex items-center justify-between mt-3 pt-4 border-t border-border/60">
-          <span className="font-sans text-xs tracking-[0.12em] uppercase text-foreground/40 group-hover:text-foreground/70 transition-colors">
-            Read →
-          </span>
-          {placeSlugs.length > 0 && (
-            <span className="font-sans text-xs text-muted-foreground/40">
-              {placeSlugs.length} place{placeSlugs.length !== 1 ? "s" : ""}
-            </span>
-          )}
-        </div>
-      </div>
-    </Link>
-  );
+  return {
+    feature,
+    heroCount: counts.hero,
+    standardCount: counts.standard,
+    minimalCount: counts.minimal,
+    strongCount,
+    visibleCount,
+    score: counts.hero * 5 + counts.standard * 3 + counts.minimal,
+  };
 }
 
-/* ─── Page ─────────────────────────────────────────────────────────────────── */
 export default function FeaturesPage() {
-  const [hero, ...rest] = features;
+  const placeBySlug = new Map(places.map((place) => [place.slug, place]));
+
+  const rankedFeatures = features
+    .map((feature) => rankFeatureByStrength(feature, placeBySlug))
+    .sort((a, b) => {
+      if (a.score !== b.score) return b.score - a.score;
+      if (a.strongCount !== b.strongCount) return b.strongCount - a.strongCount;
+      if (a.heroCount !== b.heroCount) return b.heroCount - a.heroCount;
+      return b.visibleCount - a.visibleCount;
+    });
+
+  const routeFeatures = rankedFeatures.filter((item) => item.feature.kind === "route");
+  const editorialFeatures = rankedFeatures.filter((item) => item.feature.kind !== "route");
+
+  const strongFeatures = rankedFeatures.filter((item) => item.strongCount >= 2);
+  const conciseFeatures = rankedFeatures.filter((item) => item.strongCount < 2);
+
+  const hero = strongFeatures[0] ?? rankedFeatures[0];
+  const heroSlug = hero?.feature.slug;
+
+  const remainingStrong = strongFeatures.filter((item) => item.feature.slug !== heroSlug);
+  const primaryStrong = remainingStrong.slice(0, 5);
+  const compactFeatures = [
+    ...remainingStrong.slice(5),
+    ...conciseFeatures.filter((item) => item.feature.slug !== heroSlug),
+  ];
 
   return (
-    <div className="py-16 md:py-24">
-      <Container>
-        {/* ── Page header ────────────────────────────────────────────── */}
-        <div className="mb-14 md:mb-20">
-          <p className="label-xs text-muted-foreground/60 mb-4">Editorial</p>
-          <div className="divider mb-6" />
-          <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-            <Heading as="h1" size="xl" font="serif">
-              Features
-            </Heading>
-            <p className="font-sans text-sm text-muted-foreground max-w-sm leading-relaxed">
-              Themes and editorial notes, arranged by emphasis rather than by
-              map.
-            </p>
-          </div>
-        </div>
+    <>
+      <section className="section-paper border-b border-border py-16 md:py-24">
+        <Container>
+          <div className="grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,1fr)_320px] lg:items-end">
+            <div className="max-w-4xl">
+              <p className="editorial-kicker mb-4">Routes & editorial</p>
+              <div className="editorial-rule mb-8 max-w-56" />
+              <Heading as="h1" size="xl" font="serif" className="text-balance">
+                Features that frame
+                <br />
+                how to move through Kyoto.
+              </Heading>
+              <p className="mt-6 max-w-2xl font-sans text-base leading-relaxed text-muted-foreground">
+                Organized by point of view: routes for walking sequences, collections for mood,
+                and occasional essays for context.
+              </p>
+            </div>
 
-        {/* ── Hero feature ───────────────────────────────────────────── */}
-        {hero && (
-          <div className="mb-10 md:mb-14">
-            <FeatureCardLarge {...hero} />
+            <TextNoteCard
+              title="Current mix"
+              body={`${strongFeatures.length} stronger features (2+ hero/standard places), plus ${conciseFeatures.length} concise features when the source set is lighter.`}
+              tone="ink"
+            />
           </div>
-        )}
 
-        {/* ── Secondary features grid ────────────────────────────────── */}
-        {rest.length > 0 && (
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {rest.map((f) => (
-              <FeatureCardCompact key={f.slug} {...f} />
-            ))}
-          </div>
-        )}
+          {hero && (
+            <div className="mt-12">
+              <LeadEditorialCard
+                href={`/features/${hero.feature.slug}`}
+                title={hero.feature.title}
+                excerpt={hero.feature.intro}
+                image={hero.feature.coverImage}
+                eyebrow={`Primary ${kindLabel(hero.feature.kind)} · ${hero.strongCount} strong places`}
+                footer={
+                  hero.minimalCount > 0
+                    ? `${hero.heroCount} hero · ${hero.standardCount} standard · ${hero.minimalCount} minimal`
+                    : `${hero.heroCount} hero · ${hero.standardCount} standard`
+                }
+              />
+            </div>
+          )}
+        </Container>
+      </section>
 
-      </Container>
-    </div>
+      {primaryStrong.length > 0 && (
+        <section className="section-warm border-b border-border py-14 md:py-20">
+          <Container>
+            <div className="mb-8 flex items-end justify-between gap-4">
+              <div>
+                <p className="editorial-kicker mb-3">Prioritized features</p>
+                <div className="editorial-rule mb-6 max-w-48" />
+                <Heading as="h2" size="md" font="serif">
+                  Start with the strongest editorial sets.
+                </Heading>
+              </div>
+              <Link
+                href="/neighborhoods"
+                className="font-sans text-xs tracking-[0.1em] uppercase text-muted-foreground transition-colors hover:text-foreground"
+              >
+                Pair with neighborhoods →
+              </Link>
+            </div>
+
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+              {primaryStrong.map((item, index) => {
+                const feature = item.feature;
+                const areas = featureNeighborhoodNames(feature.placeSlugs);
+                const eyebrow =
+                  areas.length > 0
+                    ? `${kindLabel(feature.kind)} · ${areas.slice(0, 2).join(" · ")}`
+                    : kindLabel(feature.kind);
+                const footer =
+                  item.minimalCount > 0
+                    ? `${item.strongCount} strong · ${item.minimalCount} minimal`
+                    : `${item.strongCount} strong places`;
+
+                if (index === 0) {
+                  return (
+                    <div key={feature.slug} className="md:col-span-2">
+                      <LeadEditorialCard
+                        href={`/features/${feature.slug}`}
+                        title={feature.title}
+                        excerpt={feature.intro}
+                        image={feature.coverImage}
+                        eyebrow={eyebrow}
+                        footer={footer}
+                      />
+                    </div>
+                  );
+                }
+
+                return (
+                  <StandardEditorialCard
+                    key={feature.slug}
+                    href={`/features/${feature.slug}`}
+                    title={feature.title}
+                    excerpt={feature.intro}
+                    image={feature.coverImage}
+                    eyebrow={eyebrow}
+                    footer={footer}
+                  />
+                );
+              })}
+            </div>
+          </Container>
+        </section>
+      )}
+
+      {compactFeatures.length > 0 && (
+        <section className="border-b border-border py-14 md:py-16">
+          <Container>
+            <div className="mb-8">
+              <p className="editorial-kicker mb-3">Concise reads</p>
+              <div className="editorial-rule mb-6 max-w-52" />
+              <Heading as="h2" size="md" font="serif" className="text-balance">
+                Keep these short and selective.
+              </Heading>
+            </div>
+
+            <div className="grid grid-cols-1 gap-6 lg:grid-cols-12">
+              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:col-span-8">
+                {compactFeatures.slice(0, 4).map((item) => (
+                  <StandardEditorialCard
+                    key={item.feature.slug}
+                    href={`/features/${item.feature.slug}`}
+                    title={item.feature.title}
+                    excerpt={item.feature.intro}
+                    image={item.feature.coverImage}
+                    eyebrow={`${kindLabel(item.feature.kind)} · ${item.strongCount} strong`}
+                    footer={
+                      item.minimalCount > 0
+                        ? `${item.minimalCount} supporting minimal places`
+                        : "Focused curation"
+                    }
+                    tone="warm"
+                  />
+                ))}
+              </div>
+
+              <div className="grid grid-cols-1 gap-4 lg:col-span-4">
+                <TextNoteCard
+                  title="How to read this page"
+                  body={
+                    routeFeatures.length > editorialFeatures.length
+                      ? "Route-heavy set right now: pick one strong route first, then add one concise theme."
+                      : "Theme-heavy set right now: pick one strong collection first, then one route if timing allows."
+                  }
+                  tone="ink"
+                />
+
+                {compactFeatures.slice(4, 8).map((item) => (
+                  <CompactEditorialCard
+                    key={item.feature.slug}
+                    href={`/features/${item.feature.slug}`}
+                    title={item.feature.title}
+                    excerpt={item.feature.intro}
+                    image={item.feature.coverImage}
+                    eyebrow={`${kindLabel(item.feature.kind)} · ${item.strongCount} strong`}
+                  />
+                ))}
+              </div>
+            </div>
+          </Container>
+        </section>
+      )}
+    </>
   );
 }

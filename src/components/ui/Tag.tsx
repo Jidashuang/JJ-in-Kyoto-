@@ -10,19 +10,15 @@ interface TagProps extends HTMLAttributes<HTMLSpanElement> {
 }
 
 const variantClasses: Record<TagVariant, string> = {
-  /** Subtle filled pill — used for place tags (Top Pick, Morning, Quiet…) */
-  default:  'bg-muted text-muted-foreground',
-  /** Slightly stronger — used for category chips (Cafe, Bookstore…) */
-  category: 'bg-foreground/[0.06] text-foreground',
-  /** Accent colour — used for editorial labels or "Featured" marks */
-  label:    'bg-[--color-accent] text-[--color-accent-foreground]',
-  /** Bare border only — used in lists or on coloured backgrounds */
-  outline:  'border border-border text-muted-foreground bg-transparent',
+  default:  'border border-black/5 bg-[#f5f5f5] text-[#4e4e4e]',
+  category: 'border border-transparent bg-[#f5f2ef]/80 text-foreground shadow-[rgba(78,50,23,0.04)_0px_6px_16px]',
+  label:    'border border-transparent bg-black text-white',
+  outline:  'border border-[#e5e5e5] text-[#4e4e4e] bg-transparent',
 }
 
 const sizeClasses: Record<TagSize, string> = {
-  sm: 'text-[0.65rem] px-2 py-0.5 tracking-[0.08em]',
-  md: 'text-xs      px-2.5 py-1  tracking-[0.06em]',
+  sm: 'text-[0.75rem] px-2.5 py-1 tracking-[0.14px] leading-[1.33]',
+  md: 'text-[0.81rem] px-3 py-1.5 tracking-[0.14px] leading-[1.38]',
 }
 
 /**
@@ -44,7 +40,7 @@ export function Tag({
   return (
     <span
       className={cn(
-        'inline-flex items-center rounded-sm font-sans uppercase',
+        'inline-flex items-center rounded-full font-sans',
         variantClasses[variant],
         sizeClasses[size],
         className,

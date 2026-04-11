@@ -1,0 +1,35 @@
+export type RealPlace = {
+  slug: string
+  title: string
+  titleJa?: string
+  titleEn?: string
+  category: string[]
+  neighborhood?: string
+  lat?: number
+  lng?: number
+  address?: string
+  hours?: string
+  price?: string
+  priceBand?: string
+  reservation?: string
+  warning?: string
+  website?: string
+  mapsUrl?: string
+  tags: string[]
+  curatorNote?: string
+  visitTime?: string
+  stayLength?: string
+  canonicalNeighborhood?: string
+  subarea?: string
+  bestFor?: string[]
+  mood?: string[]
+  pairWith?: string[]
+  excerpt?: string
+  body?: string
+  heroImage?: string
+  gallery?: string[]
+  featured: boolean
+  topPick: boolean
+  sourceFeature?: string
+  sourcePages?: string
+}

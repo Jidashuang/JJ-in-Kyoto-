@@ -1,20 +1,17 @@
 import type { Metadata } from "next";
 import { Container } from "@/components/layout/Container";
 import { Heading } from "@/components/ui/Heading";
+import { TextNoteCard } from "@/components/ui/EditorialCards";
 
 export const metadata: Metadata = {
   title: "About",
   description:
-    "About Kyoto by JJ — a selective guide built from repeated visits, careful editing, and quiet places worth returning to.",
+    "About Kyoto by JJ — a concise editorial guide built from repeated visits, careful curation, and quiet places worth returning to.",
 };
-
-function Divider() {
-  return <hr className="my-12 md:my-14 border-t border-border" />;
-}
 
 function Prose({ children }: { children: React.ReactNode }) {
   return (
-    <div className="max-w-xl space-y-4 text-sm leading-relaxed text-muted-foreground">
+    <div className="max-w-2xl space-y-4 font-sans text-sm leading-relaxed text-muted-foreground">
       {children}
     </div>
   );
@@ -22,100 +19,107 @@ function Prose({ children }: { children: React.ReactNode }) {
 
 export default function AboutPage() {
   return (
-    <div className="py-20 md:py-24">
-      <Container size="narrow">
-        <header className="mb-14 md:mb-16">
-          <p className="label-xs mb-5 text-muted-foreground/65">About</p>
-          <Heading as="h1" size="xl" font="serif" className="max-w-lg">
-            A selective guide to Kyoto.
-          </Heading>
-        </header>
+    <>
+      <section className="section-paper border-b border-border py-16 md:py-24">
+        <Container>
+          <div className="grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,1fr)_340px] lg:items-end">
+            <div className="max-w-4xl">
+              <p className="editorial-kicker mb-4">About</p>
+              <div className="editorial-rule mb-8 max-w-56" />
+              <Heading as="h1" size="xl" font="serif" className="max-w-3xl text-balance">
+                A calm, personal Kyoto guide built from repeat visits.
+              </Heading>
+              <p className="mt-6 max-w-2xl font-sans text-base leading-relaxed text-muted-foreground">
+                This project is intentionally selective. The point is to offer orientation and
+                curation, not a complete directory.
+              </p>
+            </div>
 
-        <section>
-          <Heading as="h2" size="sm" font="serif" className="mb-5">
-            How it came together
-          </Heading>
-          <Prose>
-            <p>
-              This began as private notes: places worth returning to, routes
-              that held together, details worth keeping.
-            </p>
-            <p>
-              Over time, those notes became a small editorial index. The aim is
-              not completeness, but clarity.
-            </p>
-          </Prose>
-        </section>
+            <TextNoteCard
+              title="Editorial principle"
+              body="If a place does not hold up across multiple visits, it usually stays out."
+              tone="ink"
+            />
+          </div>
+        </Container>
+      </section>
 
-        <Divider />
+      <section className="border-b border-border py-14 md:py-16">
+        <Container>
+          <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
+            <article>
+              <p className="editorial-kicker mb-3">Project story</p>
+              <Heading as="h2" size="md" font="serif" className="mb-5">
+                From private notes to a public guide
+              </Heading>
+              <Prose>
+                <p>
+                  This began as personal notes: places worth returning to, routes that worked,
+                  and details easy to forget.
+                </p>
+                <p>
+                  Over time it became a small editorial index. The aim is to stay useful,
+                  selective, and clear.
+                </p>
+              </Prose>
+            </article>
 
-        <section>
-          <Heading as="h2" size="sm" font="serif" className="mb-5">
-            Selection standard
-          </Heading>
-          <Prose>
-            <p>
-              Listings are chosen by experience, not volume. A place is included
-              when it feels distinct, consistent, and worth recommending again.
-            </p>
-            <p>
-              Preference goes to atmosphere, craft, and repeat value. The guide
-              stays selective by design.
-            </p>
-          </Prose>
-        </section>
+            <article>
+              <p className="editorial-kicker mb-3">Curation philosophy</p>
+              <Heading as="h2" size="md" font="serif" className="mb-5">
+                Distinct, consistent, repeatable
+              </Heading>
+              <Prose>
+                <p>
+                  Inclusion is based on lived experience, not listing volume. Atmosphere,
+                  craft, and repeat value matter most.
+                </p>
+                <p>
+                  This guide prefers fewer stronger recommendations over broad coverage.
+                </p>
+              </Prose>
+            </article>
+          </div>
+        </Container>
+      </section>
 
-        <Divider />
+      <section className="section-warm border-b border-border py-14 md:py-16">
+        <Container>
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-12">
+            <article className="border border-border bg-background p-6 lg:col-span-4">
+              <p className="editorial-kicker mb-3">Source note</p>
+              <Heading as="h2" size="sm" font="serif" className="mb-4">
+                On sources and verification
+              </Heading>
+              <p className="font-sans text-sm leading-relaxed text-muted-foreground">
+                Inputs include firsthand visits, direct checks, and selected references.
+                Practical details can change quickly, so verify hours and availability.
+              </p>
+            </article>
 
-        <section>
-          <Heading as="h2" size="sm" font="serif" className="mb-5">
-            Sources and checks
-          </Heading>
-          <Prose>
-            <p>
-              Sources include firsthand visits, direct checks, and selected
-              editorial references. External notes are treated as leads and
-              then filtered through personal judgment.
-            </p>
-            <p>
-              Practical details can change quickly. Please verify hours,
-              addresses, and availability before you go.
-            </p>
-          </Prose>
-        </section>
+            <article className="border border-border bg-background p-6 lg:col-span-4">
+              <p className="editorial-kicker mb-3">Image note</p>
+              <Heading as="h2" size="sm" font="serif" className="mb-4">
+                Rights and attribution
+              </Heading>
+              <p className="font-sans text-sm leading-relaxed text-muted-foreground">
+                Images are original unless stated otherwise. If you hold rights and need a
+                credit/update/removal, please get in touch.
+              </p>
+            </article>
 
-        <Divider />
-
-        <section>
-          <Heading as="h2" size="sm" font="serif" className="mb-5">
-            Images and rights
-          </Heading>
-          <Prose>
-            <p>
-              Images are original unless otherwise stated. Rights remain with
-              their respective owners.
-            </p>
-            <p>
-              If you are a rights holder and would like material credited,
-              updated, or removed, please get in touch.
-            </p>
-          </Prose>
-        </section>
-
-        <Divider />
-
-        <section>
-          <Heading as="h2" size="sm" font="serif" className="mb-5">
-            Contact
-          </Heading>
-          <Prose>
-            <p>
-              Contact details are not published yet. This section is reserved
-              for corrections, updates, and thoughtful suggestions.
-            </p>
-          </Prose>
-        </section>
-      </Container>
-    </div>
+            <article className="border border-border bg-background p-6 lg:col-span-4">
+              <p className="editorial-kicker mb-3">Corrections</p>
+              <Heading as="h2" size="sm" font="serif" className="mb-4">
+                Updates are welcome
+              </Heading>
+              <p className="font-sans text-sm leading-relaxed text-muted-foreground">
+                This section stays open for thoughtful corrections and practical updates.
+              </p>
+            </article>
+          </div>
+        </Container>
+      </section>
+    </>
   );
 }

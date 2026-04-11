@@ -8,10 +8,10 @@ import { Container } from "@/components/layout/Container";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
-  { href: "/places", label: "Places" },
-  { href: "/features", label: "Features" },
   { href: "/neighborhoods", label: "Neighborhoods" },
-  { href: "/map", label: "Map" },
+  { href: "/features", label: "Routes" },
+  { href: "/places", label: "All Places" },
+  { href: "/map", label: "Area Guide" },
   { href: "/about", label: "About" },
 ];
 
@@ -37,27 +37,25 @@ export function Header() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 bg-background/95 backdrop-blur-sm transition-shadow duration-200",
+        "sticky top-0 z-50 bg-white/95 backdrop-blur-sm transition-shadow duration-200",
         scrolled
-          ? "shadow-[0_1px_0_0_var(--color-border)]"
-          : "border-b border-border",
+          ? "shadow-[rgba(0,0,0,0.06)_0px_0px_0px_1px,rgba(0,0,0,0.04)_0px_1px_2px]"
+          : "border-b border-black/5",
       )}
     >
       <Container>
-        <div className="flex h-[60px] items-center justify-between">
-          {/* ── Site name ─────────────────────────────────────────────── */}
+        <div className="flex h-[72px] items-center justify-between">
           <Link
             href="/"
-            className="font-serif text-[1.35rem] leading-none tracking-wide text-foreground transition-opacity hover:opacity-60 focus-visible:opacity-60"
+            className="font-serif text-[1.45rem] font-[300] leading-none text-foreground transition-opacity hover:opacity-60 focus-visible:opacity-60"
             aria-label="Kyoto by JJ — home"
           >
             Kyoto by JJ
           </Link>
 
-          {/* ── Desktop navigation ────────────────────────────────────── */}
           <nav
             aria-label="Main navigation"
-            className="hidden md:flex items-center gap-7"
+            className="hidden lg:flex items-center gap-8"
           >
             {navLinks.map(({ href, label }) => {
               const active =
@@ -68,9 +66,9 @@ export function Header() {
                   key={href}
                   href={href}
                   className={cn(
-                    "font-sans text-[0.7rem] tracking-[0.18em] uppercase transition-colors",
+                    "relative font-sans text-[0.94rem] leading-[1.47] tracking-[0.15px] font-medium transition-colors",
                     active
-                      ? "text-foreground"
+                      ? "text-foreground after:absolute after:-bottom-2 after:left-0 after:h-px after:w-full after:bg-[#777169]"
                       : "text-muted-foreground hover:text-foreground",
                   )}
                 >
@@ -80,10 +78,18 @@ export function Header() {
             })}
           </nav>
 
-          {/* ── Mobile menu toggle ────────────────────────────────────── */}
+          <div className="hidden lg:flex items-center gap-2">
+            <Link href="/places" className="el-pill-white h-10">
+              All Places
+            </Link>
+            <Link href="/neighborhoods" className="el-pill-black h-10">
+              Start by Neighborhood
+            </Link>
+          </div>
+
           <button
             type="button"
-            className="md:hidden -mr-1 flex h-9 w-9 items-center justify-center rounded text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+            className="lg:hidden -mr-1 flex h-9 w-9 items-center justify-center rounded-full border border-black/5 bg-white text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileOpen}
             onClick={() => setMobileOpen((prev) => !prev)}
@@ -97,11 +103,10 @@ export function Header() {
         </div>
       </Container>
 
-      {/* ── Mobile drawer ───────────────────────────────────────────────── */}
       {mobileOpen && (
-        <div className="md:hidden border-t border-border bg-background">
+        <div className="lg:hidden border-t border-black/5 bg-white">
           <Container>
-            <nav aria-label="Mobile navigation" className="flex flex-col py-4">
+            <nav aria-label="Mobile navigation" className="flex flex-col gap-1 py-4">
               {navLinks.map(({ href, label }) => {
                 const active =
                   href === "/" ? pathname === "/" : pathname.startsWith(href);
@@ -111,9 +116,9 @@ export function Header() {
                     key={href}
                     href={href}
                     className={cn(
-                      "py-3 font-sans text-[0.7rem] tracking-[0.18em] uppercase transition-colors border-b border-border/50 last:border-0",
+                      "rounded-xl border border-transparent px-3 py-2.5 font-sans text-[0.94rem] leading-[1.47] tracking-[0.15px] transition-colors",
                       active
-                        ? "text-foreground"
+                        ? "border-black/5 bg-[#f5f2ef] text-foreground"
                         : "text-muted-foreground hover:text-foreground",
                     )}
                   >
@@ -121,6 +126,14 @@ export function Header() {
                   </Link>
                 );
               })}
+              <div className="mt-3 flex flex-wrap gap-2 border-t border-black/5 pt-3">
+                <Link href="/places" className="el-pill-white h-10">
+                  All Places
+                </Link>
+                <Link href="/neighborhoods" className="el-pill-black h-10">
+                  Start by Neighborhood
+                </Link>
+              </div>
             </nav>
           </Container>
         </div>
