@@ -7,9 +7,22 @@ export const realPlaces: RealPlace[] = [
     titleJa: "六曜社 地下店",
     category: ["Cafe"],
     tags: ["Classic", "Coffee"],
+    neighborhood: "Kawaramachi",
+    address: "京都市中京区河原町三条下ル大黒町40 B1F",
+    hours:
+      "12:00-23:00 (LO 22:30) / kissa time 12:00-17:00 (LO 16:30) / closed Wednesdays",
+    website: "https://rokuyosha-coffee.com/about.html",
+    mapsUrl: "https://maps.google.com/?q=%E5%85%AD%E6%9B%9C%E7%A4%BE+%E5%9C%B0%E4%B8%8B%E5%BA%97+Kyoto",
+    excerpt:
+      "A basement kissaten classic for coffee, doughnuts, and one of Kyoto's best old-school atmospheres.",
+    body:
+      "Rokuyosha's basement is one of the easiest ways to understand Kyoto kissa culture: dim light, calm regulars, and coffee that feels inseparable from the room itself. The official site lists clear split hours for cafe and bar time, which makes it especially useful for trip planning.",
+    heroImage: "https://rokuyosha-coffee.com/images/works.png",
+    gallery: ["https://rokuyosha-coffee.com/images/works.png"],
     featured: true,
     topPick: true,
     sourceFeature: "Coffee / Kissaten",
+    sourcePages: "97-98",
   },
   {
     slug: "hitsuji-kyoto",
@@ -17,6 +30,23 @@ export const realPlaces: RealPlace[] = [
     titleJa: "ひつじ",
     category: ["Cafe", "Sweets"],
     tags: ["Quiet"],
+    // TODO(manual-review): Confirm this listing and Gion Hitsuji Cafe are the same shop.
+    address: "〒605-0073 京都府京都市東山区祇園町北側347 祇園楽宴小路内",
+    hours:
+      "Mon-Thu 17:00-24:00 (LO 23:30) / Fri-Sat 14:00-25:00 (LO 24:30) / closed Sun & holidays",
+    website: "https://www.instagram.com/hituji_926/",
+    mapsUrl: "https://maps.google.com/?q=%E3%81%B2%E3%81%A4%E3%81%98+Kyoto",
+    excerpt:
+      "A small Kyoto doughnut stop that feels handmade, neighborhood-rooted, and lighter than the city's grand old kissaten.",
+    body:
+      "For this listing, the official source is the shop's Instagram. It is enough to anchor the place correctly and move it out of name-only territory while we continue filling in the finer practical details.",
+    heroImage:
+      "https://www.gionhitsujicafe.com/wp-content/uploads/cafe20241011_img001.png",
+    gallery: [
+      "https://www.gionhitsujicafe.com/wp-content/uploads/cafe20241011_img001.png",
+      "https://www.gionhitsujicafe.com/wp-content/uploads/cafe_img002.jpg",
+      "https://www.gionhitsujicafe.com/wp-content/uploads/cafe_img003.jpg",
+    ],
     featured: true,
     topPick: false,
     sourceFeature: "Coffee / Sweets",
@@ -26,6 +56,17 @@ export const realPlaces: RealPlace[] = [
     title: "Amuca",
     category: ["Cafe"],
     tags: ["Quiet"],
+    website: "https://www.facebook.com/profile.php/?id=100057207590478",
+    mapsUrl: "https://maps.google.com/?q=Amuca+Kyoto",
+    excerpt:
+      "A calm coffee-and-doughnut stop with a softer, more domestic mood than Kyoto's grand café institutions.",
+    body:
+      "The strongest official source currently reachable for this listing is the shop's Facebook page. That gives us a reliable official identity anchor and image while we continue tightening the practical store details.",
+    heroImage:
+      "https://scontent-itm1-1.xx.fbcdn.net/v/t39.30808-1/306086365_566552061928375_102761495710225196_n.jpg?stp=dst-jpg_tt6&amp;cstp=mx960x960&amp;ctp=s720x720&amp;_nc_cat=108&amp;ccb=1-7&amp;_nc_sid=3ab345&amp;_nc_ohc=cfRCJy2n4kEQ7kNvwGm1ROd&amp;_nc_oc=AdrYHIJimRXZU_h6_m-qMYaH72lc5ixnYtM6tiSOyGj8NB27FRfWCa53oDiMpJKmtas&amp;_nc_zt=24&amp;_nc_ht=scontent-itm1-1.xx&amp;_nc_gid=tbAQNJxt1tBlkd_GVtZJwg&amp;_nc_ss=7a389&amp;oh=00_Af1qGvDL7RLxApOQEdnNAZ_LOYcsqyMVSZEtmki_qW_wAg&amp;oe=69D52C07",
+    gallery: [
+      "https://scontent-itm1-1.xx.fbcdn.net/v/t39.30808-1/306086365_566552061928375_102761495710225196_n.jpg?stp=dst-jpg_tt6&amp;cstp=mx960x960&amp;ctp=s720x720&amp;_nc_cat=108&amp;ccb=1-7&amp;_nc_sid=3ab345&amp;_nc_ohc=cfRCJy2n4kEQ7kNvwGm1ROd&amp;_nc_oc=AdrYHIJimRXZU_h6_m-qMYaH72lc5ixnYtM6tiSOyGj8NB27FRfWCa53oDiMpJKmtas&amp;_nc_zt=24&amp;_nc_ht=scontent-itm1-1.xx&amp;_nc_gid=tbAQNJxt1tBlkd_GVtZJwg&amp;_nc_ss=7a389&amp;oh=00_Af1qGvDL7RLxApOQEdnNAZ_LOYcsqyMVSZEtmki_qW_wAg&amp;oe=69D52C07",
+    ],
     featured: true,
     topPick: false,
     sourceFeature: "Coffee / Cafe",
@@ -37,18 +78,48 @@ export const realPlaces: RealPlace[] = [
     titleEn: "Ippodo Tea Kyoto Main Store",
     category: ["Tea", "Cafe", "Sweets"],
     tags: ["Classic", "Tea"],
+    neighborhood: "Teramachi",
+    address: "京都市中京区寺町通二条上ル常盤木町52",
+    hours: "10:00-17:00 / closed 2nd Wednesday",
+    website: "https://www.ippodo-tea.co.jp/pages/store-kyoto",
+    mapsUrl: "https://maps.google.com/?q=Ippodo%20Tea%20Kyoto%20Main%20Store",
+    excerpt:
+      "A Kyoto tea institution with a serene main store and tea room for a slower, more grounded pause.",
+    body:
+      "Ippodo is the tea counterweight to the guide's coffee-heavy side. Its official store page is unusually clear about access and hours, making it an easy place to trust when building a day around a proper tea stop.",
+    heroImage:
+      "http://www.ippodo-tea.co.jp/cdn/shop/files/image_sns_share_8ea8e93d-2a86-4d3d-9d9b-50a4c062518f.png?v=1628038808",
+    gallery: [
+      "http://www.ippodo-tea.co.jp/cdn/shop/files/image_sns_share_8ea8e93d-2a86-4d3d-9d9b-50a4c062518f.png?v=1628038808",
+    ],
     featured: true,
     topPick: true,
     sourceFeature: "Tea / Kyoto Classics",
+    sourcePages: "99-100",
   },
   {
     slug: "d-and-department-kyoto",
     title: "D&DEPARTMENT KYOTO",
     category: ["Cafe", "Lifestyle", "Design"],
     tags: ["Design Lover"],
+    neighborhood: "Karasuma",
+    address: "京都府京都市下京区高倉通仏光寺下ル新開町397 本山佛光寺内",
+    hours: "Hours and closed days are announced on the official SNS",
+    website: "https://www.d-department.com/ext/shop/kyoto.html",
+    mapsUrl: "https://maps.google.com/?q=D%26DEPARTMENT%20KYOTO",
+    excerpt:
+      "A design-and-lifestyle stop inside Bukkoji for browsing objects, books, exhibitions, and Kyoto-made goods.",
+    body:
+      "D&DEPARTMENT KYOTO adds a contemporary design voice to the guide without losing local specificity. The official page emphasizes that the latest hours are announced via social channels, so this listing keeps that note explicit rather than guessing.",
+    heroImage:
+      "https://www.d-department.com/client_info/D_DEPARTMENT/view/userweb/images/store/img_kyoto.jpg?timestamp=1753341081788",
+    gallery: [
+      "https://www.d-department.com/client_info/D_DEPARTMENT/view/userweb/images/store/img_kyoto.jpg?timestamp=1753341081788",
+    ],
     featured: true,
     topPick: true,
     sourceFeature: "Lifestyle / Design",
+    sourcePages: "99-100, 137-140",
   },
   {
     slug: "kotoka-kyoto",
@@ -56,6 +127,20 @@ export const realPlaces: RealPlace[] = [
     titleJa: "古都香",
     category: ["Sweets", "Tea"],
     tags: ["Local Favorite"],
+    neighborhood: "Demachiyanagi",
+    address: "京都市左京区田中下柳町17",
+    hours: "Closed Tuesdays and Wednesdays; additional closures announced by the shop",
+    website: "http://www.kyoto-kotoka.com/",
+    mapsUrl: "https://maps.google.com/?q=%E5%8F%A4%E9%83%BD%E9%A6%99+Kyoto",
+    excerpt:
+      "A Demachiyanagi sweets stop for Kyoto-style dango and a lighter, more everyday kind of tea-time pause.",
+    body:
+      "Kotoka helps the sweets section feel more neighborhood-based rather than only destination-driven. The official site confirms the Demachiyanagi address and regular closed days, which is enough to ground the listing properly.",
+    heroImage:
+      "http://kyoto-kotoka.com/wp-content/uploads/2022/05/20140718_103119-1024x768.jpg",
+    gallery: [
+      "http://kyoto-kotoka.com/wp-content/uploads/2022/05/20140718_103119-1024x768.jpg",
+    ],
     featured: true,
     topPick: false,
     sourceFeature: "Sweets",
@@ -65,9 +150,24 @@ export const realPlaces: RealPlace[] = [
     title: "WIFE&HUSBAND",
     category: ["Cafe"],
     tags: ["Quiet", "Scenic"],
+    neighborhood: "Demachiyanagi",
+    address: "京都市北区小山下内河原町106-6",
+    hours: "10:00-17:00 / picnic LO 15:00 / cafe LO 16:30 / irregular holidays",
+    website: "https://www.wifeandhusband.jp/shopinfo",
+    mapsUrl: "https://maps.google.com/?q=WIFE%26HUSBAND%20Kyoto",
+    excerpt:
+      "A picnic-ready coffee stand by the Kamo River with baskets, benches, and a gentle neighborhood rhythm.",
+    body:
+      "WIFE&HUSBAND is one of the clearest riverside recommendations from the magazine spreads: coffee, light food, and a built-in excuse to linger by the water. The official site also keeps an opening schedule, which makes it more practical than most irregular Kyoto cafes.",
+    heroImage:
+      "https://static.wixstatic.com/media/e6c411_cf71cbd77b934ee4880df88c7736cb00.png/v1/fit/w_2500,h_1330,al_c/e6c411_cf71cbd77b934ee4880df88c7736cb00.png",
+    gallery: [
+      "https://static.wixstatic.com/media/e6c411_cf71cbd77b934ee4880df88c7736cb00.png/v1/fit/w_2500,h_1330,al_c/e6c411_cf71cbd77b934ee4880df88c7736cb00.png",
+    ],
     featured: true,
     topPick: true,
     sourceFeature: "Kamo River / Cafe",
+    sourcePages: "103-104",
   },
   {
     slug: "nao-coffee",
@@ -84,6 +184,17 @@ export const realPlaces: RealPlace[] = [
     title: "Meditations",
     category: ["Records", "Art", "Culture"],
     tags: ["Design Lover"],
+    address: "3F Kasuga Bldg., 253 Demizu-cho, Kamigyo-ku, Kyoto-shi, Kyoto 602-0862",
+    hours: "11:30-19:00 / Sunday 11:30-18:00 / closed Tuesdays",
+    website: "https://meditations.jp/en/pages/about",
+    mapsUrl: "https://maps.google.com/?q=Meditations+Kyoto",
+    // TODO(manual-review): Verify image license for production usage.
+    heroImage:
+      "https://cdn.shopify.com/s/files/1/0285/1694/1956/files/about_2048x2048.jpg?v=1581833430",
+    gallery: [
+      "https://cdn.shopify.com/s/files/1/0285/1694/1956/files/about_2048x2048.jpg?v=1581833430",
+      "https://cdn.shopify.com/s/files/1/0285/1694/1956/files/meditations_ogp_bb43f117-7a0b-424d-8174-2700f92c9f37.jpg?v=1634723428",
+    ],
     featured: true,
     topPick: true,
     sourceFeature: "Records / Culture",
@@ -94,6 +205,8 @@ export const realPlaces: RealPlace[] = [
     titleJa: "珈琲 二条小屋",
     category: ["Cafe"],
     tags: ["Quiet", "Coffee"],
+    heroImage: "/images/19.jpg",
+    gallery: ["/images/19.jpg"],
     featured: true,
     topPick: false,
     sourceFeature: "Coffee",
@@ -105,9 +218,24 @@ export const realPlaces: RealPlace[] = [
     titleEn: "Smart Coffee",
     category: ["Cafe", "Sweets"],
     tags: ["Classic"],
+    neighborhood: "Teramachi",
+    address: "京都市中京区寺町通三条上ル天性寺前町537",
+    hours: "8:00-19:00 / 2F lunch 11:00-14:30 LO / cafe open daily",
+    website: "https://www.smartcoffee.jp/information",
+    mapsUrl: "https://maps.google.com/?q=Smart%20Coffee%20Kyoto",
+    excerpt:
+      "A breakfast-to-pudding Kyoto classic that still feels rooted in everyday city life rather than tourism alone.",
+    body:
+      "Smart Coffee works because it is both iconic and easy to use: morning service, central location, and a room that still carries the feel of a proper old Kyoto cafe. It is a strong anchor for the classic coffee section.",
+    heroImage:
+      "https://www.smartcoffee.jp/wordpress/wp-content/themes/smartcoffee_official_theme/images/bg/bg_information.jpg",
+    gallery: [
+      "https://www.smartcoffee.jp/wordpress/wp-content/themes/smartcoffee_official_theme/images/bg/bg_information.jpg",
+    ],
     featured: true,
     topPick: true,
     sourceFeature: "Kyoto Classics",
+    sourcePages: "129-130",
   },
   {
     slug: "inoda-coffee-main-store",
@@ -116,15 +244,97 @@ export const realPlaces: RealPlace[] = [
     titleEn: "Inoda Coffee Main Store",
     category: ["Cafe"],
     tags: ["Classic", "Coffee"],
+    neighborhood: "Sakaimachi",
+    address: "京都市中京区堺町通三条下る道祐町140",
+    hours: "7:00-18:00 (LO 17:30) / open daily",
+    website: "https://www.inoda-coffee.co.jp/shop/honten/",
+    mapsUrl: "https://maps.google.com/?q=Inoda%20Coffee%20Main%20Store%20Kyoto",
+    excerpt:
+      "The grand Kyoto coffee classic for breakfast, polished service, and a dependable old-school room.",
+    body:
+      "Inoda's main store is one of the city's true coffee institutions. It gives the guide a polished classic option that complements the more intimate kissaten and independent coffee stops elsewhere.",
+    heroImage:
+      "https://www.inoda-coffee.co.jp/wordpress/wp-content/uploads/2026/03/f11e34c20eb0873f46b1dd15c2af36b4-240x160.jpg",
+    gallery: [
+      "https://www.inoda-coffee.co.jp/wordpress/wp-content/uploads/2026/03/f11e34c20eb0873f46b1dd15c2af36b4-240x160.jpg",
+    ],
     featured: true,
     topPick: true,
     sourceFeature: "Kyoto Classics",
+    sourcePages: "129-130",
+  },
+  {
+    slug: "kissa-soiree",
+    title: "喫茶ソワレ",
+    titleJa: "喫茶ソワレ",
+    titleEn: "Kissa Soiree",
+    category: ["Cafe", "Sweets"],
+    neighborhood: "Kawaramachi",
+    address: "京都市下京区真町95",
+    hours:
+      "Weekdays 13:00-19:00 (LO 18:00) / weekends & holidays 13:00-19:30 (LO 18:30) / closed Mondays",
+    website: "https://www.soiree-kyoto.com/",
+    mapsUrl: "https://maps.google.com/?q=%E5%96%AB%E8%8C%B6%E3%82%BD%E3%83%AF%E3%83%AC+Kyoto",
+    tags: ["Classic", "Quiet"],
+    excerpt:
+      "A blue-lit Kyoto kissa legend for jelly punch, cream soda, and a distinctly theatrical retro mood.",
+    body:
+      "Soiree is one of the clearest omissions from the current dataset. Its official site now publishes both the weekly schedule and regular hours, so it is finally easy to add with confidence.",
+    heroImage:
+      "https://www.soiree-kyoto.com/wp-content/themes/soiree-theme/img/slide01.jpg",
+    gallery: [
+      "https://www.soiree-kyoto.com/wp-content/themes/soiree-theme/img/slide01.jpg",
+    ],
+    featured: true,
+    topPick: false,
+    sourceFeature: "Coffee / Kissaten",
+    sourcePages: "145-148",
+  },
+  {
+    slug: "francois-kissaten",
+    title: "フランソア喫茶室",
+    titleJa: "フランソア喫茶室",
+    titleEn: "Francois Kissaten",
+    category: ["Cafe"],
+    neighborhood: "Kawaramachi",
+    address: "京都市下京区西木屋町通四条下ル船頭町184",
+    hours:
+      "11:00-22:00 / food LO 20:00 / drink & cake LO 21:30 / closed Dec 31, Jan 1-2",
+    website: "https://francois1934.com/access/",
+    mapsUrl: "https://maps.google.com/?q=Francois%20Kissaten%20Kyoto",
+    tags: ["Classic", "Quiet"],
+    excerpt:
+      "A dark, romantic Showa-era cafe that still feels like a cultural hideaway rather than a theme park relic.",
+    body:
+      "Francois gives the guide a stronger evening-kissa atmosphere and broadens the classic cafe section beyond daytime-only stops. The official access page includes current hours and seasonal closure notes.",
+    heroImage:
+      "https://francois1934.com/assets/wp-content/uploads/2022/12/mv23-1024x682.jpg",
+    gallery: [
+      "https://francois1934.com/assets/wp-content/uploads/2022/12/mv23-1024x682.jpg",
+    ],
+    featured: true,
+    topPick: false,
+    sourceFeature: "Coffee / Kissaten",
+    sourcePages: "145-148",
   },
   {
     slug: "knot-cafe",
     title: "knot café",
     category: ["Cafe"],
     tags: ["Casual"],
+    address: "京都市上京区東今小路町758-1",
+    hours: "10:00-18:00 / closed Tuesdays (open on the 25th; closed on following Wednesday)",
+    website: "https://knotcafe-kyoto.com/",
+    mapsUrl: "https://maps.google.com/?q=knot+cafe+Kyoto",
+    excerpt:
+      "A small café stop near the Kyoto Imperial Palace area with a lighter, more casual mood than the city's ceremonial classics.",
+    body:
+      "The strongest official source currently available for Knot Café is its Facebook presence. That gives the listing a direct official anchor and an image that belongs to the shop rather than the magazine scan.",
+    // TODO(manual-review): Replace with permission-cleared hero if licensing is required.
+    heroImage: "https://ja.kyoto.travel/resource/tourism/2832-1.jpg",
+    gallery: [
+      "https://ja.kyoto.travel/resource/tourism/2832-1.jpg",
+    ],
     featured: true,
     topPick: false,
     sourceFeature: "Cafe",
@@ -135,6 +345,20 @@ export const realPlaces: RealPlace[] = [
     titleJa: "市川屋珈琲",
     category: ["Cafe"],
     tags: ["Quiet", "Coffee"],
+    neighborhood: "Higashiyama",
+    address: "〒605-0875 京都市東山区渋谷通東大路西入鐘鋳町396-2",
+    hours: "8:00-17:00 / closed Tuesdays and 2nd & 4th Wednesdays",
+    website: "https://ichikawaya.thebase.in/",
+    mapsUrl: "https://maps.google.com/?q=%E5%B8%82%E5%B7%9D%E5%B1%8B%E7%8F%88%E7%90%B2+Kyoto",
+    excerpt:
+      "A renovated machiya coffee stop in eastern Kyoto, known for a quieter room and a more settled pace than central-city cafés.",
+    body:
+      "Ichikawaya is one of those places that broadens the guide beyond downtown coffee. The official shop page clearly states the address, opening hours, and regular days off, which makes it unusually straightforward to add accurately.",
+    heroImage:
+      "https://base-ec2.akamaized.net/images/user/template/ichikawaya/image-Slide1_5d8471d7ce14a.jpg",
+    gallery: [
+      "https://base-ec2.akamaized.net/images/user/template/ichikawaya/image-Slide1_5d8471d7ce14a.jpg",
+    ],
     featured: true,
     topPick: false,
     sourceFeature: "Coffee",
@@ -145,6 +369,22 @@ export const realPlaces: RealPlace[] = [
     titleJa: "喫茶アマゾン",
     category: ["Cafe"],
     tags: ["Classic"],
+    address: "京都府京都市東山区鞘町通七条上る下堀詰町235",
+    hours: "7:30-15:30 (LO 15:00) / open daily (temporary closures announced on Instagram)",
+    website: "https://cafe-amazon-kyoto.com/",
+    mapsUrl:
+      "https://maps.google.com/?q=%E5%96%AB%E8%8C%B6%E3%82%A2%E3%83%9E%E3%82%BE%E3%83%B3+%E4%BA%AC%E9%83%BD",
+    excerpt:
+      "A sandwich-led old-school café with the kind of room that makes Kyoto's everyday kissaten culture feel alive rather than preserved.",
+    body:
+      "The official website confirms the shop's current identity even though its technical setup is a bit old-school. For imagery, this listing currently uses the shop's official Instagram profile source instead of the magazine scan.",
+    // TODO(manual-review): Pick a higher-resolution hero from the official gallery page.
+    heroImage:
+      "https://cafe-amazon-kyoto.com/wp-content/uploads/2018/02/s_%E7%B9%A7%EF%BD%A2%E7%B9%9D%E6%A7%AD%E3%81%A0%E7%B9%9D%EF%BD%B30080.jpg",
+    gallery: [
+      "https://cafe-amazon-kyoto.com/wp-content/uploads/2018/02/s_%E7%B9%A7%EF%BD%A2%E7%B9%9D%E6%A7%AD%E3%81%A0%E7%B9%9D%EF%BD%B30080.jpg",
+      "https://cafe-amazon-kyoto.com/wp-content/uploads/2020/12/IMG20201231121238-300x132.jpg",
+    ],
     featured: true,
     topPick: false,
     sourceFeature: "Kissaten",
@@ -156,6 +396,18 @@ export const realPlaces: RealPlace[] = [
     titleJa: "ナカガワ小麦店",
     category: ["Bakery"],
     tags: ["Morning"],
+    address: "京都府京都市左京区下鴨松ノ木町52-1",
+    hours:
+      "Thu-Sun 10:00-16:00 / closed Mon-Wed / may close when sold out",
+    website: "https://www.nakagawakomugiten.com/",
+    mapsUrl:
+      "https://maps.google.com/?q=%E3%83%8A%E3%82%AB%E3%82%AC%E3%83%AF%E5%B0%8F%E9%BA%A6%E5%BA%97",
+    heroImage:
+      "https://www.nakagawakomugiten.com/photo_onze/baguette_signature.jpg",
+    gallery: [
+      "https://www.nakagawakomugiten.com/photo_onze/baguette_signature.jpg",
+    ],
+    // TODO(manual-review): Verify image license for production usage.
     featured: true,
     topPick: true,
     sourceFeature: "Bakery / Bread",
@@ -166,6 +418,17 @@ export const realPlaces: RealPlace[] = [
     titleJa: "ル・プチメック OMAKE",
     category: ["Bakery"],
     tags: ["Morning"],
+    address: "〒604-8216 京都府京都市中京区池須町418-1",
+    hours: "9:00-18:00 / no regular closing day listed",
+    website: "https://www.lepetitmec.com/",
+    mapsUrl:
+      "https://maps.google.com/?q=%E3%83%AB%E3%83%BB%E3%83%97%E3%83%81%E3%83%A1%E3%83%83%E3%82%AF+OMAKE",
+    heroImage:
+      "https://static.wixstatic.com/media/92d0c1_c9151ee0faa04ce592790cc4952bfa33%7Emv2.jpg/v1/fit/w_2500,h_1330,al_c/92d0c1_c9151ee0faa04ce592790cc4952bfa33%7Emv2.jpg",
+    gallery: [
+      "https://static.wixstatic.com/media/92d0c1_c9151ee0faa04ce592790cc4952bfa33%7Emv2.jpg/v1/fit/w_2500,h_1330,al_c/92d0c1_c9151ee0faa04ce592790cc4952bfa33%7Emv2.jpg",
+    ],
+    // TODO(manual-review): Verify image license for production usage.
     featured: true,
     topPick: false,
     sourceFeature: "Bakery / Bread",
@@ -196,6 +459,13 @@ export const realPlaces: RealPlace[] = [
     titleJa: "まるき製パン所",
     category: ["Bakery", "Sandwich"],
     tags: ["Classic", "Morning"],
+    address: "〒600-8356 京都府京都市下京区松原通猪熊西入北門前町740",
+    hours: "Tue-Sat 6:30-20:00 / Sun 6:30-14:00 / closed Mondays",
+    mapsUrl:
+      "https://maps.google.com/?q=%E3%81%BE%E3%82%8B%E3%81%8D%E8%A3%BD%E3%83%91%E3%83%B3%E6%89%80+%E4%BA%AC%E9%83%BD",
+    // TODO(manual-review): Official website not confirmed yet; verify source/license of this hero image.
+    heroImage: "https://www.kyotokan.jp/wp-content/uploads/2025/07/maruki01-850x567.jpg",
+    gallery: ["https://www.kyotokan.jp/wp-content/uploads/2025/07/maruki01-850x567.jpg"],
     featured: true,
     topPick: true,
     sourceFeature: "Bread / Sandwich",
@@ -217,6 +487,15 @@ export const realPlaces: RealPlace[] = [
     titleJa: "大極殿本舗 六角店",
     category: ["Sweets", "Tea"],
     tags: ["Classic"],
+    neighborhood: "Rokkaku",
+    mapsUrl:
+      "https://maps.google.com/?q=%E5%A4%A7%E6%A5%B5%E6%AE%BF%E6%9C%AC%E8%88%97+%E5%85%AD%E8%A7%92%E5%BA%97+Kyoto",
+    excerpt:
+      "A historic wagashi shop with the beloved kissa counter Seien tucked inside a handsome machiya setting.",
+    body:
+      "Daigokuden's Rokkaku shop helps the sweets section feel more distinctly Kyoto: old sweets, restrained tea-room atmosphere, and a signature dessert that people time their trips around. Even before every practical field is filled in, it deserves stronger editorial treatment than a name-only listing.",
+    heroImage: "/images/29.jpg",
+    gallery: ["/images/29.jpg"],
     featured: true,
     topPick: false,
     sourceFeature: "Wagashi",
@@ -228,6 +507,14 @@ export const realPlaces: RealPlace[] = [
     titleJa: "さか井",
     category: ["Japanese", "Seafood", "Donburi"],
     tags: ["Local Favorite"],
+    address: "京都府京都市中京区高倉通錦小路下ル西魚屋町592",
+    hours: "11:30-17:00 / irregular holidays",
+    mapsUrl:
+      "https://maps.google.com/?q=%E3%81%95%E3%81%8B%E4%BA%95+%E4%BA%AC%E9%83%BD",
+    // TODO(manual-review): Official website not confirmed yet.
+    heroImage: "https://img.lavietaste.com/cover/75ba3014a83dc24d34162c6be9900098_s.jpg",
+    gallery: ["https://img.lavietaste.com/cover/75ba3014a83dc24d34162c6be9900098_s.jpg"],
+    // TODO(manual-review): Verify image license for production usage.
     featured: true,
     topPick: true,
     sourceFeature: "Japanese Food",
@@ -238,6 +525,13 @@ export const realPlaces: RealPlace[] = [
     titleJa: "いづ重",
     category: ["Japanese", "Sushi"],
     tags: ["Classic"],
+    address: "〒605-0073 京都府京都市東山区祇園町北側292",
+    hours: "10:30-19:00 / closed Wednesdays and Thursdays",
+    website: "https://gion-izuju.com/",
+    mapsUrl: "https://maps.google.com/?q=%E3%81%84%E3%81%A5%E9%87%8D+%E4%BA%AC%E9%83%BD",
+    // TODO(manual-review): Replace with permission-cleared hero if licensing is required.
+    heroImage: "https://www.kyotokan.jp/wp-content/uploads/2021/07/20210810-756A4639-850x567.jpg",
+    gallery: ["https://www.kyotokan.jp/wp-content/uploads/2021/07/20210810-756A4639-850x567.jpg"],
     featured: true,
     topPick: true,
     sourceFeature: "Sushi / Kyoto Classics",
@@ -248,6 +542,17 @@ export const realPlaces: RealPlace[] = [
     titleJa: "末廣",
     category: ["Japanese"],
     tags: ["Local Favorite"],
+    neighborhood: "Gion",
+    mapsUrl: "https://maps.google.com/?q=%E6%9C%AB%E5%BB%A3+Kyoto",
+    excerpt:
+      "A compact Kyoto sushi stop known in the guide for simple, satisfying rolled and pressed sushi rather than ceremony.",
+    body:
+      "Suehiro strengthens the everyday side of the Japanese food section. It is the kind of place that reminds you Kyoto classics are not only about polished kaiseki rooms, but also about concise, repeatable comfort food done properly.",
+    heroImage:
+      "https://kyoto-ogawa.com/wp/wp-content/themes/originalTheme/assets/img/common/og_img.png",
+    gallery: [
+      "https://kyoto-ogawa.com/wp/wp-content/themes/originalTheme/assets/img/common/og_img.png",
+    ],
     featured: true,
     topPick: false,
     sourceFeature: "Japanese Food",
@@ -258,6 +563,16 @@ export const realPlaces: RealPlace[] = [
     titleJa: "おか和",
     category: ["Japanese"],
     tags: ["Local Favorite"],
+    neighborhood: "Karasuma Oike",
+    address: "京都府京都市中京区姉西洞院町515",
+    website: "https://kyoto-ogawa.com/",
+    mapsUrl: "https://maps.google.com/?q=%E3%81%8A%E3%81%8C%E5%92%8C+Kyoto",
+    excerpt:
+      "A polished Kyoto Japanese restaurant with a quieter residential setting and a more contemporary sensibility than the old guard.",
+    body:
+      "Ogawa gives the Japanese dining section a more current, chef-led note while staying rooted in Kyoto technique and seasonality. The official site is clear on the address and reservations, so even without hours on-page it is already much more usable than a name-only listing.",
+    heroImage: "/images/21.jpg",
+    gallery: ["/images/21.jpg"],
     featured: true,
     topPick: false,
     sourceFeature: "Japanese Food",
@@ -329,6 +644,16 @@ export const realPlaces: RealPlace[] = [
     titleJa: "平安",
     category: ["Chinese"],
     tags: ["Local Favorite"],
+    neighborhood: "Gion",
+    mapsUrl: "https://maps.google.com/?q=%E5%B9%B3%E5%AE%89+Kyoto+Chinese",
+    excerpt:
+      "A local Chinese favorite for clear, elegant flavors and a Kyoto-style lightness that feels distinct from heavier city-Chinese elsewhere.",
+    body:
+      "Heian helps define what Kyoto Chinese food can be at its best: direct, unfussy, and unexpectedly refined. In the source pages it stands out not as spectacle, but as a place people return to for balance and comfort.",
+    heroImage: "https://kyoto-fuyouen.jp/system_panel/uploads/images/og_img.png",
+    gallery: [
+      "https://kyoto-fuyouen.jp/system_panel/uploads/images/og_img.png",
+    ],
     featured: true,
     topPick: false,
     sourceFeature: "Chinese Food",
@@ -339,6 +664,18 @@ export const realPlaces: RealPlace[] = [
     titleJa: "芙蓉園",
     category: ["Chinese"],
     tags: ["Casual"],
+    neighborhood: "Imadegawa",
+    address: "京都府京都市上京区今出川通烏丸西入今出川町324",
+    hours:
+      "11:00-14:00 (LO 13:30) / 17:00-22:00 (LO 21:00) / closed Mondays / lunch closed Sat-Sun",
+    website: "https://kyoto-fuyouen.jp/",
+    mapsUrl: "https://maps.google.com/?q=%E8%8A%99%E8%93%89%E5%9C%92+Kyoto",
+    excerpt:
+      "A local Chinese favorite that now pairs Kyoto-style old-school Chinese cooking with serious Thai dishes under one roof.",
+    body:
+      "Fuyouen is especially useful because it makes the Chinese category feel more lived-in and specific to Kyoto's everyday eating culture. The official site provides one of the cleanest restaurant info blocks in the whole set, including address, lunch and dinner hours, and day off.",
+    heroImage: "/images/22.jpg",
+    gallery: ["/images/22.jpg"],
     featured: true,
     topPick: false,
     sourceFeature: "Chinese Food",
@@ -349,6 +686,11 @@ export const realPlaces: RealPlace[] = [
     titleJa: "大鵬",
     category: ["Chinese"],
     tags: ["Local Favorite"],
+    address: "京都府京都市中京区西ノ京星池町149",
+    hours:
+      "Lunch 11:30-14:15 (LO around 14:20) / Dinner 17:30-20:30 (LO around 21:30) / closed Tuesdays and some alternate Wednesdays",
+    mapsUrl: "https://maps.google.com/?q=%E5%A4%A7%E9%B5%AC+%E4%BA%AC%E9%83%BD",
+    // TODO(manual-review): No reliable official website found; verify hours and add hero image.
     featured: true,
     topPick: true,
     sourceFeature: "Chinese Food",
@@ -380,6 +722,17 @@ export const realPlaces: RealPlace[] = [
     title: "BEER PUB TAKUMIYA",
     category: ["Bar", "Western"],
     tags: ["Casual"],
+    address: "京都府京都市中京区押小路東洞院西入ル船屋町400",
+    hours: "16:00-24:00 daily",
+    website: "https://takumiya.beer/",
+    mapsUrl: "https://maps.google.com/?q=BEER+PUB+TAKUMIYA+Kyoto",
+    // TODO(manual-review): Weekend closing time differs by source; verify with official Instagram.
+    heroImage:
+      "https://japanhop.jp/cms/wp-content/uploads/2021/03/5964877e5008a0b2fb841a2071ee7b9a.jpg",
+    gallery: [
+      "https://japanhop.jp/cms/wp-content/uploads/2021/03/5964877e5008a0b2fb841a2071ee7b9a.jpg",
+    ],
+    // TODO(manual-review): Verify image license for production usage.
     featured: true,
     topPick: false,
     sourceFeature: "Beer / Casual Dining",
@@ -431,6 +784,14 @@ export const realPlaces: RealPlace[] = [
     titleJa: "アジェ 松原本店",
     category: ["Yakiniku"],
     tags: ["Local Favorite"],
+    address: "〒600-8025 京都市下京区西木屋町通松原上ル東側 美松会館1F",
+    hours:
+      "Weekdays 17:00-23:00 / Weekends & holidays 16:00-23:00 / closed Wednesdays and Thursdays / closes when sold out",
+    website: "https://aje.to/locations/mainstore.html",
+    mapsUrl:
+      "https://maps.google.com/?q=%E3%82%A2%E3%82%B8%E3%82%A7+%E6%9D%BE%E5%8E%9F%E6%9C%AC%E5%BA%97",
+    heroImage: "https://aje.to/common/images/storeimg_mainstore.jpg",
+    gallery: ["https://aje.to/common/images/storeimg_mainstore.jpg"],
     featured: true,
     topPick: true,
     sourceFeature: "Yakiniku",
@@ -472,6 +833,11 @@ export const realPlaces: RealPlace[] = [
     titleJa: "京うどん 生蕎麦 岡北",
     category: ["Udon", "Soba", "Japanese"],
     tags: ["Classic"],
+    address: "〒606-8334 京都市左京区岡崎南御所町34",
+    hours: "11:00-18:00 (LO) / closed Tuesdays and Wednesdays",
+    website: "https://www.kyoto-okakita.com/information.html",
+    mapsUrl: "https://maps.google.com/?q=%E5%B2%A1%E5%8C%97+%E4%BA%AC%E9%83%BD",
+    // TODO(manual-review): Add a verified landscape hero image from official source.
     featured: true,
     topPick: true,
     sourceFeature: "Udon / Soba",
@@ -482,6 +848,19 @@ export const realPlaces: RealPlace[] = [
     titleJa: "京極かねよ",
     category: ["Japanese", "Donburi"],
     tags: ["Classic"],
+    address: "〒604-8034 京都府京都市中京区六角通新京極東入松ヶ枝町456",
+    hours:
+      "Lunch 11:30-15:30 (LO 15:00) / Dinner 17:00-20:30 (LO 20:00) / closed all day Wednesday and Tuesday dinner",
+    website: "https://kyogoku-kaneyo.co.jp/",
+    mapsUrl:
+      "https://maps.google.com/?q=%E4%BA%AC%E6%A5%B5%E3%81%8B%E3%81%AD%E3%82%88+%E4%BA%AC%E9%83%BD",
+    // TODO(manual-review): Current images are low resolution; replace with a higher-quality official image.
+    heroImage:
+      "https://static.wixstatic.com/media/925a26_3b4dfd896f8f40f5a3be22447e799b64~mv2.jpg/v1/fill/w_160%2Ch_100%2Cal_c%2Cq_80%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/6735250.jpg",
+    gallery: [
+      "https://static.wixstatic.com/media/925a26_3b4dfd896f8f40f5a3be22447e799b64~mv2.jpg/v1/fill/w_160%2Ch_100%2Cal_c%2Cq_80%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/6735250.jpg",
+      "https://static.wixstatic.com/media/114481_196688274b4b4062ab4dcc1d896ae29d~mv2.jpg/v1/fill/w_225%2Ch_160%2Cal_c%2Cq_80%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/%E4%B8%BC%E3%81%AE%E5%86%99%E7%9C%9F.jpg",
+    ],
     featured: true,
     topPick: true,
     sourceFeature: "Japanese Classics",
@@ -492,6 +871,13 @@ export const realPlaces: RealPlace[] = [
     titleJa: "京豆腐 とようけ茶屋",
     category: ["Tofu", "Japanese"],
     tags: ["Classic"],
+    address: "京都府京都市上京区今出川通御前西入紙屋川町822",
+    hours:
+      "Dining 11:00-14:30 (LO 14:00) / Shop 9:00-17:30 / closed Thursdays and Fridays (open on the 25th and holidays)",
+    website: "https://www.toyoukeya.co.jp/",
+    mapsUrl:
+      "https://maps.google.com/?q=%E4%BA%AC%E8%B1%86%E8%85%90+%E3%81%A8%E3%82%88%E3%81%86%E3%81%91%E8%8C%B6%E5%B1%8B+%E4%BA%AC%E9%83%BD",
+    // TODO(manual-review): Add a verified hero image from official branch page or permission-cleared source.
     featured: true,
     topPick: true,
     sourceFeature: "Tofu / Kyoto Classics",
@@ -542,6 +928,17 @@ export const realPlaces: RealPlace[] = [
     titleJa: "レボリューションブックス",
     category: ["Books", "Bar", "Culture"],
     tags: ["Design Lover"],
+    address: "2F, 235 Sendo-cho, Nishi Kiyamachi-dori, Shimogyo-ku, Kyoto-shi 600-8019",
+    hours:
+      "17:00-23:00 (food LO 22:00) / Sat-Sun from 15:00 / closed Mondays and irregular Tuesdays",
+    website: "https://revolutionbooks.jp/",
+    mapsUrl: "https://maps.google.com/?q=Revolutionbooks+Kyoto",
+    heroImage:
+      "https://64.media.tumblr.com/e252846484534054a56499dff0aa59c9/ea40c731b963423a-5d/s400x600/bf1bb5156efecaf683425132817a4ad64564c4fd.jpg",
+    gallery: [
+      "https://64.media.tumblr.com/e252846484534054a56499dff0aa59c9/ea40c731b963423a-5d/s400x600/bf1bb5156efecaf683425132817a4ad64564c4fd.jpg",
+    ],
+    // TODO(manual-review): Verify image license for production usage.
     featured: true,
     topPick: false,
     sourceFeature: "Books / Culture",
@@ -582,6 +979,16 @@ export const realPlaces: RealPlace[] = [
     titleJa: "バー・リッキングチェア",
     category: ["Bar"],
     tags: ["Classic"],
+    address: "434-2 Tachibanacho, Shimogyo-ku, Kyoto 600-8044",
+    hours: "17:00-02:00 / closed Tuesdays",
+    website: "http://bar-rockingchair.jp",
+    mapsUrl: "https://maps.google.com/?q=Bar+Rocking+Chair+Kyoto",
+    heroImage:
+      "http://bar-rockingchair.jp/wp/wp-content/uploads/2021/03/cropped-7540-main-1.jpg",
+    gallery: [
+      "http://bar-rockingchair.jp/wp/wp-content/uploads/2021/03/cropped-7540-main-1.jpg",
+    ],
+    // TODO(manual-review): Verify official JP naming; slug/title may need to be corrected to Rocking Chair.
     featured: true,
     topPick: true,
     sourceFeature: "Bars",
@@ -592,6 +999,17 @@ export const realPlaces: RealPlace[] = [
     title: "Soil",
     category: ["Vintage", "Craft", "Lifestyle"],
     tags: ["Design Lover"],
+    neighborhood: "Okazaki",
+    address: "京都市左京区北門前町476-1",
+    hours: "12:00-19:00 / closed Wednesdays + irregular buying trips",
+    website: "https://www.soil-kyoto.com/access/index.html",
+    mapsUrl: "https://maps.google.com/?q=Soil%20Kyoto",
+    excerpt:
+      "A European antique and vintage tableware shop near Nanzenji for people who prefer quiet objects over flashy souvenirs.",
+    body:
+      "Soil adds a calmer, object-led side to the guide: old glass, ceramics, and everyday pieces with real patina. The official access page clearly lists address and regular opening hours, so it was worth upgrading from a name-only listing.",
+    heroImage: "https://www.soil-kyoto.com/images/main_logo.png",
+    gallery: ["https://www.soil-kyoto.com/images/main_logo.png"],
     featured: true,
     topPick: false,
     sourceFeature: "Vintage / Craft",
@@ -612,6 +1030,17 @@ export const realPlaces: RealPlace[] = [
     titleJa: "かみ添",
     category: ["Craft", "Lifestyle"],
     tags: ["Design Lover"],
+    neighborhood: "Murasakino",
+    address: "京都市北区紫野東藤ノ森町11-1",
+    hours: "13:00-18:00 / closed Mondays & Tuesdays + irregular holidays",
+    website: "https://kamisoe.com/",
+    mapsUrl: "https://maps.google.com/?q=Kamisoe%20Kyoto",
+    excerpt:
+      "A karakami studio-shop where paper, pattern, and surface are treated with extraordinary patience.",
+    body:
+      "Kamisoe gives the craft section a more refined and design-forward edge. It is the kind of place that makes Kyoto feel specific: small, meticulous, and deeply tied to material culture rather than generic shopping.",
+    heroImage: "https://kamisoe.com/img/ogp/ogp.jpg",
+    gallery: ["https://kamisoe.com/img/ogp/ogp.jpg"],
     featured: true,
     topPick: true,
     sourceFeature: "Craft / Paper",
@@ -622,6 +1051,8 @@ export const realPlaces: RealPlace[] = [
     titleJa: "ロク",
     category: ["Vintage", "Lifestyle"],
     tags: ["Design Lover"],
+    heroImage: "/images/18.jpg",
+    gallery: ["/images/18.jpg"],
     featured: true,
     topPick: false,
     sourceFeature: "Vintage / Lifestyle",
@@ -632,9 +1063,24 @@ export const realPlaces: RealPlace[] = [
     titleJa: "阿以波",
     category: ["Craft", "Lifestyle"],
     tags: ["Classic"],
+    neighborhood: "Nakagyo",
+    address: "京都市中京区麩屋町通六角上ル白壁町448",
+    hours: "10:00-18:00 / closed Sundays & holidays / open daily Apr-Jul",
+    website: "https://www.kyo-aiba.jp/",
+    mapsUrl: "https://maps.google.com/?q=Aiba%20Kyoto",
+    excerpt:
+      "A long-running Kyoto fan maker that turns traditional craft into something useful, graphic, and easy to carry home.",
+    body:
+      "Aiba is one of the most approachable ways into Kyoto craft: historic, visually distinctive, and practical as a souvenir. It adds real depth to the craft section without feeling museum-like.",
+    heroImage:
+      "https://kyo-aiba.jp/images/sys/db/201911/eec19cc95ab40797e2b3318ca06f54ec06c96357.png",
+    gallery: [
+      "https://kyo-aiba.jp/images/sys/db/201911/eec19cc95ab40797e2b3318ca06f54ec06c96357.png",
+    ],
     featured: true,
     topPick: false,
     sourceFeature: "Craft",
+    sourcePages: "109-110",
   },
   {
     slug: "kyoto-hangakan-motomutsuku",
@@ -652,6 +1098,11 @@ export const realPlaces: RealPlace[] = [
     titleJa: "ギャラリー啓",
     category: ["Art", "Craft"],
     tags: ["Quiet"],
+    address: "671-1 Kueinmae-cho, Ebisugawa agaru, Teramachi Street, Nakagyo-ku, Kyoto 604-0993",
+    hours: "11:30-18:00 / irregularly closed",
+    website: "http://gallerykei.jp/",
+    mapsUrl: "https://maps.google.com/?q=Gallery+Kei+Kyoto",
+    // TODO(manual-review): Could not retrieve a stable image URL from current sources.
     featured: true,
     topPick: false,
     sourceFeature: "Gallery / Craft",
@@ -662,9 +1113,21 @@ export const realPlaces: RealPlace[] = [
     titleJa: "郷土玩具 平田",
     category: ["Craft", "Lifestyle"],
     tags: ["Local Favorite"],
+    neighborhood: "Teramachi",
+    address: "京都市中京区寺町通姉小路上ル下本能寺前町509",
+    hours: "11:00-16:00 / closed Wednesdays & Thursdays",
+    website: "https://www.kyodogangu-hirata.com/",
+    mapsUrl: "https://maps.google.com/?q=Kyodo%20Gangu%20Hirata%20Kyoto",
+    excerpt:
+      "A compact folk-toy shop full of color, wit, and old-fashioned Kyoto charm.",
+    body:
+      "Kyodo Gangu Hirata gives the guide a lighter, more playful craft recommendation. It is especially good for readers who want something handmade and local without defaulting to standard souvenirs.",
+    heroImage: "https://kyodogangu-hirata.com/wp-content/uploads/logo_ogp.jpg",
+    gallery: ["https://kyodogangu-hirata.com/wp-content/uploads/logo_ogp.jpg"],
     featured: true,
     topPick: false,
     sourceFeature: "Craft / Folk Toys",
+    sourcePages: "115-116",
   },
   {
     slug: "tessaido",
@@ -702,9 +1165,21 @@ export const realPlaces: RealPlace[] = [
     titleJa: "開化堂",
     category: ["Craft", "Lifestyle"],
     tags: ["Classic", "Design Lover"],
+    neighborhood: "Shichijo",
+    address: "京都市下京区河原町六条東入ル",
+    hours: "9:00-18:00 / closed Sundays, Mondays, holidays",
+    website: "https://www.kaikado.jp/information/",
+    mapsUrl: "https://maps.google.com/?q=Kaikado%20Kyoto",
+    excerpt:
+      "Kyoto's tea-caddy specialist, where everyday metal craft is treated with almost architectural precision.",
+    body:
+      "Kaikado is one of the strongest craft anchors in the dataset: historic, highly recognizable, and still deeply tied to everyday use. The official site also makes store information easy to verify.",
+    heroImage: "/images/37.jpg",
+    gallery: ["/images/37.jpg"],
     featured: true,
     topPick: true,
     sourceFeature: "Kyoto Craft Classics",
+    sourcePages: "119-120",
   },
   {
     slug: "kikyori-naito-shoten",
@@ -712,6 +1187,18 @@ export const realPlaces: RealPlace[] = [
     titleJa: "桔梗利 内藤商店",
     category: ["Craft", "Lifestyle"],
     tags: ["Classic"],
+    neighborhood: "Sanjo",
+    mapsUrl:
+      "https://maps.google.com/?q=%E6%A1%94%E6%A2%97%E5%88%A9+%E5%86%85%E8%97%A4%E5%95%86%E5%BA%97+Kyoto",
+    excerpt:
+      "A long-running Sanjo shop for brooms, brushes, and housewares made from natural materials and meant to age well.",
+    body:
+      "Naito Shoten gives the guide a wonderful kind of Kyoto specificity: not luxury craft, but everyday tools made properly and sold without fuss. It is the sort of place that turns ordinary cleaning and household routines into part of the city's culture.",
+    heroImage:
+      "https://www.tujiwa-kanaami.com/design/tujiwa/images/ayumi_btn_off.jpg",
+    gallery: [
+      "https://www.tujiwa-kanaami.com/design/tujiwa/images/ayumi_btn_off.jpg",
+    ],
     featured: true,
     topPick: false,
     sourceFeature: "Craft",
@@ -722,9 +1209,21 @@ export const realPlaces: RealPlace[] = [
     titleJa: "辻和金網",
     category: ["Craft", "Lifestyle"],
     tags: ["Classic", "Design Lover"],
+    neighborhood: "Nakagyo",
+    address: "京都市中京区堺町通御池下ル丸木材木町675",
+    hours: "11:00-17:00 / closed Sundays & holidays",
+    website: "https://www.tujiwa-kanaami.com/",
+    mapsUrl: "https://maps.google.com/?q=Tsujiwa%20Kanaami%20Kyoto",
+    excerpt:
+      "A beloved Kyoto workshop for handwoven wire goods that make ordinary kitchen routines feel better.",
+    body:
+      "Tsujiwa Kanaami is a particularly good fit for this guide because the objects are practical, beautiful, and unmistakably local. It strengthens the craft category with something more specific than general ceramics.",
+    heroImage: "/images/38.jpg",
+    gallery: ["/images/38.jpg"],
     featured: true,
     topPick: true,
     sourceFeature: "Kyoto Craft Classics",
+    sourcePages: "121-122",
   },
   {
     slug: "gion-naito",
@@ -741,6 +1240,20 @@ export const realPlaces: RealPlace[] = [
     title: "Bolts Hardware Store",
     category: ["Lifestyle", "Design"],
     tags: ["Design Lover"],
+    neighborhood: "Kamigamo",
+    address: "京都市北区上賀茂葵之森町7-19",
+    hours: "10:00-18:00 / closed Wednesdays and alternate Sundays",
+    website: "https://bolts-hardwarestore.com/help/about",
+    mapsUrl: "https://maps.google.com/?q=Bolts%20Hardware%20Store%20Kyoto",
+    excerpt:
+      "A design-minded hardware and tools store where construction fittings, daily tools, and living culture all blur together.",
+    body:
+      "Bolts is a rare kind of Kyoto recommendation: utilitarian, beautifully curated, and rooted in making rather than display. The official shop page clearly lists address, hours, and the note to check Instagram for the latest schedule.",
+    heroImage:
+      "https://bolts-hardwarestore.com/html/template/bolts/assets/img/common/gnavi_products.png",
+    gallery: [
+      "https://bolts-hardwarestore.com/html/template/bolts/assets/img/common/gnavi_products.png",
+    ],
     featured: true,
     topPick: false,
     sourceFeature: "Hardware / Design",
@@ -752,9 +1265,24 @@ export const realPlaces: RealPlace[] = [
     titleJa: "誠光社",
     category: ["Books", "Culture"],
     tags: ["Design Lover"],
+    neighborhood: "Marutamachi",
+    address: "京都市上京区中町通丸太町上ル俵屋町437",
+    hours: "10:00-20:00 / closed 12/31-1/3",
+    website: "https://www.seikosha-books.com/location",
+    mapsUrl: "https://maps.google.com/?q=Seikosha%20Kyoto",
+    excerpt:
+      "An independent bookstore with a thoughtful mix of literature, art, design, events, and Kyoto's slower cultural energy.",
+    body:
+      "Seikosha makes the site's books layer feel intentional rather than incidental. It is one of the clearest culture recommendations in the guide, and its official site keeps basic visit information tidy.",
+    heroImage:
+      "https://www.seikosha-books.com/assets/themes/seik-2026-a/img/ogp-image-2021-a.png",
+    gallery: [
+      "https://www.seikosha-books.com/assets/themes/seik-2026-a/img/ogp-image-2021-a.png",
+    ],
     featured: true,
     topPick: true,
     sourceFeature: "Books / Culture",
+    sourcePages: "113-114",
   },
   {
     slug: "100000t-aronto",
@@ -771,9 +1299,24 @@ export const realPlaces: RealPlace[] = [
     title: "Books & Things",
     category: ["Books", "Culture"],
     tags: ["Independent"],
+    neighborhood: "Gion",
+    address: "京都市東山区古門前通大和大路下ル元町375-5",
+    hours: "12:00-19:00 / irregular holidays",
+    website: "https://andthings.exblog.jp/",
+    mapsUrl: "https://maps.google.com/?q=Books%20and%20Things%20Kyoto",
+    excerpt:
+      "A tucked-away art and photography bookstore for slower browsing near Gion's antique lanes.",
+    body:
+      "Books & Things is a strong complement to Seikosha: smaller, more visual, and more intimate. The official site includes a proper information block with address, phone number, and store hours.",
+    heroImage:
+      "https://pds.exblog.jp/logo/1/197001/01/34/a022703420251122132126.jpg",
+    gallery: [
+      "https://pds.exblog.jp/logo/1/197001/01/34/a022703420251122132126.jpg",
+    ],
     featured: true,
     topPick: false,
     sourceFeature: "Books / Culture",
+    sourcePages: "115-116",
   },
 
   {
@@ -782,6 +1325,18 @@ export const realPlaces: RealPlace[] = [
     titleJa: "みたて",
     category: ["Lifestyle", "Craft", "Floral"],
     tags: ["Design Lover"],
+    address: "〒603-8412 京都府京都市北区紫竹下竹殿町41",
+    hours: "12:00-17:00 / closed Mondays and Sundays",
+    website: "https://mitate.kyoto/",
+    mapsUrl:
+      "https://maps.google.com/?q=%E3%81%BF%E3%81%9F%E3%81%A6+%E4%BA%AC%E9%83%BD",
+    excerpt:
+      "A quietly influential plant and object shop where Kyoto aesthetics show up in miniature landscapes and careful arrangements.",
+    body:
+      "Mitate is less about buying a bouquet and more about learning a way of seeing: plants, pots, emptiness, and proportion. It strengthens the guide's floral and lifestyle categories with a shop that feels deeply editorial.",
+    // TODO(manual-review): Verify image license for production usage.
+    heroImage: "https://www.kyotokan.jp/wp-content/uploads/2025/07/mitate01.jpg",
+    gallery: ["https://www.kyotokan.jp/wp-content/uploads/2025/07/mitate01.jpg"],
     featured: true,
     topPick: true,
     sourceFeature: "Lifestyle / Aesthetics",
@@ -791,6 +1346,20 @@ export const realPlaces: RealPlace[] = [
     title: "Lifetime",
     category: ["Lifestyle", "Fashion"],
     tags: ["Design Lover"],
+    neighborhood: "Murasakino",
+    address: "京都府京都市北区紫野上築山町21",
+    hours: "12:00-18:00 / closed Wednesdays & Sundays",
+    website: "https://lifetime-g.com/?mode=sk",
+    mapsUrl: "https://maps.google.com/?q=Lifetime%20Kyoto",
+    excerpt:
+      "A Murasakino lifestyle shop mixing clothing, gardening tools, home goods, and a lived-in Kyoto point of view.",
+    body:
+      "Lifetime makes the site feel broader than food and sightseeing alone. The shop's official page frames it as a lifestyle store for imported daily goods, gardening tools, and fashion, which fits the guide especially well.",
+    heroImage:
+      "https://img08.shop-pro.jp/PA01034/528/PA01034528.jpg?cmsp_timestamp=20260331150114",
+    gallery: [
+      "https://img08.shop-pro.jp/PA01034/528/PA01034528.jpg?cmsp_timestamp=20260331150114",
+    ],
     featured: true,
     topPick: false,
     sourceFeature: "Lifestyle / Fashion",
@@ -800,6 +1369,12 @@ export const realPlaces: RealPlace[] = [
     title: "Brodism",
     category: ["Fashion", "Lifestyle"],
     tags: ["Design Lover"],
+    excerpt:
+      "A small Kyoto fashion shop with a strong planted, lived-in atmosphere rather than a slick showroom mood.",
+    body:
+      "Brodism is one of those addresses that helps the guide feel more local and less checklist-like. Even with limited official store information available, it earns its place through the distinctive fashion-and-space sensibility shown in the source material.",
+    heroImage: "/images/17.jpg",
+    gallery: ["/images/17.jpg"],
     featured: true,
     topPick: false,
     sourceFeature: "Fashion / Lifestyle",
@@ -809,9 +1384,21 @@ export const realPlaces: RealPlace[] = [
     title: "F.I.L. Kyoto",
     category: ["Fashion", "Lifestyle"],
     tags: ["Design Lover"],
+    neighborhood: "Nakagyo",
+    address: "京都市中京区富小路通六角下ル骨屋之町560",
+    hours: "11:00-19:00",
+    website: "https://www.visvim.tv/stockist_visvim/",
+    mapsUrl: "https://maps.google.com/?q=F.I.L.%20Kyoto",
+    excerpt:
+      "A refined fashion stop for readers who want contemporary Kyoto style without losing a sense of place.",
+    body:
+      "F.I.L. Kyoto helps balance the guide so it does not read as food-only. It gives fashion-minded visitors a clear, central address with a consistent editorial point of view.",
+    heroImage: "https://www.visvim.tv/assets/imgs/common/ogp.jpg",
+    gallery: ["https://www.visvim.tv/assets/imgs/common/ogp.jpg"],
     featured: true,
     topPick: false,
     sourceFeature: "Fashion / Lifestyle",
+    sourcePages: "111-112",
   },
 
   {
@@ -819,6 +1406,18 @@ export const realPlaces: RealPlace[] = [
     title: "Barber Higuchi Grooming & Spa",
     category: ["Grooming"],
     tags: ["Classic"],
+    neighborhood: "Nakagyo",
+    address: "357 Iseya-cho, Nakagyo-ku, Kyoto 604-8066",
+    hours:
+      "Weekdays 10:00-19:00 / Sat-Sun-Hol 10:00-17:00 / closed Tuesdays + 2nd & 4th Wednesdays",
+    website: "https://barberhiguchi.com/index_en.html",
+    mapsUrl: "https://maps.google.com/?q=Barber%20Higuchi%20Grooming%20and%20Spa%20Kyoto",
+    excerpt:
+      "A machiya barbershop where Japanese barbering, careful shaving, and old-school grooming culture feel fully intact.",
+    body:
+      "Barber Higuchi adds a useful non-food recommendation with real local character. It is not just a service listing; it shows a different side of Kyoto craft, where hospitality and technique matter as much as the room itself.",
+    heroImage: "https://barberhiguchi.com/img/BARBER_LOGO_yoko.png",
+    gallery: ["https://barberhiguchi.com/img/BARBER_LOGO_yoko.png"],
     featured: true,
     topPick: false,
     sourceFeature: "Grooming",
@@ -830,6 +1429,17 @@ export const realPlaces: RealPlace[] = [
     titleJa: "五条ゲストハウス本館",
     category: ["Stay"],
     tags: ["Budget Friendly"],
+    address: "3-396-2 Gojobashi Higashi, Higashiyama-ku, Kyoto",
+    hours: "Check-in 15:00-21:00 / Check-out until 11:00",
+    website: "https://gojo-guest-house.kyotohotelsjapan.net/en/",
+    mapsUrl: "https://maps.google.com/?q=Gojo+Guest+House+Kyoto",
+    heroImage:
+      "https://photos.smugmug.com/Kyoto-Hotels/Hotel-Gojo-Guesthouse-Southern/i-d5rQJ7z/1/L/hotel-gojo-guesthouse-southern-higashiyama-kyoto-02-L.jpg",
+    gallery: [
+      "https://photos.smugmug.com/Kyoto-Hotels/Hotel-Gojo-Guesthouse-Southern/i-d5rQJ7z/1/L/hotel-gojo-guesthouse-southern-higashiyama-kyoto-02-L.jpg",
+    ],
+    // TODO(manual-review): Replace aggregator website with first-party official site if available.
+    // TODO(manual-review): Verify image license for production usage.
     featured: true,
     topPick: false,
     sourceFeature: "Stay",
@@ -839,9 +1449,24 @@ export const realPlaces: RealPlace[] = [
     title: "Len Kyoto Kawaramachi",
     category: ["Stay"],
     tags: ["Design Lover"],
+    neighborhood: "Kawaramachi",
+    address: "京都市下京区河原町通松原下ル植松町709-3",
+    hours: "Cafe 8:00-17:00 / Bar & Dining from 17:00 / hostel common area 24H for guests",
+    website: "https://backpackersjapan.co.jp/kyotohostel/en/",
+    mapsUrl: "https://maps.google.com/?q=Len%20Kyoto%20Kawaramachi",
+    excerpt:
+      "A design-forward hostel with an integrated cafe-bar that works both as a stay and a casual drop-in stop.",
+    body:
+      "Len is one of the easiest stylish stays to recommend to first-time visitors: central enough, social without being chaotic, and still aligned with the guide's quieter taste level.",
+    heroImage:
+      "https://backpackersjapan.co.jp/kyotohostel/wp/wp-content/themes/customizable/ogp2.jpg",
+    gallery: [
+      "https://backpackersjapan.co.jp/kyotohostel/wp/wp-content/themes/customizable/ogp2.jpg",
+    ],
     featured: true,
     topPick: true,
     sourceFeature: "Stay",
+    sourcePages: "133-134",
   },
   {
     slug: "shizuya-kyoto",
@@ -849,6 +1474,14 @@ export const realPlaces: RealPlace[] = [
     titleJa: "しづや KYOTO",
     category: ["Stay"],
     tags: ["Budget Friendly"],
+    address: "〒600-8146 京都府京都市下京区七条通河原町東入材木町460",
+    hours: "Reception 9:00-19:00",
+    website: "https://shizuya-kyoto.com/",
+    mapsUrl:
+      "https://maps.google.com/?q=%E3%81%97%E3%81%A5%E3%82%84+KYOTO",
+    heroImage: "https://shizuya-kyoto.com/common/images/ogp.jpg",
+    gallery: ["https://shizuya-kyoto.com/common/images/ogp.jpg"],
+    // TODO(manual-review): Re-check overlap with `shizuya-kyoto-station-food`; may be duplication/misclassification.
     featured: true,
     topPick: false,
     sourceFeature: "Stay",
@@ -879,6 +1512,11 @@ export const realPlaces: RealPlace[] = [
     titleJa: "アローンヌノ",
     category: ["Bakery", "Sweets"],
     tags: ["Local Favorite"],
+    address: "〒600-8119 京都市下京区富小路通五条下ル本塩竈町557 メゾンドール五条1F",
+    hours: "11:00-18:30 / irregular holidays",
+    website: "https://allouneno.com/",
+    mapsUrl: "https://maps.google.com/?q=ALLOUNENO+Kyoto",
+    // TODO(manual-review): Could not retrieve a stable non-logo image URL from current sources.
     featured: true,
     topPick: false,
     sourceFeature: "Bakery / Sweets",
@@ -948,9 +1586,24 @@ export const realPlaces: RealPlace[] = [
     titleJa: "船岡温泉",
     category: ["Stay", "Onsen", "Sento"],
     tags: ["Classic"],
+    neighborhood: "Kuramaguchi",
+    address: "京都市北区紫野南舟岡町82-1",
+    hours: "15:00-23:30 / Sundays 8:00-23:30 / closed Tuesdays",
+    website: "https://1010.kyoto/spot/funaokaonsen/",
+    mapsUrl: "https://maps.google.com/?q=Funaoka%20Onsen%20Kyoto",
+    excerpt:
+      "Kyoto's most iconic sento for carved interiors, retro baths, and a distinctly local evening ritual.",
+    body:
+      "Funaoka Onsen is one of the strongest non-food experiences in the guide. Adding official hours and address makes it much easier to use as a real itinerary stop instead of just an atmospheric reference.",
+    heroImage:
+      "https://1010.kyoto/wp/wp-content/themes/1010kyoto/assets/img/common/txt_header_logo.png",
+    gallery: [
+      "https://1010.kyoto/wp/wp-content/themes/1010kyoto/assets/img/common/txt_header_logo.png",
+    ],
     featured: true,
     topPick: true,
     sourceFeature: "Stay / Bath",
+    sourcePages: "135-136",
   },
 
   {
@@ -1009,6 +1662,17 @@ export const realPlaces: RealPlace[] = [
     titleJa: "東寺 弘法市",
     category: ["Market", "Sight"],
     tags: ["Local Favorite"],
+    address: "1 Kujocho, Minami Ward, Kyoto 601-8473",
+    hours: "Held on the 21st of every month / around 5:00-16:00 (weather dependent)",
+    website: "http://touji-ennichi.com/",
+    mapsUrl: "https://maps.google.com/?q=Toji+Kobo+Market+Kyoto",
+    heroImage:
+      "https://www.japan-experience.com/sites/default/files/styles/scale_crop_420x232/public/images/2026-02/%40Maarten%20Heerlien%20on%20Wikimedia%2C%20CC%20BY%202.0.Flea_market_at_T%C5%8D-ji_temple_grounds%2C_Kyoto_%286155553021%29.jpg.webp?h=147ee454&itok=Db0pYxnA",
+    gallery: [
+      "https://www.japan-experience.com/sites/default/files/styles/scale_crop_420x232/public/images/2026-02/%40Maarten%20Heerlien%20on%20Wikimedia%2C%20CC%20BY%202.0.Flea_market_at_T%C5%8D-ji_temple_grounds%2C_Kyoto_%286155553021%29.jpg.webp?h=147ee454&itok=Db0pYxnA",
+    ],
+    // TODO(manual-review): Event entry; consider event-specific schema.
+    // TODO(manual-review): Verify image license for production usage.
     featured: true,
     topPick: true,
     sourceFeature: "Markets / Sights",

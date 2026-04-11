@@ -25,21 +25,17 @@ export function SmartImage({
   sizes,
   priority = false,
 }: SmartImageProps) {
+  const resolvedSrc = src?.trim() ?? "";
+  const hasImageSource = resolvedSrc.length > 0;
   const [failed, setFailed] = useState(false);
+  const shouldRenderImage = hasImageSource && !failed;
+  const fallbackText = fallbackLabel?.trim() || "Image unavailable";
 
   return (
-    <div className={cn("relative overflow-hidden", className)}>
-      {failed ? (
-        <div className="absolute inset-0 img-placeholder">
-          {fallbackLabel && (
-            <span className="label-xs text-muted-foreground/50 text-center px-4">
-              {fallbackLabel}
-            </span>
-          )}
-        </div>
-      ) : (
+    <div className={cn("img-placeholder relative overflow-hidden", className)}>
+      {shouldRenderImage && (
         <Image
-          src={src}
+          src={resolvedSrc}
           alt={alt}
           fill={fill}
           sizes={sizes}
@@ -47,6 +43,14 @@ export function SmartImage({
           className={imgClassName}
           onError={() => setFailed(true)}
         />
+      )}
+
+      {!shouldRenderImage && (
+        <div className="absolute inset-0 flex items-center justify-center px-4 text-center">
+          <span className="label-xs rounded-sm border border-border/70 bg-background/60 px-3 py-1.5 text-muted-foreground/70 backdrop-blur-[1px]">
+            {fallbackText}
+          </span>
+        </div>
       )}
     </div>
   );

@@ -2,22 +2,21 @@ import type { Place } from "@/types/place";
 import { realPlaces } from "@/data/real-places";
 import { PLACE_CATEGORIES, PLACE_TAGS } from "@/data/place-taxonomy";
 import { placeGalleryImage, placeHeroImage } from "@/data/image-assets";
+import { getPlaceDisplayTier } from "@/lib/place-display-tier";
+import {
+  normalizeNeighborhoodValue,
+  getCanonicalNeighborhoodName,
+} from "@/data/neighborhood-mapping";
+import {
+  canonicalNeighborhoodByPlaceSlug,
+  resolvePlaceCanonicalNeighborhood,
+} from "@/data/place-neighborhood-normalization";
 
 const DEFAULT_NEIGHBORHOOD = "kyoto";
 const DEFAULT_EXCERPT =
   "A curated Kyoto listing from the current guide.";
 const DEFAULT_BODY =
   "This entry collects the practical notes and editorial context for the place.";
-
-function normalizeNeighborhood(input: string): string {
-  return input
-    .trim()
-    .toLowerCase()
-    .replace(/['’]/g, "")
-    .replace(/&/g, " and ")
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "");
-}
 
 const CATEGORY_WHITELIST = new Set<string>(PLACE_CATEGORIES);
 const TAG_WHITELIST = new Set<string>(PLACE_TAGS);
@@ -101,13 +100,30 @@ function unique<T>(values: T[]): T[] {
   return Array.from(new Set(values));
 }
 
+function normalizeStringList(values?: string[]): string[] | undefined {
+  if (!values || values.length === 0) return undefined;
+  const normalized = values.map((value) => value.trim()).filter(Boolean);
+  return normalized.length > 0 ? unique(normalized) : undefined;
+}
+
+function normalizeCoordinate(value?: number): number | undefined {
+  if (typeof value !== "number" || !Number.isFinite(value)) return undefined;
+  return value;
+}
+
 export const places: Place[] = realPlaces.map((item, index) => {
   const category = mapCategories(item.category);
   const slug = normalizeSlug(item.slug || item.title || "");
   const resolvedSlug =
     slug.length > 0 ? slug : normalizeSlug(item.title) || "place";
   const title = item.title?.trim() || slugToTitle(resolvedSlug);
-  const neighborhood = item.neighborhood?.trim() || DEFAULT_NEIGHBORHOOD;
+  const rawNeighborhood = item.neighborhood?.trim();
+  const canonicalNeighborhoodSlug =
+    canonicalNeighborhoodByPlaceSlug.get(item.slug) ??
+    resolvePlaceCanonicalNeighborhood(item).canonicalNeighborhoodSlug;
+  const neighborhood = normalizeNeighborhoodValue(
+    rawNeighborhood || DEFAULT_NEIGHBORHOOD,
+  );
 
   const tags = mapTags(item.tags ?? [], item.topPick, category);
 
@@ -118,11 +134,32 @@ export const places: Place[] = realPlaces.map((item, index) => {
     titleEn: item.titleEn,
     category,
     neighborhood,
+    rawNeighborhood,
+    canonicalNeighborhoodSlug,
+    lat: normalizeCoordinate(item.lat),
+    lng: normalizeCoordinate(item.lng),
     address: item.address,
     hours: item.hours,
+    price: item.price,
+    priceBand: item.priceBand?.trim() || undefined,
+    reservation: item.reservation?.trim() || undefined,
+    warning: item.warning?.trim() || undefined,
     website: item.website,
     mapsUrl: item.mapsUrl,
     tags,
+    curatorNote: item.curatorNote?.trim() || undefined,
+    visitTime: item.visitTime?.trim() || undefined,
+    stayLength: item.stayLength?.trim() || undefined,
+    canonicalNeighborhood:
+      item.canonicalNeighborhood?.trim() ||
+      getCanonicalNeighborhoodName(canonicalNeighborhoodSlug),
+    subarea: item.subarea?.trim() || undefined,
+    bestFor: normalizeStringList(item.bestFor),
+    mood: normalizeStringList(item.mood),
+    pairWith:
+      normalizeStringList(item.pairWith)?.map((relatedSlug) =>
+        normalizeSlug(relatedSlug),
+      ).filter(Boolean) || undefined,
     excerpt: item.excerpt?.trim() || DEFAULT_EXCERPT,
     body: item.body?.trim() || DEFAULT_BODY,
     heroImage: item.heroImage || placeHeroImage(index),
@@ -136,11 +173,15 @@ export const places: Place[] = realPlaces.map((item, index) => {
     topPick: item.topPick,
     sourceFeature: item.sourceFeature,
     sourcePages: item.sourcePages,
+    displayTier: getPlaceDisplayTier({
+      slug: resolvedSlug,
+      topPick: item.topPick,
+    }),
   };
 });
 
 for (const place of places) {
-  place.neighborhood = normalizeNeighborhood(
+  place.neighborhood = normalizeNeighborhoodValue(
     place.neighborhood || DEFAULT_NEIGHBORHOOD,
   );
 }

@@ -1,0 +1,457 @@
+{
+  "generatedAt": "2026-04-04T08:48:45.985Z",
+  "totalPlaces": 105,
+  "mappedPlaces": 21,
+  "missingPlaces": 75,
+  "ambiguousPlaces": 9,
+  "byCanonicalNeighborhood": {
+    "karasuma-and-downtown": {
+      "name": "Karasuma & Downtown",
+      "count": 7
+    },
+    "gion-and-higashiyama": {
+      "name": "Gion & Higashiyama",
+      "count": 4
+    },
+    "kamo-river-and-demachiyanagi": {
+      "name": "Kamo River & Demachiyanagi",
+      "count": 3
+    },
+    "okazaki-and-marutamachi": {
+      "name": "Okazaki & Marutamachi",
+      "count": 2
+    },
+    "nishijin-and-north-kyoto": {
+      "name": "Nishijin & North Kyoto",
+      "count": 4
+    },
+    "kyoto-station-and-south": {
+      "name": "Kyoto Station & South",
+      "count": 1
+    }
+  },
+  "placesMissingCanonicalMapping": [
+    {
+      "slug": "hitsuji-kyoto",
+      "title": "ひつじ",
+      "rawNeighborhood": null
+    },
+    {
+      "slug": "amuca-kyoto",
+      "title": "Amuca",
+      "rawNeighborhood": null
+    },
+    {
+      "slug": "nao-coffee",
+      "title": "直珈琲",
+      "rawNeighborhood": null
+    },
+    {
+      "slug": "meditations-kyoto",
+      "title": "Meditations",
+      "rawNeighborhood": null
+    },
+    {
+      "slug": "coffee-nijo-goya",
+      "title": "珈琲 二条小屋",
+      "rawNeighborhood": null
+    },
+    {
+      "slug": "knot-cafe",
+      "title": "knot café",
+      "rawNeighborhood": null
+    },
+    {
+      "slug": "cafe-amazon-kyoto",
+      "title": "喫茶アマゾン",
+      "rawNeighborhood": null
+    },
+    {
+      "slug": "nakagawa-komugiten",
+      "title": "ナカガワ小麦店",
+      "rawNeighborhood": null
+    },
+    {
+      "slug": "le-petitmec-omake",
+      "title": "ル・プチメック OMAKE",
+      "rawNeighborhood": null
+    },
+    {
+      "slug": "yaoiso-shijo-omiya",
+      "title": "ヤオイソ 四条大宮店",
+      "rawNeighborhood": null
+    },
+    {
+      "slug": "germe-kyoto",
+      "title": "ジェルメ",
+      "rawNeighborhood": null
+    },
+    {
+      "slug": "maruki-seipanjo",
+      "title": "まるき製パン所",
+      "rawNeighborhood": null
+    },
+    {
+      "slug": "kiridoshi-shinshindo",
+      "title": "切通し進々堂",
+      "rawNeighborhood": null
+    },
+    {
+      "slug": "sakai-kyoto",
+      "title": "さか井",
+      "rawNeighborhood": null
+    },
+    {
+      "slug": "izuju",
+      "title": "いづ重",
+      "rawNeighborhood": null
+    },
+    {
+      "slug": "aoi-kyoto",
+      "title": "あおい",
+      "rawNeighborhood": null
+    },
+    {
+      "slug": "deai-jaya-osen",
+      "title": "出逢ひ茶屋 おせん",
+      "rawNeighborhood": null
+    },
+    {
+      "slug": "hanano-kyoto",
+      "title": "花の",
+      "rawNeighborhood": null
+    },
+    {
+      "slug": "gion-kawakami",
+      "title": "祇園 川上",
+      "rawNeighborhood": null
+    },
+    {
+      "slug": "tsuzuki-kyoto",
+      "title": "つづき",
+      "rawNeighborhood": null
+    },
+    {
+      "slug": "pontocho-misogigawa",
+      "title": "先斗町 禊川",
+      "rawNeighborhood": null
+    },
+    {
+      "slug": "taiho-kyoto",
+      "title": "大鵬",
+      "rawNeighborhood": null
+    },
+    {
+      "slug": "spice-chamber",
+      "title": "スパイスチャンバー",
+      "rawNeighborhood": null
+    },
+    {
+      "slug": "le-quatorzieme",
+      "title": "ル キャトーズィエム",
+      "rawNeighborhood": null
+    },
+    {
+      "slug": "beer-pub-takumiya",
+      "title": "BEER PUB TAKUMIYA",
+      "rawNeighborhood": null
+    },
+    {
+      "slug": "ki-kyoto",
+      "title": "汽",
+      "rawNeighborhood": null
+    },
+    {
+      "slug": "mister-gyoza",
+      "title": "ミスター・ギョーザ",
+      "rawNeighborhood": null
+    },
+    {
+      "slug": "sukiyaki-kimura",
+      "title": "すき焼 キムラ",
+      "rawNeighborhood": null
+    },
+    {
+      "slug": "moritaya-kiyamachi",
+      "title": "モリタ屋 木屋町店",
+      "rawNeighborhood": null
+    },
+    {
+      "slug": "aje-matsubara",
+      "title": "アジェ 松原本店",
+      "rawNeighborhood": null
+    },
+    {
+      "slug": "fujimura-kyoto",
+      "title": "藤むら",
+      "rawNeighborhood": null
+    },
+    {
+      "slug": "gion-negiyaki-kana-higashi",
+      "title": "祇園ねぎ焼 かな 東店",
+      "rawNeighborhood": null
+    },
+    {
+      "slug": "oyaji-kyoto",
+      "title": "おやじ",
+      "rawNeighborhood": null
+    },
+    {
+      "slug": "okabashi",
+      "title": "京うどん 生蕎麦 岡北",
+      "rawNeighborhood": null
+    },
+    {
+      "slug": "kyogoku-kaneyo",
+      "title": "京極かねよ",
+      "rawNeighborhood": null
+    },
+    {
+      "slug": "kyotofu-toyouke-jaya",
+      "title": "京豆腐 とようけ茶屋",
+      "rawNeighborhood": null
+    },
+    {
+      "slug": "toriyasu-kyoto",
+      "title": "とり安",
+      "rawNeighborhood": null
+    },
+    {
+      "slug": "gontaro-main-store",
+      "title": "権太呂 本店",
+      "rawNeighborhood": null
+    },
+    {
+      "slug": "kaian-kawamichiya",
+      "title": "晦庵 河道屋",
+      "rawNeighborhood": null
+    },
+    {
+      "slug": "sumi-kyoto",
+      "title": "SUMI",
+      "rawNeighborhood": null
+    },
+    {
+      "slug": "revolution-books-kyoto",
+      "title": "レボリューションブックス",
+      "rawNeighborhood": null
+    },
+    {
+      "slug": "sakaba-ikura-mokuzai",
+      "title": "酒場 井倉木材",
+      "rawNeighborhood": null
+    },
+    {
+      "slug": "masuya-saketen",
+      "title": "益や酒店",
+      "rawNeighborhood": null
+    },
+    {
+      "slug": "yanagikoji-taka",
+      "title": "柳小路 TAKA",
+      "rawNeighborhood": null
+    },
+    {
+      "slug": "bar-licking-chair",
+      "title": "バー・リッキングチェア",
+      "rawNeighborhood": null
+    },
+    {
+      "slug": "furui-dogu",
+      "title": "古い道具",
+      "rawNeighborhood": null
+    },
+    {
+      "slug": "roku-kyoto",
+      "title": "ロク",
+      "rawNeighborhood": null
+    },
+    {
+      "slug": "kyoto-hangakan-motomutsuku",
+      "title": "京都版画館 元むつ九",
+      "rawNeighborhood": null
+    },
+    {
+      "slug": "gallery-kei",
+      "title": "ギャラリー啓",
+      "rawNeighborhood": null
+    },
+    {
+      "slug": "tessaido",
+      "title": "てっさい堂",
+      "rawNeighborhood": null
+    },
+    {
+      "slug": "kintakedo",
+      "title": "金竹堂",
+      "rawNeighborhood": null
+    },
+    {
+      "slug": "daikichi-kyoto",
+      "title": "大吉",
+      "rawNeighborhood": null
+    },
+    {
+      "slug": "gion-naito",
+      "title": "祇園ない藤",
+      "rawNeighborhood": null
+    },
+    {
+      "slug": "100000t-aronto",
+      "title": "100000tアローント",
+      "rawNeighborhood": null
+    },
+    {
+      "slug": "mitate-kyoto",
+      "title": "みたて",
+      "rawNeighborhood": null
+    },
+    {
+      "slug": "brodism-kyoto",
+      "title": "Brodism",
+      "rawNeighborhood": null
+    },
+    {
+      "slug": "gojo-guesthouse-honkan",
+      "title": "五条ゲストハウス本館",
+      "rawNeighborhood": null
+    },
+    {
+      "slug": "shizuya-kyoto",
+      "title": "しづや KYOTO",
+      "rawNeighborhood": null
+    },
+    {
+      "slug": "shizuya-kyoto-station-food",
+      "title": "しづや KYOTO（駅弁・フード）",
+      "rawNeighborhood": null
+    },
+    {
+      "slug": "takagi-coffee-karasuma",
+      "title": "高木珈琲 烏丸店",
+      "rawNeighborhood": null
+    },
+    {
+      "slug": "allouneno",
+      "title": "アローンヌノ",
+      "rawNeighborhood": null
+    },
+    {
+      "slug": "slo-kyoto",
+      "title": "SLO Kyoto",
+      "rawNeighborhood": null
+    },
+    {
+      "slug": "hatsuda-kyoto-station-food",
+      "title": "はつだ 京都駅弁",
+      "rawNeighborhood": null
+    },
+    {
+      "slug": "ogawa-udon",
+      "title": "おがわうどん",
+      "rawNeighborhood": null
+    },
+    {
+      "slug": "hinode-udon",
+      "title": "日の出うどん",
+      "rawNeighborhood": null
+    },
+    {
+      "slug": "wabiya-korekidou-station-food",
+      "title": "侘家古暦堂 京都駅店",
+      "rawNeighborhood": null
+    },
+    {
+      "slug": "hakushokuya-kyoto-station-food",
+      "title": "白峯屋 京都駅",
+      "rawNeighborhood": null
+    },
+    {
+      "slug": "kiyomizudera",
+      "title": "清水寺",
+      "rawNeighborhood": null
+    },
+    {
+      "slug": "nishiki-market",
+      "title": "錦市場",
+      "rawNeighborhood": null
+    },
+    {
+      "slug": "rokkakudo",
+      "title": "六角堂",
+      "rawNeighborhood": null
+    },
+    {
+      "slug": "sanjusangendo",
+      "title": "蓮華王院 三十三間堂",
+      "rawNeighborhood": null
+    },
+    {
+      "slug": "shoseien",
+      "title": "渉成園",
+      "rawNeighborhood": null
+    },
+    {
+      "slug": "toji-koboichi",
+      "title": "東寺 弘法市",
+      "rawNeighborhood": null
+    },
+    {
+      "slug": "kawai-kanjiro-memorial-museum",
+      "title": "河井寛次郎記念館",
+      "rawNeighborhood": null
+    },
+    {
+      "slug": "senoku-hakukokan",
+      "title": "泉屋博古館",
+      "rawNeighborhood": null
+    }
+  ],
+  "ambiguousCasesRequiringManualReview": [
+    {
+      "slug": "rokuyosha-basement",
+      "title": "六曜社 地下店",
+      "rawNeighborhood": "Kawaramachi"
+    },
+    {
+      "slug": "kissa-soiree",
+      "title": "喫茶ソワレ",
+      "rawNeighborhood": "Kawaramachi"
+    },
+    {
+      "slug": "francois-kissaten",
+      "title": "フランソア喫茶室",
+      "rawNeighborhood": "Kawaramachi"
+    },
+    {
+      "slug": "aiha",
+      "title": "阿以波",
+      "rawNeighborhood": "Nakagyo"
+    },
+    {
+      "slug": "kikyori-naito-shoten",
+      "title": "桔梗利 内藤商店",
+      "rawNeighborhood": "Sanjo"
+    },
+    {
+      "slug": "tsujiwa-kanaami",
+      "title": "辻和金網",
+      "rawNeighborhood": "Nakagyo"
+    },
+    {
+      "slug": "fil-kyoto",
+      "title": "F.I.L. Kyoto",
+      "rawNeighborhood": "Nakagyo"
+    },
+    {
+      "slug": "barber-higuchi",
+      "title": "Barber Higuchi Grooming & Spa",
+      "rawNeighborhood": "Nakagyo"
+    },
+    {
+      "slug": "len-kyoto-kawaramachi",
+      "title": "Len Kyoto Kawaramachi",
+      "rawNeighborhood": "Kawaramachi"
+    }
+  ]
+}

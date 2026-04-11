@@ -5,5 +5,7 @@ export interface Feature {
   intro: string
   coverImage: string
   body?: string
+  kind?: "route" | "collection" | "essay"
+  tags?: string[]
   placeSlugs: string[]
 }

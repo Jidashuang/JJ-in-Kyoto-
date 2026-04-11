@@ -1,0 +1,5558 @@
+{
+  "generatedAt": "2026-04-04T06:29:40.574Z",
+  "source": {
+    "placesFile": "src/data/real-places.ts",
+    "totalPlaces": 105
+  },
+  "statusCounts": {
+    "needs_manual_review": 33,
+    "usable_but_needs_image": 6,
+    "ready_to_publish": 11,
+    "hold_back_for_now": 55
+  },
+  "structuralSummary": {
+    "missingCoreFieldCounts": {
+      "address": 56,
+      "hours": 57,
+      "website": 58,
+      "mapsUrl": 51
+    },
+    "neighborhoodQualityCounts": {
+      "ambiguous": 9,
+      "missing": 75,
+      "mapped": 21
+    },
+    "heroQualityCounts": {
+      "ok": 30,
+      "needs_review": 14,
+      "missing": 53,
+      "broken_local_path": 8
+    },
+    "curatorContentCounts": {
+      "good": 35,
+      "thin": 70
+    },
+    "manualTodoCount": 22,
+    "batchStatusCounts": {
+      "legacy_or_untracked:needs_manual_review": 10,
+      "batch2:needs_manual_review": 8,
+      "legacy_or_untracked:usable_but_needs_image": 6,
+      "legacy_or_untracked:ready_to_publish": 11,
+      "legacy_or_untracked:hold_back_for_now": 55,
+      "batch3:needs_manual_review": 15
+    }
+  },
+  "records": [
+    {
+      "slug": "rokuyosha-basement",
+      "title": "六曜社 地下店",
+      "batchOrigin": "legacy_or_untracked",
+      "status": "needs_manual_review",
+      "checks": {
+        "slugTitle": {
+          "level": "uncertain",
+          "notes": [
+            "non_latin_title_auto_check_uncertain"
+          ]
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "ambiguous",
+          "normalized": "kawaramachi",
+          "notes": [
+            "ambiguous raw neighborhood; cannot auto-resolve canonical slug"
+          ]
+        },
+        "coreCompleteness": {
+          "present": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "missing": [],
+          "score": "4/4"
+        },
+        "heroImage": {
+          "level": "ok",
+          "notes": []
+        },
+        "curatorContent": {
+          "level": "good",
+          "excerptLength": 98,
+          "bodyLength": 281,
+          "notes": []
+        }
+      },
+      "todoFlags": [],
+      "uncertain": [
+        "slug_title_non_latin_auto_check_limited",
+        "canonical_neighborhood_ambiguous"
+      ]
+    },
+    {
+      "slug": "hitsuji-kyoto",
+      "title": "ひつじ",
+      "batchOrigin": "batch2",
+      "status": "needs_manual_review",
+      "checks": {
+        "slugTitle": {
+          "level": "uncertain",
+          "notes": [
+            "non_latin_title_auto_check_uncertain"
+          ]
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "missing",
+          "notes": [
+            "raw neighborhood missing"
+          ]
+        },
+        "coreCompleteness": {
+          "present": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "missing": [],
+          "score": "4/4"
+        },
+        "heroImage": {
+          "level": "ok",
+          "notes": []
+        },
+        "curatorContent": {
+          "level": "good",
+          "excerptLength": 117,
+          "bodyLength": 202,
+          "notes": []
+        }
+      },
+      "todoFlags": [
+        {
+          "type": "manual-review",
+          "note": "Confirm this listing and Gion Hitsuji Cafe are the same shop."
+        }
+      ],
+      "uncertain": [
+        "slug_title_non_latin_auto_check_limited"
+      ]
+    },
+    {
+      "slug": "amuca-kyoto",
+      "title": "Amuca",
+      "batchOrigin": "legacy_or_untracked",
+      "status": "needs_manual_review",
+      "checks": {
+        "slugTitle": {
+          "level": "ok",
+          "notes": []
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "missing",
+          "notes": [
+            "raw neighborhood missing"
+          ]
+        },
+        "coreCompleteness": {
+          "present": [
+            "website",
+            "mapsUrl"
+          ],
+          "missing": [
+            "address",
+            "hours"
+          ],
+          "score": "2/4"
+        },
+        "heroImage": {
+          "level": "needs_review",
+          "notes": [
+            "heroImage appears to be ephemeral social CDN URL",
+            "heroImage URL hints low resolution"
+          ]
+        },
+        "curatorContent": {
+          "level": "good",
+          "excerptLength": 103,
+          "bodyLength": 213,
+          "notes": []
+        }
+      },
+      "todoFlags": [],
+      "uncertain": [
+        "hero_image_source_or_quality_uncertain"
+      ]
+    },
+    {
+      "slug": "ippodo-kyoto-main-store",
+      "title": "一保堂茶舗 京都本店",
+      "batchOrigin": "legacy_or_untracked",
+      "status": "usable_but_needs_image",
+      "checks": {
+        "slugTitle": {
+          "level": "uncertain",
+          "notes": [
+            "non_latin_title_auto_check_uncertain"
+          ]
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "mapped",
+          "normalized": "teramachi",
+          "canonicalSlug": "karasuma-and-downtown",
+          "notes": []
+        },
+        "coreCompleteness": {
+          "present": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "missing": [],
+          "score": "4/4"
+        },
+        "heroImage": {
+          "level": "needs_review",
+          "notes": [
+            "heroImage uses http (not https)"
+          ]
+        },
+        "curatorContent": {
+          "level": "good",
+          "excerptLength": 96,
+          "bodyLength": 211,
+          "notes": []
+        }
+      },
+      "todoFlags": [],
+      "uncertain": [
+        "slug_title_non_latin_auto_check_limited",
+        "hero_image_source_or_quality_uncertain"
+      ]
+    },
+    {
+      "slug": "d-and-department-kyoto",
+      "title": "D&DEPARTMENT KYOTO",
+      "batchOrigin": "legacy_or_untracked",
+      "status": "ready_to_publish",
+      "checks": {
+        "slugTitle": {
+          "level": "ok",
+          "notes": []
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "mapped",
+          "normalized": "karasuma",
+          "canonicalSlug": "karasuma-and-downtown",
+          "notes": []
+        },
+        "coreCompleteness": {
+          "present": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "missing": [],
+          "score": "4/4"
+        },
+        "heroImage": {
+          "level": "ok",
+          "notes": []
+        },
+        "curatorContent": {
+          "level": "good",
+          "excerptLength": 106,
+          "bodyLength": 247,
+          "notes": []
+        }
+      },
+      "todoFlags": [],
+      "uncertain": []
+    },
+    {
+      "slug": "kotoka-kyoto",
+      "title": "古都香",
+      "batchOrigin": "legacy_or_untracked",
+      "status": "usable_but_needs_image",
+      "checks": {
+        "slugTitle": {
+          "level": "uncertain",
+          "notes": [
+            "non_latin_title_auto_check_uncertain"
+          ]
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "mapped",
+          "normalized": "demachiyanagi",
+          "canonicalSlug": "kamo-river-and-demachiyanagi",
+          "notes": []
+        },
+        "coreCompleteness": {
+          "present": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "missing": [],
+          "score": "4/4"
+        },
+        "heroImage": {
+          "level": "needs_review",
+          "notes": [
+            "heroImage uses http (not https)"
+          ]
+        },
+        "curatorContent": {
+          "level": "good",
+          "excerptLength": 102,
+          "bodyLength": 223,
+          "notes": []
+        }
+      },
+      "todoFlags": [],
+      "uncertain": [
+        "slug_title_non_latin_auto_check_limited",
+        "hero_image_source_or_quality_uncertain"
+      ]
+    },
+    {
+      "slug": "wife-and-husband",
+      "title": "WIFE&HUSBAND",
+      "batchOrigin": "legacy_or_untracked",
+      "status": "ready_to_publish",
+      "checks": {
+        "slugTitle": {
+          "level": "ok",
+          "notes": []
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "mapped",
+          "normalized": "demachiyanagi",
+          "canonicalSlug": "kamo-river-and-demachiyanagi",
+          "notes": []
+        },
+        "coreCompleteness": {
+          "present": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "missing": [],
+          "score": "4/4"
+        },
+        "heroImage": {
+          "level": "ok",
+          "notes": []
+        },
+        "curatorContent": {
+          "level": "good",
+          "excerptLength": 102,
+          "bodyLength": 267,
+          "notes": []
+        }
+      },
+      "todoFlags": [],
+      "uncertain": []
+    },
+    {
+      "slug": "nao-coffee",
+      "title": "直珈琲",
+      "batchOrigin": "legacy_or_untracked",
+      "status": "hold_back_for_now",
+      "checks": {
+        "slugTitle": {
+          "level": "uncertain",
+          "notes": [
+            "non_latin_title_auto_check_uncertain"
+          ]
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "missing",
+          "notes": [
+            "raw neighborhood missing"
+          ]
+        },
+        "coreCompleteness": {
+          "present": [],
+          "missing": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "score": "0/4"
+        },
+        "heroImage": {
+          "level": "missing",
+          "notes": [
+            "heroImage missing"
+          ]
+        },
+        "curatorContent": {
+          "level": "thin",
+          "excerptLength": 0,
+          "bodyLength": 0,
+          "notes": [
+            "excerpt missing",
+            "body missing"
+          ]
+        }
+      },
+      "todoFlags": [],
+      "uncertain": [
+        "slug_title_non_latin_auto_check_limited"
+      ]
+    },
+    {
+      "slug": "meditations-kyoto",
+      "title": "Meditations",
+      "batchOrigin": "batch3",
+      "status": "needs_manual_review",
+      "checks": {
+        "slugTitle": {
+          "level": "ok",
+          "notes": []
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "missing",
+          "notes": [
+            "raw neighborhood missing"
+          ]
+        },
+        "coreCompleteness": {
+          "present": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "missing": [],
+          "score": "4/4"
+        },
+        "heroImage": {
+          "level": "ok",
+          "notes": []
+        },
+        "curatorContent": {
+          "level": "thin",
+          "excerptLength": 0,
+          "bodyLength": 0,
+          "notes": [
+            "excerpt missing",
+            "body missing"
+          ]
+        }
+      },
+      "todoFlags": [
+        {
+          "type": "manual-review",
+          "note": "Verify image license for production usage."
+        }
+      ],
+      "uncertain": [
+        "source_or_license_needs_verification"
+      ]
+    },
+    {
+      "slug": "coffee-nijo-goya",
+      "title": "珈琲 二条小屋",
+      "batchOrigin": "legacy_or_untracked",
+      "status": "hold_back_for_now",
+      "checks": {
+        "slugTitle": {
+          "level": "uncertain",
+          "notes": [
+            "non_latin_title_auto_check_uncertain"
+          ]
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "missing",
+          "notes": [
+            "raw neighborhood missing"
+          ]
+        },
+        "coreCompleteness": {
+          "present": [],
+          "missing": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "score": "0/4"
+        },
+        "heroImage": {
+          "level": "broken_local_path",
+          "notes": [
+            "local hero path not found: /images/19.jpg"
+          ]
+        },
+        "curatorContent": {
+          "level": "thin",
+          "excerptLength": 0,
+          "bodyLength": 0,
+          "notes": [
+            "excerpt missing",
+            "body missing"
+          ]
+        }
+      },
+      "todoFlags": [],
+      "uncertain": [
+        "slug_title_non_latin_auto_check_limited"
+      ]
+    },
+    {
+      "slug": "smart-coffee",
+      "title": "スマート珈琲店",
+      "batchOrigin": "legacy_or_untracked",
+      "status": "ready_to_publish",
+      "checks": {
+        "slugTitle": {
+          "level": "uncertain",
+          "notes": [
+            "non_latin_title_auto_check_uncertain"
+          ]
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "mapped",
+          "normalized": "teramachi",
+          "canonicalSlug": "karasuma-and-downtown",
+          "notes": []
+        },
+        "coreCompleteness": {
+          "present": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "missing": [],
+          "score": "4/4"
+        },
+        "heroImage": {
+          "level": "ok",
+          "notes": []
+        },
+        "curatorContent": {
+          "level": "good",
+          "excerptLength": 109,
+          "bodyLength": 217,
+          "notes": []
+        }
+      },
+      "todoFlags": [],
+      "uncertain": [
+        "slug_title_non_latin_auto_check_limited"
+      ]
+    },
+    {
+      "slug": "inoda-coffee-main-store",
+      "title": "イノダコーヒ 本店",
+      "batchOrigin": "legacy_or_untracked",
+      "status": "usable_but_needs_image",
+      "checks": {
+        "slugTitle": {
+          "level": "uncertain",
+          "notes": [
+            "non_latin_title_auto_check_uncertain"
+          ]
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "mapped",
+          "normalized": "sakaimachi",
+          "canonicalSlug": "karasuma-and-downtown",
+          "notes": []
+        },
+        "coreCompleteness": {
+          "present": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "missing": [],
+          "score": "4/4"
+        },
+        "heroImage": {
+          "level": "needs_review",
+          "notes": [
+            "heroImage URL hints low resolution"
+          ]
+        },
+        "curatorContent": {
+          "level": "good",
+          "excerptLength": 97,
+          "bodyLength": 194,
+          "notes": []
+        }
+      },
+      "todoFlags": [],
+      "uncertain": [
+        "slug_title_non_latin_auto_check_limited",
+        "hero_image_source_or_quality_uncertain"
+      ]
+    },
+    {
+      "slug": "kissa-soiree",
+      "title": "喫茶ソワレ",
+      "batchOrigin": "legacy_or_untracked",
+      "status": "needs_manual_review",
+      "checks": {
+        "slugTitle": {
+          "level": "uncertain",
+          "notes": [
+            "non_latin_title_auto_check_uncertain"
+          ]
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "ambiguous",
+          "normalized": "kawaramachi",
+          "notes": [
+            "ambiguous raw neighborhood; cannot auto-resolve canonical slug"
+          ]
+        },
+        "coreCompleteness": {
+          "present": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "missing": [],
+          "score": "4/4"
+        },
+        "heroImage": {
+          "level": "ok",
+          "notes": []
+        },
+        "curatorContent": {
+          "level": "good",
+          "excerptLength": 98,
+          "bodyLength": 187,
+          "notes": []
+        }
+      },
+      "todoFlags": [],
+      "uncertain": [
+        "slug_title_non_latin_auto_check_limited",
+        "canonical_neighborhood_ambiguous"
+      ]
+    },
+    {
+      "slug": "francois-kissaten",
+      "title": "フランソア喫茶室",
+      "batchOrigin": "legacy_or_untracked",
+      "status": "needs_manual_review",
+      "checks": {
+        "slugTitle": {
+          "level": "uncertain",
+          "notes": [
+            "non_latin_title_auto_check_uncertain"
+          ]
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "ambiguous",
+          "normalized": "kawaramachi",
+          "notes": [
+            "ambiguous raw neighborhood; cannot auto-resolve canonical slug"
+          ]
+        },
+        "coreCompleteness": {
+          "present": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "missing": [],
+          "score": "4/4"
+        },
+        "heroImage": {
+          "level": "ok",
+          "notes": []
+        },
+        "curatorContent": {
+          "level": "good",
+          "excerptLength": 105,
+          "bodyLength": 201,
+          "notes": []
+        }
+      },
+      "todoFlags": [],
+      "uncertain": [
+        "slug_title_non_latin_auto_check_limited",
+        "canonical_neighborhood_ambiguous"
+      ]
+    },
+    {
+      "slug": "knot-cafe",
+      "title": "knot café",
+      "batchOrigin": "batch2",
+      "status": "needs_manual_review",
+      "checks": {
+        "slugTitle": {
+          "level": "ok",
+          "notes": []
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "missing",
+          "notes": [
+            "raw neighborhood missing"
+          ]
+        },
+        "coreCompleteness": {
+          "present": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "missing": [],
+          "score": "4/4"
+        },
+        "heroImage": {
+          "level": "ok",
+          "notes": []
+        },
+        "curatorContent": {
+          "level": "good",
+          "excerptLength": 123,
+          "bodyLength": 206,
+          "notes": []
+        }
+      },
+      "todoFlags": [
+        {
+          "type": "manual-review",
+          "note": "Replace with permission-cleared hero if licensing is required."
+        }
+      ],
+      "uncertain": []
+    },
+    {
+      "slug": "ichikawaya-coffee",
+      "title": "市川屋珈琲",
+      "batchOrigin": "legacy_or_untracked",
+      "status": "ready_to_publish",
+      "checks": {
+        "slugTitle": {
+          "level": "uncertain",
+          "notes": [
+            "non_latin_title_auto_check_uncertain"
+          ]
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "mapped",
+          "normalized": "higashiyama",
+          "canonicalSlug": "gion-and-higashiyama",
+          "notes": []
+        },
+        "coreCompleteness": {
+          "present": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "missing": [],
+          "score": "4/4"
+        },
+        "heroImage": {
+          "level": "ok",
+          "notes": []
+        },
+        "curatorContent": {
+          "level": "good",
+          "excerptLength": 123,
+          "bodyLength": 229,
+          "notes": []
+        }
+      },
+      "todoFlags": [],
+      "uncertain": [
+        "slug_title_non_latin_auto_check_limited"
+      ]
+    },
+    {
+      "slug": "cafe-amazon-kyoto",
+      "title": "喫茶アマゾン",
+      "batchOrigin": "batch2",
+      "status": "needs_manual_review",
+      "checks": {
+        "slugTitle": {
+          "level": "uncertain",
+          "notes": [
+            "non_latin_title_auto_check_uncertain"
+          ]
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "missing",
+          "notes": [
+            "raw neighborhood missing"
+          ]
+        },
+        "coreCompleteness": {
+          "present": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "missing": [],
+          "score": "4/4"
+        },
+        "heroImage": {
+          "level": "ok",
+          "notes": []
+        },
+        "curatorContent": {
+          "level": "good",
+          "excerptLength": 131,
+          "bodyLength": 226,
+          "notes": []
+        }
+      },
+      "todoFlags": [
+        {
+          "type": "manual-review",
+          "note": "Pick a higher-resolution hero from the official gallery page."
+        }
+      ],
+      "uncertain": [
+        "slug_title_non_latin_auto_check_limited"
+      ]
+    },
+    {
+      "slug": "nakagawa-komugiten",
+      "title": "ナカガワ小麦店",
+      "batchOrigin": "batch3",
+      "status": "needs_manual_review",
+      "checks": {
+        "slugTitle": {
+          "level": "uncertain",
+          "notes": [
+            "non_latin_title_auto_check_uncertain"
+          ]
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "missing",
+          "notes": [
+            "raw neighborhood missing"
+          ]
+        },
+        "coreCompleteness": {
+          "present": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "missing": [],
+          "score": "4/4"
+        },
+        "heroImage": {
+          "level": "ok",
+          "notes": []
+        },
+        "curatorContent": {
+          "level": "thin",
+          "excerptLength": 0,
+          "bodyLength": 0,
+          "notes": [
+            "excerpt missing",
+            "body missing"
+          ]
+        }
+      },
+      "todoFlags": [
+        {
+          "type": "manual-review",
+          "note": "Verify image license for production usage."
+        }
+      ],
+      "uncertain": [
+        "slug_title_non_latin_auto_check_limited",
+        "source_or_license_needs_verification"
+      ]
+    },
+    {
+      "slug": "le-petitmec-omake",
+      "title": "ル・プチメック OMAKE",
+      "batchOrigin": "batch3",
+      "status": "needs_manual_review",
+      "checks": {
+        "slugTitle": {
+          "level": "ok",
+          "notes": []
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "missing",
+          "notes": [
+            "raw neighborhood missing"
+          ]
+        },
+        "coreCompleteness": {
+          "present": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "missing": [],
+          "score": "4/4"
+        },
+        "heroImage": {
+          "level": "ok",
+          "notes": []
+        },
+        "curatorContent": {
+          "level": "thin",
+          "excerptLength": 0,
+          "bodyLength": 0,
+          "notes": [
+            "excerpt missing",
+            "body missing"
+          ]
+        }
+      },
+      "todoFlags": [
+        {
+          "type": "manual-review",
+          "note": "Verify image license for production usage."
+        }
+      ],
+      "uncertain": [
+        "source_or_license_needs_verification"
+      ]
+    },
+    {
+      "slug": "yaoiso-shijo-omiya",
+      "title": "ヤオイソ 四条大宮店",
+      "batchOrigin": "legacy_or_untracked",
+      "status": "hold_back_for_now",
+      "checks": {
+        "slugTitle": {
+          "level": "uncertain",
+          "notes": [
+            "non_latin_title_auto_check_uncertain"
+          ]
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "missing",
+          "notes": [
+            "raw neighborhood missing"
+          ]
+        },
+        "coreCompleteness": {
+          "present": [],
+          "missing": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "score": "0/4"
+        },
+        "heroImage": {
+          "level": "missing",
+          "notes": [
+            "heroImage missing"
+          ]
+        },
+        "curatorContent": {
+          "level": "thin",
+          "excerptLength": 0,
+          "bodyLength": 0,
+          "notes": [
+            "excerpt missing",
+            "body missing"
+          ]
+        }
+      },
+      "todoFlags": [],
+      "uncertain": [
+        "slug_title_non_latin_auto_check_limited"
+      ]
+    },
+    {
+      "slug": "germe-kyoto",
+      "title": "ジェルメ",
+      "batchOrigin": "legacy_or_untracked",
+      "status": "hold_back_for_now",
+      "checks": {
+        "slugTitle": {
+          "level": "uncertain",
+          "notes": [
+            "non_latin_title_auto_check_uncertain"
+          ]
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "missing",
+          "notes": [
+            "raw neighborhood missing"
+          ]
+        },
+        "coreCompleteness": {
+          "present": [],
+          "missing": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "score": "0/4"
+        },
+        "heroImage": {
+          "level": "missing",
+          "notes": [
+            "heroImage missing"
+          ]
+        },
+        "curatorContent": {
+          "level": "thin",
+          "excerptLength": 0,
+          "bodyLength": 0,
+          "notes": [
+            "excerpt missing",
+            "body missing"
+          ]
+        }
+      },
+      "todoFlags": [],
+      "uncertain": [
+        "slug_title_non_latin_auto_check_limited"
+      ]
+    },
+    {
+      "slug": "maruki-seipanjo",
+      "title": "まるき製パン所",
+      "batchOrigin": "batch2",
+      "status": "needs_manual_review",
+      "checks": {
+        "slugTitle": {
+          "level": "uncertain",
+          "notes": [
+            "non_latin_title_auto_check_uncertain"
+          ]
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "missing",
+          "notes": [
+            "raw neighborhood missing"
+          ]
+        },
+        "coreCompleteness": {
+          "present": [
+            "address",
+            "hours",
+            "mapsUrl"
+          ],
+          "missing": [
+            "website"
+          ],
+          "score": "3/4"
+        },
+        "heroImage": {
+          "level": "needs_review",
+          "notes": [
+            "heroImage from third-party/aggregator domain: kyotokan.jp"
+          ]
+        },
+        "curatorContent": {
+          "level": "thin",
+          "excerptLength": 0,
+          "bodyLength": 0,
+          "notes": [
+            "excerpt missing",
+            "body missing"
+          ]
+        }
+      },
+      "todoFlags": [
+        {
+          "type": "manual-review",
+          "note": "Official website not confirmed yet; verify source/license of this hero image."
+        }
+      ],
+      "uncertain": [
+        "slug_title_non_latin_auto_check_limited",
+        "hero_image_source_or_quality_uncertain",
+        "source_or_license_needs_verification"
+      ]
+    },
+    {
+      "slug": "kiridoshi-shinshindo",
+      "title": "切通し進々堂",
+      "batchOrigin": "legacy_or_untracked",
+      "status": "hold_back_for_now",
+      "checks": {
+        "slugTitle": {
+          "level": "uncertain",
+          "notes": [
+            "non_latin_title_auto_check_uncertain"
+          ]
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "missing",
+          "notes": [
+            "raw neighborhood missing"
+          ]
+        },
+        "coreCompleteness": {
+          "present": [],
+          "missing": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "score": "0/4"
+        },
+        "heroImage": {
+          "level": "missing",
+          "notes": [
+            "heroImage missing"
+          ]
+        },
+        "curatorContent": {
+          "level": "thin",
+          "excerptLength": 0,
+          "bodyLength": 0,
+          "notes": [
+            "excerpt missing",
+            "body missing"
+          ]
+        }
+      },
+      "todoFlags": [],
+      "uncertain": [
+        "slug_title_non_latin_auto_check_limited"
+      ]
+    },
+    {
+      "slug": "daigokuden-rokkaku",
+      "title": "大極殿本舗 六角店",
+      "batchOrigin": "legacy_or_untracked",
+      "status": "hold_back_for_now",
+      "checks": {
+        "slugTitle": {
+          "level": "uncertain",
+          "notes": [
+            "non_latin_title_auto_check_uncertain"
+          ]
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "mapped",
+          "normalized": "rokkaku",
+          "canonicalSlug": "karasuma-and-downtown",
+          "notes": []
+        },
+        "coreCompleteness": {
+          "present": [
+            "mapsUrl"
+          ],
+          "missing": [
+            "address",
+            "hours",
+            "website"
+          ],
+          "score": "1/4"
+        },
+        "heroImage": {
+          "level": "broken_local_path",
+          "notes": [
+            "local hero path not found: /images/29.jpg"
+          ]
+        },
+        "curatorContent": {
+          "level": "good",
+          "excerptLength": 102,
+          "bodyLength": 298,
+          "notes": []
+        }
+      },
+      "todoFlags": [],
+      "uncertain": [
+        "slug_title_non_latin_auto_check_limited"
+      ]
+    },
+    {
+      "slug": "sakai-kyoto",
+      "title": "さか井",
+      "batchOrigin": "batch3",
+      "status": "needs_manual_review",
+      "checks": {
+        "slugTitle": {
+          "level": "uncertain",
+          "notes": [
+            "non_latin_title_auto_check_uncertain"
+          ]
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "missing",
+          "notes": [
+            "raw neighborhood missing"
+          ]
+        },
+        "coreCompleteness": {
+          "present": [
+            "address",
+            "hours",
+            "mapsUrl"
+          ],
+          "missing": [
+            "website"
+          ],
+          "score": "3/4"
+        },
+        "heroImage": {
+          "level": "needs_review",
+          "notes": [
+            "heroImage from third-party/aggregator domain: lavietaste.com"
+          ]
+        },
+        "curatorContent": {
+          "level": "thin",
+          "excerptLength": 0,
+          "bodyLength": 0,
+          "notes": [
+            "excerpt missing",
+            "body missing"
+          ]
+        }
+      },
+      "todoFlags": [
+        {
+          "type": "manual-review",
+          "note": "Official website not confirmed yet."
+        },
+        {
+          "type": "manual-review",
+          "note": "Verify image license for production usage."
+        }
+      ],
+      "uncertain": [
+        "slug_title_non_latin_auto_check_limited",
+        "hero_image_source_or_quality_uncertain",
+        "source_or_license_needs_verification"
+      ]
+    },
+    {
+      "slug": "izuju",
+      "title": "いづ重",
+      "batchOrigin": "batch2",
+      "status": "needs_manual_review",
+      "checks": {
+        "slugTitle": {
+          "level": "uncertain",
+          "notes": [
+            "non_latin_title_auto_check_uncertain"
+          ]
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "missing",
+          "notes": [
+            "raw neighborhood missing"
+          ]
+        },
+        "coreCompleteness": {
+          "present": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "missing": [],
+          "score": "4/4"
+        },
+        "heroImage": {
+          "level": "needs_review",
+          "notes": [
+            "heroImage from third-party/aggregator domain: kyotokan.jp"
+          ]
+        },
+        "curatorContent": {
+          "level": "thin",
+          "excerptLength": 0,
+          "bodyLength": 0,
+          "notes": [
+            "excerpt missing",
+            "body missing"
+          ]
+        }
+      },
+      "todoFlags": [
+        {
+          "type": "manual-review",
+          "note": "Replace with permission-cleared hero if licensing is required."
+        }
+      ],
+      "uncertain": [
+        "slug_title_non_latin_auto_check_limited",
+        "hero_image_source_or_quality_uncertain"
+      ]
+    },
+    {
+      "slug": "suehiro-kyoto",
+      "title": "末廣",
+      "batchOrigin": "legacy_or_untracked",
+      "status": "hold_back_for_now",
+      "checks": {
+        "slugTitle": {
+          "level": "uncertain",
+          "notes": [
+            "non_latin_title_auto_check_uncertain"
+          ]
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "mapped",
+          "normalized": "gion",
+          "canonicalSlug": "gion-and-higashiyama",
+          "notes": []
+        },
+        "coreCompleteness": {
+          "present": [
+            "mapsUrl"
+          ],
+          "missing": [
+            "address",
+            "hours",
+            "website"
+          ],
+          "score": "1/4"
+        },
+        "heroImage": {
+          "level": "ok",
+          "notes": []
+        },
+        "curatorContent": {
+          "level": "good",
+          "excerptLength": 115,
+          "bodyLength": 229,
+          "notes": []
+        }
+      },
+      "todoFlags": [],
+      "uncertain": [
+        "slug_title_non_latin_auto_check_limited"
+      ]
+    },
+    {
+      "slug": "okawa-kyoto",
+      "title": "おか和",
+      "batchOrigin": "legacy_or_untracked",
+      "status": "usable_but_needs_image",
+      "checks": {
+        "slugTitle": {
+          "level": "uncertain",
+          "notes": [
+            "non_latin_title_auto_check_uncertain"
+          ]
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "mapped",
+          "normalized": "karasuma-oike",
+          "canonicalSlug": "karasuma-and-downtown",
+          "notes": []
+        },
+        "coreCompleteness": {
+          "present": [
+            "address",
+            "website",
+            "mapsUrl"
+          ],
+          "missing": [
+            "hours"
+          ],
+          "score": "3/4"
+        },
+        "heroImage": {
+          "level": "broken_local_path",
+          "notes": [
+            "local hero path not found: /images/21.jpg"
+          ]
+        },
+        "curatorContent": {
+          "level": "good",
+          "excerptLength": 127,
+          "bodyLength": 273,
+          "notes": []
+        }
+      },
+      "todoFlags": [],
+      "uncertain": [
+        "slug_title_non_latin_auto_check_limited"
+      ]
+    },
+    {
+      "slug": "aoi-kyoto",
+      "title": "あおい",
+      "batchOrigin": "legacy_or_untracked",
+      "status": "hold_back_for_now",
+      "checks": {
+        "slugTitle": {
+          "level": "uncertain",
+          "notes": [
+            "non_latin_title_auto_check_uncertain"
+          ]
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "missing",
+          "notes": [
+            "raw neighborhood missing"
+          ]
+        },
+        "coreCompleteness": {
+          "present": [],
+          "missing": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "score": "0/4"
+        },
+        "heroImage": {
+          "level": "missing",
+          "notes": [
+            "heroImage missing"
+          ]
+        },
+        "curatorContent": {
+          "level": "thin",
+          "excerptLength": 0,
+          "bodyLength": 0,
+          "notes": [
+            "excerpt missing",
+            "body missing"
+          ]
+        }
+      },
+      "todoFlags": [],
+      "uncertain": [
+        "slug_title_non_latin_auto_check_limited"
+      ]
+    },
+    {
+      "slug": "deai-jaya-osen",
+      "title": "出逢ひ茶屋 おせん",
+      "batchOrigin": "legacy_or_untracked",
+      "status": "hold_back_for_now",
+      "checks": {
+        "slugTitle": {
+          "level": "uncertain",
+          "notes": [
+            "non_latin_title_auto_check_uncertain"
+          ]
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "missing",
+          "notes": [
+            "raw neighborhood missing"
+          ]
+        },
+        "coreCompleteness": {
+          "present": [],
+          "missing": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "score": "0/4"
+        },
+        "heroImage": {
+          "level": "missing",
+          "notes": [
+            "heroImage missing"
+          ]
+        },
+        "curatorContent": {
+          "level": "thin",
+          "excerptLength": 0,
+          "bodyLength": 0,
+          "notes": [
+            "excerpt missing",
+            "body missing"
+          ]
+        }
+      },
+      "todoFlags": [],
+      "uncertain": [
+        "slug_title_non_latin_auto_check_limited"
+      ]
+    },
+    {
+      "slug": "hanano-kyoto",
+      "title": "花の",
+      "batchOrigin": "legacy_or_untracked",
+      "status": "hold_back_for_now",
+      "checks": {
+        "slugTitle": {
+          "level": "uncertain",
+          "notes": [
+            "non_latin_title_auto_check_uncertain"
+          ]
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "missing",
+          "notes": [
+            "raw neighborhood missing"
+          ]
+        },
+        "coreCompleteness": {
+          "present": [],
+          "missing": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "score": "0/4"
+        },
+        "heroImage": {
+          "level": "missing",
+          "notes": [
+            "heroImage missing"
+          ]
+        },
+        "curatorContent": {
+          "level": "thin",
+          "excerptLength": 0,
+          "bodyLength": 0,
+          "notes": [
+            "excerpt missing",
+            "body missing"
+          ]
+        }
+      },
+      "todoFlags": [],
+      "uncertain": [
+        "slug_title_non_latin_auto_check_limited"
+      ]
+    },
+    {
+      "slug": "gion-kawakami",
+      "title": "祇園 川上",
+      "batchOrigin": "legacy_or_untracked",
+      "status": "hold_back_for_now",
+      "checks": {
+        "slugTitle": {
+          "level": "uncertain",
+          "notes": [
+            "non_latin_title_auto_check_uncertain"
+          ]
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "missing",
+          "notes": [
+            "raw neighborhood missing"
+          ]
+        },
+        "coreCompleteness": {
+          "present": [],
+          "missing": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "score": "0/4"
+        },
+        "heroImage": {
+          "level": "missing",
+          "notes": [
+            "heroImage missing"
+          ]
+        },
+        "curatorContent": {
+          "level": "thin",
+          "excerptLength": 0,
+          "bodyLength": 0,
+          "notes": [
+            "excerpt missing",
+            "body missing"
+          ]
+        }
+      },
+      "todoFlags": [],
+      "uncertain": [
+        "slug_title_non_latin_auto_check_limited"
+      ]
+    },
+    {
+      "slug": "tsuzuki-kyoto",
+      "title": "つづき",
+      "batchOrigin": "legacy_or_untracked",
+      "status": "hold_back_for_now",
+      "checks": {
+        "slugTitle": {
+          "level": "uncertain",
+          "notes": [
+            "non_latin_title_auto_check_uncertain"
+          ]
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "missing",
+          "notes": [
+            "raw neighborhood missing"
+          ]
+        },
+        "coreCompleteness": {
+          "present": [],
+          "missing": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "score": "0/4"
+        },
+        "heroImage": {
+          "level": "missing",
+          "notes": [
+            "heroImage missing"
+          ]
+        },
+        "curatorContent": {
+          "level": "thin",
+          "excerptLength": 0,
+          "bodyLength": 0,
+          "notes": [
+            "excerpt missing",
+            "body missing"
+          ]
+        }
+      },
+      "todoFlags": [],
+      "uncertain": [
+        "slug_title_non_latin_auto_check_limited"
+      ]
+    },
+    {
+      "slug": "pontocho-misogigawa",
+      "title": "先斗町 禊川",
+      "batchOrigin": "legacy_or_untracked",
+      "status": "hold_back_for_now",
+      "checks": {
+        "slugTitle": {
+          "level": "uncertain",
+          "notes": [
+            "non_latin_title_auto_check_uncertain"
+          ]
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "missing",
+          "notes": [
+            "raw neighborhood missing"
+          ]
+        },
+        "coreCompleteness": {
+          "present": [],
+          "missing": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "score": "0/4"
+        },
+        "heroImage": {
+          "level": "missing",
+          "notes": [
+            "heroImage missing"
+          ]
+        },
+        "curatorContent": {
+          "level": "thin",
+          "excerptLength": 0,
+          "bodyLength": 0,
+          "notes": [
+            "excerpt missing",
+            "body missing"
+          ]
+        }
+      },
+      "todoFlags": [],
+      "uncertain": [
+        "slug_title_non_latin_auto_check_limited"
+      ]
+    },
+    {
+      "slug": "heian-kyoto",
+      "title": "平安",
+      "batchOrigin": "legacy_or_untracked",
+      "status": "hold_back_for_now",
+      "checks": {
+        "slugTitle": {
+          "level": "uncertain",
+          "notes": [
+            "non_latin_title_auto_check_uncertain"
+          ]
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "mapped",
+          "normalized": "gion",
+          "canonicalSlug": "gion-and-higashiyama",
+          "notes": []
+        },
+        "coreCompleteness": {
+          "present": [
+            "mapsUrl"
+          ],
+          "missing": [
+            "address",
+            "hours",
+            "website"
+          ],
+          "score": "1/4"
+        },
+        "heroImage": {
+          "level": "ok",
+          "notes": []
+        },
+        "curatorContent": {
+          "level": "good",
+          "excerptLength": 136,
+          "bodyLength": 214,
+          "notes": []
+        }
+      },
+      "todoFlags": [],
+      "uncertain": [
+        "slug_title_non_latin_auto_check_limited"
+      ]
+    },
+    {
+      "slug": "fuyoen-kyoto",
+      "title": "芙蓉園",
+      "batchOrigin": "legacy_or_untracked",
+      "status": "usable_but_needs_image",
+      "checks": {
+        "slugTitle": {
+          "level": "uncertain",
+          "notes": [
+            "non_latin_title_auto_check_uncertain"
+          ]
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "mapped",
+          "normalized": "imadegawa",
+          "canonicalSlug": "kamo-river-and-demachiyanagi",
+          "notes": []
+        },
+        "coreCompleteness": {
+          "present": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "missing": [],
+          "score": "4/4"
+        },
+        "heroImage": {
+          "level": "broken_local_path",
+          "notes": [
+            "local hero path not found: /images/22.jpg"
+          ]
+        },
+        "curatorContent": {
+          "level": "good",
+          "excerptLength": 119,
+          "bodyLength": 278,
+          "notes": []
+        }
+      },
+      "todoFlags": [],
+      "uncertain": [
+        "slug_title_non_latin_auto_check_limited"
+      ]
+    },
+    {
+      "slug": "taiho-kyoto",
+      "title": "大鵬",
+      "batchOrigin": "batch3",
+      "status": "needs_manual_review",
+      "checks": {
+        "slugTitle": {
+          "level": "uncertain",
+          "notes": [
+            "non_latin_title_auto_check_uncertain"
+          ]
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "missing",
+          "notes": [
+            "raw neighborhood missing"
+          ]
+        },
+        "coreCompleteness": {
+          "present": [
+            "address",
+            "hours",
+            "mapsUrl"
+          ],
+          "missing": [
+            "website"
+          ],
+          "score": "3/4"
+        },
+        "heroImage": {
+          "level": "missing",
+          "notes": [
+            "heroImage missing"
+          ]
+        },
+        "curatorContent": {
+          "level": "thin",
+          "excerptLength": 0,
+          "bodyLength": 0,
+          "notes": [
+            "excerpt missing",
+            "body missing"
+          ]
+        }
+      },
+      "todoFlags": [
+        {
+          "type": "manual-review",
+          "note": "No reliable official website found; verify hours and add hero image."
+        }
+      ],
+      "uncertain": [
+        "slug_title_non_latin_auto_check_limited",
+        "source_or_license_needs_verification"
+      ]
+    },
+    {
+      "slug": "spice-chamber",
+      "title": "スパイスチャンバー",
+      "batchOrigin": "legacy_or_untracked",
+      "status": "hold_back_for_now",
+      "checks": {
+        "slugTitle": {
+          "level": "uncertain",
+          "notes": [
+            "non_latin_title_auto_check_uncertain"
+          ]
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "missing",
+          "notes": [
+            "raw neighborhood missing"
+          ]
+        },
+        "coreCompleteness": {
+          "present": [],
+          "missing": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "score": "0/4"
+        },
+        "heroImage": {
+          "level": "missing",
+          "notes": [
+            "heroImage missing"
+          ]
+        },
+        "curatorContent": {
+          "level": "thin",
+          "excerptLength": 0,
+          "bodyLength": 0,
+          "notes": [
+            "excerpt missing",
+            "body missing"
+          ]
+        }
+      },
+      "todoFlags": [],
+      "uncertain": [
+        "slug_title_non_latin_auto_check_limited"
+      ]
+    },
+    {
+      "slug": "le-quatorzieme",
+      "title": "ル キャトーズィエム",
+      "batchOrigin": "legacy_or_untracked",
+      "status": "hold_back_for_now",
+      "checks": {
+        "slugTitle": {
+          "level": "uncertain",
+          "notes": [
+            "non_latin_title_auto_check_uncertain"
+          ]
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "missing",
+          "notes": [
+            "raw neighborhood missing"
+          ]
+        },
+        "coreCompleteness": {
+          "present": [],
+          "missing": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "score": "0/4"
+        },
+        "heroImage": {
+          "level": "missing",
+          "notes": [
+            "heroImage missing"
+          ]
+        },
+        "curatorContent": {
+          "level": "thin",
+          "excerptLength": 0,
+          "bodyLength": 0,
+          "notes": [
+            "excerpt missing",
+            "body missing"
+          ]
+        }
+      },
+      "todoFlags": [],
+      "uncertain": [
+        "slug_title_non_latin_auto_check_limited"
+      ]
+    },
+    {
+      "slug": "beer-pub-takumiya",
+      "title": "BEER PUB TAKUMIYA",
+      "batchOrigin": "batch3",
+      "status": "needs_manual_review",
+      "checks": {
+        "slugTitle": {
+          "level": "ok",
+          "notes": []
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "missing",
+          "notes": [
+            "raw neighborhood missing"
+          ]
+        },
+        "coreCompleteness": {
+          "present": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "missing": [],
+          "score": "4/4"
+        },
+        "heroImage": {
+          "level": "needs_review",
+          "notes": [
+            "heroImage from third-party/aggregator domain: japanhop.jp"
+          ]
+        },
+        "curatorContent": {
+          "level": "thin",
+          "excerptLength": 0,
+          "bodyLength": 0,
+          "notes": [
+            "excerpt missing",
+            "body missing"
+          ]
+        }
+      },
+      "todoFlags": [
+        {
+          "type": "manual-review",
+          "note": "Weekend closing time differs by source; verify with official Instagram."
+        },
+        {
+          "type": "manual-review",
+          "note": "Verify image license for production usage."
+        }
+      ],
+      "uncertain": [
+        "hero_image_source_or_quality_uncertain",
+        "source_or_license_needs_verification"
+      ]
+    },
+    {
+      "slug": "ki-kyoto",
+      "title": "汽",
+      "batchOrigin": "legacy_or_untracked",
+      "status": "hold_back_for_now",
+      "checks": {
+        "slugTitle": {
+          "level": "uncertain",
+          "notes": [
+            "non_latin_title_auto_check_uncertain"
+          ]
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "missing",
+          "notes": [
+            "raw neighborhood missing"
+          ]
+        },
+        "coreCompleteness": {
+          "present": [],
+          "missing": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "score": "0/4"
+        },
+        "heroImage": {
+          "level": "missing",
+          "notes": [
+            "heroImage missing"
+          ]
+        },
+        "curatorContent": {
+          "level": "thin",
+          "excerptLength": 0,
+          "bodyLength": 0,
+          "notes": [
+            "excerpt missing",
+            "body missing"
+          ]
+        }
+      },
+      "todoFlags": [],
+      "uncertain": [
+        "slug_title_non_latin_auto_check_limited"
+      ]
+    },
+    {
+      "slug": "mister-gyoza",
+      "title": "ミスター・ギョーザ",
+      "batchOrigin": "legacy_or_untracked",
+      "status": "hold_back_for_now",
+      "checks": {
+        "slugTitle": {
+          "level": "uncertain",
+          "notes": [
+            "non_latin_title_auto_check_uncertain"
+          ]
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "missing",
+          "notes": [
+            "raw neighborhood missing"
+          ]
+        },
+        "coreCompleteness": {
+          "present": [],
+          "missing": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "score": "0/4"
+        },
+        "heroImage": {
+          "level": "missing",
+          "notes": [
+            "heroImage missing"
+          ]
+        },
+        "curatorContent": {
+          "level": "thin",
+          "excerptLength": 0,
+          "bodyLength": 0,
+          "notes": [
+            "excerpt missing",
+            "body missing"
+          ]
+        }
+      },
+      "todoFlags": [],
+      "uncertain": [
+        "slug_title_non_latin_auto_check_limited"
+      ]
+    },
+    {
+      "slug": "sukiyaki-kimura",
+      "title": "すき焼 キムラ",
+      "batchOrigin": "legacy_or_untracked",
+      "status": "hold_back_for_now",
+      "checks": {
+        "slugTitle": {
+          "level": "uncertain",
+          "notes": [
+            "non_latin_title_auto_check_uncertain"
+          ]
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "missing",
+          "notes": [
+            "raw neighborhood missing"
+          ]
+        },
+        "coreCompleteness": {
+          "present": [],
+          "missing": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "score": "0/4"
+        },
+        "heroImage": {
+          "level": "missing",
+          "notes": [
+            "heroImage missing"
+          ]
+        },
+        "curatorContent": {
+          "level": "thin",
+          "excerptLength": 0,
+          "bodyLength": 0,
+          "notes": [
+            "excerpt missing",
+            "body missing"
+          ]
+        }
+      },
+      "todoFlags": [],
+      "uncertain": [
+        "slug_title_non_latin_auto_check_limited"
+      ]
+    },
+    {
+      "slug": "moritaya-kiyamachi",
+      "title": "モリタ屋 木屋町店",
+      "batchOrigin": "legacy_or_untracked",
+      "status": "hold_back_for_now",
+      "checks": {
+        "slugTitle": {
+          "level": "uncertain",
+          "notes": [
+            "non_latin_title_auto_check_uncertain"
+          ]
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "missing",
+          "notes": [
+            "raw neighborhood missing"
+          ]
+        },
+        "coreCompleteness": {
+          "present": [],
+          "missing": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "score": "0/4"
+        },
+        "heroImage": {
+          "level": "missing",
+          "notes": [
+            "heroImage missing"
+          ]
+        },
+        "curatorContent": {
+          "level": "thin",
+          "excerptLength": 0,
+          "bodyLength": 0,
+          "notes": [
+            "excerpt missing",
+            "body missing"
+          ]
+        }
+      },
+      "todoFlags": [],
+      "uncertain": [
+        "slug_title_non_latin_auto_check_limited"
+      ]
+    },
+    {
+      "slug": "aje-matsubara",
+      "title": "アジェ 松原本店",
+      "batchOrigin": "batch3",
+      "status": "needs_manual_review",
+      "checks": {
+        "slugTitle": {
+          "level": "uncertain",
+          "notes": [
+            "non_latin_title_auto_check_uncertain"
+          ]
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "missing",
+          "notes": [
+            "raw neighborhood missing"
+          ]
+        },
+        "coreCompleteness": {
+          "present": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "missing": [],
+          "score": "4/4"
+        },
+        "heroImage": {
+          "level": "ok",
+          "notes": []
+        },
+        "curatorContent": {
+          "level": "thin",
+          "excerptLength": 0,
+          "bodyLength": 0,
+          "notes": [
+            "excerpt missing",
+            "body missing"
+          ]
+        }
+      },
+      "todoFlags": [],
+      "uncertain": [
+        "slug_title_non_latin_auto_check_limited"
+      ]
+    },
+    {
+      "slug": "fujimura-kyoto",
+      "title": "藤むら",
+      "batchOrigin": "legacy_or_untracked",
+      "status": "hold_back_for_now",
+      "checks": {
+        "slugTitle": {
+          "level": "uncertain",
+          "notes": [
+            "non_latin_title_auto_check_uncertain"
+          ]
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "missing",
+          "notes": [
+            "raw neighborhood missing"
+          ]
+        },
+        "coreCompleteness": {
+          "present": [],
+          "missing": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "score": "0/4"
+        },
+        "heroImage": {
+          "level": "missing",
+          "notes": [
+            "heroImage missing"
+          ]
+        },
+        "curatorContent": {
+          "level": "thin",
+          "excerptLength": 0,
+          "bodyLength": 0,
+          "notes": [
+            "excerpt missing",
+            "body missing"
+          ]
+        }
+      },
+      "todoFlags": [],
+      "uncertain": [
+        "slug_title_non_latin_auto_check_limited"
+      ]
+    },
+    {
+      "slug": "gion-negiyaki-kana-higashi",
+      "title": "祇園ねぎ焼 かな 東店",
+      "batchOrigin": "legacy_or_untracked",
+      "status": "hold_back_for_now",
+      "checks": {
+        "slugTitle": {
+          "level": "uncertain",
+          "notes": [
+            "non_latin_title_auto_check_uncertain"
+          ]
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "missing",
+          "notes": [
+            "raw neighborhood missing"
+          ]
+        },
+        "coreCompleteness": {
+          "present": [],
+          "missing": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "score": "0/4"
+        },
+        "heroImage": {
+          "level": "missing",
+          "notes": [
+            "heroImage missing"
+          ]
+        },
+        "curatorContent": {
+          "level": "thin",
+          "excerptLength": 0,
+          "bodyLength": 0,
+          "notes": [
+            "excerpt missing",
+            "body missing"
+          ]
+        }
+      },
+      "todoFlags": [],
+      "uncertain": [
+        "slug_title_non_latin_auto_check_limited"
+      ]
+    },
+    {
+      "slug": "oyaji-kyoto",
+      "title": "おやじ",
+      "batchOrigin": "legacy_or_untracked",
+      "status": "hold_back_for_now",
+      "checks": {
+        "slugTitle": {
+          "level": "uncertain",
+          "notes": [
+            "non_latin_title_auto_check_uncertain"
+          ]
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "missing",
+          "notes": [
+            "raw neighborhood missing"
+          ]
+        },
+        "coreCompleteness": {
+          "present": [],
+          "missing": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "score": "0/4"
+        },
+        "heroImage": {
+          "level": "missing",
+          "notes": [
+            "heroImage missing"
+          ]
+        },
+        "curatorContent": {
+          "level": "thin",
+          "excerptLength": 0,
+          "bodyLength": 0,
+          "notes": [
+            "excerpt missing",
+            "body missing"
+          ]
+        }
+      },
+      "todoFlags": [],
+      "uncertain": [
+        "slug_title_non_latin_auto_check_limited"
+      ]
+    },
+    {
+      "slug": "okabashi",
+      "title": "京うどん 生蕎麦 岡北",
+      "batchOrigin": "batch2",
+      "status": "needs_manual_review",
+      "checks": {
+        "slugTitle": {
+          "level": "uncertain",
+          "notes": [
+            "non_latin_title_auto_check_uncertain"
+          ]
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "missing",
+          "notes": [
+            "raw neighborhood missing"
+          ]
+        },
+        "coreCompleteness": {
+          "present": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "missing": [],
+          "score": "4/4"
+        },
+        "heroImage": {
+          "level": "missing",
+          "notes": [
+            "heroImage missing"
+          ]
+        },
+        "curatorContent": {
+          "level": "thin",
+          "excerptLength": 0,
+          "bodyLength": 0,
+          "notes": [
+            "excerpt missing",
+            "body missing"
+          ]
+        }
+      },
+      "todoFlags": [
+        {
+          "type": "manual-review",
+          "note": "Add a verified landscape hero image from official source."
+        }
+      ],
+      "uncertain": [
+        "slug_title_non_latin_auto_check_limited"
+      ]
+    },
+    {
+      "slug": "kyogoku-kaneyo",
+      "title": "京極かねよ",
+      "batchOrigin": "batch2",
+      "status": "needs_manual_review",
+      "checks": {
+        "slugTitle": {
+          "level": "uncertain",
+          "notes": [
+            "non_latin_title_auto_check_uncertain"
+          ]
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "missing",
+          "notes": [
+            "raw neighborhood missing"
+          ]
+        },
+        "coreCompleteness": {
+          "present": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "missing": [],
+          "score": "4/4"
+        },
+        "heroImage": {
+          "level": "needs_review",
+          "notes": [
+            "heroImage URL hints low resolution"
+          ]
+        },
+        "curatorContent": {
+          "level": "thin",
+          "excerptLength": 0,
+          "bodyLength": 0,
+          "notes": [
+            "excerpt missing",
+            "body missing"
+          ]
+        }
+      },
+      "todoFlags": [
+        {
+          "type": "manual-review",
+          "note": "Current images are low resolution; replace with a higher-quality official image."
+        }
+      ],
+      "uncertain": [
+        "slug_title_non_latin_auto_check_limited",
+        "hero_image_source_or_quality_uncertain"
+      ]
+    },
+    {
+      "slug": "kyotofu-toyouke-jaya",
+      "title": "京豆腐 とようけ茶屋",
+      "batchOrigin": "batch2",
+      "status": "needs_manual_review",
+      "checks": {
+        "slugTitle": {
+          "level": "uncertain",
+          "notes": [
+            "non_latin_title_auto_check_uncertain"
+          ]
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "missing",
+          "notes": [
+            "raw neighborhood missing"
+          ]
+        },
+        "coreCompleteness": {
+          "present": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "missing": [],
+          "score": "4/4"
+        },
+        "heroImage": {
+          "level": "missing",
+          "notes": [
+            "heroImage missing"
+          ]
+        },
+        "curatorContent": {
+          "level": "thin",
+          "excerptLength": 0,
+          "bodyLength": 0,
+          "notes": [
+            "excerpt missing",
+            "body missing"
+          ]
+        }
+      },
+      "todoFlags": [
+        {
+          "type": "manual-review",
+          "note": "Add a verified hero image from official branch page or permission-cleared source."
+        }
+      ],
+      "uncertain": [
+        "slug_title_non_latin_auto_check_limited"
+      ]
+    },
+    {
+      "slug": "toriyasu-kyoto",
+      "title": "とり安",
+      "batchOrigin": "legacy_or_untracked",
+      "status": "hold_back_for_now",
+      "checks": {
+        "slugTitle": {
+          "level": "uncertain",
+          "notes": [
+            "non_latin_title_auto_check_uncertain"
+          ]
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "missing",
+          "notes": [
+            "raw neighborhood missing"
+          ]
+        },
+        "coreCompleteness": {
+          "present": [],
+          "missing": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "score": "0/4"
+        },
+        "heroImage": {
+          "level": "missing",
+          "notes": [
+            "heroImage missing"
+          ]
+        },
+        "curatorContent": {
+          "level": "thin",
+          "excerptLength": 0,
+          "bodyLength": 0,
+          "notes": [
+            "excerpt missing",
+            "body missing"
+          ]
+        }
+      },
+      "todoFlags": [],
+      "uncertain": [
+        "slug_title_non_latin_auto_check_limited"
+      ]
+    },
+    {
+      "slug": "gontaro-main-store",
+      "title": "権太呂 本店",
+      "batchOrigin": "legacy_or_untracked",
+      "status": "hold_back_for_now",
+      "checks": {
+        "slugTitle": {
+          "level": "uncertain",
+          "notes": [
+            "non_latin_title_auto_check_uncertain"
+          ]
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "missing",
+          "notes": [
+            "raw neighborhood missing"
+          ]
+        },
+        "coreCompleteness": {
+          "present": [],
+          "missing": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "score": "0/4"
+        },
+        "heroImage": {
+          "level": "missing",
+          "notes": [
+            "heroImage missing"
+          ]
+        },
+        "curatorContent": {
+          "level": "thin",
+          "excerptLength": 0,
+          "bodyLength": 0,
+          "notes": [
+            "excerpt missing",
+            "body missing"
+          ]
+        }
+      },
+      "todoFlags": [],
+      "uncertain": [
+        "slug_title_non_latin_auto_check_limited"
+      ]
+    },
+    {
+      "slug": "kaian-kawamichiya",
+      "title": "晦庵 河道屋",
+      "batchOrigin": "legacy_or_untracked",
+      "status": "hold_back_for_now",
+      "checks": {
+        "slugTitle": {
+          "level": "uncertain",
+          "notes": [
+            "non_latin_title_auto_check_uncertain"
+          ]
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "missing",
+          "notes": [
+            "raw neighborhood missing"
+          ]
+        },
+        "coreCompleteness": {
+          "present": [],
+          "missing": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "score": "0/4"
+        },
+        "heroImage": {
+          "level": "missing",
+          "notes": [
+            "heroImage missing"
+          ]
+        },
+        "curatorContent": {
+          "level": "thin",
+          "excerptLength": 0,
+          "bodyLength": 0,
+          "notes": [
+            "excerpt missing",
+            "body missing"
+          ]
+        }
+      },
+      "todoFlags": [],
+      "uncertain": [
+        "slug_title_non_latin_auto_check_limited"
+      ]
+    },
+    {
+      "slug": "sumi-kyoto",
+      "title": "SUMI",
+      "batchOrigin": "legacy_or_untracked",
+      "status": "hold_back_for_now",
+      "checks": {
+        "slugTitle": {
+          "level": "ok",
+          "notes": []
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "missing",
+          "notes": [
+            "raw neighborhood missing"
+          ]
+        },
+        "coreCompleteness": {
+          "present": [],
+          "missing": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "score": "0/4"
+        },
+        "heroImage": {
+          "level": "missing",
+          "notes": [
+            "heroImage missing"
+          ]
+        },
+        "curatorContent": {
+          "level": "thin",
+          "excerptLength": 0,
+          "bodyLength": 0,
+          "notes": [
+            "excerpt missing",
+            "body missing"
+          ]
+        }
+      },
+      "todoFlags": [],
+      "uncertain": []
+    },
+    {
+      "slug": "revolution-books-kyoto",
+      "title": "レボリューションブックス",
+      "batchOrigin": "batch3",
+      "status": "needs_manual_review",
+      "checks": {
+        "slugTitle": {
+          "level": "uncertain",
+          "notes": [
+            "non_latin_title_auto_check_uncertain"
+          ]
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "missing",
+          "notes": [
+            "raw neighborhood missing"
+          ]
+        },
+        "coreCompleteness": {
+          "present": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "missing": [],
+          "score": "4/4"
+        },
+        "heroImage": {
+          "level": "needs_review",
+          "notes": [
+            "heroImage from third-party/aggregator domain: tumblr.com",
+            "heroImage URL hints low resolution"
+          ]
+        },
+        "curatorContent": {
+          "level": "thin",
+          "excerptLength": 0,
+          "bodyLength": 0,
+          "notes": [
+            "excerpt missing",
+            "body missing"
+          ]
+        }
+      },
+      "todoFlags": [
+        {
+          "type": "manual-review",
+          "note": "Verify image license for production usage."
+        }
+      ],
+      "uncertain": [
+        "slug_title_non_latin_auto_check_limited",
+        "hero_image_source_or_quality_uncertain",
+        "source_or_license_needs_verification"
+      ]
+    },
+    {
+      "slug": "sakaba-ikura-mokuzai",
+      "title": "酒場 井倉木材",
+      "batchOrigin": "legacy_or_untracked",
+      "status": "hold_back_for_now",
+      "checks": {
+        "slugTitle": {
+          "level": "uncertain",
+          "notes": [
+            "non_latin_title_auto_check_uncertain"
+          ]
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "missing",
+          "notes": [
+            "raw neighborhood missing"
+          ]
+        },
+        "coreCompleteness": {
+          "present": [],
+          "missing": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "score": "0/4"
+        },
+        "heroImage": {
+          "level": "missing",
+          "notes": [
+            "heroImage missing"
+          ]
+        },
+        "curatorContent": {
+          "level": "thin",
+          "excerptLength": 0,
+          "bodyLength": 0,
+          "notes": [
+            "excerpt missing",
+            "body missing"
+          ]
+        }
+      },
+      "todoFlags": [],
+      "uncertain": [
+        "slug_title_non_latin_auto_check_limited"
+      ]
+    },
+    {
+      "slug": "masuya-saketen",
+      "title": "益や酒店",
+      "batchOrigin": "legacy_or_untracked",
+      "status": "hold_back_for_now",
+      "checks": {
+        "slugTitle": {
+          "level": "uncertain",
+          "notes": [
+            "non_latin_title_auto_check_uncertain"
+          ]
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "missing",
+          "notes": [
+            "raw neighborhood missing"
+          ]
+        },
+        "coreCompleteness": {
+          "present": [],
+          "missing": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "score": "0/4"
+        },
+        "heroImage": {
+          "level": "missing",
+          "notes": [
+            "heroImage missing"
+          ]
+        },
+        "curatorContent": {
+          "level": "thin",
+          "excerptLength": 0,
+          "bodyLength": 0,
+          "notes": [
+            "excerpt missing",
+            "body missing"
+          ]
+        }
+      },
+      "todoFlags": [],
+      "uncertain": [
+        "slug_title_non_latin_auto_check_limited"
+      ]
+    },
+    {
+      "slug": "yanagikoji-taka",
+      "title": "柳小路 TAKA",
+      "batchOrigin": "legacy_or_untracked",
+      "status": "hold_back_for_now",
+      "checks": {
+        "slugTitle": {
+          "level": "ok",
+          "notes": []
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "missing",
+          "notes": [
+            "raw neighborhood missing"
+          ]
+        },
+        "coreCompleteness": {
+          "present": [],
+          "missing": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "score": "0/4"
+        },
+        "heroImage": {
+          "level": "missing",
+          "notes": [
+            "heroImage missing"
+          ]
+        },
+        "curatorContent": {
+          "level": "thin",
+          "excerptLength": 0,
+          "bodyLength": 0,
+          "notes": [
+            "excerpt missing",
+            "body missing"
+          ]
+        }
+      },
+      "todoFlags": [],
+      "uncertain": []
+    },
+    {
+      "slug": "bar-licking-chair",
+      "title": "バー・リッキングチェア",
+      "batchOrigin": "batch3",
+      "status": "needs_manual_review",
+      "checks": {
+        "slugTitle": {
+          "level": "needs_review",
+          "notes": [
+            "non_latin_title_auto_check_uncertain",
+            "possible_typo_should_be_rocking_chair"
+          ]
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "missing",
+          "notes": [
+            "raw neighborhood missing"
+          ]
+        },
+        "coreCompleteness": {
+          "present": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "missing": [],
+          "score": "4/4"
+        },
+        "heroImage": {
+          "level": "needs_review",
+          "notes": [
+            "heroImage uses http (not https)"
+          ]
+        },
+        "curatorContent": {
+          "level": "thin",
+          "excerptLength": 0,
+          "bodyLength": 0,
+          "notes": [
+            "excerpt missing",
+            "body missing"
+          ]
+        }
+      },
+      "todoFlags": [
+        {
+          "type": "manual-review",
+          "note": "Verify official JP naming; slug/title may need to be corrected to Rocking Chair."
+        }
+      ],
+      "uncertain": [
+        "hero_image_source_or_quality_uncertain",
+        "source_or_license_needs_verification"
+      ]
+    },
+    {
+      "slug": "soil-kyoto",
+      "title": "Soil",
+      "batchOrigin": "legacy_or_untracked",
+      "status": "ready_to_publish",
+      "checks": {
+        "slugTitle": {
+          "level": "ok",
+          "notes": []
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "mapped",
+          "normalized": "okazaki",
+          "canonicalSlug": "okazaki-and-marutamachi",
+          "notes": []
+        },
+        "coreCompleteness": {
+          "present": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "missing": [],
+          "score": "4/4"
+        },
+        "heroImage": {
+          "level": "ok",
+          "notes": []
+        },
+        "curatorContent": {
+          "level": "good",
+          "excerptLength": 118,
+          "bodyLength": 234,
+          "notes": []
+        }
+      },
+      "todoFlags": [],
+      "uncertain": []
+    },
+    {
+      "slug": "furui-dogu",
+      "title": "古い道具",
+      "batchOrigin": "legacy_or_untracked",
+      "status": "hold_back_for_now",
+      "checks": {
+        "slugTitle": {
+          "level": "uncertain",
+          "notes": [
+            "non_latin_title_auto_check_uncertain"
+          ]
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "missing",
+          "notes": [
+            "raw neighborhood missing"
+          ]
+        },
+        "coreCompleteness": {
+          "present": [],
+          "missing": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "score": "0/4"
+        },
+        "heroImage": {
+          "level": "missing",
+          "notes": [
+            "heroImage missing"
+          ]
+        },
+        "curatorContent": {
+          "level": "thin",
+          "excerptLength": 0,
+          "bodyLength": 0,
+          "notes": [
+            "excerpt missing",
+            "body missing"
+          ]
+        }
+      },
+      "todoFlags": [],
+      "uncertain": [
+        "slug_title_non_latin_auto_check_limited"
+      ]
+    },
+    {
+      "slug": "kamisoe",
+      "title": "かみ添",
+      "batchOrigin": "legacy_or_untracked",
+      "status": "ready_to_publish",
+      "checks": {
+        "slugTitle": {
+          "level": "uncertain",
+          "notes": [
+            "non_latin_title_auto_check_uncertain"
+          ]
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "mapped",
+          "normalized": "murasakino",
+          "canonicalSlug": "nishijin-and-north-kyoto",
+          "notes": []
+        },
+        "coreCompleteness": {
+          "present": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "missing": [],
+          "score": "4/4"
+        },
+        "heroImage": {
+          "level": "ok",
+          "notes": []
+        },
+        "curatorContent": {
+          "level": "good",
+          "excerptLength": 97,
+          "bodyLength": 212,
+          "notes": []
+        }
+      },
+      "todoFlags": [],
+      "uncertain": [
+        "slug_title_non_latin_auto_check_limited"
+      ]
+    },
+    {
+      "slug": "roku-kyoto",
+      "title": "ロク",
+      "batchOrigin": "legacy_or_untracked",
+      "status": "hold_back_for_now",
+      "checks": {
+        "slugTitle": {
+          "level": "uncertain",
+          "notes": [
+            "non_latin_title_auto_check_uncertain"
+          ]
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "missing",
+          "notes": [
+            "raw neighborhood missing"
+          ]
+        },
+        "coreCompleteness": {
+          "present": [],
+          "missing": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "score": "0/4"
+        },
+        "heroImage": {
+          "level": "broken_local_path",
+          "notes": [
+            "local hero path not found: /images/18.jpg"
+          ]
+        },
+        "curatorContent": {
+          "level": "thin",
+          "excerptLength": 0,
+          "bodyLength": 0,
+          "notes": [
+            "excerpt missing",
+            "body missing"
+          ]
+        }
+      },
+      "todoFlags": [],
+      "uncertain": [
+        "slug_title_non_latin_auto_check_limited"
+      ]
+    },
+    {
+      "slug": "aiha",
+      "title": "阿以波",
+      "batchOrigin": "legacy_or_untracked",
+      "status": "needs_manual_review",
+      "checks": {
+        "slugTitle": {
+          "level": "uncertain",
+          "notes": [
+            "non_latin_title_auto_check_uncertain"
+          ]
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "ambiguous",
+          "normalized": "nakagyo",
+          "notes": [
+            "ambiguous raw neighborhood; cannot auto-resolve canonical slug"
+          ]
+        },
+        "coreCompleteness": {
+          "present": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "missing": [],
+          "score": "4/4"
+        },
+        "heroImage": {
+          "level": "ok",
+          "notes": []
+        },
+        "curatorContent": {
+          "level": "good",
+          "excerptLength": 115,
+          "bodyLength": 189,
+          "notes": []
+        }
+      },
+      "todoFlags": [],
+      "uncertain": [
+        "slug_title_non_latin_auto_check_limited",
+        "canonical_neighborhood_ambiguous"
+      ]
+    },
+    {
+      "slug": "kyoto-hangakan-motomutsuku",
+      "title": "京都版画館 元むつ九",
+      "batchOrigin": "legacy_or_untracked",
+      "status": "hold_back_for_now",
+      "checks": {
+        "slugTitle": {
+          "level": "uncertain",
+          "notes": [
+            "non_latin_title_auto_check_uncertain"
+          ]
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "missing",
+          "notes": [
+            "raw neighborhood missing"
+          ]
+        },
+        "coreCompleteness": {
+          "present": [],
+          "missing": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "score": "0/4"
+        },
+        "heroImage": {
+          "level": "missing",
+          "notes": [
+            "heroImage missing"
+          ]
+        },
+        "curatorContent": {
+          "level": "thin",
+          "excerptLength": 0,
+          "bodyLength": 0,
+          "notes": [
+            "excerpt missing",
+            "body missing"
+          ]
+        }
+      },
+      "todoFlags": [],
+      "uncertain": [
+        "slug_title_non_latin_auto_check_limited"
+      ]
+    },
+    {
+      "slug": "gallery-kei",
+      "title": "ギャラリー啓",
+      "batchOrigin": "batch3",
+      "status": "needs_manual_review",
+      "checks": {
+        "slugTitle": {
+          "level": "uncertain",
+          "notes": [
+            "non_latin_title_auto_check_uncertain"
+          ]
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "missing",
+          "notes": [
+            "raw neighborhood missing"
+          ]
+        },
+        "coreCompleteness": {
+          "present": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "missing": [],
+          "score": "4/4"
+        },
+        "heroImage": {
+          "level": "missing",
+          "notes": [
+            "heroImage missing"
+          ]
+        },
+        "curatorContent": {
+          "level": "thin",
+          "excerptLength": 0,
+          "bodyLength": 0,
+          "notes": [
+            "excerpt missing",
+            "body missing"
+          ]
+        }
+      },
+      "todoFlags": [
+        {
+          "type": "manual-review",
+          "note": "Could not retrieve a stable image URL from current sources."
+        }
+      ],
+      "uncertain": [
+        "slug_title_non_latin_auto_check_limited"
+      ]
+    },
+    {
+      "slug": "kyodo-gangu-hirata",
+      "title": "郷土玩具 平田",
+      "batchOrigin": "legacy_or_untracked",
+      "status": "needs_manual_review",
+      "checks": {
+        "slugTitle": {
+          "level": "uncertain",
+          "notes": [
+            "non_latin_title_auto_check_uncertain"
+          ]
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "mapped",
+          "normalized": "teramachi",
+          "canonicalSlug": "karasuma-and-downtown",
+          "notes": []
+        },
+        "coreCompleteness": {
+          "present": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "missing": [],
+          "score": "4/4"
+        },
+        "heroImage": {
+          "level": "ok",
+          "notes": []
+        },
+        "curatorContent": {
+          "level": "thin",
+          "excerptLength": 74,
+          "bodyLength": 194,
+          "notes": [
+            "excerpt too short (<80 chars)"
+          ]
+        }
+      },
+      "todoFlags": [],
+      "uncertain": [
+        "slug_title_non_latin_auto_check_limited"
+      ]
+    },
+    {
+      "slug": "tessaido",
+      "title": "てっさい堂",
+      "batchOrigin": "legacy_or_untracked",
+      "status": "hold_back_for_now",
+      "checks": {
+        "slugTitle": {
+          "level": "uncertain",
+          "notes": [
+            "non_latin_title_auto_check_uncertain"
+          ]
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "missing",
+          "notes": [
+            "raw neighborhood missing"
+          ]
+        },
+        "coreCompleteness": {
+          "present": [],
+          "missing": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "score": "0/4"
+        },
+        "heroImage": {
+          "level": "missing",
+          "notes": [
+            "heroImage missing"
+          ]
+        },
+        "curatorContent": {
+          "level": "thin",
+          "excerptLength": 0,
+          "bodyLength": 0,
+          "notes": [
+            "excerpt missing",
+            "body missing"
+          ]
+        }
+      },
+      "todoFlags": [],
+      "uncertain": [
+        "slug_title_non_latin_auto_check_limited"
+      ]
+    },
+    {
+      "slug": "kintakedo",
+      "title": "金竹堂",
+      "batchOrigin": "legacy_or_untracked",
+      "status": "hold_back_for_now",
+      "checks": {
+        "slugTitle": {
+          "level": "uncertain",
+          "notes": [
+            "non_latin_title_auto_check_uncertain"
+          ]
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "missing",
+          "notes": [
+            "raw neighborhood missing"
+          ]
+        },
+        "coreCompleteness": {
+          "present": [],
+          "missing": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "score": "0/4"
+        },
+        "heroImage": {
+          "level": "missing",
+          "notes": [
+            "heroImage missing"
+          ]
+        },
+        "curatorContent": {
+          "level": "thin",
+          "excerptLength": 0,
+          "bodyLength": 0,
+          "notes": [
+            "excerpt missing",
+            "body missing"
+          ]
+        }
+      },
+      "todoFlags": [],
+      "uncertain": [
+        "slug_title_non_latin_auto_check_limited"
+      ]
+    },
+    {
+      "slug": "daikichi-kyoto",
+      "title": "大吉",
+      "batchOrigin": "legacy_or_untracked",
+      "status": "hold_back_for_now",
+      "checks": {
+        "slugTitle": {
+          "level": "uncertain",
+          "notes": [
+            "non_latin_title_auto_check_uncertain"
+          ]
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "missing",
+          "notes": [
+            "raw neighborhood missing"
+          ]
+        },
+        "coreCompleteness": {
+          "present": [],
+          "missing": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "score": "0/4"
+        },
+        "heroImage": {
+          "level": "missing",
+          "notes": [
+            "heroImage missing"
+          ]
+        },
+        "curatorContent": {
+          "level": "thin",
+          "excerptLength": 0,
+          "bodyLength": 0,
+          "notes": [
+            "excerpt missing",
+            "body missing"
+          ]
+        }
+      },
+      "todoFlags": [],
+      "uncertain": [
+        "slug_title_non_latin_auto_check_limited"
+      ]
+    },
+    {
+      "slug": "kaikado",
+      "title": "開化堂",
+      "batchOrigin": "legacy_or_untracked",
+      "status": "usable_but_needs_image",
+      "checks": {
+        "slugTitle": {
+          "level": "uncertain",
+          "notes": [
+            "non_latin_title_auto_check_uncertain"
+          ]
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "mapped",
+          "normalized": "shichijo",
+          "canonicalSlug": "kyoto-station-and-south",
+          "notes": []
+        },
+        "coreCompleteness": {
+          "present": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "missing": [],
+          "score": "4/4"
+        },
+        "heroImage": {
+          "level": "broken_local_path",
+          "notes": [
+            "local hero path not found: /images/37.jpg"
+          ]
+        },
+        "curatorContent": {
+          "level": "good",
+          "excerptLength": 104,
+          "bodyLength": 194,
+          "notes": []
+        }
+      },
+      "todoFlags": [],
+      "uncertain": [
+        "slug_title_non_latin_auto_check_limited"
+      ]
+    },
+    {
+      "slug": "kikyori-naito-shoten",
+      "title": "桔梗利 内藤商店",
+      "batchOrigin": "legacy_or_untracked",
+      "status": "hold_back_for_now",
+      "checks": {
+        "slugTitle": {
+          "level": "uncertain",
+          "notes": [
+            "non_latin_title_auto_check_uncertain"
+          ]
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "ambiguous",
+          "normalized": "sanjo",
+          "notes": [
+            "ambiguous raw neighborhood; cannot auto-resolve canonical slug"
+          ]
+        },
+        "coreCompleteness": {
+          "present": [
+            "mapsUrl"
+          ],
+          "missing": [
+            "address",
+            "hours",
+            "website"
+          ],
+          "score": "1/4"
+        },
+        "heroImage": {
+          "level": "ok",
+          "notes": []
+        },
+        "curatorContent": {
+          "level": "good",
+          "excerptLength": 112,
+          "bodyLength": 250,
+          "notes": []
+        }
+      },
+      "todoFlags": [],
+      "uncertain": [
+        "slug_title_non_latin_auto_check_limited",
+        "canonical_neighborhood_ambiguous"
+      ]
+    },
+    {
+      "slug": "tsujiwa-kanaami",
+      "title": "辻和金網",
+      "batchOrigin": "legacy_or_untracked",
+      "status": "needs_manual_review",
+      "checks": {
+        "slugTitle": {
+          "level": "uncertain",
+          "notes": [
+            "non_latin_title_auto_check_uncertain"
+          ]
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "ambiguous",
+          "normalized": "nakagyo",
+          "notes": [
+            "ambiguous raw neighborhood; cannot auto-resolve canonical slug"
+          ]
+        },
+        "coreCompleteness": {
+          "present": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "missing": [],
+          "score": "4/4"
+        },
+        "heroImage": {
+          "level": "broken_local_path",
+          "notes": [
+            "local hero path not found: /images/38.jpg"
+          ]
+        },
+        "curatorContent": {
+          "level": "good",
+          "excerptLength": 98,
+          "bodyLength": 213,
+          "notes": []
+        }
+      },
+      "todoFlags": [],
+      "uncertain": [
+        "slug_title_non_latin_auto_check_limited",
+        "canonical_neighborhood_ambiguous"
+      ]
+    },
+    {
+      "slug": "gion-naito",
+      "title": "祇園ない藤",
+      "batchOrigin": "legacy_or_untracked",
+      "status": "hold_back_for_now",
+      "checks": {
+        "slugTitle": {
+          "level": "uncertain",
+          "notes": [
+            "non_latin_title_auto_check_uncertain"
+          ]
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "missing",
+          "notes": [
+            "raw neighborhood missing"
+          ]
+        },
+        "coreCompleteness": {
+          "present": [],
+          "missing": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "score": "0/4"
+        },
+        "heroImage": {
+          "level": "missing",
+          "notes": [
+            "heroImage missing"
+          ]
+        },
+        "curatorContent": {
+          "level": "thin",
+          "excerptLength": 0,
+          "bodyLength": 0,
+          "notes": [
+            "excerpt missing",
+            "body missing"
+          ]
+        }
+      },
+      "todoFlags": [],
+      "uncertain": [
+        "slug_title_non_latin_auto_check_limited"
+      ]
+    },
+    {
+      "slug": "bolts-hardware-store",
+      "title": "Bolts Hardware Store",
+      "batchOrigin": "legacy_or_untracked",
+      "status": "ready_to_publish",
+      "checks": {
+        "slugTitle": {
+          "level": "ok",
+          "notes": []
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "mapped",
+          "normalized": "kamigamo",
+          "canonicalSlug": "nishijin-and-north-kyoto",
+          "notes": []
+        },
+        "coreCompleteness": {
+          "present": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "missing": [],
+          "score": "4/4"
+        },
+        "heroImage": {
+          "level": "ok",
+          "notes": []
+        },
+        "curatorContent": {
+          "level": "good",
+          "excerptLength": 120,
+          "bodyLength": 231,
+          "notes": []
+        }
+      },
+      "todoFlags": [],
+      "uncertain": []
+    },
+    {
+      "slug": "seikosha",
+      "title": "誠光社",
+      "batchOrigin": "legacy_or_untracked",
+      "status": "ready_to_publish",
+      "checks": {
+        "slugTitle": {
+          "level": "uncertain",
+          "notes": [
+            "non_latin_title_auto_check_uncertain"
+          ]
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "mapped",
+          "normalized": "marutamachi",
+          "canonicalSlug": "okazaki-and-marutamachi",
+          "notes": []
+        },
+        "coreCompleteness": {
+          "present": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "missing": [],
+          "score": "4/4"
+        },
+        "heroImage": {
+          "level": "ok",
+          "notes": []
+        },
+        "curatorContent": {
+          "level": "good",
+          "excerptLength": 118,
+          "bodyLength": 200,
+          "notes": []
+        }
+      },
+      "todoFlags": [],
+      "uncertain": [
+        "slug_title_non_latin_auto_check_limited"
+      ]
+    },
+    {
+      "slug": "100000t-aronto",
+      "title": "100000tアローント",
+      "batchOrigin": "legacy_or_untracked",
+      "status": "hold_back_for_now",
+      "checks": {
+        "slugTitle": {
+          "level": "uncertain",
+          "notes": [
+            "non_latin_title_auto_check_uncertain"
+          ]
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "missing",
+          "notes": [
+            "raw neighborhood missing"
+          ]
+        },
+        "coreCompleteness": {
+          "present": [],
+          "missing": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "score": "0/4"
+        },
+        "heroImage": {
+          "level": "missing",
+          "notes": [
+            "heroImage missing"
+          ]
+        },
+        "curatorContent": {
+          "level": "thin",
+          "excerptLength": 0,
+          "bodyLength": 0,
+          "notes": [
+            "excerpt missing",
+            "body missing"
+          ]
+        }
+      },
+      "todoFlags": [],
+      "uncertain": [
+        "slug_title_non_latin_auto_check_limited"
+      ]
+    },
+    {
+      "slug": "books-and-things",
+      "title": "Books & Things",
+      "batchOrigin": "legacy_or_untracked",
+      "status": "ready_to_publish",
+      "checks": {
+        "slugTitle": {
+          "level": "ok",
+          "notes": []
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "mapped",
+          "normalized": "gion",
+          "canonicalSlug": "gion-and-higashiyama",
+          "notes": []
+        },
+        "coreCompleteness": {
+          "present": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "missing": [],
+          "score": "4/4"
+        },
+        "heroImage": {
+          "level": "ok",
+          "notes": []
+        },
+        "curatorContent": {
+          "level": "good",
+          "excerptLength": 90,
+          "bodyLength": 190,
+          "notes": []
+        }
+      },
+      "todoFlags": [],
+      "uncertain": []
+    },
+    {
+      "slug": "mitate-kyoto",
+      "title": "みたて",
+      "batchOrigin": "batch3",
+      "status": "needs_manual_review",
+      "checks": {
+        "slugTitle": {
+          "level": "uncertain",
+          "notes": [
+            "non_latin_title_auto_check_uncertain"
+          ]
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "missing",
+          "notes": [
+            "raw neighborhood missing"
+          ]
+        },
+        "coreCompleteness": {
+          "present": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "missing": [],
+          "score": "4/4"
+        },
+        "heroImage": {
+          "level": "needs_review",
+          "notes": [
+            "heroImage from third-party/aggregator domain: kyotokan.jp"
+          ]
+        },
+        "curatorContent": {
+          "level": "good",
+          "excerptLength": 124,
+          "bodyLength": 219,
+          "notes": []
+        }
+      },
+      "todoFlags": [
+        {
+          "type": "manual-review",
+          "note": "Verify image license for production usage."
+        }
+      ],
+      "uncertain": [
+        "slug_title_non_latin_auto_check_limited",
+        "hero_image_source_or_quality_uncertain",
+        "source_or_license_needs_verification"
+      ]
+    },
+    {
+      "slug": "lifetime-kyoto",
+      "title": "Lifetime",
+      "batchOrigin": "legacy_or_untracked",
+      "status": "ready_to_publish",
+      "checks": {
+        "slugTitle": {
+          "level": "ok",
+          "notes": []
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "mapped",
+          "normalized": "murasakino",
+          "canonicalSlug": "nishijin-and-north-kyoto",
+          "notes": []
+        },
+        "coreCompleteness": {
+          "present": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "missing": [],
+          "score": "4/4"
+        },
+        "heroImage": {
+          "level": "ok",
+          "notes": []
+        },
+        "curatorContent": {
+          "level": "good",
+          "excerptLength": 109,
+          "bodyLength": 219,
+          "notes": []
+        }
+      },
+      "todoFlags": [],
+      "uncertain": []
+    },
+    {
+      "slug": "brodism-kyoto",
+      "title": "Brodism",
+      "batchOrigin": "legacy_or_untracked",
+      "status": "hold_back_for_now",
+      "checks": {
+        "slugTitle": {
+          "level": "ok",
+          "notes": []
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "missing",
+          "notes": [
+            "raw neighborhood missing"
+          ]
+        },
+        "coreCompleteness": {
+          "present": [],
+          "missing": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "score": "0/4"
+        },
+        "heroImage": {
+          "level": "broken_local_path",
+          "notes": [
+            "local hero path not found: /images/17.jpg"
+          ]
+        },
+        "curatorContent": {
+          "level": "good",
+          "excerptLength": 104,
+          "bodyLength": 254,
+          "notes": []
+        }
+      },
+      "todoFlags": [],
+      "uncertain": []
+    },
+    {
+      "slug": "fil-kyoto",
+      "title": "F.I.L. Kyoto",
+      "batchOrigin": "legacy_or_untracked",
+      "status": "needs_manual_review",
+      "checks": {
+        "slugTitle": {
+          "level": "needs_review",
+          "notes": [
+            "latin_title_slug_mismatch(expected_like=f-i-l-kyoto)"
+          ]
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "ambiguous",
+          "normalized": "nakagyo",
+          "notes": [
+            "ambiguous raw neighborhood; cannot auto-resolve canonical slug"
+          ]
+        },
+        "coreCompleteness": {
+          "present": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "missing": [],
+          "score": "4/4"
+        },
+        "heroImage": {
+          "level": "ok",
+          "notes": []
+        },
+        "curatorContent": {
+          "level": "good",
+          "excerptLength": 101,
+          "bodyLength": 171,
+          "notes": []
+        }
+      },
+      "todoFlags": [],
+      "uncertain": [
+        "canonical_neighborhood_ambiguous"
+      ]
+    },
+    {
+      "slug": "barber-higuchi",
+      "title": "Barber Higuchi Grooming & Spa",
+      "batchOrigin": "legacy_or_untracked",
+      "status": "needs_manual_review",
+      "checks": {
+        "slugTitle": {
+          "level": "ok",
+          "notes": []
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "ambiguous",
+          "normalized": "nakagyo",
+          "notes": [
+            "ambiguous raw neighborhood; cannot auto-resolve canonical slug"
+          ]
+        },
+        "coreCompleteness": {
+          "present": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "missing": [],
+          "score": "4/4"
+        },
+        "heroImage": {
+          "level": "ok",
+          "notes": []
+        },
+        "curatorContent": {
+          "level": "good",
+          "excerptLength": 114,
+          "bodyLength": 222,
+          "notes": []
+        }
+      },
+      "todoFlags": [],
+      "uncertain": [
+        "canonical_neighborhood_ambiguous"
+      ]
+    },
+    {
+      "slug": "gojo-guesthouse-honkan",
+      "title": "五条ゲストハウス本館",
+      "batchOrigin": "batch3",
+      "status": "needs_manual_review",
+      "checks": {
+        "slugTitle": {
+          "level": "uncertain",
+          "notes": [
+            "non_latin_title_auto_check_uncertain"
+          ]
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "missing",
+          "notes": [
+            "raw neighborhood missing"
+          ]
+        },
+        "coreCompleteness": {
+          "present": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "missing": [],
+          "score": "4/4"
+        },
+        "heroImage": {
+          "level": "needs_review",
+          "notes": [
+            "heroImage from third-party/aggregator domain: smugmug.com"
+          ]
+        },
+        "curatorContent": {
+          "level": "thin",
+          "excerptLength": 0,
+          "bodyLength": 0,
+          "notes": [
+            "excerpt missing",
+            "body missing"
+          ]
+        }
+      },
+      "todoFlags": [
+        {
+          "type": "manual-review",
+          "note": "Replace aggregator website with first-party official site if available."
+        },
+        {
+          "type": "manual-review",
+          "note": "Verify image license for production usage."
+        }
+      ],
+      "uncertain": [
+        "slug_title_non_latin_auto_check_limited",
+        "hero_image_source_or_quality_uncertain",
+        "source_or_license_needs_verification"
+      ]
+    },
+    {
+      "slug": "len-kyoto-kawaramachi",
+      "title": "Len Kyoto Kawaramachi",
+      "batchOrigin": "legacy_or_untracked",
+      "status": "needs_manual_review",
+      "checks": {
+        "slugTitle": {
+          "level": "ok",
+          "notes": []
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "ambiguous",
+          "normalized": "kawaramachi",
+          "notes": [
+            "ambiguous raw neighborhood; cannot auto-resolve canonical slug"
+          ]
+        },
+        "coreCompleteness": {
+          "present": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "missing": [],
+          "score": "4/4"
+        },
+        "heroImage": {
+          "level": "ok",
+          "notes": []
+        },
+        "curatorContent": {
+          "level": "good",
+          "excerptLength": 104,
+          "bodyLength": 178,
+          "notes": []
+        }
+      },
+      "todoFlags": [],
+      "uncertain": [
+        "canonical_neighborhood_ambiguous"
+      ]
+    },
+    {
+      "slug": "shizuya-kyoto",
+      "title": "しづや KYOTO",
+      "batchOrigin": "batch3",
+      "status": "needs_manual_review",
+      "checks": {
+        "slugTitle": {
+          "level": "ok",
+          "notes": []
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "missing",
+          "notes": [
+            "raw neighborhood missing"
+          ]
+        },
+        "coreCompleteness": {
+          "present": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "missing": [],
+          "score": "4/4"
+        },
+        "heroImage": {
+          "level": "ok",
+          "notes": []
+        },
+        "curatorContent": {
+          "level": "thin",
+          "excerptLength": 0,
+          "bodyLength": 0,
+          "notes": [
+            "excerpt missing",
+            "body missing"
+          ]
+        }
+      },
+      "todoFlags": [
+        {
+          "type": "manual-review",
+          "note": "Re-check overlap with `shizuya-kyoto-station-food`; may be duplication/misclassification."
+        }
+      ],
+      "uncertain": []
+    },
+    {
+      "slug": "shizuya-kyoto-station-food",
+      "title": "しづや KYOTO（駅弁・フード）",
+      "batchOrigin": "legacy_or_untracked",
+      "status": "hold_back_for_now",
+      "checks": {
+        "slugTitle": {
+          "level": "needs_review",
+          "notes": [
+            "slug_semantics_conflict_with_stay_category"
+          ]
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "missing",
+          "notes": [
+            "raw neighborhood missing"
+          ]
+        },
+        "coreCompleteness": {
+          "present": [],
+          "missing": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "score": "0/4"
+        },
+        "heroImage": {
+          "level": "missing",
+          "notes": [
+            "heroImage missing"
+          ]
+        },
+        "curatorContent": {
+          "level": "thin",
+          "excerptLength": 0,
+          "bodyLength": 0,
+          "notes": [
+            "excerpt missing",
+            "body missing"
+          ]
+        }
+      },
+      "todoFlags": [],
+      "uncertain": []
+    },
+    {
+      "slug": "takagi-coffee-karasuma",
+      "title": "高木珈琲 烏丸店",
+      "batchOrigin": "legacy_or_untracked",
+      "status": "hold_back_for_now",
+      "checks": {
+        "slugTitle": {
+          "level": "uncertain",
+          "notes": [
+            "non_latin_title_auto_check_uncertain"
+          ]
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "missing",
+          "notes": [
+            "raw neighborhood missing"
+          ]
+        },
+        "coreCompleteness": {
+          "present": [],
+          "missing": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "score": "0/4"
+        },
+        "heroImage": {
+          "level": "missing",
+          "notes": [
+            "heroImage missing"
+          ]
+        },
+        "curatorContent": {
+          "level": "thin",
+          "excerptLength": 0,
+          "bodyLength": 0,
+          "notes": [
+            "excerpt missing",
+            "body missing"
+          ]
+        }
+      },
+      "todoFlags": [],
+      "uncertain": [
+        "slug_title_non_latin_auto_check_limited"
+      ]
+    },
+    {
+      "slug": "allouneno",
+      "title": "アローンヌノ",
+      "batchOrigin": "batch3",
+      "status": "needs_manual_review",
+      "checks": {
+        "slugTitle": {
+          "level": "uncertain",
+          "notes": [
+            "non_latin_title_auto_check_uncertain"
+          ]
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "missing",
+          "notes": [
+            "raw neighborhood missing"
+          ]
+        },
+        "coreCompleteness": {
+          "present": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "missing": [],
+          "score": "4/4"
+        },
+        "heroImage": {
+          "level": "missing",
+          "notes": [
+            "heroImage missing"
+          ]
+        },
+        "curatorContent": {
+          "level": "thin",
+          "excerptLength": 0,
+          "bodyLength": 0,
+          "notes": [
+            "excerpt missing",
+            "body missing"
+          ]
+        }
+      },
+      "todoFlags": [
+        {
+          "type": "manual-review",
+          "note": "Could not retrieve a stable non-logo image URL from current sources."
+        }
+      ],
+      "uncertain": [
+        "slug_title_non_latin_auto_check_limited"
+      ]
+    },
+    {
+      "slug": "slo-kyoto",
+      "title": "SLO Kyoto",
+      "batchOrigin": "legacy_or_untracked",
+      "status": "hold_back_for_now",
+      "checks": {
+        "slugTitle": {
+          "level": "ok",
+          "notes": []
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "missing",
+          "notes": [
+            "raw neighborhood missing"
+          ]
+        },
+        "coreCompleteness": {
+          "present": [],
+          "missing": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "score": "0/4"
+        },
+        "heroImage": {
+          "level": "missing",
+          "notes": [
+            "heroImage missing"
+          ]
+        },
+        "curatorContent": {
+          "level": "thin",
+          "excerptLength": 0,
+          "bodyLength": 0,
+          "notes": [
+            "excerpt missing",
+            "body missing"
+          ]
+        }
+      },
+      "todoFlags": [],
+      "uncertain": []
+    },
+    {
+      "slug": "hatsuda-kyoto-station-food",
+      "title": "はつだ 京都駅弁",
+      "batchOrigin": "legacy_or_untracked",
+      "status": "hold_back_for_now",
+      "checks": {
+        "slugTitle": {
+          "level": "uncertain",
+          "notes": [
+            "non_latin_title_auto_check_uncertain"
+          ]
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "missing",
+          "notes": [
+            "raw neighborhood missing"
+          ]
+        },
+        "coreCompleteness": {
+          "present": [],
+          "missing": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "score": "0/4"
+        },
+        "heroImage": {
+          "level": "missing",
+          "notes": [
+            "heroImage missing"
+          ]
+        },
+        "curatorContent": {
+          "level": "thin",
+          "excerptLength": 0,
+          "bodyLength": 0,
+          "notes": [
+            "excerpt missing",
+            "body missing"
+          ]
+        }
+      },
+      "todoFlags": [],
+      "uncertain": [
+        "slug_title_non_latin_auto_check_limited"
+      ]
+    },
+    {
+      "slug": "ogawa-udon",
+      "title": "おがわうどん",
+      "batchOrigin": "legacy_or_untracked",
+      "status": "hold_back_for_now",
+      "checks": {
+        "slugTitle": {
+          "level": "uncertain",
+          "notes": [
+            "non_latin_title_auto_check_uncertain"
+          ]
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "missing",
+          "notes": [
+            "raw neighborhood missing"
+          ]
+        },
+        "coreCompleteness": {
+          "present": [],
+          "missing": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "score": "0/4"
+        },
+        "heroImage": {
+          "level": "missing",
+          "notes": [
+            "heroImage missing"
+          ]
+        },
+        "curatorContent": {
+          "level": "thin",
+          "excerptLength": 0,
+          "bodyLength": 0,
+          "notes": [
+            "excerpt missing",
+            "body missing"
+          ]
+        }
+      },
+      "todoFlags": [],
+      "uncertain": [
+        "slug_title_non_latin_auto_check_limited"
+      ]
+    },
+    {
+      "slug": "hinode-udon",
+      "title": "日の出うどん",
+      "batchOrigin": "legacy_or_untracked",
+      "status": "hold_back_for_now",
+      "checks": {
+        "slugTitle": {
+          "level": "uncertain",
+          "notes": [
+            "non_latin_title_auto_check_uncertain"
+          ]
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "missing",
+          "notes": [
+            "raw neighborhood missing"
+          ]
+        },
+        "coreCompleteness": {
+          "present": [],
+          "missing": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "score": "0/4"
+        },
+        "heroImage": {
+          "level": "missing",
+          "notes": [
+            "heroImage missing"
+          ]
+        },
+        "curatorContent": {
+          "level": "thin",
+          "excerptLength": 0,
+          "bodyLength": 0,
+          "notes": [
+            "excerpt missing",
+            "body missing"
+          ]
+        }
+      },
+      "todoFlags": [],
+      "uncertain": [
+        "slug_title_non_latin_auto_check_limited"
+      ]
+    },
+    {
+      "slug": "wabiya-korekidou-station-food",
+      "title": "侘家古暦堂 京都駅店",
+      "batchOrigin": "legacy_or_untracked",
+      "status": "hold_back_for_now",
+      "checks": {
+        "slugTitle": {
+          "level": "uncertain",
+          "notes": [
+            "non_latin_title_auto_check_uncertain"
+          ]
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "missing",
+          "notes": [
+            "raw neighborhood missing"
+          ]
+        },
+        "coreCompleteness": {
+          "present": [],
+          "missing": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "score": "0/4"
+        },
+        "heroImage": {
+          "level": "missing",
+          "notes": [
+            "heroImage missing"
+          ]
+        },
+        "curatorContent": {
+          "level": "thin",
+          "excerptLength": 0,
+          "bodyLength": 0,
+          "notes": [
+            "excerpt missing",
+            "body missing"
+          ]
+        }
+      },
+      "todoFlags": [],
+      "uncertain": [
+        "slug_title_non_latin_auto_check_limited"
+      ]
+    },
+    {
+      "slug": "hakushokuya-kyoto-station-food",
+      "title": "白峯屋 京都駅",
+      "batchOrigin": "legacy_or_untracked",
+      "status": "hold_back_for_now",
+      "checks": {
+        "slugTitle": {
+          "level": "uncertain",
+          "notes": [
+            "non_latin_title_auto_check_uncertain"
+          ]
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "missing",
+          "notes": [
+            "raw neighborhood missing"
+          ]
+        },
+        "coreCompleteness": {
+          "present": [],
+          "missing": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "score": "0/4"
+        },
+        "heroImage": {
+          "level": "missing",
+          "notes": [
+            "heroImage missing"
+          ]
+        },
+        "curatorContent": {
+          "level": "thin",
+          "excerptLength": 0,
+          "bodyLength": 0,
+          "notes": [
+            "excerpt missing",
+            "body missing"
+          ]
+        }
+      },
+      "todoFlags": [],
+      "uncertain": [
+        "slug_title_non_latin_auto_check_limited"
+      ]
+    },
+    {
+      "slug": "funaoka-onsen",
+      "title": "船岡温泉",
+      "batchOrigin": "legacy_or_untracked",
+      "status": "ready_to_publish",
+      "checks": {
+        "slugTitle": {
+          "level": "uncertain",
+          "notes": [
+            "non_latin_title_auto_check_uncertain"
+          ]
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "mapped",
+          "normalized": "kuramaguchi",
+          "canonicalSlug": "nishijin-and-north-kyoto",
+          "notes": []
+        },
+        "coreCompleteness": {
+          "present": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "missing": [],
+          "score": "4/4"
+        },
+        "heroImage": {
+          "level": "ok",
+          "notes": []
+        },
+        "curatorContent": {
+          "level": "good",
+          "excerptLength": 99,
+          "bodyLength": 201,
+          "notes": []
+        }
+      },
+      "todoFlags": [],
+      "uncertain": [
+        "slug_title_non_latin_auto_check_limited"
+      ]
+    },
+    {
+      "slug": "kiyomizudera",
+      "title": "清水寺",
+      "batchOrigin": "legacy_or_untracked",
+      "status": "hold_back_for_now",
+      "checks": {
+        "slugTitle": {
+          "level": "uncertain",
+          "notes": [
+            "non_latin_title_auto_check_uncertain"
+          ]
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "missing",
+          "notes": [
+            "raw neighborhood missing"
+          ]
+        },
+        "coreCompleteness": {
+          "present": [],
+          "missing": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "score": "0/4"
+        },
+        "heroImage": {
+          "level": "missing",
+          "notes": [
+            "heroImage missing"
+          ]
+        },
+        "curatorContent": {
+          "level": "thin",
+          "excerptLength": 0,
+          "bodyLength": 0,
+          "notes": [
+            "excerpt missing",
+            "body missing"
+          ]
+        }
+      },
+      "todoFlags": [],
+      "uncertain": [
+        "slug_title_non_latin_auto_check_limited"
+      ]
+    },
+    {
+      "slug": "nishiki-market",
+      "title": "錦市場",
+      "batchOrigin": "legacy_or_untracked",
+      "status": "hold_back_for_now",
+      "checks": {
+        "slugTitle": {
+          "level": "uncertain",
+          "notes": [
+            "non_latin_title_auto_check_uncertain"
+          ]
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "missing",
+          "notes": [
+            "raw neighborhood missing"
+          ]
+        },
+        "coreCompleteness": {
+          "present": [],
+          "missing": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "score": "0/4"
+        },
+        "heroImage": {
+          "level": "missing",
+          "notes": [
+            "heroImage missing"
+          ]
+        },
+        "curatorContent": {
+          "level": "thin",
+          "excerptLength": 0,
+          "bodyLength": 0,
+          "notes": [
+            "excerpt missing",
+            "body missing"
+          ]
+        }
+      },
+      "todoFlags": [],
+      "uncertain": [
+        "slug_title_non_latin_auto_check_limited"
+      ]
+    },
+    {
+      "slug": "rokkakudo",
+      "title": "六角堂",
+      "batchOrigin": "legacy_or_untracked",
+      "status": "hold_back_for_now",
+      "checks": {
+        "slugTitle": {
+          "level": "uncertain",
+          "notes": [
+            "non_latin_title_auto_check_uncertain"
+          ]
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "missing",
+          "notes": [
+            "raw neighborhood missing"
+          ]
+        },
+        "coreCompleteness": {
+          "present": [],
+          "missing": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "score": "0/4"
+        },
+        "heroImage": {
+          "level": "missing",
+          "notes": [
+            "heroImage missing"
+          ]
+        },
+        "curatorContent": {
+          "level": "thin",
+          "excerptLength": 0,
+          "bodyLength": 0,
+          "notes": [
+            "excerpt missing",
+            "body missing"
+          ]
+        }
+      },
+      "todoFlags": [],
+      "uncertain": [
+        "slug_title_non_latin_auto_check_limited"
+      ]
+    },
+    {
+      "slug": "sanjusangendo",
+      "title": "蓮華王院 三十三間堂",
+      "batchOrigin": "legacy_or_untracked",
+      "status": "hold_back_for_now",
+      "checks": {
+        "slugTitle": {
+          "level": "uncertain",
+          "notes": [
+            "non_latin_title_auto_check_uncertain"
+          ]
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "missing",
+          "notes": [
+            "raw neighborhood missing"
+          ]
+        },
+        "coreCompleteness": {
+          "present": [],
+          "missing": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "score": "0/4"
+        },
+        "heroImage": {
+          "level": "missing",
+          "notes": [
+            "heroImage missing"
+          ]
+        },
+        "curatorContent": {
+          "level": "thin",
+          "excerptLength": 0,
+          "bodyLength": 0,
+          "notes": [
+            "excerpt missing",
+            "body missing"
+          ]
+        }
+      },
+      "todoFlags": [],
+      "uncertain": [
+        "slug_title_non_latin_auto_check_limited"
+      ]
+    },
+    {
+      "slug": "shoseien",
+      "title": "渉成園",
+      "batchOrigin": "legacy_or_untracked",
+      "status": "hold_back_for_now",
+      "checks": {
+        "slugTitle": {
+          "level": "uncertain",
+          "notes": [
+            "non_latin_title_auto_check_uncertain"
+          ]
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "missing",
+          "notes": [
+            "raw neighborhood missing"
+          ]
+        },
+        "coreCompleteness": {
+          "present": [],
+          "missing": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "score": "0/4"
+        },
+        "heroImage": {
+          "level": "missing",
+          "notes": [
+            "heroImage missing"
+          ]
+        },
+        "curatorContent": {
+          "level": "thin",
+          "excerptLength": 0,
+          "bodyLength": 0,
+          "notes": [
+            "excerpt missing",
+            "body missing"
+          ]
+        }
+      },
+      "todoFlags": [],
+      "uncertain": [
+        "slug_title_non_latin_auto_check_limited"
+      ]
+    },
+    {
+      "slug": "toji-koboichi",
+      "title": "東寺 弘法市",
+      "batchOrigin": "batch3",
+      "status": "needs_manual_review",
+      "checks": {
+        "slugTitle": {
+          "level": "uncertain",
+          "notes": [
+            "non_latin_title_auto_check_uncertain"
+          ]
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "missing",
+          "notes": [
+            "raw neighborhood missing"
+          ]
+        },
+        "coreCompleteness": {
+          "present": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "missing": [],
+          "score": "4/4"
+        },
+        "heroImage": {
+          "level": "needs_review",
+          "notes": [
+            "heroImage from third-party/aggregator domain: japan-experience.com"
+          ]
+        },
+        "curatorContent": {
+          "level": "thin",
+          "excerptLength": 0,
+          "bodyLength": 0,
+          "notes": [
+            "excerpt missing",
+            "body missing"
+          ]
+        }
+      },
+      "todoFlags": [
+        {
+          "type": "manual-review",
+          "note": "Event entry; consider event-specific schema."
+        },
+        {
+          "type": "manual-review",
+          "note": "Verify image license for production usage."
+        }
+      ],
+      "uncertain": [
+        "slug_title_non_latin_auto_check_limited",
+        "hero_image_source_or_quality_uncertain",
+        "source_or_license_needs_verification"
+      ]
+    },
+    {
+      "slug": "kawai-kanjiro-memorial-museum",
+      "title": "河井寛次郎記念館",
+      "batchOrigin": "legacy_or_untracked",
+      "status": "hold_back_for_now",
+      "checks": {
+        "slugTitle": {
+          "level": "uncertain",
+          "notes": [
+            "non_latin_title_auto_check_uncertain"
+          ]
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "missing",
+          "notes": [
+            "raw neighborhood missing"
+          ]
+        },
+        "coreCompleteness": {
+          "present": [],
+          "missing": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "score": "0/4"
+        },
+        "heroImage": {
+          "level": "missing",
+          "notes": [
+            "heroImage missing"
+          ]
+        },
+        "curatorContent": {
+          "level": "thin",
+          "excerptLength": 0,
+          "bodyLength": 0,
+          "notes": [
+            "excerpt missing",
+            "body missing"
+          ]
+        }
+      },
+      "todoFlags": [],
+      "uncertain": [
+        "slug_title_non_latin_auto_check_limited"
+      ]
+    },
+    {
+      "slug": "senoku-hakukokan",
+      "title": "泉屋博古館",
+      "batchOrigin": "legacy_or_untracked",
+      "status": "hold_back_for_now",
+      "checks": {
+        "slugTitle": {
+          "level": "uncertain",
+          "notes": [
+            "non_latin_title_auto_check_uncertain"
+          ]
+        },
+        "categoryQuality": {
+          "level": "ok",
+          "notes": []
+        },
+        "neighborhood": {
+          "level": "missing",
+          "notes": [
+            "raw neighborhood missing"
+          ]
+        },
+        "coreCompleteness": {
+          "present": [],
+          "missing": [
+            "address",
+            "hours",
+            "website",
+            "mapsUrl"
+          ],
+          "score": "0/4"
+        },
+        "heroImage": {
+          "level": "missing",
+          "notes": [
+            "heroImage missing"
+          ]
+        },
+        "curatorContent": {
+          "level": "thin",
+          "excerptLength": 0,
+          "bodyLength": 0,
+          "notes": [
+            "excerpt missing",
+            "body missing"
+          ]
+        }
+      },
+      "todoFlags": [],
+      "uncertain": [
+        "slug_title_non_latin_auto_check_limited"
+      ]
+    }
+  ]
+}

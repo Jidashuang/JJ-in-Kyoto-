@@ -64,3 +64,89 @@ export const PLACE_TAGS = [
 
 export type PlaceCategory = (typeof PLACE_CATEGORIES)[number];
 export type PlaceTag = (typeof PLACE_TAGS)[number];
+
+export type PlaceIntentGroup = {
+  id: string;
+  label: string;
+  categories?: readonly PlaceCategory[];
+  tags?: readonly PlaceTag[];
+  topPick?: boolean;
+};
+
+export const PLACE_INTENT_GROUPS: PlaceIntentGroup[] = [
+  {
+    id: "coffee-tea",
+    label: "Coffee & Tea",
+    categories: ["Cafe", "Tea"],
+    tags: ["Coffee", "Tea"],
+  },
+  {
+    id: "breakfast-bakery",
+    label: "Breakfast & Bakery",
+    categories: ["Bakery", "Sandwich", "Takeout"],
+    tags: ["Morning"],
+  },
+  {
+    id: "lunch-dinner",
+    label: "Lunch & Dinner",
+    categories: [
+      "Casual Dining",
+      "Dining",
+      "Japanese",
+      "Kaiseki",
+      "Soba",
+      "Udon",
+      "Sushi",
+      "Izakaya",
+      "Yakiniku",
+      "Curry",
+      "Donburi",
+      "Seafood",
+      "Sukiyaki",
+      "Tofu",
+      "Chinese",
+      "Western",
+      "Bar",
+      "Okonomiyaki",
+      "Gyoza",
+      "Grill",
+    ],
+  },
+  {
+    id: "sweets",
+    label: "Sweets",
+    categories: ["Sweets"],
+  },
+  {
+    id: "shops-crafts",
+    label: "Shops & Crafts",
+    categories: [
+      "Books",
+      "Craft",
+      "Design",
+      "Lifestyle",
+      "Fashion",
+      "Vintage",
+      "Records",
+      "Floral",
+      "Market",
+      "Grooming",
+      "Art",
+    ],
+  },
+  {
+    id: "culture-sights",
+    label: "Culture & Sights",
+    categories: ["Culture", "Sight", "Temple", "Museum", "Garden", "Art"],
+  },
+  {
+    id: "stay-bath",
+    label: "Stay & Bath",
+    categories: ["Stay", "Onsen", "Sento"],
+  },
+  {
+    id: "top-picks",
+    label: "Top Picks",
+    topPick: true,
+  },
+];

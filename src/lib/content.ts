@@ -99,12 +99,17 @@ export interface PlaceFilter {
  * All provided criteria must match (AND logic).
  *
  * @example
- * filterPlaces({ category: 'Cafe', neighborhood: 'nishijin' })
+ * filterPlaces({ category: 'Cafe', neighborhood: 'karasuma-and-downtown' })
  */
 export function filterPlaces({ category, neighborhood, tag }: PlaceFilter): Place[] {
   return places.filter((p) => {
     if (category !== undefined && !p.category.includes(category)) return false
-    if (neighborhood !== undefined && p.neighborhood !== neighborhood) return false
+    if (
+      neighborhood !== undefined &&
+      p.canonicalNeighborhoodSlug !== neighborhood
+    ) {
+      return false
+    }
     if (tag !== undefined && !p.tags.includes(tag)) return false
     return true
   })

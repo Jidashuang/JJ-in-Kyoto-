@@ -3,6 +3,7 @@ import type { PlaceCategory, PlaceTag } from "@/data/place-taxonomy";
 export type { PlaceCategory, PlaceTag };
 
 export type PlaceTagWithTopPick = PlaceTag | "Top Pick";
+export type PlaceDisplayTier = "hero" | "standard" | "minimal" | "hidden";
 
 export type VerificationSource = 'pdf' | 'manual' | 'official'
 export type VerificationStatus = 'unverified' | 'verified' | 'possibly_outdated'
@@ -20,12 +21,27 @@ export interface Place {
   titleEn?: string
   category: PlaceCategory[]
   neighborhood: string
+  rawNeighborhood?: string
+  canonicalNeighborhoodSlug?: string
+  lat?: number
+  lng?: number
   address?: string
   hours?: string
   price?: string
+  priceBand?: string
+  reservation?: string
+  warning?: string
   website?: string
   mapsUrl?: string
   tags: PlaceTagWithTopPick[]
+  curatorNote?: string
+  visitTime?: string
+  stayLength?: string
+  canonicalNeighborhood?: string
+  subarea?: string
+  bestFor?: string[]
+  mood?: string[]
+  pairWith?: string[]
   excerpt: string
   body: string
   heroImage: string
@@ -35,4 +51,5 @@ export interface Place {
   sourceFeature?: string
   sourcePages?: string
   verification?: Verification
+  displayTier: PlaceDisplayTier
 }

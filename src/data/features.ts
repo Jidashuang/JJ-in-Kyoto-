@@ -24,6 +24,35 @@ function unique<T>(values: T[]): T[] {
 
 const placeSlugSet = new Set(places.map((p) => p.slug));
 
+function inferFeatureKind(input: {
+  slug: string;
+  title: string;
+  tags?: string[];
+  intro: string;
+  body?: string;
+}): Feature["kind"] {
+  const lowerSlug = input.slug.toLowerCase();
+  const lowerTitle = input.title.toLowerCase();
+  const lowerIntro = input.intro.toLowerCase();
+  const lowerBody = (input.body ?? "").toLowerCase();
+  const tags = (input.tags ?? []).map((tag) => tag.toLowerCase());
+
+  const isRoute =
+    lowerSlug.includes("day") ||
+    lowerTitle.includes("day") ||
+    tags.includes("walk") ||
+    lowerIntro.includes("route") ||
+    lowerBody.includes("route");
+
+  if (isRoute) return "route";
+
+  const isEssay =
+    tags.includes("culture") && !tags.includes("takeout") && !tags.includes("bakery");
+  if (isEssay) return "essay";
+
+  return "collection";
+}
+
 function resolveFeaturePlaceSlugs(inputSlugs: string[]): string[] {
   const resolved = inputSlugs
     .map((slug) => normalizeSlug(slug))
@@ -40,6 +69,10 @@ export const features: Feature[] = realFeatures.map((item) => {
   const body = item.body?.trim() || DEFAULT_BODY;
   const coverImage = item.coverImage || DEFAULT_COVER_IMAGE;
   const placeSlugs = resolveFeaturePlaceSlugs(item.placeSlugs ?? []);
+  const tags =
+    item.tags && item.tags.length > 0
+      ? unique(item.tags.map((tag) => tag.trim()).filter(Boolean))
+      : undefined;
 
   return {
     slug: resolvedSlug,
@@ -48,6 +81,14 @@ export const features: Feature[] = realFeatures.map((item) => {
     intro,
     coverImage,
     body,
+    kind: inferFeatureKind({
+      slug: resolvedSlug,
+      title,
+      tags,
+      intro,
+      body,
+    }),
+    tags,
     placeSlugs,
   };
 });

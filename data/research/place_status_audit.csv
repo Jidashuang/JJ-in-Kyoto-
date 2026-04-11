@@ -1,0 +1,106 @@
+slug,title,batch_origin,status,core_score,core_missing,slug_title_level,category_level,neighborhood_level,neighborhood_normalized,canonical_slug_guess,hero_level,curator_level,excerpt_len,body_len,todo_count,todo_notes,uncertain
+rokuyosha-basement,六曜社 地下店,legacy_or_untracked,needs_manual_review,4/4,,uncertain,ok,ambiguous,kawaramachi,,ok,good,98,281,0,,slug_title_non_latin_auto_check_limited|canonical_neighborhood_ambiguous
+hitsuji-kyoto,ひつじ,batch2,needs_manual_review,4/4,,uncertain,ok,missing,,,ok,good,117,202,1,manual-review:Confirm this listing and Gion Hitsuji Cafe are the same shop.,slug_title_non_latin_auto_check_limited
+amuca-kyoto,Amuca,legacy_or_untracked,needs_manual_review,2/4,address|hours,ok,ok,missing,,,needs_review,good,103,213,0,,hero_image_source_or_quality_uncertain
+ippodo-kyoto-main-store,一保堂茶舗 京都本店,legacy_or_untracked,usable_but_needs_image,4/4,,uncertain,ok,mapped,teramachi,karasuma-and-downtown,needs_review,good,96,211,0,,slug_title_non_latin_auto_check_limited|hero_image_source_or_quality_uncertain
+d-and-department-kyoto,D&DEPARTMENT KYOTO,legacy_or_untracked,ready_to_publish,4/4,,ok,ok,mapped,karasuma,karasuma-and-downtown,ok,good,106,247,0,,
+kotoka-kyoto,古都香,legacy_or_untracked,usable_but_needs_image,4/4,,uncertain,ok,mapped,demachiyanagi,kamo-river-and-demachiyanagi,needs_review,good,102,223,0,,slug_title_non_latin_auto_check_limited|hero_image_source_or_quality_uncertain
+wife-and-husband,WIFE&HUSBAND,legacy_or_untracked,ready_to_publish,4/4,,ok,ok,mapped,demachiyanagi,kamo-river-and-demachiyanagi,ok,good,102,267,0,,
+nao-coffee,直珈琲,legacy_or_untracked,hold_back_for_now,0/4,address|hours|website|mapsUrl,uncertain,ok,missing,,,missing,thin,0,0,0,,slug_title_non_latin_auto_check_limited
+meditations-kyoto,Meditations,batch3,needs_manual_review,4/4,,ok,ok,missing,,,ok,thin,0,0,1,manual-review:Verify image license for production usage.,source_or_license_needs_verification
+coffee-nijo-goya,珈琲 二条小屋,legacy_or_untracked,hold_back_for_now,0/4,address|hours|website|mapsUrl,uncertain,ok,missing,,,broken_local_path,thin,0,0,0,,slug_title_non_latin_auto_check_limited
+smart-coffee,スマート珈琲店,legacy_or_untracked,ready_to_publish,4/4,,uncertain,ok,mapped,teramachi,karasuma-and-downtown,ok,good,109,217,0,,slug_title_non_latin_auto_check_limited
+inoda-coffee-main-store,イノダコーヒ 本店,legacy_or_untracked,usable_but_needs_image,4/4,,uncertain,ok,mapped,sakaimachi,karasuma-and-downtown,needs_review,good,97,194,0,,slug_title_non_latin_auto_check_limited|hero_image_source_or_quality_uncertain
+kissa-soiree,喫茶ソワレ,legacy_or_untracked,needs_manual_review,4/4,,uncertain,ok,ambiguous,kawaramachi,,ok,good,98,187,0,,slug_title_non_latin_auto_check_limited|canonical_neighborhood_ambiguous
+francois-kissaten,フランソア喫茶室,legacy_or_untracked,needs_manual_review,4/4,,uncertain,ok,ambiguous,kawaramachi,,ok,good,105,201,0,,slug_title_non_latin_auto_check_limited|canonical_neighborhood_ambiguous
+knot-cafe,knot café,batch2,needs_manual_review,4/4,,ok,ok,missing,,,ok,good,123,206,1,manual-review:Replace with permission-cleared hero if licensing is required.,
+ichikawaya-coffee,市川屋珈琲,legacy_or_untracked,ready_to_publish,4/4,,uncertain,ok,mapped,higashiyama,gion-and-higashiyama,ok,good,123,229,0,,slug_title_non_latin_auto_check_limited
+cafe-amazon-kyoto,喫茶アマゾン,batch2,needs_manual_review,4/4,,uncertain,ok,missing,,,ok,good,131,226,1,manual-review:Pick a higher-resolution hero from the official gallery page.,slug_title_non_latin_auto_check_limited
+nakagawa-komugiten,ナカガワ小麦店,batch3,needs_manual_review,4/4,,uncertain,ok,missing,,,ok,thin,0,0,1,manual-review:Verify image license for production usage.,slug_title_non_latin_auto_check_limited|source_or_license_needs_verification
+le-petitmec-omake,ル・プチメック OMAKE,batch3,needs_manual_review,4/4,,ok,ok,missing,,,ok,thin,0,0,1,manual-review:Verify image license for production usage.,source_or_license_needs_verification
+yaoiso-shijo-omiya,ヤオイソ 四条大宮店,legacy_or_untracked,hold_back_for_now,0/4,address|hours|website|mapsUrl,uncertain,ok,missing,,,missing,thin,0,0,0,,slug_title_non_latin_auto_check_limited
+germe-kyoto,ジェルメ,legacy_or_untracked,hold_back_for_now,0/4,address|hours|website|mapsUrl,uncertain,ok,missing,,,missing,thin,0,0,0,,slug_title_non_latin_auto_check_limited
+maruki-seipanjo,まるき製パン所,batch2,needs_manual_review,3/4,website,uncertain,ok,missing,,,needs_review,thin,0,0,1,manual-review:Official website not confirmed yet; verify source/license of this hero image.,slug_title_non_latin_auto_check_limited|hero_image_source_or_quality_uncertain|source_or_license_needs_verification
+kiridoshi-shinshindo,切通し進々堂,legacy_or_untracked,hold_back_for_now,0/4,address|hours|website|mapsUrl,uncertain,ok,missing,,,missing,thin,0,0,0,,slug_title_non_latin_auto_check_limited
+daigokuden-rokkaku,大極殿本舗 六角店,legacy_or_untracked,hold_back_for_now,1/4,address|hours|website,uncertain,ok,mapped,rokkaku,karasuma-and-downtown,broken_local_path,good,102,298,0,,slug_title_non_latin_auto_check_limited
+sakai-kyoto,さか井,batch3,needs_manual_review,3/4,website,uncertain,ok,missing,,,needs_review,thin,0,0,2,manual-review:Official website not confirmed yet. | manual-review:Verify image license for production usage.,slug_title_non_latin_auto_check_limited|hero_image_source_or_quality_uncertain|source_or_license_needs_verification
+izuju,いづ重,batch2,needs_manual_review,4/4,,uncertain,ok,missing,,,needs_review,thin,0,0,1,manual-review:Replace with permission-cleared hero if licensing is required.,slug_title_non_latin_auto_check_limited|hero_image_source_or_quality_uncertain
+suehiro-kyoto,末廣,legacy_or_untracked,hold_back_for_now,1/4,address|hours|website,uncertain,ok,mapped,gion,gion-and-higashiyama,ok,good,115,229,0,,slug_title_non_latin_auto_check_limited
+okawa-kyoto,おか和,legacy_or_untracked,usable_but_needs_image,3/4,hours,uncertain,ok,mapped,karasuma-oike,karasuma-and-downtown,broken_local_path,good,127,273,0,,slug_title_non_latin_auto_check_limited
+aoi-kyoto,あおい,legacy_or_untracked,hold_back_for_now,0/4,address|hours|website|mapsUrl,uncertain,ok,missing,,,missing,thin,0,0,0,,slug_title_non_latin_auto_check_limited
+deai-jaya-osen,出逢ひ茶屋 おせん,legacy_or_untracked,hold_back_for_now,0/4,address|hours|website|mapsUrl,uncertain,ok,missing,,,missing,thin,0,0,0,,slug_title_non_latin_auto_check_limited
+hanano-kyoto,花の,legacy_or_untracked,hold_back_for_now,0/4,address|hours|website|mapsUrl,uncertain,ok,missing,,,missing,thin,0,0,0,,slug_title_non_latin_auto_check_limited
+gion-kawakami,祇園 川上,legacy_or_untracked,hold_back_for_now,0/4,address|hours|website|mapsUrl,uncertain,ok,missing,,,missing,thin,0,0,0,,slug_title_non_latin_auto_check_limited
+tsuzuki-kyoto,つづき,legacy_or_untracked,hold_back_for_now,0/4,address|hours|website|mapsUrl,uncertain,ok,missing,,,missing,thin,0,0,0,,slug_title_non_latin_auto_check_limited
+pontocho-misogigawa,先斗町 禊川,legacy_or_untracked,hold_back_for_now,0/4,address|hours|website|mapsUrl,uncertain,ok,missing,,,missing,thin,0,0,0,,slug_title_non_latin_auto_check_limited
+heian-kyoto,平安,legacy_or_untracked,hold_back_for_now,1/4,address|hours|website,uncertain,ok,mapped,gion,gion-and-higashiyama,ok,good,136,214,0,,slug_title_non_latin_auto_check_limited
+fuyoen-kyoto,芙蓉園,legacy_or_untracked,usable_but_needs_image,4/4,,uncertain,ok,mapped,imadegawa,kamo-river-and-demachiyanagi,broken_local_path,good,119,278,0,,slug_title_non_latin_auto_check_limited
+taiho-kyoto,大鵬,batch3,needs_manual_review,3/4,website,uncertain,ok,missing,,,missing,thin,0,0,1,manual-review:No reliable official website found; verify hours and add hero image.,slug_title_non_latin_auto_check_limited|source_or_license_needs_verification
+spice-chamber,スパイスチャンバー,legacy_or_untracked,hold_back_for_now,0/4,address|hours|website|mapsUrl,uncertain,ok,missing,,,missing,thin,0,0,0,,slug_title_non_latin_auto_check_limited
+le-quatorzieme,ル キャトーズィエム,legacy_or_untracked,hold_back_for_now,0/4,address|hours|website|mapsUrl,uncertain,ok,missing,,,missing,thin,0,0,0,,slug_title_non_latin_auto_check_limited
+beer-pub-takumiya,BEER PUB TAKUMIYA,batch3,needs_manual_review,4/4,,ok,ok,missing,,,needs_review,thin,0,0,2,manual-review:Weekend closing time differs by source; verify with official Instagram. | manual-review:Verify image license for production usage.,hero_image_source_or_quality_uncertain|source_or_license_needs_verification
+ki-kyoto,汽,legacy_or_untracked,hold_back_for_now,0/4,address|hours|website|mapsUrl,uncertain,ok,missing,,,missing,thin,0,0,0,,slug_title_non_latin_auto_check_limited
+mister-gyoza,ミスター・ギョーザ,legacy_or_untracked,hold_back_for_now,0/4,address|hours|website|mapsUrl,uncertain,ok,missing,,,missing,thin,0,0,0,,slug_title_non_latin_auto_check_limited
+sukiyaki-kimura,すき焼 キムラ,legacy_or_untracked,hold_back_for_now,0/4,address|hours|website|mapsUrl,uncertain,ok,missing,,,missing,thin,0,0,0,,slug_title_non_latin_auto_check_limited
+moritaya-kiyamachi,モリタ屋 木屋町店,legacy_or_untracked,hold_back_for_now,0/4,address|hours|website|mapsUrl,uncertain,ok,missing,,,missing,thin,0,0,0,,slug_title_non_latin_auto_check_limited
+aje-matsubara,アジェ 松原本店,batch3,needs_manual_review,4/4,,uncertain,ok,missing,,,ok,thin,0,0,0,,slug_title_non_latin_auto_check_limited
+fujimura-kyoto,藤むら,legacy_or_untracked,hold_back_for_now,0/4,address|hours|website|mapsUrl,uncertain,ok,missing,,,missing,thin,0,0,0,,slug_title_non_latin_auto_check_limited
+gion-negiyaki-kana-higashi,祇園ねぎ焼 かな 東店,legacy_or_untracked,hold_back_for_now,0/4,address|hours|website|mapsUrl,uncertain,ok,missing,,,missing,thin,0,0,0,,slug_title_non_latin_auto_check_limited
+oyaji-kyoto,おやじ,legacy_or_untracked,hold_back_for_now,0/4,address|hours|website|mapsUrl,uncertain,ok,missing,,,missing,thin,0,0,0,,slug_title_non_latin_auto_check_limited
+okabashi,京うどん 生蕎麦 岡北,batch2,needs_manual_review,4/4,,uncertain,ok,missing,,,missing,thin,0,0,1,manual-review:Add a verified landscape hero image from official source.,slug_title_non_latin_auto_check_limited
+kyogoku-kaneyo,京極かねよ,batch2,needs_manual_review,4/4,,uncertain,ok,missing,,,needs_review,thin,0,0,1,manual-review:Current images are low resolution; replace with a higher-quality official image.,slug_title_non_latin_auto_check_limited|hero_image_source_or_quality_uncertain
+kyotofu-toyouke-jaya,京豆腐 とようけ茶屋,batch2,needs_manual_review,4/4,,uncertain,ok,missing,,,missing,thin,0,0,1,manual-review:Add a verified hero image from official branch page or permission-cleared source.,slug_title_non_latin_auto_check_limited
+toriyasu-kyoto,とり安,legacy_or_untracked,hold_back_for_now,0/4,address|hours|website|mapsUrl,uncertain,ok,missing,,,missing,thin,0,0,0,,slug_title_non_latin_auto_check_limited
+gontaro-main-store,権太呂 本店,legacy_or_untracked,hold_back_for_now,0/4,address|hours|website|mapsUrl,uncertain,ok,missing,,,missing,thin,0,0,0,,slug_title_non_latin_auto_check_limited
+kaian-kawamichiya,晦庵 河道屋,legacy_or_untracked,hold_back_for_now,0/4,address|hours|website|mapsUrl,uncertain,ok,missing,,,missing,thin,0,0,0,,slug_title_non_latin_auto_check_limited
+sumi-kyoto,SUMI,legacy_or_untracked,hold_back_for_now,0/4,address|hours|website|mapsUrl,ok,ok,missing,,,missing,thin,0,0,0,,
+revolution-books-kyoto,レボリューションブックス,batch3,needs_manual_review,4/4,,uncertain,ok,missing,,,needs_review,thin,0,0,1,manual-review:Verify image license for production usage.,slug_title_non_latin_auto_check_limited|hero_image_source_or_quality_uncertain|source_or_license_needs_verification
+sakaba-ikura-mokuzai,酒場 井倉木材,legacy_or_untracked,hold_back_for_now,0/4,address|hours|website|mapsUrl,uncertain,ok,missing,,,missing,thin,0,0,0,,slug_title_non_latin_auto_check_limited
+masuya-saketen,益や酒店,legacy_or_untracked,hold_back_for_now,0/4,address|hours|website|mapsUrl,uncertain,ok,missing,,,missing,thin,0,0,0,,slug_title_non_latin_auto_check_limited
+yanagikoji-taka,柳小路 TAKA,legacy_or_untracked,hold_back_for_now,0/4,address|hours|website|mapsUrl,ok,ok,missing,,,missing,thin,0,0,0,,
+bar-licking-chair,バー・リッキングチェア,batch3,needs_manual_review,4/4,,needs_review,ok,missing,,,needs_review,thin,0,0,1,manual-review:Verify official JP naming; slug/title may need to be corrected to Rocking Chair.,hero_image_source_or_quality_uncertain|source_or_license_needs_verification
+soil-kyoto,Soil,legacy_or_untracked,ready_to_publish,4/4,,ok,ok,mapped,okazaki,okazaki-and-marutamachi,ok,good,118,234,0,,
+furui-dogu,古い道具,legacy_or_untracked,hold_back_for_now,0/4,address|hours|website|mapsUrl,uncertain,ok,missing,,,missing,thin,0,0,0,,slug_title_non_latin_auto_check_limited
+kamisoe,かみ添,legacy_or_untracked,ready_to_publish,4/4,,uncertain,ok,mapped,murasakino,nishijin-and-north-kyoto,ok,good,97,212,0,,slug_title_non_latin_auto_check_limited
+roku-kyoto,ロク,legacy_or_untracked,hold_back_for_now,0/4,address|hours|website|mapsUrl,uncertain,ok,missing,,,broken_local_path,thin,0,0,0,,slug_title_non_latin_auto_check_limited
+aiha,阿以波,legacy_or_untracked,needs_manual_review,4/4,,uncertain,ok,ambiguous,nakagyo,,ok,good,115,189,0,,slug_title_non_latin_auto_check_limited|canonical_neighborhood_ambiguous
+kyoto-hangakan-motomutsuku,京都版画館 元むつ九,legacy_or_untracked,hold_back_for_now,0/4,address|hours|website|mapsUrl,uncertain,ok,missing,,,missing,thin,0,0,0,,slug_title_non_latin_auto_check_limited
+gallery-kei,ギャラリー啓,batch3,needs_manual_review,4/4,,uncertain,ok,missing,,,missing,thin,0,0,1,manual-review:Could not retrieve a stable image URL from current sources.,slug_title_non_latin_auto_check_limited
+kyodo-gangu-hirata,郷土玩具 平田,legacy_or_untracked,needs_manual_review,4/4,,uncertain,ok,mapped,teramachi,karasuma-and-downtown,ok,thin,74,194,0,,slug_title_non_latin_auto_check_limited
+tessaido,てっさい堂,legacy_or_untracked,hold_back_for_now,0/4,address|hours|website|mapsUrl,uncertain,ok,missing,,,missing,thin,0,0,0,,slug_title_non_latin_auto_check_limited
+kintakedo,金竹堂,legacy_or_untracked,hold_back_for_now,0/4,address|hours|website|mapsUrl,uncertain,ok,missing,,,missing,thin,0,0,0,,slug_title_non_latin_auto_check_limited
+daikichi-kyoto,大吉,legacy_or_untracked,hold_back_for_now,0/4,address|hours|website|mapsUrl,uncertain,ok,missing,,,missing,thin,0,0,0,,slug_title_non_latin_auto_check_limited
+kaikado,開化堂,legacy_or_untracked,usable_but_needs_image,4/4,,uncertain,ok,mapped,shichijo,kyoto-station-and-south,broken_local_path,good,104,194,0,,slug_title_non_latin_auto_check_limited
+kikyori-naito-shoten,桔梗利 内藤商店,legacy_or_untracked,hold_back_for_now,1/4,address|hours|website,uncertain,ok,ambiguous,sanjo,,ok,good,112,250,0,,slug_title_non_latin_auto_check_limited|canonical_neighborhood_ambiguous
+tsujiwa-kanaami,辻和金網,legacy_or_untracked,needs_manual_review,4/4,,uncertain,ok,ambiguous,nakagyo,,broken_local_path,good,98,213,0,,slug_title_non_latin_auto_check_limited|canonical_neighborhood_ambiguous
+gion-naito,祇園ない藤,legacy_or_untracked,hold_back_for_now,0/4,address|hours|website|mapsUrl,uncertain,ok,missing,,,missing,thin,0,0,0,,slug_title_non_latin_auto_check_limited
+bolts-hardware-store,Bolts Hardware Store,legacy_or_untracked,ready_to_publish,4/4,,ok,ok,mapped,kamigamo,nishijin-and-north-kyoto,ok,good,120,231,0,,
+seikosha,誠光社,legacy_or_untracked,ready_to_publish,4/4,,uncertain,ok,mapped,marutamachi,okazaki-and-marutamachi,ok,good,118,200,0,,slug_title_non_latin_auto_check_limited
+100000t-aronto,100000tアローント,legacy_or_untracked,hold_back_for_now,0/4,address|hours|website|mapsUrl,uncertain,ok,missing,,,missing,thin,0,0,0,,slug_title_non_latin_auto_check_limited
+books-and-things,Books & Things,legacy_or_untracked,ready_to_publish,4/4,,ok,ok,mapped,gion,gion-and-higashiyama,ok,good,90,190,0,,
+mitate-kyoto,みたて,batch3,needs_manual_review,4/4,,uncertain,ok,missing,,,needs_review,good,124,219,1,manual-review:Verify image license for production usage.,slug_title_non_latin_auto_check_limited|hero_image_source_or_quality_uncertain|source_or_license_needs_verification
+lifetime-kyoto,Lifetime,legacy_or_untracked,ready_to_publish,4/4,,ok,ok,mapped,murasakino,nishijin-and-north-kyoto,ok,good,109,219,0,,
+brodism-kyoto,Brodism,legacy_or_untracked,hold_back_for_now,0/4,address|hours|website|mapsUrl,ok,ok,missing,,,broken_local_path,good,104,254,0,,
+fil-kyoto,F.I.L. Kyoto,legacy_or_untracked,needs_manual_review,4/4,,needs_review,ok,ambiguous,nakagyo,,ok,good,101,171,0,,canonical_neighborhood_ambiguous
+barber-higuchi,Barber Higuchi Grooming & Spa,legacy_or_untracked,needs_manual_review,4/4,,ok,ok,ambiguous,nakagyo,,ok,good,114,222,0,,canonical_neighborhood_ambiguous
+gojo-guesthouse-honkan,五条ゲストハウス本館,batch3,needs_manual_review,4/4,,uncertain,ok,missing,,,needs_review,thin,0,0,2,manual-review:Replace aggregator website with first-party official site if available. | manual-review:Verify image license for production usage.,slug_title_non_latin_auto_check_limited|hero_image_source_or_quality_uncertain|source_or_license_needs_verification
+len-kyoto-kawaramachi,Len Kyoto Kawaramachi,legacy_or_untracked,needs_manual_review,4/4,,ok,ok,ambiguous,kawaramachi,,ok,good,104,178,0,,canonical_neighborhood_ambiguous
+shizuya-kyoto,しづや KYOTO,batch3,needs_manual_review,4/4,,ok,ok,missing,,,ok,thin,0,0,1,manual-review:Re-check overlap with `shizuya-kyoto-station-food`; may be duplication/misclassification.,
+shizuya-kyoto-station-food,しづや KYOTO（駅弁・フード）,legacy_or_untracked,hold_back_for_now,0/4,address|hours|website|mapsUrl,needs_review,ok,missing,,,missing,thin,0,0,0,,
+takagi-coffee-karasuma,高木珈琲 烏丸店,legacy_or_untracked,hold_back_for_now,0/4,address|hours|website|mapsUrl,uncertain,ok,missing,,,missing,thin,0,0,0,,slug_title_non_latin_auto_check_limited
+allouneno,アローンヌノ,batch3,needs_manual_review,4/4,,uncertain,ok,missing,,,missing,thin,0,0,1,manual-review:Could not retrieve a stable non-logo image URL from current sources.,slug_title_non_latin_auto_check_limited
+slo-kyoto,SLO Kyoto,legacy_or_untracked,hold_back_for_now,0/4,address|hours|website|mapsUrl,ok,ok,missing,,,missing,thin,0,0,0,,
+hatsuda-kyoto-station-food,はつだ 京都駅弁,legacy_or_untracked,hold_back_for_now,0/4,address|hours|website|mapsUrl,uncertain,ok,missing,,,missing,thin,0,0,0,,slug_title_non_latin_auto_check_limited
+ogawa-udon,おがわうどん,legacy_or_untracked,hold_back_for_now,0/4,address|hours|website|mapsUrl,uncertain,ok,missing,,,missing,thin,0,0,0,,slug_title_non_latin_auto_check_limited
+hinode-udon,日の出うどん,legacy_or_untracked,hold_back_for_now,0/4,address|hours|website|mapsUrl,uncertain,ok,missing,,,missing,thin,0,0,0,,slug_title_non_latin_auto_check_limited
+wabiya-korekidou-station-food,侘家古暦堂 京都駅店,legacy_or_untracked,hold_back_for_now,0/4,address|hours|website|mapsUrl,uncertain,ok,missing,,,missing,thin,0,0,0,,slug_title_non_latin_auto_check_limited
+hakushokuya-kyoto-station-food,白峯屋 京都駅,legacy_or_untracked,hold_back_for_now,0/4,address|hours|website|mapsUrl,uncertain,ok,missing,,,missing,thin,0,0,0,,slug_title_non_latin_auto_check_limited
+funaoka-onsen,船岡温泉,legacy_or_untracked,ready_to_publish,4/4,,uncertain,ok,mapped,kuramaguchi,nishijin-and-north-kyoto,ok,good,99,201,0,,slug_title_non_latin_auto_check_limited
+kiyomizudera,清水寺,legacy_or_untracked,hold_back_for_now,0/4,address|hours|website|mapsUrl,uncertain,ok,missing,,,missing,thin,0,0,0,,slug_title_non_latin_auto_check_limited
+nishiki-market,錦市場,legacy_or_untracked,hold_back_for_now,0/4,address|hours|website|mapsUrl,uncertain,ok,missing,,,missing,thin,0,0,0,,slug_title_non_latin_auto_check_limited
+rokkakudo,六角堂,legacy_or_untracked,hold_back_for_now,0/4,address|hours|website|mapsUrl,uncertain,ok,missing,,,missing,thin,0,0,0,,slug_title_non_latin_auto_check_limited
+sanjusangendo,蓮華王院 三十三間堂,legacy_or_untracked,hold_back_for_now,0/4,address|hours|website|mapsUrl,uncertain,ok,missing,,,missing,thin,0,0,0,,slug_title_non_latin_auto_check_limited
+shoseien,渉成園,legacy_or_untracked,hold_back_for_now,0/4,address|hours|website|mapsUrl,uncertain,ok,missing,,,missing,thin,0,0,0,,slug_title_non_latin_auto_check_limited
+toji-koboichi,東寺 弘法市,batch3,needs_manual_review,4/4,,uncertain,ok,missing,,,needs_review,thin,0,0,2,manual-review:Event entry; consider event-specific schema. | manual-review:Verify image license for production usage.,slug_title_non_latin_auto_check_limited|hero_image_source_or_quality_uncertain|source_or_license_needs_verification
+kawai-kanjiro-memorial-museum,河井寛次郎記念館,legacy_or_untracked,hold_back_for_now,0/4,address|hours|website|mapsUrl,uncertain,ok,missing,,,missing,thin,0,0,0,,slug_title_non_latin_auto_check_limited
+senoku-hakukokan,泉屋博古館,legacy_or_untracked,hold_back_for_now,0/4,address|hours|website|mapsUrl,uncertain,ok,missing,,,missing,thin,0,0,0,,slug_title_non_latin_auto_check_limited
