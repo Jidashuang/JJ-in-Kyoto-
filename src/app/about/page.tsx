@@ -103,8 +103,8 @@ export default function AboutPage() {
                 Rights and attribution
               </Heading>
               <p className="font-sans text-sm leading-relaxed text-muted-foreground">
-                Images are original unless stated otherwise. If you hold rights and need a
-                credit/update/removal, please get in touch.
+                Most images are sourced from shops&apos; own official websites or public-facing materials.
+                If you hold rights and need a credit, update, or removal, please get in touch.
               </p>
             </article>
 

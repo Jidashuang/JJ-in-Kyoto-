@@ -1,0 +1,218 @@
+import type { RealNeighborhood } from "@/types/neighborhood-real";
+
+export const realNeighborhoods: RealNeighborhood[] = [
+  {
+    slug: "karasuma-and-downtown",
+    name: "Karasuma & Downtown",
+    intro:
+      "Central Kyoto at its most walkable: the city's main north–south spine and the dense, flat grid of streets that surround it. Most of the guide's classic coffee rooms, craft shops, and daily essentials sit within fifteen minutes of each other here.",
+    hook: "The easiest district to base a day around — walkable, layered, and dense with good things at every price point.",
+    lat: 35.0116,
+    lng: 135.7681,
+    heroImage:
+      "https://www.d-department.com/client_info/D_DEPARTMENT/view/userweb/images/store/img_kyoto.jpg?timestamp=1753341081788",
+    tags: ["Central", "Walkable", "Classic"],
+    bestFor: [
+      "first-time Kyoto days with flexible plans",
+      "wandering on foot between multiple stops",
+      "classic Kyoto cafés, diners, and long-running shops",
+    ],
+    whenToGo: "Weekday mornings before peak crowds",
+    halfDayRoute:
+      "Start at Ippodo Tea for a morning cup, walk south to Nishiki Market for a slow browse, cut east to Smart Coffee for lunch, then spend the afternoon in the Rokkaku and Teramachi craft shops.",
+    anchorPlaceSlugs: [
+      "ippodo-kyoto-main-store",
+      "smart-coffee",
+      "d-and-department-kyoto",
+    ],
+    placeSlugs: [
+      "rokuyosha-basement",
+      "kissa-soiree",
+      "francois-kissaten",
+      "d-and-department-kyoto",
+      "ippodo-kyoto-main-store",
+      "smart-coffee",
+      "inoda-coffee-main-store",
+      "okawa-kyoto",
+      "kyodo-gangu-hirata",
+      "daigokuden-rokkaku",
+      "sakai-kyoto",
+      "kyogoku-kaneyo",
+      "le-petitmec-omake",
+      "maruki-seipanjo",
+      "beer-pub-takumiya",
+      "len-kyoto-kawaramachi",
+      "nishiki-market",
+      "rokkakudo",
+      "aiha",
+      "tsujiwa-kanaami",
+      "fil-kyoto",
+      "barber-higuchi",
+      "gallery-kei",
+      "allouneno",
+      "revolution-books-kyoto",
+      "knot-cafe",
+      "meditations-kyoto",
+      "coffee-nijo-goya",
+      "takagi-coffee-karasuma",
+    ],
+    featured: true,
+  },
+  {
+    slug: "gion-and-higashiyama",
+    name: "Gion & Higashiyama",
+    intro:
+      "Eastern Kyoto's temple-and-stone-paving district, dense with history but best experienced off the main tourist lanes. Good for a specific kind of slow afternoon — independent bookshops, a machiya coffee stop, and old sushi rooms that still feel like working neighborhood places.",
+    hook: "Come for the back streets, not the main drag. Higashiyama rewards the route that avoids Sannenzaka.",
+    lat: 35.0036,
+    lng: 135.7794,
+    heroImage:
+      "https://base-ec2.akamaized.net/images/user/template/ichikawaya/image-Slide1_5d8471d7ce14a.jpg",
+    tags: ["Historic", "Walkable", "Classic"],
+    bestFor: [
+      "traditional Kyoto streets, temples, and old-city atmosphere",
+      "wandering on foot between multiple stops",
+    ],
+    whenToGo: "Weekday mornings before peak crowds",
+    halfDayRoute:
+      "Lunch at Izuju before noon, then walk the back streets of Furumonzen to Books & Things. Arrive at Ichikawaya Coffee between 14:00–16:00 for the best light. End at Kawai Kanjiro Memorial House before it closes at 17:00.",
+    anchorPlaceSlugs: [
+      "izuju",
+      "ichikawaya-coffee",
+      "books-and-things",
+    ],
+    placeSlugs: [
+      "hitsuji-kyoto",
+      "izuju",
+      "suehiro-kyoto",
+      "heian-kyoto",
+      "ichikawaya-coffee",
+      "cafe-amazon-kyoto",
+      "books-and-things",
+      "gion-naito",
+      "gion-kawakami",
+      "gion-negiyaki-kana-higashi",
+      "kiyomizudera",
+      "kawai-kanjiro-memorial-museum",
+      "gojo-guesthouse-honkan",
+    ],
+    featured: true,
+  },
+  {
+    slug: "kamo-river-and-demachiyanagi",
+    name: "Kamo River & Demachiyanagi",
+    intro:
+      "The upper Kamo River area, anchored at Demachiyanagi where two rivers meet. Quieter and more residential than central Kyoto, with a strong morning-bread-and-coffee culture and some of the best outdoor sitting in the city.",
+    hook: "The guide's best case for a slow morning: bread from Nakagawa, coffee by the river, time that expands instead of contracts.",
+    lat: 35.0349,
+    lng: 135.7748,
+    heroImage:
+      "https://static.wixstatic.com/media/e6c411_cf71cbd77b934ee4880df88c7736cb00.png/v1/fit/w_2500,h_1330,al_c/e6c411_cf71cbd77b934ee4880df88c7736cb00.png",
+    tags: ["Scenic", "Calm", "Local"],
+    bestFor: [
+      "riverside walks and slower outdoor time",
+      "everyday local Kyoto over checklist tourism",
+    ],
+    whenToGo: "Late morning through golden hour",
+    halfDayRoute:
+      "Nakagawa Komugiten opens at 10 (Thu–Sun only). Walk south to Demachiyanagi, collect a coffee to go, then follow the river bank. WIFE&HUSBAND has a picnic setup — borrow a basket and stay by the water as long as the afternoon allows. Kotoka for dango on the way back.",
+    anchorPlaceSlugs: [
+      "wife-and-husband",
+      "nakagawa-komugiten",
+      "kotoka-kyoto",
+    ],
+    placeSlugs: [
+      "wife-and-husband",
+      "kotoka-kyoto",
+      "nakagawa-komugiten",
+      "fuyoen-kyoto",
+    ],
+    featured: true,
+  },
+  {
+    slug: "okazaki-and-marutamachi",
+    name: "Okazaki & Marutamachi",
+    intro:
+      "The museum district east of the Imperial Palace, stretching from the Heian Shrine grounds toward the canal. Calmer than Gion, with a good mix of cultural institutions, a strong bookshop, and an udon room worth arriving early for.",
+    hook: "Okazaki works as a half-day: museum or garden in the morning, lunch at Okabashi, Seikosha in the afternoon.",
+    lat: 35.0175,
+    lng: 135.7822,
+    heroImage:
+      "https://www.seikosha-books.com/assets/themes/seik-2026-a/img/ogp-image-2021-a.png",
+    tags: ["Culture", "Calm", "Walkable"],
+    bestFor: [
+      "museum-and-cafe combinations",
+      "quieter pacing and fewer crowded blocks",
+    ],
+    whenToGo: "Weekday afternoons at a slower pace",
+    halfDayRoute:
+      "Okabashi udon for lunch (arrives early — closes at 18:00, shorter on busy days). Walk north toward Heian Shrine. Seikosha bookshop is open until 20:00 and makes a good late-afternoon stop. Soil for antique tableware browsing nearby.",
+    anchorPlaceSlugs: ["seikosha", "okabashi", "soil-kyoto"],
+    placeSlugs: [
+      "seikosha",
+      "soil-kyoto",
+      "okabashi",
+      "senoku-hakukokan",
+    ],
+    featured: true,
+  },
+  {
+    slug: "nishijin-and-north-kyoto",
+    name: "Nishijin & North Kyoto",
+    intro:
+      "The former weaving district and the quieter residential streets of Kyoto's north. Less tourist-facing than any other part of the guide, with some of its most specific craft addresses — karakami paper, lifestyle shops, and Funaoka Onsen for a late-afternoon sento.",
+    hook: "Come here for Kamisoe, Mitate, or Funaoka Onsen. Come deliberately rather than as an add-on.",
+    lat: 35.0327,
+    lng: 135.7468,
+    heroImage:
+      "https://kamisoe.com/img/ogp/ogp.jpg",
+    tags: ["Local", "Calm", "Walkable"],
+    bestFor: [
+      "everyday local Kyoto over checklist tourism",
+      "quieter pacing and fewer crowded blocks",
+    ],
+    whenToGo: "Weekday afternoons at a slower pace",
+    halfDayRoute:
+      "Start at Kamisoe (open 13:00, closed Mon–Tue) to browse karakami paper. Walk south to Lifetime or Mitate for a different kind of lifestyle shop. End the day at Funaoka Onsen after 15:00 — the carved interior is worth seeing, and an early evening sento is the right note to finish on.",
+    anchorPlaceSlugs: ["funaoka-onsen", "kamisoe", "lifetime-kyoto"],
+    placeSlugs: [
+      "kamisoe",
+      "lifetime-kyoto",
+      "bolts-hardware-store",
+      "funaoka-onsen",
+      "kyotofu-toyouke-jaya",
+      "mitate-kyoto",
+    ],
+    featured: true,
+  },
+  {
+    slug: "kyoto-station-and-south",
+    name: "Kyoto Station & South",
+    intro:
+      "The arrival district and a practical half-day zone for early or late visits. Toji's flea market on the 21st is the main event; Kaikado, Sanjusangendo, and Shoseien garden fill a slower pace between train times.",
+    hook: "Most useful for arrival days and departure-morning planning. Toji on the 21st changes everything.",
+    lat: 34.9851,
+    lng: 135.7587,
+    heroImage: "/images/37.jpg",
+    tags: ["Practical", "Transit"],
+    bestFor: [
+      "arrival/departure-day planning",
+      "station-based half-days and quick pivots",
+    ],
+    whenToGo: "Early morning or late afternoon around train timing",
+    halfDayRoute:
+      "Kaikado opens at 9:00 (closed Sun–Mon and holidays) — the shop is small and the wait is worth it. Shoseien garden is a quiet walk nearby, rarely busy. Sanjusangendo is best visited early before group tours arrive. Toji flea market on the 21st runs from around 5am; plan an early start for the best browsing.",
+    anchorPlaceSlugs: ["kaikado", "toji-koboichi", "sanjusangendo"],
+    placeSlugs: [
+      "kaikado",
+      "shizuya-kyoto",
+      "hatsuda-kyoto-station-food",
+      "wabiya-korekidou-station-food",
+      "hakushokuya-kyoto-station-food",
+      "sanjusangendo",
+      "shoseien",
+      "toji-koboichi",
+    ],
+    featured: true,
+  },
+];
