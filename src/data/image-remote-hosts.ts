@@ -31,6 +31,7 @@ export const IMAGE_REMOTE_HOSTNAMES = [
   "www.japan-experience.com",
   "www.d-department.com",
   "www.inoda-coffee.co.jp",
+  "www.kaikado.jp",
   "www.ippodo-tea.co.jp",
   "www.kyotokan.jp",
   "www.nakagawakomugiten.com",
@@ -46,5 +47,6 @@ export const IMAGE_REMOTE_HOSTNAMES = [
 export const IMAGE_REMOTE_HTTP_HOSTNAMES = [
   "bar-rockingchair.jp",
   "kyoto-kotoka.com",
+  "www.kyoto-okakita.com",
   "www.ippodo-tea.co.jp",
 ] as const;

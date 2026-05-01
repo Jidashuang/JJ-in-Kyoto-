@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint --ignore-pattern '.claude/**' --ignore-pattern '.claire/**' --ignore-pattern '.next_pre_debug_*/**'"
   },
   "dependencies": {
     "@base-ui/react": "^1.3.0",

@@ -8,6 +8,34 @@ const DEFAULT_BODY =
   "This page gathers the linked places and notes for the feature.";
 const DEFAULT_COVER_IMAGE = "/images/features/placeholder.jpg";
 
+// When a theme does not specify a local coverImage (or uses the placeholder
+// convention path /images/features/{slug}.jpg that has no asset yet), fall
+// back to the first linked place's heroImage so the feature card renders real
+// imagery immediately. Replace with curated shots per the theme image direction
+// under public/images/features/ when available.
+function resolveFeatureCoverImage(params: {
+  coverImage?: string;
+  placeSlugs: string[];
+  placeHeroBySlug: Map<string, string>;
+}): string {
+  const { coverImage, placeSlugs, placeHeroBySlug } = params;
+
+  const placeholderPrefix = "/images/features/";
+  const isPlaceholder =
+    !coverImage ||
+    coverImage === DEFAULT_COVER_IMAGE ||
+    coverImage.startsWith(placeholderPrefix);
+
+  if (isPlaceholder) {
+    for (const slug of placeSlugs) {
+      const hero = placeHeroBySlug.get(slug);
+      if (hero && hero.trim().length > 0) return hero;
+    }
+  }
+
+  return coverImage || DEFAULT_COVER_IMAGE;
+}
+
 function normalizeSlug(input: string): string {
   return input
     .trim()
@@ -23,6 +51,7 @@ function unique<T>(values: T[]): T[] {
 }
 
 const placeSlugSet = new Set(places.map((p) => p.slug));
+const placeHeroBySlug = new Map(places.map((p) => [p.slug, p.heroImage]));
 
 function inferFeatureKind(input: {
   slug: string;
@@ -67,8 +96,12 @@ export const features: Feature[] = realFeatures.map((item) => {
   const title = item.title?.trim() || "Untitled Feature";
   const intro = item.intro?.trim() || DEFAULT_INTRO;
   const body = item.body?.trim() || DEFAULT_BODY;
-  const coverImage = item.coverImage || DEFAULT_COVER_IMAGE;
   const placeSlugs = resolveFeaturePlaceSlugs(item.placeSlugs ?? []);
+  const coverImage = resolveFeatureCoverImage({
+    coverImage: item.coverImage,
+    placeSlugs,
+    placeHeroBySlug,
+  });
   const tags =
     item.tags && item.tags.length > 0
       ? unique(item.tags.map((tag) => tag.trim()).filter(Boolean))

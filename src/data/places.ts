@@ -17,6 +17,7 @@ const DEFAULT_EXCERPT =
   "A curated Kyoto listing from the current guide.";
 const DEFAULT_BODY =
   "This entry collects the practical notes and editorial context for the place.";
+const DEFAULT_HERO_IMAGE = "/images/places/placeholder.jpg";
 
 const CATEGORY_WHITELIST = new Set<string>(PLACE_CATEGORIES);
 const TAG_WHITELIST = new Set<string>(PLACE_TAGS);
@@ -162,21 +163,26 @@ export const places: Place[] = realPlaces.map((item, index) => {
       ).filter(Boolean) || undefined,
     excerpt: item.excerpt?.trim() || DEFAULT_EXCERPT,
     body: item.body?.trim() || DEFAULT_BODY,
-    heroImage: item.heroImage || placeHeroImage(index),
+    essence: item.essence?.trim() || undefined,
+    sensory: item.sensory?.trim() || undefined,
+    tip: item.tip?.trim() || undefined,
+    heroImage: item.heroImage || placeHeroImage() || DEFAULT_HERO_IMAGE,
     gallery:
       item.gallery && item.gallery.length > 0
         ? item.gallery
-        : index < 45 && placeGalleryImage(index)
-          ? [placeGalleryImage(index)!]
+        : index < 45 && placeGalleryImage()
+          ? [placeGalleryImage()!]
           : undefined,
     featured: item.featured,
     topPick: item.topPick,
     sourceFeature: item.sourceFeature,
     sourcePages: item.sourcePages,
-    displayTier: getPlaceDisplayTier({
-      slug: resolvedSlug,
-      topPick: item.topPick,
-    }),
+    displayTier:
+      item.displayTierOverride ??
+      getPlaceDisplayTier({
+        slug: resolvedSlug,
+        topPick: item.topPick,
+      }),
   };
 });
 

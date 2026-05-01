@@ -149,11 +149,15 @@ export function getUsedCategories(): PlaceCategory[] {
 /**
  * Returns every PlaceTag that appears on at least one place in the current
  * data set, sorted alphabetically. Useful for building filter UIs.
+ *
+ * The "Top Pick" marker is intentionally excluded — it's a system flag for
+ * editorial display, not a filterable tag.
  */
 export function getUsedTags(): PlaceTag[] {
   const seen = new Set<PlaceTag>()
   for (const p of places) {
     for (const t of p.tags) {
+      if (t === 'Top Pick') continue
       seen.add(t)
     }
   }

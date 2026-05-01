@@ -298,7 +298,22 @@ export default async function PlaceDetailPage({
             )}
 
             <p className="label-xs text-muted-foreground/70">{area.label}</p>
+
+            {place.essence && (
+              <p className="mt-8 max-w-3xl font-serif text-2xl leading-[1.3] text-foreground md:text-[1.75rem] md:leading-[1.28]">
+                {place.essence}
+              </p>
+            )}
           </header>
+
+          {place.sensory && (
+            <section className="mb-12 md:mb-14">
+              <SectionHeading eyebrow="In the room" title="Atmosphere" />
+              <p className="max-w-3xl font-sans text-base leading-[1.75] text-foreground md:text-[1.0625rem]">
+                {place.sensory}
+              </p>
+            </section>
+          )}
 
           {editorialSummary && (
             <section className="mb-12 md:mb-14">
@@ -306,6 +321,17 @@ export default async function PlaceDetailPage({
               <p className="max-w-3xl font-serif text-lg italic leading-[1.7] text-muted-foreground md:text-xl">
                 {editorialSummary}
               </p>
+            </section>
+          )}
+
+          {place.tip && (
+            <section className="mb-12 md:mb-14">
+              <aside className="max-w-3xl border-l-2 border-foreground/20 bg-muted/30 px-5 py-4 md:px-6 md:py-5">
+                <p className="mb-2 label-xs text-muted-foreground/60">Go when</p>
+                <p className="font-sans text-sm leading-[1.7] text-foreground md:text-[0.9375rem]">
+                  {place.tip}
+                </p>
+              </aside>
             </section>
           )}
 

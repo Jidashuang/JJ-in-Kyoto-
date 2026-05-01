@@ -17,6 +17,10 @@ export const realPlaces: RealPlace[] = [
       "A basement kissaten classic for coffee, doughnuts, and one of Kyoto's best old-school atmospheres.",
     body:
       "Rokuyosha's basement is one of the easiest ways to understand Kyoto kissa culture: dim light, calm regulars, and coffee that feels inseparable from the room itself. The official site lists clear split hours for cafe and bar time, which makes it especially useful for trip planning.",
+    essence: "The kissaten prototype, preserved one floor underground.",
+    sensory:
+      "Walk down the narrow stairs and the sound drops before the light does. The coffee cup is thick, warm through the base. The leather on the chairback still holds the shape of a shoulder that sat there long before yours.",
+    tip: "Go before 5pm — kissa hours run 12:00–17:00, after which the room switches to bar mode with a different menu. Closed Wednesdays.",
     heroImage: "https://rokuyosha-coffee.com/images/works.png",
     gallery: ["https://rokuyosha-coffee.com/images/works.png"],
     featured: true,
@@ -87,6 +91,10 @@ export const realPlaces: RealPlace[] = [
       "A Kyoto tea institution with a serene main store and tea room for a slower, more grounded pause.",
     body:
       "Ippodo is the tea counterweight to the guide's coffee-heavy side. Its official store page is unusually clear about access and hours, making it an easy place to trust when building a day around a proper tea stop.",
+    essence: "Kyoto's tea institution, still counted by hand.",
+    sensory:
+      "A wide counter in front, paper labels on the tins behind. The tea room to the side serves matcha with a single wagashi; you whisk your own. The smell of the main shop changes with each season's harvest.",
+    tip: "Tea room 10:00–17:00, closed 2nd Wednesday. Go mid-afternoon for the quietest whisking; bring a container if buying loose leaf.",
     heroImage:
       "http://www.ippodo-tea.co.jp/cdn/shop/files/image_sns_share_8ea8e93d-2a86-4d3d-9d9b-50a4c062518f.png?v=1628038808",
     gallery: [
@@ -111,6 +119,10 @@ export const realPlaces: RealPlace[] = [
       "A design-and-lifestyle stop inside Bukkoji for browsing objects, books, exhibitions, and Kyoto-made goods.",
     body:
       "D&DEPARTMENT KYOTO adds a contemporary design voice to the guide without losing local specificity. The official page emphasizes that the latest hours are announced via social channels, so this listing keeps that note explicit rather than guessing.",
+    essence: "A design shop built inside a temple compound.",
+    sensory:
+      "The shop occupies a side-hall of Bukkoji — tatami floors, wooden pillars, modern furniture and Kyoto-made ceramics arranged without irony on top. The cafe opens onto the temple courtyard. Prefecture-by-prefecture books sit in a reading corner.",
+    tip: "Hours posted via the shop's SNS rather than a fixed schedule — check before going; pair with a slow browse in the temple grounds.",
     heroImage:
       "https://www.d-department.com/client_info/D_DEPARTMENT/view/userweb/images/store/img_kyoto.jpg?timestamp=1753341081788",
     gallery: [
@@ -136,6 +148,10 @@ export const realPlaces: RealPlace[] = [
       "A Demachiyanagi sweets stop for Kyoto-style dango and a lighter, more everyday kind of tea-time pause.",
     body:
       "Kotoka helps the sweets section feel more neighborhood-based rather than only destination-driven. The official site confirms the Demachiyanagi address and regular closed days, which is enough to ground the listing properly.",
+    essence: "Skewered dango from the delta where two rivers meet.",
+    sensory:
+      "The shop sits steps from Kamo Delta, where the Takano and Kamo join in a shallow triangle. Mitarashi dango is charred on the outside, syrup-glossed, served still warm. Cross the bridge, find a river rock, eat before the sugar hardens.",
+    tip: "Closed Tuesdays and Wednesdays. Go in the morning — afternoon can sell out; extra closures are posted by the shop.",
     heroImage:
       "http://kyoto-kotoka.com/wp-content/uploads/2022/05/20140718_103119-1024x768.jpg",
     gallery: [
@@ -159,6 +175,10 @@ export const realPlaces: RealPlace[] = [
       "A picnic-ready coffee stand by the Kamo River with baskets, benches, and a gentle neighborhood rhythm.",
     body:
       "WIFE&HUSBAND is one of the clearest riverside recommendations from the magazine spreads: coffee, light food, and a built-in excuse to linger by the water. The official site also keeps an opening schedule, which makes it more practical than most irregular Kyoto cafes.",
+    essence: "Coffee packed to take to the river.",
+    sensory:
+      "The shop rents a small picnic basket: thermos of their own roast, a folded mat, a chair light enough to carry. The walk to the Kamo bank is four minutes, and the gravel underfoot changes tone twice before you sit down.",
+    tip: "Picnic last order is 15:00; for a dry spot on the bank in spring, arrive by 10:30. Cafe LO 16:30, irregular holidays.",
     heroImage:
       "https://static.wixstatic.com/media/e6c411_cf71cbd77b934ee4880df88c7736cb00.png/v1/fit/w_2500,h_1330,al_c/e6c411_cf71cbd77b934ee4880df88c7736cb00.png",
     gallery: [
@@ -188,6 +208,10 @@ export const realPlaces: RealPlace[] = [
     hours: "11:30-19:00 / Sunday 11:30-18:00 / closed Tuesdays",
     website: "https://meditations.jp/en/pages/about",
     mapsUrl: "https://maps.google.com/?q=Meditations+Kyoto",
+    essence: "A small record label, operating as a shop.",
+    sensory:
+      "Up three flights of stairs; one long wall of vinyl, a turntable that works, a few chairs that invite you to listen. The genre is ambient / drone / experimental — the shop's own releases sit alongside imports. Volume stays conversational.",
+    tip: "11:30–19:00 (Sun until 18:00), closed Tuesdays. Ask at the counter to hear a new release — the staff will put it on.",
     // TODO(manual-review): Verify image license for production usage.
     heroImage:
       "https://cdn.shopify.com/s/files/1/0285/1694/1956/files/about_2048x2048.jpg?v=1581833430",
@@ -227,6 +251,10 @@ export const realPlaces: RealPlace[] = [
       "A breakfast-to-pudding Kyoto classic that still feels rooted in everyday city life rather than tourism alone.",
     body:
       "Smart Coffee works because it is both iconic and easy to use: morning service, central location, and a room that still carries the feel of a proper old Kyoto cafe. It is a strong anchor for the classic coffee section.",
+    essence: "Since 1932, breakfast hours have never needed explaining.",
+    sensory:
+      "The counter runs long and the menu hasn't asked for reinvention. Hotcakes arrive on a warm plate with a pat of butter that gives in before the fork. By 8:10 the room is half-regulars who never look up.",
+    tip: "Go before 9:30 for a quiet breakfast; after 11:00 the staircase up to the lunch floor opens (2F LO 14:30).",
     heroImage:
       "https://www.smartcoffee.jp/wordpress/wp-content/themes/smartcoffee_official_theme/images/bg/bg_information.jpg",
     gallery: [
@@ -253,10 +281,14 @@ export const realPlaces: RealPlace[] = [
       "The grand Kyoto coffee classic for breakfast, polished service, and a dependable old-school room.",
     body:
       "Inoda's main store is one of the city's true coffee institutions. It gives the guide a polished classic option that complements the more intimate kissaten and independent coffee stops elsewhere.",
+    essence: "Old Kyoto coffee at its most composed.",
+    sensory:
+      "Uniformed staff, white cups, a circular counter at the entrance that reads like the room's clock. Coffee arrives already touched with milk and sugar; ordering it black is a quiet instruction you give the first time. The courtyard room softens the formality.",
+    tip: "Go at 7:30 for the morning set with a full room of regulars; ask for the courtyard seating if the front counter is loud.",
     heroImage:
-      "https://www.inoda-coffee.co.jp/wordpress/wp-content/uploads/2026/03/f11e34c20eb0873f46b1dd15c2af36b4-240x160.jpg",
+      "https://www.inoda-coffee.co.jp/wordpress/wp-content/uploads/2024/03/65b59a40992b462b8511d091baa7cb1f-730x413.jpg",
     gallery: [
-      "https://www.inoda-coffee.co.jp/wordpress/wp-content/uploads/2026/03/f11e34c20eb0873f46b1dd15c2af36b4-240x160.jpg",
+      "https://www.inoda-coffee.co.jp/wordpress/wp-content/uploads/2024/03/65b59a40992b462b8511d091baa7cb1f-730x413.jpg",
     ],
     featured: true,
     topPick: true,
@@ -280,6 +312,10 @@ export const realPlaces: RealPlace[] = [
       "A blue-lit Kyoto kissa legend for jelly punch, cream soda, and a distinctly theatrical retro mood.",
     body:
       "Soiree is one of the clearest omissions from the current dataset. Its official site now publishes both the weekly schedule and regular hours, so it is finally easy to add with confidence.",
+    essence: "The blue room, still running on its own spell.",
+    sensory:
+      "The entire space is lit cool blue — by rule, because the original proprietor believed it flattered every face equally. Jelly punch arrives layered, primary-colored, gloriously unfashionable. The chairs are narrow and upright; no one sits casually here.",
+    tip: "Opens at 13:00. Go on a weekday afternoon — weekends queue outside. Closed Mondays.",
     heroImage:
       "https://www.soiree-kyoto.com/wp-content/themes/soiree-theme/img/slide01.jpg",
     gallery: [
@@ -307,6 +343,10 @@ export const realPlaces: RealPlace[] = [
       "A dark, romantic Showa-era cafe that still feels like a cultural hideaway rather than a theme park relic.",
     body:
       "Francois gives the guide a stronger evening-kissa atmosphere and broadens the classic cafe section beyond daytime-only stops. The official access page includes current hours and seasonal closure notes.",
+    essence: "A 1930s European salon, still open for evening.",
+    sensory:
+      "Stained-glass ceiling, velvet booths, a small stage that no longer plays. The waitstaff move as if the room has been set for a performance that is always about to begin. Order the cheesecake and let the cup arrive a beat later.",
+    tip: "Evening hours run to 22:00 (food LO 20:00, drinks LO 21:30) — a rare Kyoto kissa that rewards a late dinner pause.",
     heroImage:
       "https://francois1934.com/assets/wp-content/uploads/2022/12/mv23-1024x682.jpg",
     gallery: [
@@ -476,6 +516,10 @@ export const realPlaces: RealPlace[] = [
     titleJa: "切通し進々堂",
     category: ["Bakery"],
     tags: ["Classic"],
+    essence: "A long wood table shared with people reading nothing in particular.",
+    sensory:
+      "One communal plank runs the length of the room; you sit where there's space, and your elbow ends up near a stranger's book. Bread is thick-cut, coffee is hot, and the silence holds even when the door opens.",
+    tip: "Go mid-morning on a weekday for the long-table seat; the crowd thins again after 14:00.",
     featured: true,
     topPick: false,
     sourceFeature: "Bakery / Kyoto Classics",
@@ -494,6 +538,10 @@ export const realPlaces: RealPlace[] = [
       "A historic wagashi shop with the beloved kissa counter Seien tucked inside a handsome machiya setting.",
     body:
       "Daigokuden's Rokkaku shop helps the sweets section feel more distinctly Kyoto: old sweets, restrained tea-room atmosphere, and a signature dessert that people time their trips around. Even before every practical field is filled in, it deserves stronger editorial treatment than a name-only listing.",
+    essence: "A wagashi counter that changes weekly with the season.",
+    sensory:
+      "A small glass case holds the current week's sweets — a plum jelly in spring, a chestnut wrap in autumn. The shop itself is narrow, clean, painted quiet. You buy a piece of the current season and eat it within the afternoon.",
+    tip: "Seasonal items sell out mid-afternoon; go before 14:00 for the week's centerpiece.",
     heroImage: "/images/29.jpg",
     gallery: ["/images/29.jpg"],
     featured: true,
@@ -511,6 +559,10 @@ export const realPlaces: RealPlace[] = [
     hours: "11:30-17:00 / irregular holidays",
     mapsUrl:
       "https://maps.google.com/?q=%E3%81%95%E3%81%8B%E4%BA%95+%E4%BA%AC%E9%83%BD",
+    essence: "A six-seat counter that reads the day's fish to you in a bowl.",
+    sensory:
+      "The owner works at a counter no more than six seats long. Donburi arrives layered — raw fish on rice, scent of shiso and vinegar rising. No two lunches look exactly the same; the menu is announced, not printed.",
+    tip: "Lunch only (11:30–17:00) and small — go at opening or expect to wait; call ahead to confirm the day's fish.",
     // TODO(manual-review): Official website not confirmed yet.
     heroImage: "https://img.lavietaste.com/cover/75ba3014a83dc24d34162c6be9900098_s.jpg",
     gallery: ["https://img.lavietaste.com/cover/75ba3014a83dc24d34162c6be9900098_s.jpg"],
@@ -529,6 +581,10 @@ export const realPlaces: RealPlace[] = [
     hours: "10:30-19:00 / closed Wednesdays and Thursdays",
     website: "https://gion-izuju.com/",
     mapsUrl: "https://maps.google.com/?q=%E3%81%84%E3%81%A5%E9%87%8D+%E4%BA%AC%E9%83%BD",
+    essence: "Kyoto sushi from before the city learned to explain itself.",
+    sensory:
+      "Saba-zushi and hako-zushi, pressed into shape and laid out on a cold glass case. Inside, a small back room with wood the color of black tea and vinyl seats worn smooth. Rice is vinegared on the sweet side, fish cured firm.",
+    tip: "The boxes are built to travel — if the back room is full, ask for takeaway and eat within the hour on a bench near Yasaka. Closed Wed & Thu.",
     // TODO(manual-review): Replace with permission-cleared hero if licensing is required.
     heroImage: "https://www.kyotokan.jp/wp-content/uploads/2021/07/20210810-756A4639-850x567.jpg",
     gallery: ["https://www.kyotokan.jp/wp-content/uploads/2021/07/20210810-756A4639-850x567.jpg"],
@@ -633,6 +689,10 @@ export const realPlaces: RealPlace[] = [
     titleJa: "先斗町 禊川",
     category: ["Japanese", "Dining"],
     tags: ["Scenic"],
+    essence: "Dining on a wooden deck with the river moving beneath in summer.",
+    sensory:
+      "From May through September the restaurant extends a wooden platform (yuka) over the Kamo and the meal happens above running water. Voices stay low: the river does the ambient sound. Lantern light catches the ripples below and throws it back onto the ceiling beams.",
+    tip: "Book the yuka deck in advance for May–Sep dinner; the indoor room runs year-round but loses most of the reason to come.",
     featured: true,
     topPick: false,
     sourceFeature: "Pontocho / Dining",
@@ -674,8 +734,8 @@ export const realPlaces: RealPlace[] = [
       "A local Chinese favorite that now pairs Kyoto-style old-school Chinese cooking with serious Thai dishes under one roof.",
     body:
       "Fuyouen is especially useful because it makes the Chinese category feel more lived-in and specific to Kyoto's everyday eating culture. The official site provides one of the cleanest restaurant info blocks in the whole set, including address, lunch and dinner hours, and day off.",
-    heroImage: "/images/22.jpg",
-    gallery: ["/images/22.jpg"],
+    heroImage: "https://kyoto-fuyouen.jp/system_panel/uploads/images/cover04.jpg",
+    gallery: ["https://kyoto-fuyouen.jp/system_panel/uploads/images/cover04.jpg"],
     featured: true,
     topPick: false,
     sourceFeature: "Chinese Food",
@@ -690,6 +750,10 @@ export const realPlaces: RealPlace[] = [
     hours:
       "Lunch 11:30-14:15 (LO around 14:20) / Dinner 17:30-20:30 (LO around 21:30) / closed Tuesdays and some alternate Wednesdays",
     mapsUrl: "https://maps.google.com/?q=%E5%A4%A7%E9%B5%AC+%E4%BA%AC%E9%83%BD",
+    essence: "A Kyoto Chinese kitchen that feeds like a neighborhood dining room.",
+    sensory:
+      "Red vinyl seats, small tables, the smell of sesame and scallion oil. Dishes come fast and hot; dumplings pop in the mouth, the fried rice is loose and buttery. Families eat here on weekends for a reason.",
+    tip: "Go slightly off-peak (13:30 or after 19:00) for a quieter room; order the gyoza and one rice dish to start. Closed Tuesdays.",
     // TODO(manual-review): No reliable official website found; verify hours and add hero image.
     featured: true,
     topPick: true,
@@ -764,6 +828,10 @@ export const realPlaces: RealPlace[] = [
     titleJa: "すき焼 キムラ",
     category: ["Japanese", "Sukiyaki"],
     tags: ["Classic"],
+    essence: "Sukiyaki cooked at the table by someone who has done it thousands of times.",
+    sensory:
+      "A staff member prepares the pot in front of you — sugar first, then a cut of beef, then the broth. Meat is sliced thinly enough to fold around a chopstick. The room is small; every table is doing the same quiet thing.",
+    tip: "Reservations required. The lunch set is lighter than dinner — go at lunch if you want to move on afterward.",
     featured: true,
     topPick: true,
     sourceFeature: "Meat / Kyoto Classics",
@@ -837,7 +905,15 @@ export const realPlaces: RealPlace[] = [
     hours: "11:00-18:00 (LO) / closed Tuesdays and Wednesdays",
     website: "https://www.kyoto-okakita.com/information.html",
     mapsUrl: "https://maps.google.com/?q=%E5%B2%A1%E5%8C%97+%E4%BA%AC%E9%83%BD",
-    // TODO(manual-review): Add a verified landscape hero image from official source.
+    essence: "Kyoto udon at its clearest — noodle, dashi, nothing extra.",
+    sensory:
+      "The dashi is translucent gold, warmed to a temperature that lets you smell it before you taste. Noodles are thinner than Sanuki udon and softer, made to drink as much as chew. The shop holds the hush of a serious counter.",
+    tip: "Lunch peaks 12:00–13:00; go at 11:30 or after 14:00 for a quieter room. Closed Tue & Wed.",
+    heroImage: "http://www.kyoto-okakita.com/images/exterior.jpg",
+    gallery: [
+      "http://www.kyoto-okakita.com/images/exterior.jpg",
+      "http://www.kyoto-okakita.com/images/interior.jpg",
+    ],
     featured: true,
     topPick: true,
     sourceFeature: "Udon / Soba",
@@ -854,6 +930,10 @@ export const realPlaces: RealPlace[] = [
     website: "https://kyogoku-kaneyo.co.jp/",
     mapsUrl:
       "https://maps.google.com/?q=%E4%BA%AC%E6%A5%B5%E3%81%8B%E3%81%AD%E3%82%88+%E4%BA%AC%E9%83%BD",
+    essence: "Unagi donburi in a wooden room older than most tourists.",
+    sensory:
+      "The kitchen grills eel on the ground floor; the smell is the menu. Upstairs, low tatami tables; downstairs, a sushi-bar-like counter. The rice arrives first, dark with sauce; the eel lands on top still crackling at the edges.",
+    tip: "Queue forms at lunch — go before 11:30 or after 14:00. Cash-preferred; confirm payment options at the door.",
     // TODO(manual-review): Current images are low resolution; replace with a higher-quality official image.
     heroImage:
       "https://static.wixstatic.com/media/925a26_3b4dfd896f8f40f5a3be22447e799b64~mv2.jpg/v1/fill/w_160%2Ch_100%2Cal_c%2Cq_80%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/6735250.jpg",
@@ -877,6 +957,10 @@ export const realPlaces: RealPlace[] = [
     website: "https://www.toyoukeya.co.jp/",
     mapsUrl:
       "https://maps.google.com/?q=%E4%BA%AC%E8%B1%86%E8%85%90+%E3%81%A8%E3%82%88%E3%81%86%E3%81%91%E8%8C%B6%E5%B1%8B+%E4%BA%AC%E9%83%BD",
+    essence: "Tofu as a full meal, served across from a shrine.",
+    sensory:
+      "The meal arrives as a set — silken tofu still warm, yuba, miso soup, rice, pickle. Texture is the whole argument: nothing is assertive, everything is carefully placed. The shop sits across the road from Kitano Tenmangu.",
+    tip: "Lunch-only crowd is heavy 12:00–13:30; go at opening or after 13:30. Closed Thursdays and Fridays (open on the 25th).",
     // TODO(manual-review): Add a verified hero image from official branch page or permission-cleared source.
     featured: true,
     topPick: true,
@@ -908,6 +992,10 @@ export const realPlaces: RealPlace[] = [
     titleJa: "晦庵 河道屋",
     category: ["Soba", "Japanese"],
     tags: ["Classic", "Quiet"],
+    essence: "A Kyoto soba house whose floorboards remember generations.",
+    sensory:
+      "You enter through a courtyard with a stone basin still in use. The room is low-ceilinged, wooden, scented with just-boiled dashi. Soba arrives cold on lacquer, dipping broth in a small cup; the pace is set by the noodles.",
+    tip: "Go at 11:30 for the calmest seating; pair with a walk west along the Takase.",
     featured: true,
     topPick: false,
     sourceFeature: "Soba / Kyoto Classics",
@@ -918,6 +1006,10 @@ export const realPlaces: RealPlace[] = [
     title: "SUMI",
     category: ["Bar", "Izakaya"],
     tags: ["Casual"],
+    essence: "A modern Kyoto bar that keeps old drinking discipline.",
+    sensory:
+      "Concrete, wood, and iron; one long counter under warm low lighting. Drinks are mixed with deliberation; snacks arrive in small, considered portions. Voices stay low — the room asks for it.",
+    tip: "Go between 19:00 and 21:00 for the best counter conversation with the bartender; reservations recommended on weekends.",
     featured: true,
     topPick: false,
     sourceFeature: "Bars / Izakaya",
@@ -933,6 +1025,10 @@ export const realPlaces: RealPlace[] = [
       "17:00-23:00 (food LO 22:00) / Sat-Sun from 15:00 / closed Mondays and irregular Tuesdays",
     website: "https://revolutionbooks.jp/",
     mapsUrl: "https://maps.google.com/?q=Revolutionbooks+Kyoto",
+    essence: "A bookshop by day, a bar by night, with books still on the shelves.",
+    sensory:
+      "Same room, same spines, different light. Drinks and snacks arrive alongside whatever you pulled off the shelf; pages stay open on the counter. Conversation tilts toward what you were reading an hour ago.",
+    tip: "Evening mode starts around 17:00 (weekends from 15:00); food LO 22:00. Small space — go with one person, not three. Closed Mondays.",
     heroImage:
       "https://64.media.tumblr.com/e252846484534054a56499dff0aa59c9/ea40c731b963423a-5d/s400x600/bf1bb5156efecaf683425132817a4ad64564c4fd.jpg",
     gallery: [
@@ -949,6 +1045,10 @@ export const realPlaces: RealPlace[] = [
     titleJa: "酒場 井倉木材",
     category: ["Izakaya"],
     tags: ["Local Favorite"],
+    essence: "A drinking spot hidden inside a working lumber yard.",
+    sensory:
+      "Step in and the room smells of sawdust and grilled fish at once. Long wood benches, communal tables, the kitchen visible at the far wall. The menu is a board; the staff shout orders; the crowd fills every seat by 19:00.",
+    tip: "Go early (17:30) or very late (22:00); no reservations — the wait is part of the place.",
     featured: true,
     topPick: false,
     sourceFeature: "Bars / Izakaya",
@@ -959,6 +1059,10 @@ export const realPlaces: RealPlace[] = [
     titleJa: "益や酒店",
     category: ["Bar", "Sake"],
     tags: ["Casual"],
+    essence: "A sake shop that stands up to drink as well as to sell.",
+    sensory:
+      "Bottles line the walls from floor to ceiling. Stand-up counter in the middle; a glass of sake handed across, no menu — you say a flavor and the owner pours. Pairings are small: pickles, a bite of cheese, a salted plum.",
+    tip: "Tachinomi (stand-drinking) counter only — go in for a single glass and let the next customer take the space.",
     featured: true,
     topPick: false,
     sourceFeature: "Sake / Bars",
@@ -969,6 +1073,10 @@ export const realPlaces: RealPlace[] = [
     titleJa: "柳小路 TAKA",
     category: ["Bar", "Dining"],
     tags: ["Scenic"],
+    essence: "A counter bar tucked into Kyoto's narrowest alley.",
+    sensory:
+      "Yanagikoji is one of the thinnest streets in Kyoto — lanterns strung overhead, cobbles underfoot, doors within an arm's reach of each other. The bar holds maybe eight. Conversation stays at a murmur because the space makes it so.",
+    tip: "Walk Yanagikoji slowly from the Shijo side after 19:00 — doors are easy to miss. Reserve for a counter seat.",
     featured: true,
     topPick: false,
     sourceFeature: "Bars / Dining",
@@ -983,6 +1091,10 @@ export const realPlaces: RealPlace[] = [
     hours: "17:00-02:00 / closed Tuesdays",
     website: "http://bar-rockingchair.jp",
     mapsUrl: "https://maps.google.com/?q=Bar+Rocking+Chair+Kyoto",
+    essence: "A small bar whose door is harder to find than its reputation.",
+    sensory:
+      "Low ceiling, long counter, a single upholstered chair that gave the bar its name. The barman pours in silence; the drinks arrive in glasses heavier than they look. Bottle labels stay turned toward the shelf.",
+    tip: "Arrive between 18:00 and 19:30 for a counter seat; after 21:00 the room thickens and standing becomes the norm. Closed Tuesdays.",
     heroImage:
       "http://bar-rockingchair.jp/wp/wp-content/uploads/2021/03/cropped-7540-main-1.jpg",
     gallery: [
@@ -1008,8 +1120,11 @@ export const realPlaces: RealPlace[] = [
       "A European antique and vintage tableware shop near Nanzenji for people who prefer quiet objects over flashy souvenirs.",
     body:
       "Soil adds a calmer, object-led side to the guide: old glass, ceramics, and everyday pieces with real patina. The official access page clearly lists address and regular opening hours, so it was worth upgrading from a name-only listing.",
-    heroImage: "https://www.soil-kyoto.com/images/main_logo.png",
-    gallery: ["https://www.soil-kyoto.com/images/main_logo.png"],
+    heroImage: "https://www.soil-kyoto.com/access/images/img05.jpg",
+    gallery: [
+      "https://www.soil-kyoto.com/access/images/img05.jpg",
+      "https://www.soil-kyoto.com/access/images/img01.jpg",
+    ],
     featured: true,
     topPick: false,
     sourceFeature: "Vintage / Craft",
@@ -1020,6 +1135,10 @@ export const realPlaces: RealPlace[] = [
     titleJa: "古い道具",
     category: ["Vintage", "Craft"],
     tags: ["Design Lover"],
+    essence: "Old tools, sold at the weight of their use.",
+    sensory:
+      "Planes, chisels, strainers, ladles, a wall of weathered hand-tools. Most things show the polish of decades. Lift a tool and the handle has been shaped by someone else's grip long before yours.",
+    tip: "Cash preferred for small items; go on a weekday when the owner has time to talk through a piece.",
     featured: true,
     topPick: false,
     sourceFeature: "Vintage / Craft",
@@ -1039,6 +1158,10 @@ export const realPlaces: RealPlace[] = [
       "A karakami studio-shop where paper, pattern, and surface are treated with extraordinary patience.",
     body:
       "Kamisoe gives the craft section a more refined and design-forward edge. It is the kind of place that makes Kyoto feel specific: small, meticulous, and deeply tied to material culture rather than generic shopping.",
+    essence: "Paper printed slowly with woodblock, for walls and letters.",
+    sensory:
+      "Sheets hang drying in neat rows; pressed patterns are geometric, muted, never assertive. The pigments smell faintly of mineral. What sells best is letter-sized and shoji-sized — the same aesthetic, two scales.",
+    tip: "Small studio — call ahead if you want to see printing in progress. Closed Mondays & Tuesdays; other closures posted by the shop.",
     heroImage: "https://kamisoe.com/img/ogp/ogp.jpg",
     gallery: ["https://kamisoe.com/img/ogp/ogp.jpg"],
     featured: true,
@@ -1072,6 +1195,10 @@ export const realPlaces: RealPlace[] = [
       "A long-running Kyoto fan maker that turns traditional craft into something useful, graphic, and easy to carry home.",
     body:
       "Aiba is one of the most approachable ways into Kyoto craft: historic, visually distinctive, and practical as a souvenir. It adds real depth to the craft section without feeling museum-like.",
+    essence: "One of the last workshops making folding fans entirely by hand.",
+    sensory:
+      "Dozens of painted fans are closed and fanned open along the wall like a score. The bamboo ribs whisper as a fan opens, and the paper snaps into place at the last centimeter. Summer designs are cooler to look at; winter ones warmer.",
+    tip: "Browsing is open without reservation; hand-painted one-off fans take weeks to commission, so plan ahead. Open daily Apr–Jul.",
     heroImage:
       "https://kyo-aiba.jp/images/sys/db/201911/eec19cc95ab40797e2b3318ca06f54ec06c96357.png",
     gallery: [
@@ -1088,6 +1215,10 @@ export const realPlaces: RealPlace[] = [
     titleJa: "京都版画館 元むつ九",
     category: ["Art", "Craft"],
     tags: ["Design Lover"],
+    essence: "A woodblock print shop where the blocks still do the work.",
+    sensory:
+      "Prints hang three deep along the walls — cityscapes, old Kyoto scenes, a few abstracts. The paper holds the ink with a slight texture that a digital reproduction cannot imitate. A loupe on the counter is meant to be used.",
+    tip: "Browse unhurriedly — the owner explains the block-by-color process if asked. Small shop, avoid peak weekends.",
     featured: true,
     topPick: false,
     sourceFeature: "Print / Craft",
@@ -1102,6 +1233,10 @@ export const realPlaces: RealPlace[] = [
     hours: "11:30-18:00 / irregularly closed",
     website: "http://gallerykei.jp/",
     mapsUrl: "https://maps.google.com/?q=Gallery+Kei+Kyoto",
+    essence: "A gallery that shows one thing at a time, and shows it properly.",
+    sensory:
+      "A single small room, white-walled, with one or two works and a lot of space around each. Light is diffused, sound is absorbed. The viewing is closer to reading than to looking.",
+    tip: "Exhibits rotate — check the current show online before visiting; closed days vary by exhibit.",
     // TODO(manual-review): Could not retrieve a stable image URL from current sources.
     featured: true,
     topPick: false,
@@ -1135,6 +1270,10 @@ export const realPlaces: RealPlace[] = [
     titleJa: "てっさい堂",
     category: ["Vintage", "Craft"],
     tags: ["Classic"],
+    essence: "An antiques shop that edits its own stock as carefully as a gallery.",
+    sensory:
+      "Ceramics, lacquerware, small scrolls, and old kitchen tools — arranged so that each object looks rested. Prices are written on tiny paper slips. The room is too still for small talk.",
+    tip: "Browse slowly; if something holds your attention the owner reads it and begins to tell you the provenance.",
     featured: true,
     topPick: false,
     sourceFeature: "Vintage / Antiques",
@@ -1174,8 +1313,16 @@ export const realPlaces: RealPlace[] = [
       "Kyoto's tea-caddy specialist, where everyday metal craft is treated with almost architectural precision.",
     body:
       "Kaikado is one of the strongest craft anchors in the dataset: historic, highly recognizable, and still deeply tied to everyday use. The official site also makes store information easy to verify.",
-    heroImage: "/images/37.jpg",
-    gallery: ["/images/37.jpg"],
+    essence: "One hundred and forty years of copper, still turning in the hand.",
+    sensory:
+      "The workshop smells faintly of metal polish. When the lid drops onto the tea canister the escaping air makes a small 'pock' — that sound is the signature of the shop. Tea poured in is held shut on contact.",
+    tip: "Walk-ins are welcome at the counter; if you want to see the lid demonstrated, ask whether the craftsman is on the floor that afternoon. Closed Sundays, Mondays, holidays.",
+    heroImage:
+      "https://www.kaikado.jp/wp-content/themes/kaikado/common/information_img/information_img01.jpg",
+    gallery: [
+      "https://www.kaikado.jp/wp-content/themes/kaikado/common/information_img/information_img01.jpg",
+      "https://www.kaikado.jp/wp-content/themes/kaikado/common/information_img/information_img02.jpg",
+    ],
     featured: true,
     topPick: true,
     sourceFeature: "Kyoto Craft Classics",
@@ -1194,10 +1341,14 @@ export const realPlaces: RealPlace[] = [
       "A long-running Sanjo shop for brooms, brushes, and housewares made from natural materials and meant to age well.",
     body:
       "Naito Shoten gives the guide a wonderful kind of Kyoto specificity: not luxury craft, but everyday tools made properly and sold without fuss. It is the sort of place that turns ordinary cleaning and household routines into part of the city's culture.",
+    essence: "Palm-fiber brooms and brushes, unchanged since the 1800s.",
+    sensory:
+      "The storefront shows dozens of brushes arranged by fiber stiffness, from a pastry brush to a bath brush as tall as a child. Pick one up and the handle is balanced exactly for its weight — a cookware brush feels wrong in the wrong hand and right in the right one.",
+    tip: "Small items (pot brushes, kitchen brushes) fit in a suitcase; standing brooms ship internationally on request.",
     heroImage:
-      "https://www.tujiwa-kanaami.com/design/tujiwa/images/ayumi_btn_off.jpg",
+      "https://www.kyotokan.jp/wp-content/uploads/2022/06/naito_karutamidashi-850x580.png",
     gallery: [
-      "https://www.tujiwa-kanaami.com/design/tujiwa/images/ayumi_btn_off.jpg",
+      "https://www.kyotokan.jp/wp-content/uploads/2022/06/naito_karutamidashi-850x580.png",
     ],
     featured: true,
     topPick: false,
@@ -1218,8 +1369,12 @@ export const realPlaces: RealPlace[] = [
       "A beloved Kyoto workshop for handwoven wire goods that make ordinary kitchen routines feel better.",
     body:
       "Tsujiwa Kanaami is a particularly good fit for this guide because the objects are practical, beautiful, and unmistakably local. It strengthens the craft category with something more specific than general ceramics.",
-    heroImage: "/images/38.jpg",
-    gallery: ["/images/38.jpg"],
+    essence: "Kitchen tools woven out of wire, one at a time.",
+    sensory:
+      "The workshop window shows the craftsman folding and pressing a brass tofu strainer into shape. Finished pieces are surprisingly light and springy — a tea strainer weighs less than a coin and holds its tension for decades.",
+    tip: "Go during daytime hours to catch weaving in progress; small pieces travel well in carry-on. Closed Sundays & holidays.",
+    heroImage: "https://www.tujiwa-kanaami.com/design/tujiwa/images/shop_photo.jpg",
+    gallery: ["https://www.tujiwa-kanaami.com/design/tujiwa/images/shop_photo.jpg"],
     featured: true,
     topPick: true,
     sourceFeature: "Kyoto Craft Classics",
@@ -1274,6 +1429,10 @@ export const realPlaces: RealPlace[] = [
       "An independent bookstore with a thoughtful mix of literature, art, design, events, and Kyoto's slower cultural energy.",
     body:
       "Seikosha makes the site's books layer feel intentional rather than incidental. It is one of the clearest culture recommendations in the guide, and its official site keeps basic visit information tidy.",
+    essence: "A neighborhood bookshop run like a small editorial.",
+    sensory:
+      "The selection is tight: poetry, photography, Kyoto essays, a shelf of English. The front table is laid out like an argument — spines facing up, a single book turned open. The room is quiet enough that flipping a page sounds like a decision.",
+    tip: "Go on a weekday afternoon for the calmest room; in-house readings and small launches are posted on the shop's site, not at the door.",
     heroImage:
       "https://www.seikosha-books.com/assets/themes/seik-2026-a/img/ogp-image-2021-a.png",
     gallery: [
@@ -1290,6 +1449,10 @@ export const realPlaces: RealPlace[] = [
     titleJa: "100000tアローント",
     category: ["Books", "Culture"],
     tags: ["Independent"],
+    essence: "A tiny bookshop that reads its own shelves as argument.",
+    sensory:
+      "Narrow stairs up, a room smaller than most living rooms. Zines, art books, small-press Japanese fiction, a handful of English titles. The selection tilts toward the owner's obsessions; when you find something that fits, you find several at once.",
+    tip: "Go outside peak hours and linger; small shop, not built for hurried browsing.",
     featured: true,
     topPick: false,
     sourceFeature: "Books / Culture",
@@ -1308,6 +1471,10 @@ export const realPlaces: RealPlace[] = [
       "A tucked-away art and photography bookstore for slower browsing near Gion's antique lanes.",
     body:
       "Books & Things is a strong complement to Seikosha: smaller, more visual, and more intimate. The official site includes a proper information block with address, phone number, and store hours.",
+    essence: "A Gion bookshop with objects between the pages.",
+    sensory:
+      "Shelves mix books with small ceramic and paper objects — a tea cup beside an essay about tea. The lighting is tungsten-warm, the floor wooden, the tables intentionally cluttered. You read standing, shoulder near the window.",
+    tip: "Near the southern end of Gion — pair with a walk down Ishibei-koji and coffee after.",
     heroImage:
       "https://pds.exblog.jp/logo/1/197001/01/34/a022703420251122132126.jpg",
     gallery: [
@@ -1334,6 +1501,10 @@ export const realPlaces: RealPlace[] = [
       "A quietly influential plant and object shop where Kyoto aesthetics show up in miniature landscapes and careful arrangements.",
     body:
       "Mitate is less about buying a bouquet and more about learning a way of seeing: plants, pots, emptiness, and proportion. It strengthens the guide's floral and lifestyle categories with a shop that feels deeply editorial.",
+    essence: "A florist whose work is closer to ikebana than bouquet.",
+    sensory:
+      "Arrangements sit on dark low shelves, each in an object that probably wasn't a vase originally. A single branch or a slice of moss can be the whole piece. Scent stays secondary to shape; the shop smells of water and wood.",
+    tip: "Arrangements change week to week — if you want to buy, go in the same morning you plan to photograph or present. Closed Mondays & Sundays.",
     // TODO(manual-review): Verify image license for production usage.
     heroImage: "https://www.kyotokan.jp/wp-content/uploads/2025/07/mitate01.jpg",
     gallery: ["https://www.kyotokan.jp/wp-content/uploads/2025/07/mitate01.jpg"],
@@ -1433,6 +1604,10 @@ export const realPlaces: RealPlace[] = [
     hours: "Check-in 15:00-21:00 / Check-out until 11:00",
     website: "https://gojo-guest-house.kyotohotelsjapan.net/en/",
     mapsUrl: "https://maps.google.com/?q=Gojo+Guest+House+Kyoto",
+    essence: "A machiya guesthouse kept as a machiya, not renovated out.",
+    sensory:
+      "A narrow entrance hall, wooden floors, paper shoji. Rooms are tatami; the bathroom is communal and hot. The neighborhood is residential — in the morning you hear the street being swept before you hear cars.",
+    tip: "Budget rate, shared bath, light linens. Best for a 1–2 night stop while moving through the southern city; reserve direct for the better rate.",
     heroImage:
       "https://photos.smugmug.com/Kyoto-Hotels/Hotel-Gojo-Guesthouse-Southern/i-d5rQJ7z/1/L/hotel-gojo-guesthouse-southern-higashiyama-kyoto-02-L.jpg",
     gallery: [
@@ -1458,6 +1633,10 @@ export const realPlaces: RealPlace[] = [
       "A design-forward hostel with an integrated cafe-bar that works both as a stay and a casual drop-in stop.",
     body:
       "Len is one of the easiest stylish stays to recommend to first-time visitors: central enough, social without being chaotic, and still aligned with the guide's quieter taste level.",
+    essence: "A hostel built around a common room that actually works.",
+    sensory:
+      "The ground floor opens into a long cafe-bar that stays lively into the night — travelers on laptops, locals on wine. Rooms upstairs are small, quiet, clean-lined. The neighborhood is Kawaramachi: anywhere you want to go by foot.",
+    tip: "Dorm beds book faster than privates; reserve 2–3 weeks ahead in peak season. Check-in from 15:00.",
     heroImage:
       "https://backpackersjapan.co.jp/kyotohostel/wp/wp-content/themes/customizable/ogp2.jpg",
     gallery: [
@@ -1495,6 +1674,7 @@ export const realPlaces: RealPlace[] = [
     featured: true,
     topPick: false,
     sourceFeature: "Station Food",
+    displayTierOverride: "minimal",
   },
   {
     slug: "takagi-coffee-karasuma",
@@ -1539,6 +1719,7 @@ export const realPlaces: RealPlace[] = [
     featured: true,
     topPick: false,
     sourceFeature: "Station Food",
+    displayTierOverride: "minimal",
   },
   {
     slug: "ogawa-udon",
@@ -1569,6 +1750,7 @@ export const realPlaces: RealPlace[] = [
     featured: true,
     topPick: false,
     sourceFeature: "Station Food",
+    displayTierOverride: "minimal",
   },
   {
     slug: "hakushokuya-kyoto-station-food",
@@ -1579,6 +1761,7 @@ export const realPlaces: RealPlace[] = [
     featured: true,
     topPick: false,
     sourceFeature: "Station Food",
+    displayTierOverride: "minimal",
   },
   {
     slug: "funaoka-onsen",
@@ -1595,6 +1778,10 @@ export const realPlaces: RealPlace[] = [
       "Kyoto's most iconic sento for carved interiors, retro baths, and a distinctly local evening ritual.",
     body:
       "Funaoka Onsen is one of the strongest non-food experiences in the guide. Adding official hours and address makes it much easier to use as a real itinerary stop instead of just an atmospheric reference.",
+    essence: "A working sento inside a building that is also a heritage site.",
+    sensory:
+      "The entrance corridor is carved wood — battle scenes, gods, detail a public bath has no reason to bother with and yet here it is. Inside, multiple baths: cypress, electric, herb, cold. The attendant folds towels; you pay, undress, step into the steam.",
+    tip: "Open 15:00–23:30 (Sundays from 8:00). Bring or rent a small towel; go on a weekday at 16:00 to have a bath to yourself. Closed Tuesdays.",
     heroImage:
       "https://1010.kyoto/wp/wp-content/themes/1010kyoto/assets/img/common/txt_header_logo.png",
     gallery: [
@@ -1615,6 +1802,7 @@ export const realPlaces: RealPlace[] = [
     featured: true,
     topPick: true,
     sourceFeature: "Kyoto Sights",
+    displayTierOverride: "minimal",
   },
   {
     slug: "nishiki-market",
@@ -1625,6 +1813,7 @@ export const realPlaces: RealPlace[] = [
     featured: true,
     topPick: true,
     sourceFeature: "Kyoto Sights",
+    displayTierOverride: "minimal",
   },
   {
     slug: "rokkakudo",
@@ -1635,6 +1824,7 @@ export const realPlaces: RealPlace[] = [
     featured: true,
     topPick: false,
     sourceFeature: "Kyoto Sights",
+    displayTierOverride: "minimal",
   },
   {
     slug: "sanjusangendo",
@@ -1645,6 +1835,7 @@ export const realPlaces: RealPlace[] = [
     featured: true,
     topPick: true,
     sourceFeature: "Kyoto Sights",
+    displayTierOverride: "minimal",
   },
   {
     slug: "shoseien",
@@ -1655,6 +1846,7 @@ export const realPlaces: RealPlace[] = [
     featured: true,
     topPick: false,
     sourceFeature: "Kyoto Sights",
+    displayTierOverride: "minimal",
   },
   {
     slug: "toji-koboichi",
@@ -1666,6 +1858,10 @@ export const realPlaces: RealPlace[] = [
     hours: "Held on the 21st of every month / around 5:00-16:00 (weather dependent)",
     website: "http://touji-ennichi.com/",
     mapsUrl: "https://maps.google.com/?q=Toji+Kobo+Market+Kyoto",
+    essence: "The 21st of each month, Toji becomes a city of objects.",
+    sensory:
+      "Hundreds of stalls spill through the temple grounds — antiques, ceramics, old kimono, rice bowls by the box. The pace is set by tea from a roadside stand: stop, look, move on. By 14:00 the good stuff is thinning.",
+    tip: "Held on the 21st of every month. Go before 9:00 for first pick, and bring cash in small bills.",
     heroImage:
       "https://www.japan-experience.com/sites/default/files/styles/scale_crop_420x232/public/images/2026-02/%40Maarten%20Heerlien%20on%20Wikimedia%2C%20CC%20BY%202.0.Flea_market_at_T%C5%8D-ji_temple_grounds%2C_Kyoto_%286155553021%29.jpg.webp?h=147ee454&itok=Db0pYxnA",
     gallery: [
@@ -1683,6 +1879,10 @@ export const realPlaces: RealPlace[] = [
     titleJa: "河井寛次郎記念館",
     category: ["Museum", "Craft", "Sight"],
     tags: ["Design Lover"],
+    essence: "A potter's house, preserved as he left it.",
+    sensory:
+      "You enter through a kitchen with a live kiln still set in the floor. Rooms unfold around objects that were in use — a chair dented to Kawai's weight, a plate still on the table. The mingei aesthetic reveals itself as a way of living, not a shelf.",
+    tip: "Closed Mondays. Go on a weekday afternoon for the calmest rooms; the kiln downstairs is the climax — don't miss it.",
     featured: true,
     topPick: true,
     sourceFeature: "Craft / Museum",
@@ -1693,6 +1893,10 @@ export const realPlaces: RealPlace[] = [
     titleJa: "泉屋博古館",
     category: ["Museum", "Sight"],
     tags: ["Quiet"],
+    essence: "A museum of ancient Chinese bronzes, set in a Kyoto garden.",
+    sensory:
+      "The galleries are dim by design — bronze reads better in low light, and ritual vessels two thousand years old hold their patina best when the eye adjusts slowly. Walk between cases at the speed of reading.",
+    tip: "Closed Mondays. A 90-minute visit is about right; plan tea afterward at the small stand if it's open.",
     featured: true,
     topPick: false,
     sourceFeature: "Museum / Sight",

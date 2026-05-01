@@ -44,6 +44,9 @@ export interface Place {
   pairWith?: string[]
   excerpt: string
   body: string
+  essence?: string
+  sensory?: string
+  tip?: string
   heroImage: string
   gallery?: string[]
   featured: boolean

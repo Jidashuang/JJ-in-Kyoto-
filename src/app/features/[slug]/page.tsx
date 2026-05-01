@@ -200,7 +200,7 @@ function MinimalPlaceRow({
   return (
     <Link
       href={`/places/${slug}`}
-      className="group border border-border/70 bg-[color-mix(in_oklab,var(--background)_90%,var(--muted))] p-4 transition-colors hover:border-foreground/20"
+      className="group border border-border/70 bg-muted/50 p-4 transition-colors hover:border-foreground/20"
     >
       <div className="flex items-center justify-between gap-4">
         <div className="min-w-0">

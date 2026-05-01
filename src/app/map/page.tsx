@@ -85,7 +85,8 @@ export default function MapPage() {
         .map((slug) => placeBySlug.get(slug))
         .filter(
           (place): place is (typeof places)[number] =>
-            Boolean(place) && placeVisibleOnSurface(place, "neighborhood_anchor"),
+            place !== undefined &&
+            placeVisibleOnSurface(place, "neighborhood_anchor"),
         );
       const topPicks = prominentPlaces.filter((place) => place.topPick);
 
