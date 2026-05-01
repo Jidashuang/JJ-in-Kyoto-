@@ -3,7 +3,10 @@ import { Cormorant_Garamond, Inter } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { Analytics } from "@/components/Analytics";
+import { StructuredData } from "@/components/StructuredData";
 import { siteUrl } from "@/lib/site";
+import { websiteJsonLd } from "@/lib/structured-data";
 
 const siteName = "Kyoto by JJ";
 const siteDescription =
@@ -92,6 +95,15 @@ export const metadata: Metadata = {
     description: siteDescription,
     images: ["/og-image.png"],
   },
+  // Site-verification meta tags — populated from env so secrets stay out of
+  // the repo. Each one is rendered only when its env var is set.
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
+    yandex: process.env.NEXT_PUBLIC_YANDEX_VERIFICATION,
+    other: process.env.NEXT_PUBLIC_BING_VERIFICATION
+      ? { "msvalidate.01": [process.env.NEXT_PUBLIC_BING_VERIFICATION] }
+      : undefined,
+  },
 };
 
 /* ─── Root layout ────────────────────────────────────────────────────────── */
@@ -108,9 +120,11 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="flex min-h-dvh flex-col bg-background text-foreground antialiased">
+        <StructuredData data={websiteJsonLd()} />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
+        <Analytics />
       </body>
     </html>
   );

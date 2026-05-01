@@ -9,10 +9,12 @@ import {
 } from "@/components/ui/EditorialCards";
 import { Heading } from "@/components/ui/Heading";
 import { TagList } from "@/components/ui/Tag";
+import { StructuredData } from "@/components/StructuredData";
 import { features } from "@/data/features";
 import { neighborhoods } from "@/data/neighborhoods";
 import { places } from "@/data/places";
 import { selectPlacesForSurface } from "@/lib/place-display-selectors";
+import { breadcrumbJsonLd, neighborhoodJsonLd } from "@/lib/structured-data";
 import type { Place } from "@/types/place";
 
 export async function generateStaticParams() {
@@ -206,8 +208,22 @@ export default async function NeighborhoodPage({
     })
     .slice(0, 4);
 
+  const neighborhoodBreadcrumbs = [
+    { name: "Neighborhoods", url: "/neighborhoods" },
+    {
+      name: neighborhood.name,
+      url: `/neighborhoods/${neighborhood.slug}`,
+    },
+  ];
+
   return (
     <div className="pb-24">
+      <StructuredData
+        data={[
+          neighborhoodJsonLd(neighborhood, neighborhoodPlaces),
+          breadcrumbJsonLd(neighborhoodBreadcrumbs),
+        ]}
+      />
       <section className="section-paper border-b border-border py-16 md:py-24">
         <Container>
           <nav aria-label="Breadcrumb" className="mb-10 flex items-center gap-2">

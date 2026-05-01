@@ -6,10 +6,12 @@ import { SmartImage } from "@/components/media/SmartImage";
 import { CompactEditorialCard } from "@/components/ui/EditorialCards";
 import { Heading } from "@/components/ui/Heading";
 import { TagList } from "@/components/ui/Tag";
+import { StructuredData } from "@/components/StructuredData";
 import { features } from "@/data/features";
 import { neighborhoods } from "@/data/neighborhoods";
 import { places } from "@/data/places";
 import { selectPlacesForSurface } from "@/lib/place-display-selectors";
+import { breadcrumbJsonLd, featureJsonLd } from "@/lib/structured-data";
 import type { Place } from "@/types/place";
 
 export function generateStaticParams() {
@@ -295,8 +297,19 @@ export default async function FeatureDetailPage({
     .sort((a, b) => b.strongCount - a.strongCount)
     .slice(0, 3);
 
+  const featureBreadcrumbs = [
+    { name: "Features", url: "/features" },
+    { name: feature.title, url: `/features/${feature.slug}` },
+  ];
+
   return (
     <article>
+      <StructuredData
+        data={[
+          featureJsonLd(feature, featureVisiblePlaces),
+          breadcrumbJsonLd(featureBreadcrumbs),
+        ]}
+      />
       <SmartImage
         src={feature.coverImage}
         alt={feature.title}

@@ -208,10 +208,11 @@ After deployment, validate:
 
 ## Recommended Next Improvements
 
-- Add per-page Open Graph images for dynamic detail pages
-- Add JSON-LD structured data (`WebSite`, `TravelGuide`, `BreadcrumbList`)
-- Add analytics + search console verification metadata
-- Add content pipeline (MDX/CMS) if editorial volume grows
+- ✅ Per-page Open Graph images for dynamic detail pages — `opengraph-image.tsx` files under `places/[slug]`, `features/[slug]`, `neighborhoods/[slug]` generate per-slug PNGs at build time via Next's metadata convention.
+- ✅ JSON-LD structured data (`WebSite`, `TouristAttraction`, `Article`, `TouristDestination`, `BreadcrumbList`) — see `src/lib/structured-data.ts` and `src/components/StructuredData.tsx`.
+- ✅ Analytics + Search Console verification metadata — env-driven via `NEXT_PUBLIC_PLAUSIBLE_DOMAIN`, `NEXT_PUBLIC_GA_ID`, `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION`, etc. See `.env.example`.
+- Add content pipeline (MDX/CMS) if editorial volume grows beyond the typed local data files.
+- Curate cover JPGs for the seven feature themes — drop into `public/images/features/` with filenames matching feature slugs (see that directory's README for shot direction).
 
 ---
 

@@ -5,11 +5,13 @@ import { Container } from "@/components/layout/Container";
 import { SmartImage } from "@/components/media/SmartImage";
 import { Heading } from "@/components/ui/Heading";
 import { Tag, TagList } from "@/components/ui/Tag";
+import { StructuredData } from "@/components/StructuredData";
 import { places } from "@/data/places";
 import {
   getPlaceNeighborhoodBucket,
   titleCaseNeighborhood,
 } from "@/lib/place-neighborhood";
+import { breadcrumbJsonLd, placeJsonLd } from "@/lib/structured-data";
 
 export function generateStaticParams() {
   return places.map((p) => ({ slug: p.slug }));
@@ -229,8 +231,20 @@ export default async function PlaceDetailPage({
     (place.bestFor && place.bestFor.length > 0) ||
     (place.mood && place.mood.length > 0);
 
+  const breadcrumbs = [
+    { name: "Places", url: "/places" },
+    {
+      name: area.canonical,
+      url: place.canonicalNeighborhoodSlug
+        ? `/neighborhoods/${place.canonicalNeighborhoodSlug}`
+        : "/neighborhoods",
+    },
+    { name: place.title, url: `/places/${place.slug}` },
+  ];
+
   return (
     <>
+      <StructuredData data={[placeJsonLd(place), breadcrumbJsonLd(breadcrumbs)]} />
       <section className="w-full">
         <SmartImage
           src={place.heroImage || "/images/places/placeholder.jpg"}
