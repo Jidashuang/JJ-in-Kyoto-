@@ -2,7 +2,9 @@ import type { Neighborhood } from "@/types/neighborhood";
 import { realNeighborhoods } from "@/data/real-neighborhoods";
 import { realPlaces } from "@/data/real-places";
 
-const DEFAULT_HERO_IMAGE = "/images/neighborhoods/placeholder.jpg";
+// Empty string lets SmartImage fall through to its editorial paper-and-serif
+// fallback rather than 404-flickering on a placeholder file that doesn't exist.
+const DEFAULT_HERO_IMAGE = "";
 const DEFAULT_INTRO =
   "A Kyoto neighborhood guide drawn from the current dataset.";
 

@@ -229,7 +229,6 @@ export const realPlaces: RealPlace[] = [
     titleJa: "珈琲 二条小屋",
     category: ["Cafe"],
     tags: ["Quiet", "Coffee"],
-    heroImage: "/images/19.jpg",
     gallery: ["/images/19.jpg"],
     featured: true,
     topPick: false,
@@ -542,7 +541,6 @@ export const realPlaces: RealPlace[] = [
     sensory:
       "A small glass case holds the current week's sweets — a plum jelly in spring, a chestnut wrap in autumn. The shop itself is narrow, clean, painted quiet. You buy a piece of the current season and eat it within the afternoon.",
     tip: "Seasonal items sell out mid-afternoon; go before 14:00 for the week's centerpiece.",
-    heroImage: "/images/29.jpg",
     gallery: ["/images/29.jpg"],
     featured: true,
     topPick: false,
@@ -627,7 +625,6 @@ export const realPlaces: RealPlace[] = [
       "A polished Kyoto Japanese restaurant with a quieter residential setting and a more contemporary sensibility than the old guard.",
     body:
       "Ogawa gives the Japanese dining section a more current, chef-led note while staying rooted in Kyoto technique and seasonality. The official site is clear on the address and reservations, so even without hours on-page it is already much more usable than a name-only listing.",
-    heroImage: "/images/21.jpg",
     gallery: ["/images/21.jpg"],
     featured: true,
     topPick: false,
@@ -1174,7 +1171,6 @@ export const realPlaces: RealPlace[] = [
     titleJa: "ロク",
     category: ["Vintage", "Lifestyle"],
     tags: ["Design Lover"],
-    heroImage: "/images/18.jpg",
     gallery: ["/images/18.jpg"],
     featured: true,
     topPick: false,
@@ -1544,7 +1540,6 @@ export const realPlaces: RealPlace[] = [
       "A small Kyoto fashion shop with a strong planted, lived-in atmosphere rather than a slick showroom mood.",
     body:
       "Brodism is one of those addresses that helps the guide feel more local and less checklist-like. Even with limited official store information available, it earns its place through the distinctive fashion-and-space sensibility shown in the source material.",
-    heroImage: "/images/17.jpg",
     gallery: ["/images/17.jpg"],
     featured: true,
     topPick: false,

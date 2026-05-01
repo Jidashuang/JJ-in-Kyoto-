@@ -313,7 +313,8 @@ export default async function FeatureDetailPage({
       <SmartImage
         src={feature.coverImage}
         alt={feature.title}
-        fallbackLabel="Selected feature"
+        fallbackLabel="Feature"
+        fallbackTitle={feature.title}
         className="aspect-[21/9] w-full max-h-[60svh]"
         imgClassName="object-cover"
         priority

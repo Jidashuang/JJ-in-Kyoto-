@@ -316,9 +316,10 @@ export default async function NeighborhoodPage({
 
       <Container className="mt-1 mb-0">
         <SmartImage
-          src={neighborhood.heroImage ?? "/images/neighborhoods/placeholder.jpg"}
+          src={neighborhood.heroImage ?? ""}
           alt={neighborhood.name}
-          fallbackLabel={`${neighborhood.name} — overview`}
+          fallbackLabel="Neighborhood"
+          fallbackTitle={neighborhood.name}
           className="w-full aspect-[21/9]"
           imgClassName="object-cover"
           priority

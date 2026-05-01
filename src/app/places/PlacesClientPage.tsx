@@ -79,6 +79,7 @@ function PlaceCard({
           src={heroImage}
           alt={title}
           fallbackLabel={category[0]}
+          fallbackTitle={title}
           className="aspect-[4/3] w-full"
           imgClassName="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
         />

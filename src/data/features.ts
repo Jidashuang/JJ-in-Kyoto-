@@ -6,7 +6,10 @@ const DEFAULT_INTRO =
   "An editorial Kyoto feature drawn from the current guide.";
 const DEFAULT_BODY =
   "This page gathers the linked places and notes for the feature.";
-const DEFAULT_COVER_IMAGE = "/images/features/placeholder.jpg";
+// Empty string lets SmartImage skip the <Image> request and render its
+// editorial fallback. The legacy placeholder path (/images/features/...) had
+// no asset on disk, so consumers 404-flickered before falling through.
+const DEFAULT_COVER_IMAGE = "";
 
 // When a theme does not specify a local coverImage (or uses the placeholder
 // convention path /images/features/{slug}.jpg that has no asset yet), fall

@@ -33,9 +33,10 @@ export function LeadEditorialCard({
       )}
     >
       <SmartImage
-        src={image ?? "/images/places/placeholder.jpg"}
+        src={image ?? ""}
         alt={title}
         fallbackLabel={eyebrow ?? "Lead"}
+        fallbackTitle={title}
         className="aspect-[5/4] w-full md:aspect-auto md:min-h-[440px]"
         imgClassName="object-cover transition-transform duration-700 group-hover:scale-[1.02]"
       />
@@ -90,9 +91,10 @@ export function StandardEditorialCard({
       )}
     >
       <SmartImage
-        src={image ?? "/images/places/placeholder.jpg"}
+        src={image ?? ""}
         alt={title}
         fallbackLabel={eyebrow ?? "Guide"}
+        fallbackTitle={title}
         className="aspect-[16/10] w-full"
         imgClassName="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
       />
@@ -139,9 +141,10 @@ export function CompactEditorialCard({
       )}
     >
       <SmartImage
-        src={image ?? "/images/places/placeholder.jpg"}
+        src={image ?? ""}
         alt={title}
         fallbackLabel={eyebrow ?? "Area"}
+        fallbackTitle={title}
         className="h-20 w-24 shrink-0"
         imgClassName="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
       />

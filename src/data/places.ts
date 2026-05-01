@@ -17,7 +17,10 @@ const DEFAULT_EXCERPT =
   "A curated Kyoto listing from the current guide.";
 const DEFAULT_BODY =
   "This entry collects the practical notes and editorial context for the place.";
-const DEFAULT_HERO_IMAGE = "/images/places/placeholder.jpg";
+// Empty string lets SmartImage skip the <Image> request entirely and render
+// its editorial paper-and-serif fallback. Using a placeholder path that
+// doesn't exist on disk produces a 404 flicker before the fallback shows.
+const DEFAULT_HERO_IMAGE = "";
 
 const CATEGORY_WHITELIST = new Set<string>(PLACE_CATEGORIES);
 const TAG_WHITELIST = new Set<string>(PLACE_TAGS);

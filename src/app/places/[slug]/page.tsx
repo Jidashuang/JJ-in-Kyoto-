@@ -247,9 +247,10 @@ export default async function PlaceDetailPage({
       <StructuredData data={[placeJsonLd(place), breadcrumbJsonLd(breadcrumbs)]} />
       <section className="w-full">
         <SmartImage
-          src={place.heroImage || "/images/places/placeholder.jpg"}
+          src={place.heroImage}
           alt={place.title}
           fallbackLabel={place.category[0]}
+          fallbackTitle={place.title}
           className="aspect-[16/9] w-full max-h-[620px] md:aspect-[21/9]"
           imgClassName="object-cover"
           priority

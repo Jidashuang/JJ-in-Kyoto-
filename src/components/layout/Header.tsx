@@ -78,15 +78,6 @@ export function Header() {
             })}
           </nav>
 
-          <div className="hidden lg:flex items-center gap-2">
-            <Link href="/places" className="el-pill-white h-10">
-              All Places
-            </Link>
-            <Link href="/neighborhoods" className="el-pill-black h-10">
-              Start by Neighborhood
-            </Link>
-          </div>
-
           <button
             type="button"
             className="lg:hidden -mr-1 flex h-9 w-9 items-center justify-center rounded-full border border-black/5 bg-white text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
@@ -126,14 +117,6 @@ export function Header() {
                   </Link>
                 );
               })}
-              <div className="mt-3 flex flex-wrap gap-2 border-t border-black/5 pt-3">
-                <Link href="/places" className="el-pill-white h-10">
-                  All Places
-                </Link>
-                <Link href="/neighborhoods" className="el-pill-black h-10">
-                  Start by Neighborhood
-                </Link>
-              </div>
             </nav>
           </Container>
         </div>
