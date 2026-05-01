@@ -3,481 +3,229 @@ import type { Metadata } from "next";
 import { Container } from "@/components/layout/Container";
 import { Heading } from "@/components/ui/Heading";
 import { TagList } from "@/components/ui/Tag";
-import { TextNoteCard } from "@/components/ui/EditorialCards";
-import { PLACE_INTENT_GROUPS } from "@/data/place-taxonomy";
 import { neighborhoods } from "@/data/neighborhoods";
 import { places } from "@/data/places";
-import {
-  placeVisibleOnSurface,
-  selectPlacesForSurface,
-} from "@/lib/place-display-selectors";
 
 export const metadata: Metadata = {
-  title: "Area Guide",
+  title: "Half-day Routes",
   description:
-    "Browse Kyoto by area with neighborhood intros, anchor places, and top picks from the current guide data.",
+    "Half-day Kyoto routes drawn from each neighborhood — anchor stops, walkable in three hours, with notes on who each route suits and when to go.",
 };
 
-function titleCaseNeighborhood(value: string) {
-  return value
-    .split("-")
-    .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
-    .join(" ");
+/**
+ * Half-day routes page.
+ *
+ * Each neighborhood already carries the data we need (hook, anchorPlaceSlugs,
+ * halfDayRoute prose, bestFor, whenToGo). This page composes them into 15
+ * editorial cards — one route per neighborhood, anchor places shown as a
+ * numbered sequence, the halfDayRoute paragraph as prose underneath.
+ *
+ * Routes complement /features (themed essays across multiple neighborhoods)
+ * and /neighborhoods (full per-area pages with deeper context).
+ */
+
+type AnchorEntry = {
+  slug: string;
+  title: string;
+  category: string;
+  oneLiner: string;
+};
+
+function buildAnchorEntries(slugs: string[]): AnchorEntry[] {
+  // Resolve anchor place slugs into a small display object.
+  // Falls through any slug that isn't in the place dataset rather than
+  // crashing — mismatches are reported at build time by tsc when types change.
+  const out: AnchorEntry[] = [];
+  for (const slug of slugs) {
+    const place = places.find((p) => p.slug === slug);
+    if (!place) continue;
+    out.push({
+      slug: place.slug,
+      title: place.title,
+      category: place.category[0] ?? "Place",
+      // essence is the cleanest one-liner when present; otherwise fall back
+      // to the first sentence of body (which is the argument-led opener we
+      // wrote for the Why go section). excerpt is last because it is often
+      // the generic default fallback string from the data factory.
+      oneLiner: pickOneLiner(place.essence, place.body, place.excerpt),
+    });
+  }
+  return out;
 }
 
-function CountCard({
-  label,
-  value,
-}: {
-  label: string;
-  value: string | number;
-}) {
-  return (
-    <div className="section-paper border border-border px-5 py-5">
-      <p className="editorial-kicker mb-2">{label}</p>
-      <p className="font-serif text-[clamp(1.8rem,3.6vw,2.8rem)] leading-none text-foreground">
-        {value}
-      </p>
-    </div>
-  );
+function pickOneLiner(
+  essence: string | undefined,
+  body: string,
+  excerpt: string,
+): string {
+  const trimmedEssence = essence?.trim();
+  if (trimmedEssence) return trimmedEssence;
+
+  const trimmedBody = body?.trim();
+  if (trimmedBody) {
+    // Take the first sentence of body — our body openers are designed as
+    // standalone arguments and read well as a one-liner.
+    const firstSentence = trimmedBody.split(/(?<=[.!?])\s/, 1)[0];
+    if (firstSentence && firstSentence.length > 0) return firstSentence;
+  }
+
+  return excerpt.trim();
 }
 
-const AREA_GROUPS = [
-  {
-    id: "group-central-and-river",
-    label: "Central & River Loop",
-    intro:
-      "Best for first-time days when you want flexible walking between cafés, classic shops, and riverside breaks.",
-    neighborhoodSlugs: ["karasuma-and-downtown", "kamo-river-and-demachiyanagi"],
-  },
-  {
-    id: "group-east-and-culture",
-    label: "East Side Classics",
-    intro:
-      "Historic streets, temples, and museum-friendly routes with strong old-Kyoto atmosphere and slower pacing options.",
-    neighborhoodSlugs: ["gion-and-higashiyama", "okazaki-and-marutamachi"],
-  },
-  {
-    id: "group-north-and-south",
-    label: "North & South Everyday Kyoto",
-    intro:
-      "Useful for local rhythm and practical planning, from sento culture and tofu lanes to station-side transitions.",
-    neighborhoodSlugs: ["nishijin-and-north-kyoto", "kyoto-station-and-south"],
-  },
-] as const;
+const STEP_LABELS = ["Morning", "Midday", "Afternoon", "Later"];
 
 export default function MapPage() {
-  const placeBySlug = new Map(places.map((place) => [place.slug, place]));
-
-  const neighborhoodRecords = neighborhoods
-    .map((neighborhood) => ({
-      ...neighborhood,
-      listedPlaces: neighborhood.placeSlugs
-        .map((slug) => placeBySlug.get(slug))
-        .filter((place): place is (typeof places)[number] => Boolean(place)),
-    }))
+  const routeCards = neighborhoods
     .map((neighborhood) => {
-      const prominentPlaces = selectPlacesForSurface(
-        neighborhood.listedPlaces,
-        "neighborhood_anchor",
-      );
-      const anchorPlaces = (neighborhood.anchorPlaceSlugs ?? [])
-        .map((slug) => placeBySlug.get(slug))
-        .filter(
-          (place): place is (typeof places)[number] =>
-            place !== undefined &&
-            placeVisibleOnSurface(place, "neighborhood_anchor"),
-        );
-      const topPicks = prominentPlaces.filter((place) => place.topPick);
-
-      return {
-        ...neighborhood,
-        count: neighborhood.listedPlaces.length,
-        anchorPlaces:
-          anchorPlaces.length > 0
-            ? anchorPlaces
-            : prominentPlaces.slice(0, 3),
-        topPicks: topPicks.length > 0 ? topPicks : prominentPlaces.slice(0, 3),
-      };
+      const anchorSlugs = neighborhood.anchorPlaceSlugs ?? [];
+      const fallbackSlugs = anchorSlugs.length === 0 ? neighborhood.placeSlugs.slice(0, 3) : anchorSlugs;
+      const anchors = buildAnchorEntries(fallbackSlugs).slice(0, 4);
+      return { neighborhood, anchors };
     })
-    .sort((a, b) => b.count - a.count || a.name.localeCompare(b.name));
-
-  const neighborhoodRecordBySlug = new Map(
-    neighborhoodRecords.map((neighborhood) => [neighborhood.slug, neighborhood]),
-  );
-
-  const placeToNeighborhoodSlug = new Map<string, string>();
-  neighborhoodRecords.forEach((neighborhood) => {
-    neighborhood.placeSlugs.forEach((slug) => {
-      placeToNeighborhoodSlug.set(slug, neighborhood.slug);
-    });
-  });
-
-  const groupedAreas = AREA_GROUPS.map((group) => {
-    const items = group.neighborhoodSlugs
-      .map((slug) => neighborhoodRecordBySlug.get(slug))
-      .filter(
-        (neighborhood): neighborhood is (typeof neighborhoodRecords)[number] =>
-          Boolean(neighborhood),
-      );
-    const placeCount = items.reduce((sum, item) => sum + item.count, 0);
-    const topPickCount = items.reduce((sum, item) => sum + item.topPicks.length, 0);
-
-    return {
-      ...group,
-      items,
-      placeCount,
-      topPickCount,
-    };
-  });
-
-  const topPicksByArea = neighborhoodRecords
-    .filter((neighborhood) => neighborhood.topPicks.length > 0)
-    .sort(
-      (a, b) => b.topPicks.length - a.topPicks.length || a.name.localeCompare(b.name),
-    );
-
-  const quickEntryByType = PLACE_INTENT_GROUPS.map((intent) => {
-    const matchedPlaces = places.filter((place) => {
-      if (intent.topPick) return place.topPick;
-      const matchesCategory =
-        intent.categories?.some((category) => place.category.includes(category)) ??
-        false;
-      const matchesTag = intent.tags?.some((tag) => place.tags.includes(tag)) ?? false;
-      return matchesCategory || matchesTag;
-    });
-
-    const areaCount = new Map<string, number>();
-
-    matchedPlaces.forEach((place) => {
-      const areaSlug =
-        placeToNeighborhoodSlug.get(place.slug) || place.canonicalNeighborhoodSlug;
-      if (!areaSlug) return;
-      areaCount.set(areaSlug, (areaCount.get(areaSlug) ?? 0) + 1);
-    });
-
-    const topAreas = Array.from(areaCount.entries())
-      .sort((a, b) => b[1] - a[1])
-      .slice(0, 2)
-      .map(([areaSlug, count]) => {
-        const areaName =
-          neighborhoodRecordBySlug.get(areaSlug)?.name ||
-          titleCaseNeighborhood(areaSlug);
-        return `${areaName} (${count})`;
-      });
-
-    return {
-      id: intent.id,
-      label: intent.label,
-      matchedPlaces,
-      topAreas,
-    };
-  }).filter((entry) => entry.matchedPlaces.length > 0);
-
-  const quickAreaJump = groupedAreas.flatMap((group) => group.items);
-  const topPickCount = places.filter((place) => place.topPick).length;
+    .filter((card) => card.anchors.length > 0);
 
   return (
     <>
+      {/* Hero ─────────────────────────────────────────────────────────── */}
       <section className="section-paper border-b border-border py-16 md:py-24">
         <Container>
-          <div className="grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,1fr)_320px] lg:items-end">
-            <div>
-              <p className="editorial-kicker mb-4">Area guide</p>
-              <div className="editorial-rule mb-8 max-w-56" />
-              <Heading as="h1" size="xl" font="serif" className="text-balance">
-                Browse Kyoto by area,
-                <br />
-                then decide your pace.
-              </Heading>
-              <p className="mt-6 max-w-2xl font-sans text-base leading-relaxed text-muted-foreground">
-                This is an editorial map-like index. Use it to choose neighborhood clusters,
-                not to optimize every minute.
-              </p>
-            </div>
-
-            <TextNoteCard
-              title="How to read this page"
-              body="Pick one area group first, choose 2-3 anchors, and keep route order flexible."
-              tone="ink"
-            />
-          </div>
-
-          <div className="mt-10 grid grid-cols-2 gap-4 md:grid-cols-4">
-            <CountCard label="Area groups" value={groupedAreas.length} />
-            <CountCard label="Neighborhoods" value={neighborhoodRecords.length} />
-            <CountCard label="Places" value={places.length} />
-            <CountCard label="Top picks" value={topPickCount} />
-          </div>
-
-          <div className="mt-8 grid gap-6 border border-border section-warm p-6 lg:grid-cols-2">
-            <div>
-              <p className="editorial-kicker mb-3">Quick jump by group</p>
-              <div className="flex flex-wrap gap-2">
-                {groupedAreas.map((group) => (
-                  <a
-                    key={group.id}
-                    href={`#${group.id}`}
-                    className="inline-flex border border-border bg-background px-3 py-1.5 font-sans text-xs text-muted-foreground transition-colors hover:border-foreground/30 hover:text-foreground"
-                  >
-                    {group.label}
-                  </a>
-                ))}
-              </div>
-            </div>
-
-            <div>
-              <p className="editorial-kicker mb-3">Quick jump by neighborhood</p>
-              <div className="flex flex-wrap gap-2">
-                {quickAreaJump.map((neighborhood) => (
-                  <a
-                    key={neighborhood.slug}
-                    href={`#area-${neighborhood.slug}`}
-                    className="inline-flex border border-border bg-background px-3 py-1.5 font-sans text-xs text-muted-foreground transition-colors hover:border-foreground/30 hover:text-foreground"
-                  >
-                    {neighborhood.name}
-                  </a>
-                ))}
-              </div>
-            </div>
-          </div>
-        </Container>
-      </section>
-
-      <section className="border-b border-border py-14 md:py-16">
-        <Container>
-          <div className="mb-10">
-            <p className="editorial-kicker mb-3">Neighborhood groups</p>
-            <div className="editorial-rule mb-6 max-w-52" />
-            <Heading as="h2" size="lg" font="serif">
-              Area-first browsing
+          <div className="max-w-4xl">
+            <p className="editorial-kicker mb-4">Half-day routes</p>
+            <div className="editorial-rule mb-8 max-w-56" />
+            <Heading as="h1" size="xl" font="serif" className="text-balance">
+              Fifteen neighborhoods,
+              <br />
+              fifteen half-days.
             </Heading>
-          </div>
-
-          <div className="space-y-12">
-            {groupedAreas.map((group, groupIndex) => (
-              <section
-                key={group.id}
-                id={group.id}
-                className={`scroll-mt-24 border border-border p-6 md:p-7 ${
-                  groupIndex % 2 === 0 ? "bg-background" : "section-warm"
-                }`}
+            <p className="mt-7 max-w-2xl font-sans text-base leading-[1.6] tracking-[0.18px] text-muted-foreground">
+              Each route opens with one neighborhood and two or three anchor places,
+              walkable in roughly three hours. Pace stays slow on purpose — these
+              are arguments for one careful loop, not optimised checklists.
+            </p>
+            <p className="mt-4 max-w-2xl font-sans text-sm leading-relaxed text-muted-foreground/80">
+              Pair with{" "}
+              <Link
+                href="/features"
+                className="underline underline-offset-4 hover:text-foreground"
               >
-                <div className="mb-6 flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
-                  <div>
-                    <p className="editorial-kicker mb-2">{group.items.length} neighborhoods</p>
-                    <Heading as="h3" size="md" font="serif">
-                      {group.label}
-                    </Heading>
-                    <p className="mt-2 max-w-3xl font-sans text-sm leading-relaxed text-muted-foreground">
-                      {group.intro}
-                    </p>
-                  </div>
-                </div>
-
-                <p className="mb-6 font-sans text-xs text-muted-foreground/65">
-                  {group.placeCount} places · {group.topPickCount} editorial top picks
-                </p>
-
-                <div className="grid grid-cols-1 gap-5 lg:grid-cols-2">
-                  {group.items.map((neighborhood) => (
-                    <article
-                      key={neighborhood.slug}
-                      id={`area-${neighborhood.slug}`}
-                      className="flex h-full flex-col gap-4 border border-border bg-background p-5 scroll-mt-24"
-                    >
-                      <div className="flex items-start justify-between gap-4">
-                        <div>
-                          <Heading as="h4" size="sm" font="serif">
-                            {neighborhood.name}
-                          </Heading>
-                          <p className="mt-1 font-sans text-xs text-muted-foreground/55">
-                            {neighborhood.count} places in this area
-                          </p>
-                        </div>
-                        <Link
-                          href={`/neighborhoods/${neighborhood.slug}`}
-                          className="font-sans text-xs text-muted-foreground transition-colors hover:text-foreground"
-                        >
-                          Open area →
-                        </Link>
-                      </div>
-
-                      <p className="font-sans text-sm leading-relaxed text-muted-foreground">
-                        {neighborhood.intro}
-                      </p>
-
-                      {neighborhood.anchorPlaces.length > 0 && (
-                        <div>
-                          <p className="editorial-kicker mb-2">Anchor places</p>
-                          <div className="flex flex-wrap gap-2">
-                            {neighborhood.anchorPlaces.slice(0, 4).map((place) => (
-                              <Link
-                                key={place.slug}
-                                href={`/places/${place.slug}`}
-                                className="inline-flex border border-border px-2.5 py-1 font-sans text-xs text-muted-foreground transition-colors hover:border-foreground/30 hover:text-foreground"
-                              >
-                                {place.title}
-                              </Link>
-                            ))}
-                          </div>
-                        </div>
-                      )}
-
-                      <div className="mt-auto flex items-center justify-between gap-4 border-t border-border/60 pt-3">
-                        <p className="font-sans text-xs text-muted-foreground/55">
-                          {neighborhood.topPicks.length} top picks
-                        </p>
-                        {neighborhood.ambiance && neighborhood.ambiance.length > 0 && (
-                          <TagList
-                            tags={neighborhood.ambiance.slice(0, 2)}
-                            variant="outline"
-                            size="sm"
-                          />
-                        )}
-                      </div>
-                    </article>
-                  ))}
-                </div>
-              </section>
-            ))}
+                Routes
+              </Link>{" "}
+              for themed sequences across multiple areas, or{" "}
+              <Link
+                href="/neighborhoods"
+                className="underline underline-offset-4 hover:text-foreground"
+              >
+                Neighborhoods
+              </Link>{" "}
+              for the full per-area page.
+            </p>
           </div>
         </Container>
       </section>
 
-      <section className="section-warm border-b border-border py-14 md:py-16">
+      {/* Route grid ────────────────────────────────────────────────────── */}
+      <section className="border-b border-border py-14 md:py-20">
         <Container>
-          <div className="mb-8">
-            <p className="editorial-kicker mb-3">Top picks by area</p>
-            <div className="editorial-rule mb-6 max-w-44" />
-            <Heading as="h2" size="md" font="serif">
-              Start with standout addresses.
-            </Heading>
-          </div>
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-10">
+            {routeCards.map(({ neighborhood, anchors }, index) => {
+              const tone = index % 2 === 0 ? "paper" : "warm";
+              const cardClass =
+                tone === "paper"
+                  ? "border border-border bg-background"
+                  : "border border-border bg-[#f5f2ef]/60";
 
-          <div className="grid grid-cols-1 gap-6 lg:grid-cols-12">
-            <div className="space-y-5 lg:col-span-8">
-              {topPicksByArea.slice(0, 4).map((neighborhood) => (
+              return (
                 <article
                   key={neighborhood.slug}
-                  className="grid gap-4 border border-border bg-background p-5 md:grid-cols-[220px_minmax(0,1fr)] md:items-start"
+                  className={`${cardClass} flex flex-col gap-7 p-7 md:p-9`}
                 >
-                  <div>
-                    <Heading as="h3" size="sm" font="serif">
-                      {neighborhood.name}
-                    </Heading>
-                    <p className="mt-1 font-sans text-xs text-muted-foreground/60">
-                      {neighborhood.topPicks.length} picks
+                  <header className="flex flex-col gap-3">
+                    <p className="editorial-kicker">
+                      Half-day · {neighborhood.name}
                     </p>
-                  </div>
-                  <div className="space-y-2">
-                    {neighborhood.topPicks.slice(0, 4).map((place) => (
-                      <Link
-                        key={place.slug}
-                        href={`/places/${place.slug}`}
-                        className="group flex items-center justify-between border border-border/70 px-3 py-2 transition-colors hover:border-foreground/30"
-                      >
-                        <div className="min-w-0">
-                          <p className="truncate font-sans text-sm text-foreground">
-                            {place.title}
-                          </p>
-                          <p className="font-sans text-xs text-muted-foreground/60">
-                            {place.category[0]}
-                          </p>
-                        </div>
-                        <span className="font-sans text-xs text-muted-foreground/40 transition-colors group-hover:text-foreground">
-                          →
-                        </span>
-                      </Link>
+                    <Heading
+                      as="h2"
+                      size="md"
+                      font="serif"
+                      className="text-balance leading-[1.18]"
+                    >
+                      {neighborhood.hook ?? `${neighborhood.name} in three hours.`}
+                    </Heading>
+                  </header>
+
+                  {/* Numbered anchor sequence */}
+                  <ol className="flex flex-col gap-5 border-l border-border/60 pl-5">
+                    {anchors.map((anchor, stepIndex) => (
+                      <li key={anchor.slug} className="flex flex-col gap-1.5">
+                        <p className="label-xs text-muted-foreground/70">
+                          {STEP_LABELS[stepIndex] ?? `Stop ${stepIndex + 1}`} · {anchor.category}
+                        </p>
+                        <Link
+                          href={`/places/${anchor.slug}`}
+                          className="font-serif text-[1.35rem] leading-[1.2] text-foreground transition-opacity hover:opacity-70"
+                        >
+                          {anchor.title}
+                        </Link>
+                        <p className="font-sans text-sm leading-[1.55] text-muted-foreground">
+                          {anchor.oneLiner}
+                        </p>
+                      </li>
                     ))}
+                  </ol>
+
+                  {/* halfDayRoute prose */}
+                  {neighborhood.halfDayRoute && (
+                    <aside className="border-l-2 border-foreground/15 pl-5">
+                      <p className="mb-2 label-xs text-muted-foreground/65">
+                        How to walk it
+                      </p>
+                      <p className="font-sans text-[0.94rem] leading-[1.65] tracking-[0.14px] text-foreground/85">
+                        {neighborhood.halfDayRoute}
+                      </p>
+                    </aside>
+                  )}
+
+                  {/* Footer: best for / when / link */}
+                  <div className="mt-auto flex flex-col gap-4 border-t border-border/70 pt-5">
+                    {neighborhood.bestFor && neighborhood.bestFor.length > 0 && (
+                      <div>
+                        <p className="mb-2 label-xs text-muted-foreground/65">Best for</p>
+                        <p className="font-sans text-sm leading-[1.5] text-muted-foreground">
+                          {neighborhood.bestFor[0]}
+                        </p>
+                      </div>
+                    )}
+
+                    <div className="flex flex-wrap items-center justify-between gap-3">
+                      {neighborhood.whenToGo && (
+                        <p className="font-sans text-xs italic text-muted-foreground/65">
+                          {neighborhood.whenToGo}
+                        </p>
+                      )}
+                      <Link
+                        href={`/neighborhoods/${neighborhood.slug}`}
+                        className="font-sans text-xs uppercase tracking-[0.12em] text-muted-foreground transition-colors hover:text-foreground"
+                      >
+                        Open the full area →
+                      </Link>
+                    </div>
+
+                    {neighborhood.ambiance && neighborhood.ambiance.length > 0 && (
+                      <TagList
+                        tags={neighborhood.ambiance.slice(0, 3)}
+                        variant="outline"
+                        size="sm"
+                      />
+                    )}
                   </div>
                 </article>
-              ))}
-            </div>
-
-            <div className="grid grid-cols-1 gap-4 lg:col-span-4">
-              <TextNoteCard
-                title="Practical tip"
-                body="Pick one anchor from this list, then add nearby stops from the same neighborhood page."
-                tone="ink"
-              />
-              {topPicksByArea.slice(4, 7).map((neighborhood) => (
-                <Link
-                  key={neighborhood.slug}
-                  href={`/neighborhoods/${neighborhood.slug}`}
-                  className="group border border-border bg-background p-4 transition-colors hover:border-foreground/30"
-                >
-                  <p className="editorial-kicker mb-2">Area</p>
-                  <p className="font-serif text-lg text-foreground transition-opacity group-hover:opacity-75">
-                    {neighborhood.name}
-                  </p>
-                  <p className="mt-2 font-sans text-xs text-muted-foreground/65">
-                    {neighborhood.topPicks.length} top picks
-                  </p>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </Container>
-      </section>
-
-      <section className="border-b border-border py-14 md:py-16">
-        <Container>
-          <div className="mb-8">
-            <p className="editorial-kicker mb-3">Quick entry by type</p>
-            <div className="editorial-rule mb-6 max-w-52" />
-            <Heading as="h2" size="md" font="serif">
-              Choose intention first, then neighborhood.
-            </Heading>
+              );
+            })}
           </div>
 
-          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-4">
-            {quickEntryByType.map((entry, index) => (
-              <article
-                key={entry.id}
-                className={`flex h-full flex-col gap-4 border border-border p-5 ${
-                  index === 0 ? "note-panel" : "section-paper"
-                }`}
-              >
-                <div className="flex items-start justify-between gap-3">
-                  <Heading
-                    as="h3"
-                    size="sm"
-                    font="serif"
-                    className={index === 0 ? "text-current" : undefined}
-                  >
-                    {entry.label}
-                  </Heading>
-                  <p className="font-sans text-xs text-current/70">{entry.matchedPlaces.length}</p>
-                </div>
-
-                {entry.topAreas.length > 0 && (
-                  <p className="font-sans text-xs leading-relaxed text-current/80">
-                    Best areas: {entry.topAreas.join(" · ")}
-                  </p>
-                )}
-
-                <div className="flex flex-wrap gap-2">
-                  {entry.matchedPlaces.slice(0, 3).map((place) => (
-                    <Link
-                      key={place.slug}
-                      href={`/places/${place.slug}`}
-                      className="inline-flex border border-current/30 px-2.5 py-1 font-sans text-xs text-current/80 transition-colors hover:border-current"
-                    >
-                      {place.title}
-                    </Link>
-                  ))}
-                </div>
-
-                <Link
-                  href="/places"
-                  className="mt-auto font-sans text-xs tracking-[0.1em] uppercase text-current/80 transition-colors hover:text-current"
-                >
-                  Browse full list →
-                </Link>
-              </article>
-            ))}
-          </div>
+          <p className="mt-14 text-center font-sans text-xs text-muted-foreground/45">
+            {routeCards.length} routes · curated from the current data set · last reviewed from source material
+          </p>
         </Container>
       </section>
     </>
