@@ -170,10 +170,14 @@ export default async function PlaceDetailPage({
   // excerpt is set (or excerpt is the default placeholder), let the section
   // hide. The card-level surfaces still use excerpt.
   const DEFAULT_EXCERPT = "A curated Kyoto listing from the current guide.";
+  const DEFAULT_BODY =
+    "This entry collects the practical notes and editorial context for the place.";
   const realExcerpt =
     place.excerpt && place.excerpt.trim() !== DEFAULT_EXCERPT
       ? place.excerpt.trim()
       : undefined;
+  const realBody =
+    displayBody && displayBody !== DEFAULT_BODY ? displayBody : undefined;
   const editorialSummary = place.curatorNote?.trim() || realExcerpt;
   const galleryImages = place.gallery && place.gallery.length > 0 ? place.gallery : [];
 
@@ -364,11 +368,11 @@ export default async function PlaceDetailPage({
             </section>
           )}
 
-          {displayBody && (
+          {realBody && (
             <section className="mb-12 md:mb-14">
               <SectionHeading eyebrow="Editorial" title="Why go" />
               <div className="prose-kyoto max-w-none md:max-w-3xl">
-                {displayBody.split("\n\n").map((paragraph, index) => (
+                {realBody.split("\n\n").map((paragraph, index) => (
                   <p key={index} className="mb-5 last:mb-0">
                     {paragraph}
                   </p>
