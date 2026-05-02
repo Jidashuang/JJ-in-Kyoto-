@@ -199,6 +199,8 @@ export const realPlaces: RealPlace[] = [
     hours: "Hours posted on the shop's X account / closed Wednesdays",
     website: "https://x.com/kyoto_naocoffee",
     mapsUrl: "https://maps.google.com/?q=Nao+Coffee+Kyoto",
+    excerpt:
+      "A six-seat counter near Kawaramachi-Sanjo where Naoto Watanabe drips each cup individually — photography off, conversation low.",
     essence: "Six counter seats, one cup at a time, photography off.",
     sensory:
       "A clean wooden counter with six stools, no fanciful décor. Owner Naoto Watanabe drips each cup individually behind the counter and chooses a different cup and saucer for each customer — Portuguese flea-market finds among them. Conversation stays low; no phones.",
@@ -247,6 +249,8 @@ export const realPlaces: RealPlace[] = [
     hours: "11:00-20:00 / closed Tuesdays + irregular holidays",
     website: "https://www.facebook.com/nijokoya/",
     mapsUrl: "https://maps.google.com/?q=Nijo+Koya+Kyoto",
+    excerpt:
+      "A standing-only specialty coffee shed south of Nijo Castle, run by Akihiro Nishiki with eight rotating roasts.",
     essence: "A standing kohi shed south of Nijo Castle.",
     sensory:
       "An old wooden building tucked off the corner of a parking lot, easy to walk past. Inside, a counter to stand at, vinyl jazz, the smell of fresh grounds, eight drip options listed by roast on a small board.",
@@ -509,6 +513,8 @@ export const realPlaces: RealPlace[] = [
     hours: "Fruit parlor 9:30-17:00 (LO 16:30) / fruit shop 9:00-18:00 / open year-round (closed New Year)",
     website: "https://yaoiso.com/",
     mapsUrl: "https://maps.google.com/?q=Yaoiso+Shijo+Omiya+Kyoto",
+    excerpt:
+      "A 156-year-old Kyoto fruit shop with a small fruit-sandwich parlor next door, opened 1972.",
     essence: "An 1869 fruit shop with a fruit-sandwich counter at the back.",
     sensory:
       "The fruit parlor is a small wooden room east of Shijo-Omiya — display case of the day's fruit at the counter, a few tables, the sound of a knife on a cutting board. The signature sandwich is layered fruit and lightly sweetened cream on barely-salted bread, cut into clean triangles.",
@@ -531,6 +537,8 @@ export const realPlaces: RealPlace[] = [
     address: "京都市左京区浄土寺西田町3 銀閣寺ハウス120",
     hours: "Bakery from 12:00 / wine bar from 18:00 / closed Mondays and Tuesdays",
     mapsUrl: "https://maps.google.com/?q=Germer+Kyoto+Ginkakuji",
+    excerpt:
+      "A bakery near Ginkaku-ji that reopens as a wine bar at 18:00, sharing the same loaves between both modes.",
     essence: "A bakery by day, a wine bar by night, sharing the same loaves.",
     sensory:
       "A small lane near Ginkaku-ji, AOC butter on the croissants, French flour fermented long and slow. Bread comes out of the oven at noon (mornings go to wholesale). After 18:00 the room reopens as a bistro — wine, a 3-day cured pork ham, the same bread on the table.",
@@ -749,6 +757,8 @@ export const realPlaces: RealPlace[] = [
     website: "http://gion-kawakami.co.jp/",
     mapsUrl: "https://maps.google.com/?q=Gion+Kawakami+Kyoto",
     reservation: "Reservations only — book via ikyu.com or by phone",
+    excerpt:
+      "A 1960-founded kaiseki house in a hundred-year-old townhouse one alley west of Hanami-koji.",
     essence: "Kaiseki in a converted hundred-year-old townhouse, west of the lantern alley.",
     sensory:
       "One quiet alley west of Hanami-koji, the kind of door you'd walk past without a reservation. Inside: tatami, a small courtyard, lacquered tableware. The course follows the season — sashimi, yuba, hamo in summer, kani in winter — and the room dims as the night moves on.",
@@ -873,6 +883,8 @@ export const realPlaces: RealPlace[] = [
       "Tue-Fri 11:30-15:00 / 18:00-20:45 (LO) / Sat & holidays 11:30-15:00 only / closed Sundays and Mondays",
     website: "https://spicechamber.com/",
     mapsUrl: "https://maps.google.com/?q=Spice+Chamber+Kyoto",
+    excerpt:
+      "A six-seat counter near Shijo Karasuma serving one keema curry, opened 2010.",
     essence: "One keema curry, one room, no menu after that.",
     sensory:
       "A narrow bar room near Shijo Karasuma — six counter seats, a back table, walls lined with spice jars and the owner's CD collection. The keema arrives black with onion sweetness and an umeboshi at the rice's center. Heat builds slowly across the spoon.",
@@ -897,6 +909,8 @@ export const realPlaces: RealPlace[] = [
       "Weekdays lunch 12:00-13:30 (LO) / dinner 18:00-21:30 (LO) / Sat-Sun-Hol 16:00-21:30 (LO) / closed Wednesdays and Thursdays",
     mapsUrl: "https://maps.google.com/?q=Le+Quatorzieme+Kyoto",
     reservation: "Reservations recommended; cash only, no cards",
+    excerpt:
+      "A 10-seat Paris-14e-style Kyoto bistro built around steak frites — Michelin-listed 2025.",
     essence: "A Paris 14e-style bistro built around steak frites.",
     sensory:
       "A 10-seat second-floor room (4 at the counter), small enough that the smell of beef and butter dominates. Chef Makoto Shigeno trained in Paris near the bistro Le Severo and brought back its style — pan-fried steak, double-fried frites, a wine list selected for the meat.",
@@ -918,6 +932,8 @@ export const realPlaces: RealPlace[] = [
     hours: "16:00-24:00 daily",
     website: "https://takumiya.beer/",
     mapsUrl: "https://maps.google.com/?q=BEER+PUB+TAKUMIYA+Kyoto",
+    excerpt:
+      "A 10-tap Japanese craft-beer pub three minutes from Karasuma Oike, run by KYOTO NUDE BREWERY since 2015.",
     essence: "Ten taps of Japanese craft beer, three minutes from Karasuma Oike.",
     sensory:
       "A blue-painted street-front near Karasuma Oike. Inside, a counter and a couple of small tables, eight rotating taps from breweries west of Gifu plus one Guinness, plus the in-house Kyoto Nude Brewery line. Glasses come priced clearly — S/M/L — so a flight is straightforward.",
@@ -1023,6 +1039,8 @@ export const realPlaces: RealPlace[] = [
     mapsUrl:
       "https://maps.google.com/?q=%E3%82%A2%E3%82%B8%E3%82%A7+%E6%9D%BE%E5%8E%9F%E6%9C%AC%E5%BA%97",
     reservation: "Daytime reservations weekdays only; weekends walk-in",
+    excerpt:
+      "The original Kyoto shio-horumon counter — small intestine grilled over salt and fire since 1997.",
     essence: "The original salt-grilled offal counter, opened 1997.",
     sensory:
       "A counter, a grill in the middle, smoke that settles into the jacket. The signature dish is salt-cured horumon (small intestine) grilled over fire, eaten with shiso and a lemon wedge. The room is unrenovated on purpose — every surface is part of how the place tastes.",
@@ -1069,6 +1087,8 @@ export const realPlaces: RealPlace[] = [
     hours: "12:00-04:00 (next morning) / closed Mondays and 3rd Tuesday",
     mapsUrl: "https://maps.google.com/?q=Gion+Negiyaki+Kana+Higashi+Kyoto",
     reservation: "Strongly recommended — 12 counter seats only",
+    excerpt:
+      "A 12-seat negiyaki counter two minutes south of Yasaka, Tabelog Top 100 for okonomiyaki, open until 4am.",
     essence: "Negiyaki at a 12-seat counter, two minutes south of Yasaka.",
     sensory:
       "A long thin room — a single line of grills, twelve counter seats, the back wall stained Showa-orange with decades of oil. Negiyaki is a thin batter heaped with kujo onion, gyusuji simmered ahead, an egg cracked on top. Sazae-san on the TV behind the counter most nights.",
@@ -1558,6 +1578,8 @@ export const realPlaces: RealPlace[] = [
     titleJa: "大吉",
     category: ["Vintage", "Craft"],
     tags: ["Local Favorite", "Classic"],
+    excerpt:
+      "A converted-restaurant antique shop with a small café counter at the back, organizing pieces as everyday-use objects.",
     essence: "Antiques bought to use, with a tea counter at the back.",
     sensory:
       "A converted restaurant on a narrow street, ceramics laid out as if they were daily objects rather than gallery pieces. Ko-Imari blue, glass tumblers, silver spoons, plates that have been used long enough to feel right in the hand. A small café counter in back where tea arrives in something you've just been admiring.",
@@ -1661,6 +1683,8 @@ export const realPlaces: RealPlace[] = [
     address: "京都市東山区祇園縄手四条下る",
     website: "http://gion-naitou.com/",
     mapsUrl: "https://maps.google.com/?q=Gion+Naito+Kyoto",
+    excerpt:
+      "A 150-year-old Kyoto footwear maker, still measuring feet by hand and selling zori, geta, and the modern JOJO Naitou sandals.",
     essence: "An 1875 footwear maker still measuring feet by hand.",
     sensory:
       "The shopfront is mushikomado lattice — protected as a heritage façade by the city — with rows of zori, geta, and the modern JOJO Naitou sandals laid out in measured pairs. Buying anything begins with a foot measurement; the shop keeps the record on file.",
@@ -1943,6 +1967,8 @@ export const realPlaces: RealPlace[] = [
     website: "https://shizuya-kyoto.com/",
     mapsUrl:
       "https://maps.google.com/?q=%E3%81%97%E3%81%A5%E3%82%84+KYOTO",
+    excerpt:
+      "A two-building machiya guesthouse near Kyoto Station, with a courtyard garden and a women-only main wing.",
     essence: "Two-building guesthouse near Kyoto Station, garden in between.",
     sensory:
       "Two machiya-style buildings — OMOYA (women only) and HANARE (mixed) — share a small courtyard garden and a lounge. Rooms are minimal: tatami-thin mattresses by Takaokaya, a desk, a reading light. The neighborhood is residential, three minutes from Keihan Shichijo.",
@@ -1991,6 +2017,8 @@ export const realPlaces: RealPlace[] = [
     hours: "11:00-18:30 / closed Sundays + irregular holidays",
     website: "https://allouneno.com/",
     mapsUrl: "https://maps.google.com/?q=ALLOUNENO+Kyoto",
+    excerpt:
+      "A bento and obanzai stand run by Uneno, the 1903 Kyoto dashi house — known for the Uneno Bento built around a thick dashimaki.",
     essence: "A bento and obanzai stand run by the city's oldest dashi house.",
     sensory:
       "A small storefront on Tomi-no-koji at Gojo, run by Uneno — the dashi shop founded in 1903 that still hand-cuts katsuobushi on five inherited grinders. The Uneno Bento is the signature: a single thick dashimaki, a sheet of nori with karaage and bonito beneath. Eat-in counter since the 2024 renovation.",

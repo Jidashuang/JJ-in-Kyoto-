@@ -165,7 +165,16 @@ export default async function PlaceDetailPage({
     : "/neighborhoods";
 
   const displayBody = place.body?.trim();
-  const editorialSummary = place.curatorNote?.trim() || place.excerpt?.trim();
+  // The "Curator note" section is meant for an explicit editorial note, not a
+  // generic listing description. Don't fall back to excerpt — when only
+  // excerpt is set (or excerpt is the default placeholder), let the section
+  // hide. The card-level surfaces still use excerpt.
+  const DEFAULT_EXCERPT = "A curated Kyoto listing from the current guide.";
+  const realExcerpt =
+    place.excerpt && place.excerpt.trim() !== DEFAULT_EXCERPT
+      ? place.excerpt.trim()
+      : undefined;
+  const editorialSummary = place.curatorNote?.trim() || realExcerpt;
   const galleryImages = place.gallery && place.gallery.length > 0 ? place.gallery : [];
 
   const quickFacts = [

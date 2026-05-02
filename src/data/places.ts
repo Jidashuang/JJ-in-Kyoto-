@@ -115,6 +115,21 @@ function normalizeCoordinate(value?: number): number | undefined {
   return value;
 }
 
+/**
+ * Pull the first sentence out of a longer body string. Used as a fallback
+ * for excerpt when neither an explicit excerpt nor an essence one-liner is
+ * provided — body openers are written as standalone arguments so they read
+ * cleanly as one-line card descriptions.
+ */
+function firstSentence(input?: string): string | undefined {
+  const trimmed = input?.trim();
+  if (!trimmed) return undefined;
+  const match = trimmed.match(/^.+?[.!?](?=\s|$)/);
+  if (!match) return trimmed;
+  const candidate = match[0].trim();
+  return candidate.length > 0 ? candidate : undefined;
+}
+
 export const places: Place[] = realPlaces.map((item, index) => {
   const category = mapCategories(item.category);
   const slug = normalizeSlug(item.slug || item.title || "");
@@ -164,7 +179,16 @@ export const places: Place[] = realPlaces.map((item, index) => {
       normalizeStringList(item.pairWith)?.map((relatedSlug) =>
         normalizeSlug(relatedSlug),
       ).filter(Boolean) || undefined,
-    excerpt: item.excerpt?.trim() || DEFAULT_EXCERPT,
+    // excerpt feeds card-level surfaces (PlaceCard, related-place suggestions,
+    // OG fallbacks). When an explicit excerpt isn't provided, fall through
+    // through essence (one-line argument) → first sentence of body → finally
+    // the generic DEFAULT_EXCERPT placeholder. This keeps cards meaningful
+    // for any place that has at least some editorial content.
+    excerpt:
+      item.excerpt?.trim() ||
+      item.essence?.trim() ||
+      firstSentence(item.body) ||
+      DEFAULT_EXCERPT,
     body: item.body?.trim() || DEFAULT_BODY,
     essence: item.essence?.trim() || undefined,
     sensory: item.sensory?.trim() || undefined,
