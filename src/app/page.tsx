@@ -10,6 +10,7 @@ import {
 import { places } from "@/data/places";
 import { features } from "@/data/features";
 import { neighborhoods } from "@/data/neighborhoods";
+import { MOMENTS, getMomentPlaces } from "@/data/moments";
 import { selectHomepagePlaces } from "@/lib/homepage-selection";
 
 export default function HomePage() {
@@ -115,6 +116,77 @@ export default function HomePage() {
               href="/features"
               cta="Read Routes"
             />
+          </div>
+        </Container>
+      </section>
+
+      <section className="section-tint border-b border-black/5 py-16 md:py-20">
+        <Container>
+          <div className="mb-10 flex items-end justify-between gap-4">
+            <div>
+              <p className="editorial-kicker mb-3">Pick a moment</p>
+              <div className="editorial-rule mb-6 max-w-44" />
+              <Heading as="h2" size="lg" font="serif" className="max-w-3xl text-balance">
+                Enter the guide by what kind of hour you want.
+              </Heading>
+              <p className="mt-5 max-w-2xl font-sans text-base leading-[1.6] tracking-[0.18px] text-muted-foreground">
+                Less of a category, more of a mood. Each moment opens onto three
+                or four places that suit it — start there and keep going if any
+                of them holds.
+              </p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-2">
+            {MOMENTS.map((moment, index) => {
+              const momentPlaces = getMomentPlaces(moment).slice(0, 4);
+              if (momentPlaces.length === 0) return null;
+
+              const isWarm = index % 2 === 1;
+              return (
+                <article
+                  key={moment.id}
+                  className={`flex h-full flex-col gap-5 border p-6 md:p-7 ${
+                    isWarm
+                      ? "border-transparent bg-[#f5f2ef]/70"
+                      : "border-border bg-background"
+                  }`}
+                >
+                  <header>
+                    <p className="editorial-kicker mb-2">Moment</p>
+                    <Heading
+                      as="h3"
+                      size="sm"
+                      font="serif"
+                      className="text-balance leading-[1.18]"
+                    >
+                      {moment.label}
+                    </Heading>
+                    <p className="mt-2 max-w-md font-sans text-sm leading-relaxed text-muted-foreground/85">
+                      {moment.hint}
+                    </p>
+                  </header>
+
+                  <ul className="flex flex-col gap-2.5 border-t border-border/60 pt-4">
+                    {momentPlaces.map((place) => (
+                      <li key={place.slug}>
+                        <Link
+                          href={`/places/${place.slug}`}
+                          className="group flex items-baseline justify-between gap-3"
+                        >
+                          <span className="font-serif text-[1.05rem] leading-[1.25] text-foreground transition-opacity group-hover:opacity-65">
+                            {place.title}
+                          </span>
+                          <span className="shrink-0 font-sans text-xs uppercase tracking-[0.08em] text-muted-foreground/55">
+                            {place.category[0]}
+                          </span>
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </article>
+              );
+            })}
           </div>
         </Container>
       </section>

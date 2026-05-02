@@ -172,6 +172,11 @@ export default async function PlaceDetailPage({
     { label: "Area", value: area.label },
     place.hours ? { label: "Hours", value: place.hours } : null,
     place.price ? { label: "Price", value: place.price } : null,
+    place.visitTime ? { label: "Best time", value: place.visitTime } : null,
+    place.stayLength ? { label: "Stay", value: place.stayLength } : null,
+    place.reservation
+      ? { label: "Reservation", value: place.reservation }
+      : null,
     place.website
       ? { label: "Website", value: websiteDomain(place.website) }
       : null,
