@@ -29,7 +29,7 @@ This project is a content-first Kyoto travel guide with:
 
 ## Project Architecture
 
-```Kyoto annai/kyoto-guide/README.md#L1-200
+```text
 kyoto-guide/
 ├── src/
 │   ├── app/
@@ -66,6 +66,17 @@ kyoto-guide/
 ├── tsconfig.json
 └── package.json
 ```
+
+### Content tooling
+
+- `npm run validate` — checks duplicate slugs, dangling `placeSlugs` / `pairWith`
+  references, placeholder copy, missing hero images and `http://` image URLs.
+  Errors exit non-zero (runs in CI); warnings are informational.
+- `npm run images:localize` — downloads remote hero/gallery images into
+  `public/images/places/<slug>/` and regenerates
+  `src/data/local-image-manifest.ts`. Local copies take priority over remote
+  URLs. Check each source's usage rights before committing the files.
+- `npm run typecheck` — `tsc --noEmit`.
 
 ### Rendering Strategy
 
