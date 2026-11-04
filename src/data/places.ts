@@ -1,7 +1,7 @@
 import type { Place } from "@/types/place";
 import { realPlaces } from "@/data/real-places";
 import { PLACE_CATEGORIES, PLACE_TAGS } from "@/data/place-taxonomy";
-import { placeGalleryImage, placeHeroImage } from "@/data/image-assets";
+import { localPlaceImages } from "@/data/image-assets";
 import { getPlaceDisplayTier } from "@/lib/place-display-tier";
 import {
   normalizeNeighborhoodValue,
@@ -130,11 +130,30 @@ function firstSentence(input?: string): string | undefined {
   return candidate.length > 0 ? candidate : undefined;
 }
 
-export const places: Place[] = realPlaces.map((item, index) => {
+/**
+ * Resolve slugs up front so every cross-reference (pairWith, features,
+ * neighborhoods) can be checked against the final value. Collisions get a
+ * numeric suffix on the later entry; `scripts/validate-data.ts` fails if any
+ * exist in the source data.
+ */
+function resolveSlugs(items: typeof realPlaces): string[] {
+  const used = new Map<string, number>();
+  return items.map((item) => {
+    const base =
+      normalizeSlug(item.slug || item.title || "") ||
+      normalizeSlug(item.title) ||
+      "place";
+    const count = used.get(base) ?? 0;
+    used.set(base, count + 1);
+    return count === 0 ? base : `${base}-${count + 1}`;
+  });
+}
+
+function buildPlace(
+  item: (typeof realPlaces)[number],
+  resolvedSlug: string,
+): Place {
   const category = mapCategories(item.category);
-  const slug = normalizeSlug(item.slug || item.title || "");
-  const resolvedSlug =
-    slug.length > 0 ? slug : normalizeSlug(item.title) || "place";
   const title = item.title?.trim() || slugToTitle(resolvedSlug);
   const rawNeighborhood = item.neighborhood?.trim();
   const canonicalNeighborhoodSlug =
@@ -144,7 +163,17 @@ export const places: Place[] = realPlaces.map((item, index) => {
     rawNeighborhood || DEFAULT_NEIGHBORHOOD,
   );
 
+  // mapTags guarantees "Top Pick" is present when topPick is set, so no
+  // later sync pass is needed.
   const tags = mapTags(item.tags ?? [], item.topPick, category);
+
+  const local = localPlaceImages(resolvedSlug);
+  const heroImage = local?.hero || item.heroImage || DEFAULT_HERO_IMAGE;
+  const gallery = local?.gallery?.length
+    ? local.gallery
+    : item.gallery && item.gallery.length > 0
+      ? item.gallery
+      : undefined;
 
   return {
     slug: resolvedSlug,
@@ -176,14 +205,11 @@ export const places: Place[] = realPlaces.map((item, index) => {
     bestFor: normalizeStringList(item.bestFor),
     mood: normalizeStringList(item.mood),
     pairWith:
-      normalizeStringList(item.pairWith)?.map((relatedSlug) =>
-        normalizeSlug(relatedSlug),
-      ).filter(Boolean) || undefined,
-    // excerpt feeds card-level surfaces (PlaceCard, related-place suggestions,
-    // OG fallbacks). When an explicit excerpt isn't provided, fall through
-    // through essence (one-line argument) → first sentence of body → finally
-    // the generic DEFAULT_EXCERPT placeholder. This keeps cards meaningful
-    // for any place that has at least some editorial content.
+      normalizeStringList(item.pairWith)
+        ?.map((relatedSlug) => normalizeSlug(relatedSlug))
+        .filter(Boolean) || undefined,
+    // excerpt feeds card-level surfaces. Fallback order: explicit excerpt →
+    // essence → first sentence of body → generic placeholder.
     excerpt:
       item.excerpt?.trim() ||
       item.essence?.trim() ||
@@ -193,47 +219,20 @@ export const places: Place[] = realPlaces.map((item, index) => {
     essence: item.essence?.trim() || undefined,
     sensory: item.sensory?.trim() || undefined,
     tip: item.tip?.trim() || undefined,
-    heroImage: item.heroImage || placeHeroImage() || DEFAULT_HERO_IMAGE,
-    gallery:
-      item.gallery && item.gallery.length > 0
-        ? item.gallery
-        : index < 45 && placeGalleryImage()
-          ? [placeGalleryImage()!]
-          : undefined,
+    heroImage,
+    gallery,
     featured: item.featured,
     topPick: item.topPick,
     sourceFeature: item.sourceFeature,
     sourcePages: item.sourcePages,
     displayTier:
       item.displayTierOverride ??
-      getPlaceDisplayTier({
-        slug: resolvedSlug,
-        topPick: item.topPick,
-      }),
+      getPlaceDisplayTier({ slug: resolvedSlug, topPick: item.topPick }),
   };
-});
-
-for (const place of places) {
-  place.neighborhood = normalizeNeighborhoodValue(
-    place.neighborhood || DEFAULT_NEIGHBORHOOD,
-  );
 }
 
-// Ensure stable unique slugs if upstream data contains collisions
-{
-  const seen = new Map<string, number>();
-  for (const place of places) {
-    const count = seen.get(place.slug) ?? 0;
-    if (count > 0) {
-      place.slug = `${place.slug}-${count + 1}`;
-    }
-    seen.set(place.slug, count + 1);
-  }
-}
+const resolvedSlugs = resolveSlugs(realPlaces);
 
-// Keep "Top Pick" tag in sync with topPick flag after potential dedupe edits
-for (const place of places) {
-  if (place.topPick && !place.tags.includes("Top Pick")) {
-    place.tags = unique(["Top Pick", ...place.tags]);
-  }
-}
+export const places: Place[] = realPlaces.map((item, index) =>
+  buildPlace(item, resolvedSlugs[index]),
+);
