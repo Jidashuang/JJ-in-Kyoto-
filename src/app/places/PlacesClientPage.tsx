@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { useSearchParams } from "next/navigation";
+import { useEffect, useMemo, useState } from "react";
 import { Container } from "@/components/layout/Container";
 import { SmartImage } from "@/components/media/SmartImage";
 import { Heading } from "@/components/ui/Heading";
@@ -172,14 +173,35 @@ function EmptyState({ onReset }: EmptyStateProps) {
   );
 }
 
+// Filter state is mirrored into the URL (?q=&intent=&category=&area=&tag=) so
+// a filtered view can be shared or bookmarked. Defaults are omitted.
 export default function PlacesClientPage() {
-  const [query, setQuery] = useState("");
-  const [selectedIntent, setSelectedIntent] =
-    useState<string>(ALL_INTENT);
-  const [selectedCategory, setSelectedCategory] = useState<string>(ALL_OPTION);
-  const [selectedNeighborhood, setSelectedNeighborhood] =
-    useState<string>(ALL_OPTION);
-  const [selectedTag, setSelectedTag] = useState<string>(ALL_OPTION);
+  const params = useSearchParams();
+  const [query, setQuery] = useState(() => params.get("q") ?? "");
+  const [selectedIntent, setSelectedIntent] = useState<string>(
+    () => params.get("intent") ?? ALL_INTENT,
+  );
+  const [selectedCategory, setSelectedCategory] = useState<string>(
+    () => params.get("category") ?? ALL_OPTION,
+  );
+  const [selectedNeighborhood, setSelectedNeighborhood] = useState<string>(
+    () => params.get("area") ?? ALL_OPTION,
+  );
+  const [selectedTag, setSelectedTag] = useState<string>(
+    () => params.get("tag") ?? ALL_OPTION,
+  );
+
+  useEffect(() => {
+    const next = new URLSearchParams();
+    if (query.trim()) next.set("q", query.trim());
+    if (selectedIntent !== ALL_INTENT) next.set("intent", selectedIntent);
+    if (selectedCategory !== ALL_OPTION) next.set("category", selectedCategory);
+    if (selectedNeighborhood !== ALL_OPTION) next.set("area", selectedNeighborhood);
+    if (selectedTag !== ALL_OPTION) next.set("tag", selectedTag);
+    const qs = next.toString();
+    const url = qs ? `${window.location.pathname}?${qs}` : window.location.pathname;
+    window.history.replaceState(window.history.state, "", url);
+  }, [query, selectedIntent, selectedCategory, selectedNeighborhood, selectedTag]);
   const visiblePlaces = useMemo(
     () => selectPlacesForSurface(places, "all_places"),
     [],
